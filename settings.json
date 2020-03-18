@@ -1,0 +1,31 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "nativescript.analytics.enabled": false,
+    "git.enableSmartCommit": true,
+    "javascript.autoClosingTags": false,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "terminal.integrated.shell.osx": "zsh",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "prettier.singleQuote": true,
+    "prettier.useTabs": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "javascript.preferences.importModuleSpecifier": "non-relative",
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "editor.formatOnSave": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "html.format.wrapAttributes": "force-expand-multiline",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+    },
+    "editor.minimap.enabled": true
+}
