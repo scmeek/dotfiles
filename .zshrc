@@ -58,7 +58,7 @@ export GPG_TTY=$(tty)
 export PATH="/usr/local/sbin:$PATH"
 
 # Golang
-export GOPATH=$HOME/<your_go_workspace_folder_name>
+export GOPATH=$HOME/Documents/Development/Go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
