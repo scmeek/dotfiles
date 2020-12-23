@@ -48,11 +48,6 @@ if [ -f /Users/sean/.tnsrc ]; then
     source /Users/sean/.tnsrc 
 fi
 ###-tns-completion-end-###
-###-tns-completion-start-###
-if [ -f /Users/sean/.tnsrc ]; then 
-    source /Users/sean/.tnsrc 
-fi
-###-tns-completion-end-###
 
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
