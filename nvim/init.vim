@@ -11,16 +11,16 @@ call plug#begin('~/.vim/plugged')
 		Plug 'neovim/nvim-lspconfig'
 		Plug 'nvim-lua/completion-nvim'
 
+		" treesitter
+		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 		" telecope
 		Plug 'nvim-lua/popup.nvim'
 		Plug 'nvim-lua/plenary.nvim'
 		Plug 'nvim-telescope/telescope.nvim'
 
-		" treesitter
-		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-		" undo tree
-		" fugitive
+		Plug 'mbbill/undotree'
+		Plug 'tpope/vim-fugitive'
 call plug#end()
 
 fun! TrimWhitespace()
