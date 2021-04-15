@@ -44,8 +44,8 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 ###-tns-completion-start-###
-if [ -f /Users/sean/.tnsrc ]; then 
-    source /Users/sean/.tnsrc 
+if [ -f /Users/sean/.tnsrc ]; then
+    source /Users/sean/.tnsrc
 fi
 ###-tns-completion-end-###
 
@@ -56,6 +56,7 @@ fi
 
 export GPG_TTY=$(tty)
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 # Golang
 export GOPATH=$HOME/Documents/Development/Go
@@ -63,3 +64,6 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 # / Golang
+
+alias vim="nvim"
+alias vi="nvim"
