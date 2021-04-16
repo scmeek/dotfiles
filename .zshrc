@@ -67,3 +67,4 @@ export PATH=$PATH:$GOROOT/bin
 
 alias vim="nvim"
 alias vi="nvim"
+alias la="ls -la"
