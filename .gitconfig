@@ -1,0 +1,18 @@
+[user]
+	name = scmeek
+	email = sean@seanmeek.com
+	signingkey = CDBD2F5C61320530
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[pull]
+	ff = only
+[alias]
+	unstage = reset --
+	last = log -1 HEAD
+	st = status
+	cb = checkout -b
+	b = branch
+	co = checkout
+	db = branch -D
