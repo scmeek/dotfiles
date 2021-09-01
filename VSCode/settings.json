@@ -1,12 +1,10 @@
 {
 	"workbench.startupEditor": "newUntitledFile",
 	"workbench.iconTheme": "material-icon-theme",
-	"workbench.colorTheme": "One Monokai",
 	"editor.fontFamily": "'Cascadia Code', 'SF Mono', Consolas, Menlo, Monaco, 'Courier New', monospace",
 	"editor.fontLigatures": true,
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
-	"nativescript.analytics.enabled": false,
 	"git.enableSmartCommit": true,
 	"javascript.autoClosingTags": false,
 	"[html]": {
@@ -34,5 +32,14 @@
 	"editor.codeActionsOnSave": {
 		"source.organizeImports": true,
 	},
-	"editor.minimap.enabled": true
+	"editor.minimap.enabled": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"editor.defaultFormatter": "ms-dotnettools.csharp",
+	"python.pythonPath": "/usr/local/anaconda3/envs/py38/bin/python3.8",
+	"extensions.ignoreRecommendations": false,
+	"omnisharp.organizeImportsOnFormat": true,
+	"window.autoDetectColorScheme": true,
+	"workbench.editor.untitled.hint": "hidden",
+	"security.workspace.trust.untrustedFiles": "open"
 }
