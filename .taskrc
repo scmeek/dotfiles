@@ -29,3 +29,10 @@ data.location=~/.task
 #include /usr/local/Cellar/task/2.5.3_1/share/doc/task/rc/solarized-light-256.theme
 #include /usr/local/Cellar/task/2.5.3_1/share/doc/task/rc/no-color.theme
 
+# Inthe.am syncing
+taskd.certificate=~/.inthe.am/private.certificate.pem
+taskd.key=~/.inthe.am/private.key.pem
+taskd.ca=~/.inthe.am/ca.cert.pem
+taskd.server=inthe.am:53589
+taskd.credentials=inthe_am/s.c.meek/667d4fa0-d269-41fd-8c89-44dea9f9da2a
+taskd.trust=strict
