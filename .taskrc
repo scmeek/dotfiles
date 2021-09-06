@@ -30,9 +30,9 @@ data.location=~/.task
 #include /usr/local/Cellar/task/2.5.3_1/share/doc/task/rc/no-color.theme
 
 # Inthe.am syncing
-taskd.certificate=~/.inthe.am/private.certificate.pem
-taskd.key=~/.inthe.am/private.key.pem
-taskd.ca=~/.inthe.am/ca.cert.pem
+taskd.certificate=/Users/sean/.inthe.am/private.certificate.pem
+taskd.key=/Users/sean/.inthe.am/private.key.pem
+taskd.ca=/Users/sean/.inthe.am/ca.crt
 taskd.server=inthe.am:53589
 taskd.credentials=inthe_am/s.c.meek/667d4fa0-d269-41fd-8c89-44dea9f9da2a
 taskd.trust=strict
