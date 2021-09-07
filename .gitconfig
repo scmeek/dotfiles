@@ -19,6 +19,7 @@
 	db = branch -D
 	a = add
 	c = commit -m
+	ca = commit -a -m
 	clone = clone --recursive
 	aa = add .
 	cp = cherry-pick
