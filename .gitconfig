@@ -27,3 +27,5 @@
 	colorMoved = zebra
 [advice]
 	addEmptyPathspec = false
+[pager]
+	branch = false
