@@ -20,7 +20,10 @@
 	a = add
 	c = commit -m
 	clone = clone --recursive
+	aa = add .
 [fetch]
 	prune = true
 [diff]
 	colorMoved = zebra
+[advice]
+	addEmptyPathspec = false
