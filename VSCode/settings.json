@@ -3,7 +3,6 @@
 	"workbench.iconTheme": "material-icon-theme",
 	"editor.fontFamily": "'Cascadia Code', 'SF Mono', Consolas, Menlo, Monaco, 'Courier New', monospace",
 	"editor.fontLigatures": true,
-	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,
 	"git.enableSmartCommit": true,
 	"javascript.autoClosingTags": false,
