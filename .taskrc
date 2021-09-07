@@ -30,6 +30,8 @@ data.location=~/.task
 #include /usr/local/Cellar/task/2.5.3_1/share/doc/task/rc/no-color.theme
 
 alias.s=sync
+alias.a=all
+alias.ann=annotate
 
 # Inthe.am syncing
 taskd.certificate=/Users/sean/.inthe.am/private.certificate.pem
