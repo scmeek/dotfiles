@@ -16,7 +16,6 @@
 	"[typescript]": {
 		"editor.defaultFormatter": "vscode.typescript-language-features"
 	},
-	"terminal.integrated.shell.osx": "zsh",
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"javascript.preferences.quoteStyle": "single",
 	"typescript.preferences.quoteStyle": "single",
@@ -31,14 +30,12 @@
 	"html.format.wrapAttributes": "force-expand-multiline",
 	"editor.codeActionsOnSave": {
 		"source.organizeImports": true,
+		"source.fixAll.tslint": true
 	},
 	"editor.minimap.enabled": true,
 	"diffEditor.ignoreTrimWhitespace": false,
 	"javascript.updateImportsOnFileMove.enabled": "always",
-	"editor.defaultFormatter": "ms-dotnettools.csharp",
-	"python.pythonPath": "/usr/local/anaconda3/envs/py38/bin/python3.8",
 	"extensions.ignoreRecommendations": false,
-	"omnisharp.organizeImportsOnFormat": true,
 	"window.autoDetectColorScheme": true,
 	"workbench.editor.untitled.hint": "hidden",
 	"security.workspace.trust.untrustedFiles": "open"
