@@ -36,3 +36,7 @@ taskd.ca=/Users/sean/.inthe.am/ca.crt
 taskd.server=inthe.am:53589
 taskd.credentials=inthe_am/s.c.meek/667d4fa0-d269-41fd-8c89-44dea9f9da2a
 taskd.trust=strict
+
+# Disable for non-primary clients to prevent duplication of recurring tasks
+recurrence=on
+
