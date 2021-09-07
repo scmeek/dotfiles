@@ -8,6 +8,7 @@
 	defaultBranch = main
 [pull]
 	ff = only
+	rebase = true
 [alias]
 	unstage = reset --
 	last = log -1 HEAD
@@ -19,3 +20,7 @@
 	a = add
 	c = commit -m
 	clone = clone --recursive
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra
