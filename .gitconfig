@@ -23,6 +23,7 @@
 	clone = clone --recursive
 	aa = add .
 	cp = cherry-pick
+	d = diff
 [fetch]
 	prune = true
 [diff]
