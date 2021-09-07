@@ -121,3 +121,9 @@ PROMPT_COMMAND="history -a; history -c; history -r"
 # Set nvim as default editor
 export EDITOR='nvim'
 export VISUAL='nvim'
+
+###-tns-completion-start-###
+if [ -f /Users/sean/.tnsrc ]; then 
+    source /Users/sean/.tnsrc 
+fi
+###-tns-completion-end-###
