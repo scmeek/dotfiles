@@ -21,6 +21,7 @@
 	c = commit -m
 	clone = clone --recursive
 	aa = add .
+	cp = cherry-pick
 [fetch]
 	prune = true
 [diff]
