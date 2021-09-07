@@ -29,6 +29,8 @@ data.location=~/.task
 #include /usr/local/Cellar/task/2.5.3_1/share/doc/task/rc/solarized-light-256.theme
 #include /usr/local/Cellar/task/2.5.3_1/share/doc/task/rc/no-color.theme
 
+alias.s=sync
+
 # Inthe.am syncing
 taskd.certificate=/Users/sean/.inthe.am/private.certificate.pem
 taskd.key=/Users/sean/.inthe.am/private.key.pem
@@ -45,6 +47,4 @@ alias.@=context
 context.spring=+spring_labs
 context.home=-spring_labs or +personal or +home
 context=home
-
-alias.s=sync
 
