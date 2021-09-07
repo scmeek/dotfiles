@@ -120,9 +120,23 @@ setopt histignorealldups sharehistory
 bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=1000000
+SAVEHIST=1000000
 HISTFILE=~/.zsh_history
+
+setopt BANG_HIST				# Treat the '!' character specially during expansion
+setopt EXTENDED_HISTORY			# Write the history file in the "start:elapsed;command" format
+setopt INC_APPEND_HISTORY		# Write to the history file immediately, not when the shell exists
+setopt SHARE_HISTORY			# Share history between all sessions
+setopt HIST_REDUCE_BLANKS		# Remove superfluous blanks before recording entry
+
+# Dupes
+setopt HIST_EXPIRE_DUPS_FIRST	# Expire duplicate entries first when trimming history
+setopt HIST_IGNORE_DUPS			# Don't record an entry that was just recorded again
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
 
 # Use modern completion system
 autoload -Uz compinit
