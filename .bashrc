@@ -127,3 +127,6 @@ if [ -f /Users/sean/.tnsrc ]; then
     source /Users/sean/.tnsrc 
 fi
 ###-tns-completion-end-###
+
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

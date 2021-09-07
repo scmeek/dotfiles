@@ -196,3 +196,6 @@ alias t="task"
 alias c="clear"
 alias cls="clear"
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
