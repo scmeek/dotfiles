@@ -29,10 +29,6 @@ data.location=~/.task
 #include /usr/local/Cellar/task/2.5.3_1/share/doc/task/rc/solarized-light-256.theme
 #include /usr/local/Cellar/task/2.5.3_1/share/doc/task/rc/no-color.theme
 
-alias.s=sync
-alias.a=all
-alias.ann=annotate
-
 # Inthe.am syncing
 taskd.certificate=/Users/sean/.inthe.am/private.certificate.pem
 taskd.key=/Users/sean/.inthe.am/private.key.pem
@@ -44,10 +40,21 @@ taskd.trust=strict
 # Disable for non-primary clients to prevent duplication of recurring tasks
 recurrence=on
 
+# Aliases
+alias.s=sync
+alias.a=all
+alias.ann=annotate
+
+# Reports
+report.cy.description=Completed yesterday
+report.cy.columns=description.count,tags,entry,entry.age
+report.cy.labels=Task,Tags,Created,Age
+report.cy.sort=end-
+report.cy.filter=end:yesterday and status:completed
+
 # Contexts
 alias.@=context
 context.spring=+spring_labs
 context.home=-spring_labs or +personal or +home
 
 context=home
-
