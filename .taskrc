@@ -29,6 +29,7 @@ data.location=~/.task
 #include /usr/local/Cellar/task/2.5.3_1/share/doc/task/rc/solarized-light-256.theme
 #include /usr/local/Cellar/task/2.5.3_1/share/doc/task/rc/no-color.theme
 
+
 # Inthe.am syncing
 taskd.certificate=/Users/sean/.inthe.am/private.certificate.pem
 taskd.key=/Users/sean/.inthe.am/private.key.pem
@@ -37,20 +38,42 @@ taskd.server=inthe.am:53589
 taskd.credentials=inthe_am/s.c.meek/667d4fa0-d269-41fd-8c89-44dea9f9da2a
 taskd.trust=strict
 
+
 # Disable for non-primary clients to prevent duplication of recurring tasks
 recurrence=on
+
 
 # Aliases
 alias.s=sync
 alias.a=all
 alias.ann=annotate
 
+
 # Reports
+
+dateformat.report=a b d, H:N
+
+## Completed yesterday
 report.cy.description=Completed yesterday
-report.cy.columns=description.count,tags,entry,entry.age
-report.cy.labels=Task,Tags,Created,Age
-report.cy.sort=end-
+report.cy.columns=status.short,description.count,tags,entry,entry.age,end
+report.cy.labels=Status,Task,Tags,Created,Age,Completed
+report.cy.sort=end-,description+,id+
 report.cy.filter=end:yesterday and status:completed
+
+## Completed within last week
+report.cwlw.description=Completed within last week
+report.cwlw.columns=status.short,description.count,tags,entry,entry.age,end
+report.cwlw.labels=Status,Task,Tags,Created,Age,Completed
+report.cwlw.sort=end-,description+,id+
+report.cwlw.filter=end.after:today-1wk and status:completed
+
+## Completed last week
+report.clw.description=Completed last week
+report.clw.columns=status.short,description.count,tags,entry,entry.age,end
+report.clw.labels=Status,Task,Tags,Created,Age,Completed
+report.clw.sort=end-,description+,id+
+report.clw.filter=end.after:sow-1wk and status:completed
+
 
 # Contexts
 alias.@=context
