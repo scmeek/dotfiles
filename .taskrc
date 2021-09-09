@@ -47,6 +47,12 @@ recurrence=on
 alias.s=sync
 alias.a=all
 alias.ann=annotate
+alias.cy=completed_yesterday
+alias.cya=completed_yesterday_annotated
+alias.cwlw=completed_within_last_week
+alias.cwlwa=completed_within_last_week_annotated
+alias.clw=completed_last_week
+alias.clwa=completed_last_week_annotated
 
 
 # Reports
@@ -54,25 +60,46 @@ alias.ann=annotate
 dateformat.report=a b d, H:N
 
 ## Completed yesterday
-report.cy.description=Completed yesterday
-report.cy.columns=status.short,description.count,tags,entry,entry.age,end
-report.cy.labels=Status,Task,Tags,Created,Age,Completed
-report.cy.sort=end-,description+,id+
-report.cy.filter=end:yesterday and status:completed
+report.completed_yesterdaydescription=Completed yesterday
+report.completed_yesterdaycolumns=status.short,description.count,tags,entry,entry.age,end
+report.completed_yesterdaylabels=Status,Task,Tags,Created,Age,Completed
+report.completed_yesterday.sort=end-,description+,id+
+report.completed_yesterdayfilter=end:yesterday and status:completed
+
+## Completed yesterday (annotated)
+report.completed_yesterday_annotated.description=Completed yesterday (annotated)
+report.completed_yesterday_annotated.columns=status.short,description,tags,entry,entry.age,end
+report.completed_yesterday_annotated.labels=Status,Task,Tags,Created,Age,Completed
+report.completed_yesterday_annotated.sort=end-,description+,id+
+report.completed_yesterday_annotated.filter=end:yesterday and status:completed
 
 ## Completed within last week
-report.cwlw.description=Completed within last week
-report.cwlw.columns=status.short,description.count,tags,entry,entry.age,end
-report.cwlw.labels=Status,Task,Tags,Created,Age,Completed
-report.cwlw.sort=end-,description+,id+
-report.cwlw.filter=end.after:today-1wk and status:completed
+report.completed_within_last_week.description=Completed within last week
+report.completed_within_last_week.columns=status.short,description.count,tags,entry,entry.age,end
+report.completed_within_last_week.labels=Status,Task,Tags,Created,Age,Completed
+report.completed_within_last_week.sort=end-,description+,id+
+report.completed_within_last_week.filter=end.after:today-1wk and status:completed
+
+## Completed within last week (annotated)
+report.completed_within_last_week_annotated.description=Completed within last week (annotated)
+report.completed_within_last_week_annotated.columns=status.short,description,tags,entry,entry.age,end
+report.completed_within_last_week_annotated.labels=Status,Task,Tags,Created,Age,Completed
+report.completed_within_last_week_annotated.sort=end-,description+,id+
+report.completed_within_last_week_annotated.filter=end.after:today-1wk and status:completed
 
 ## Completed last week
-report.clw.description=Completed last week
-report.clw.columns=status.short,description.count,tags,entry,entry.age,end
-report.clw.labels=Status,Task,Tags,Created,Age,Completed
-report.clw.sort=end-,description+,id+
-report.clw.filter=end.after:sow-1wk and status:completed
+report.completed_last_week.description=Completed last week
+report.completed_last_week.columns=status.short,description.count,tags,entry,entry.age,end
+report.completed_last_week.labels=Status,Task,Tags,Created,Age,Completed
+report.completed_last_week.sort=end-,description+,id+
+report.completed_last_week.filter=end.after:sow-1wk and end.before:eow-1wk+1d and status:completed
+
+## Completed last week (annotated)
+report.completed_last_week_annotated.description=Completed last week
+report.completed_last_week_annotated.columns=status.short,description,tags,entry,entry.age,end
+report.completed_last_week_annotated.labels=Status,Task,Tags,Created,Age,Completed
+report.completed_last_week_annotated.sort=end-,description+,id+
+report.completed_last_week_annotated.filter=end.after:sow-1wk and end.before:eow-1wk+1d and status:completed
 
 
 # Contexts
