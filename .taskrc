@@ -60,11 +60,11 @@ alias.clwa=completed_last_week_annotated
 dateformat.report=a b d, H:N
 
 ## Completed yesterday
-report.completed_yesterdaydescription=Completed yesterday
-report.completed_yesterdaycolumns=status.short,description.count,tags,entry,entry.age,end
-report.completed_yesterdaylabels=Status,Task,Tags,Created,Age,Completed
+report.completed_yesterday.description=Completed yesterday
+report.completed_yesterday.columns=status.short,description.count,tags,entry,entry.age,end
+report.completed_yesterday.labels=Status,Task,Tags,Created,Age,Completed
 report.completed_yesterday.sort=end-,description+,id+
-report.completed_yesterdayfilter=end:yesterday and status:completed
+report.completed_yesterday.filter=end:yesterday and status:completed
 
 ## Completed yesterday (annotated)
 report.completed_yesterday_annotated.description=Completed yesterday (annotated)
