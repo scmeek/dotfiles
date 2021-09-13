@@ -170,10 +170,15 @@ if [ -f /Users/sean/.tnsrc ]; then
 fi
 ###-tns-completion-end-###
 
+# Python
+alias pip=pip3
+
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+# / Python
 
 export GPG_TTY=$(tty)
 export PATH="/usr/local/sbin:$PATH"
