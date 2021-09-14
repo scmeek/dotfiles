@@ -31,7 +31,7 @@ data.location=~/.task
 
 ## Syncing
 
-custom.sync=true
+custom.sean.sync=true
 
 # Inthe.am syncing
 taskd.certificate=/Users/sean/.inthe.am/private.certificate.pem

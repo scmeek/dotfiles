@@ -8,17 +8,13 @@
 n=0
 while read modified_task
 do
-    n=$(($n + 1))
+	n=$(($n + 1))
 done
 
-if [ -n "$TASKWARRIOR_CUSTOM_SYNC" ] && [ "$TASKWARRIOR_CUSTOM_SYNC" -eq 1 ]; then
-    if (($n > 0)); then
-        echo "Syncing..."
-        task sync >> ~/.task/sync_hook.log
-        echo "Done"
-    fi
+if [ -n "$TASKWARRIOR_CUSTOM_SEAN_SYNC" ] && ["$TASKWARRIOR_CUSTOM_SEAN_SYNC" == "true" ]; then
+	if (($n > 0)); then
+		task synchronize >> ~/.task/sync_hook.log
+	fi
 fi
-
-unset TASKWARRIOR_CUSTOM_SYNC
 
 exit 0
