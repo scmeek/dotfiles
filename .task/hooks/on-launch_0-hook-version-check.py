@@ -25,10 +25,14 @@ def main():
     script_name = sys.argv[0]
     api_version_argument = sys.argv[1]
 
-    if api_version_argument != 'api:2':
-        print(f'{script_name}: Hooks API isn\'t v2. Functionality may have changed.')
-        exit(1)
+    if api_version_argument != "api:2":
+        print(
+            f"{script_name}: Hooks API isn't v2. Functionality may have changed.",
+            file=sys.stderr,
+        )
+        # Intentionally not failing
+        # exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

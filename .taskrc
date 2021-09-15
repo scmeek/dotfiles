@@ -32,6 +32,8 @@ data.location=~/.task
 ## Syncing
 
 custom.sean.sync=true
+custom.sean.synchooklogfilename=auto-sync.log
+custom.sean.lastsyncdatetimefilename=last_auto-sync_datetime.txt
 
 # Inthe.am syncing
 taskd.certificate=/Users/sean/.inthe.am/private.certificate.pem
