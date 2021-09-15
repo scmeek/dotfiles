@@ -47,7 +47,13 @@ def main():
                 last_sync_datetime = datetime.strptime(
                     last_sync_datetime_raw, DATETIME_FORMAT
                 )
-                if last_sync_datetime.date() <= datetime.now().date():
+                this_morning_6am = datetime.now().replace(
+                    hour=6, minute=0, second=0, microsecond=0
+                )
+                if (
+                    last_sync_datetime.time() > this_morning_6am.time()
+                    and last_sync_datetime.date() <= datetime.now().date()
+                ):
                     return
 
     task_sync()
