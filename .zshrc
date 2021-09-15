@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # Set up the prompt
 
 #https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
-PROMPT='%(?.%F{green}:).%F{red}:()%f %B%1~%b %# '
+PROMPT='%(?.%F{green}:).%F{red}:()%f %B%1~%b '
 
 autoload -Uz promptinit
 promptinit
