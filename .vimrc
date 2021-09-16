@@ -20,6 +20,8 @@ set copyindent
 set preserveindent
 set autoindent
 
+set number relativenumber	" hybrid line numbers on
+
 inoremap jj <Esc>	" jj escapes insert mode
 
 set colorcolumn=80
