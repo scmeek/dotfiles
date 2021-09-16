@@ -29,13 +29,34 @@ data.location=~/.task
 #include /usr/local/Cellar/task/2.5.3_1/share/doc/task/rc/solarized-light-256.theme
 #include /usr/local/Cellar/task/2.5.3_1/share/doc/task/rc/no-color.theme
 
-## Syncing
+nag=
+
+# Urgency
+#urgency.user.tag.next.coefficient=15.0				# +next tag (default: 15.0)
+#urgency.due.coefficient=12.0						# overdue or near due date (default: 12.0)
+#urgency.blocking.coefficient=8.0					# blocking other tasks (default: 8.0)
+#urgency.uda.priority.H.coefficient=6.0				# high Priority (default: 6.0)
+#urgency.uda.priority.M.coefficient=3.9				# medium Priority (default: 3.9)
+#urgency.uda.priority.L.coefficient=1.8				# low Priority (default: 1.8)
+#urgency.scheduled.coefficient=5.0					# scheduled tasks (default: 5.0)
+#urgency.active.coefficient=4.0						# already started tasks (default: 4.0)
+#urgency.age.coefficient=2.0						# coefficient for age (default: 2.0)
+urgency.annotations.coefficient=0.0					# has annotations (default: 1.0)
+urgency.tags.coefficient=0.0						# has tags (default: 1.0)
+#urgency.project.coefficient=1.0					# assigned to any project (default: 1.0)
+#urgency.user.project.My Project.coefficient=5.0	# assigned to project:"My Project" (default: 5.0)
+#urgency.waiting.coefficient=-3.0					# waiting task (default: -3.0)
+#urgency.blocked.coefficient=-5.0					# blocked by other tasks (default: -5.0)
+
+
+# Syncing
 
 custom.sean.sync=true
 custom.sean.synchooklogfilename=auto-sync.log
 custom.sean.lastsyncdatetimefilename=last_auto-sync_datetime.txt
 
-# Inthe.am syncing
+##  Inthe.am syncing
+
 taskd.certificate=/Users/sean/.inthe.am/private.certificate.pem
 taskd.key=/Users/sean/.inthe.am/private.key.pem
 taskd.ca=/Users/sean/.inthe.am/ca.crt
@@ -43,17 +64,22 @@ taskd.server=inthe.am:53589
 taskd.credentials=inthe_am/s.c.meek/667d4fa0-d269-41fd-8c89-44dea9f9da2a
 taskd.trust=strict
 
+## Disable for non-primary clients to prevent duplication of recurring tasks
 
-# Disable for non-primary clients to prevent duplication of recurring tasks
 recurrence=on
 
 
 # Aliases
+
 alias.s=sync
 alias.a=all
 alias.ann=annotate
 alias.ud=undelete
 alias.undelete="modify end: status:pending"
+
+alias.dutod=modify due:today+20h					# "due today" 8PM
+alias.dutom=modify due:tomorrow+20h wait:tomorrow	# "due tomorrow" 8PM
+
 alias.cy=completed_yesterday
 alias.cya=completed_yesterday_annotated
 alias.cwlw=completed_within_last_week
