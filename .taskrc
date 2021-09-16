@@ -80,6 +80,8 @@ alias.undelete="modify end: status:pending"
 alias.dutod=modify due:today+20h					# "due today" 8PM
 alias.dutom=modify due:tomorrow+20h wait:tomorrow	# "due tomorrow" 8PM
 
+alias.ct=completed_today
+alias.cta=completed_today_annotated
 alias.cy=completed_yesterday
 alias.cya=completed_yesterday_annotated
 alias.cwlw=completed_within_last_week
@@ -91,6 +93,20 @@ alias.clwa=completed_last_week_annotated
 # Reports
 
 dateformat.report=a b d, H:N
+
+## Completed today
+report.completed_today.description=Completed today
+report.completed_today.columns=status.short,description.count,tags,entry,entry.age,end
+report.completed_today.labels=Status,Task,Tags,Created,Age,Completed
+report.completed_today.sort=end-,description+,id+
+report.completed_today.filter=end:today and status:completed
+
+## Completed today (annotated)
+report.completed_today_annotated.description=Completed today (annotated)
+report.completed_today_annotated.columns=status.short,description,tags,entry,entry.age,end
+report.completed_today_annotated.labels=Status,Task,Tags,Created,Age,Completed
+report.completed_today_annotated.sort=end-,description+,id+
+report.completed_today_annotated.filter=end:today and status:completed
 
 ## Completed yesterday
 report.completed_yesterday.description=Completed yesterday
