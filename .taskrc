@@ -48,12 +48,15 @@ urgency.tags.coefficient=0.0						# has tags (default: 1.0)
 #urgency.waiting.coefficient=-3.0					# waiting task (default: -3.0)
 #urgency.blocked.coefficient=-5.0					# blocked by other tasks (default: -5.0)
 
+## Custom settings
 
 # Syncing
 
 custom.sean.sync=true
 custom.sean.synchooklogfilename=auto-sync.log
 custom.sean.lastsyncdatetimefilename=last_auto-sync_datetime.txt
+
+## Syncing
 
 ##  Inthe.am syncing
 
@@ -155,5 +158,7 @@ report.completed_last_week_annotated.filter=end.after:sow-1wk and end.before:eow
 alias.@=context
 context.spring=+spring_labs
 context.home=-spring_labs or +personal or +home
+context.human_data=+human_centered_data
+context.comp_network=+computer_networking
 
 context=home
