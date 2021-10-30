@@ -17,6 +17,8 @@
 	b = branch
 	co = checkout
 	db = branch -D
+	mb = branch -m
+	rnb = branch -m
 	a = add
 	c = commit -m
 	ca = commit -a -m
@@ -32,3 +34,5 @@
 	addEmptyPathspec = false
 [pager]
 	branch = false
+[push]
+	default = current
