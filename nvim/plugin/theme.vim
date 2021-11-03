@@ -8,12 +8,12 @@
 " highlight Normal ctermbg=NONE
 " highlight nonText ctermbg=NONE
 
-colorscheme purify
+" colorscheme base16-default-dark
 
 " https://github.com/hoob3rt/lualine.nvim/blob/master/THEMES.md
 let g:lualine = {
     \'options' : {
-    \  'theme' : 'ayu_mirage',
+    \  'theme' : 'tomorrow',
     \  'section_separators' : ['', ''],
     \  'component_separators' : ['', ''],
     \  'icons_enabled' : v:true,

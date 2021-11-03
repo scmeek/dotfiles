@@ -1,9 +1,11 @@
 call plug#begin('~/.vim/plugged')
 		" Plug 'gruvbox-community/gruvbox'
 		" Plug 'crusoexia/vim-monokai'
-		Plug 'rafi/awesome-vim-colorschemes'
+		" Plug 'rafi/awesome-vim-colorschemes'
+		" Plug 'chriskempson/base16-vim'
 
 		Plug 'hoob3rt/lualine.nvim'
+		Plug 'kyazdani42/nvim-web-devicons'
 
 		Plug 'ryanoasis/vim-devicons'
 
