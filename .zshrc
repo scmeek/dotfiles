@@ -198,7 +198,7 @@ export PATH=$PATH:$GOROOT/bin
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
-alias ls="ls -lah --color=auto"
+alias ls="ls -lahG"
 
 alias t="task"
 
