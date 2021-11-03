@@ -69,4 +69,18 @@
 	"editor.fontSize": 12.5,
 	"editor.formatOnType": true,
 	"scm.inputFontSize": 12.5,
+	"prettier.singleQuote": true,
+	"vim.easymotionDimBackground": false,
+	"vim.joinspaces": false,
+	"vim.smartRelativeLine": true,
+	"vim.useSystemClipboard": true,
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }
