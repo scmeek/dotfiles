@@ -35,7 +35,6 @@
 	"diffEditor.ignoreTrimWhitespace": false,
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"extensions.ignoreRecommendations": false,
-	"window.autoDetectColorScheme": true,
 	"workbench.editor.untitled.hint": "hidden",
 	"security.workspace.trust.untrustedFiles": "open",
 	"editor.minimap.showSlider": "always",
@@ -64,7 +63,10 @@
 		"terminal.ansiWhite": "#ffffff",
 		"terminal.ansiYellow": "#f0c674"
 	},
-	"workbench.colorTheme": "Tomorrow Night",
+	"window.autoDetectColorScheme": true,
+	"workbench.colorTheme": "Tomorrow",
+	"workbench.preferredLightColorTheme": "Tomorrow",
+	"workbench.preferredDarkColorTheme": "Tomorrow Night",
 	"editor.codeLensFontFamily": "'JetBrains Mono', 'Cascadia Code', 'SF Mono', Consolas, Menlo, Monaco, 'Courier New', monospace",
 	"editor.fontSize": 12.5,
 	"editor.formatOnType": true,
@@ -82,5 +84,6 @@
 	},
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+	},
+	"editor.semanticHighlighting.enabled": true,
 }
