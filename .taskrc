@@ -75,9 +75,9 @@ recurrence=on
 # Aliases
 
 alias.s=sync
-alias.a=all
+#alias.a=all
 alias.ann=annotate
-alias.ud=undelete
+#alias.ud=undelete
 alias.undelete="modify end: status:pending"
 
 alias.dutod=modify due:today+20h					# "due today" 8PM
@@ -158,12 +158,13 @@ news.version=2.6.0
 
 # Contexts
 alias.@=context
-context.comp_network.read=+computer_networking
-context.comp_network.write=+computer_networking
-context.home.read=-spring_labs or +personal or +home
-context.human_data.read=+human_centered_data
-context.human_data.write=+human_centered_data
-context.school.read=+human_centered_data or +computer_networking
+context.home.read=+personal
+context.home.write=+personal
+context.school.read=+school
+context.school.write=+school
 context.spring.read=+spring_labs
 context.spring.write=+spring_labs
-context=home
+context.comp_network.read=+computer_networking
+context.comp_network.write=+computer_networking +school
+context.human_data.read=+human_centered_data
+context.human_data.write=+human_centered_data +school
