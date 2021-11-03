@@ -201,6 +201,9 @@ alias t="task"
 alias c="clear"
 alias cls="clear"
 
+alias cdn="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/ComputerNetworking_COMP4621/networking_fall_2021_meek"
+alias cdh="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/HumanCenteredDataSecurity\&Privacy_COMP4732/FinalProject_TorLeakUserData/code"
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
