@@ -2266,12 +2266,18 @@
 	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
+	<key>SmartPlacement</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.10196412614248328</real>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>4</integer>
+	<key>ThreeFingerEmulates</key>
+	<true/>
+	<key>UseBorder</key>
+	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>VisualIndicatorForEsc</key>
