@@ -23,6 +23,8 @@ call plug#begin('~/.vim/plugged')
 
 		Plug 'mbbill/undotree'
 		Plug 'tpope/vim-fugitive'
+
+		Plug 'semanser/vim-outdated-plugins'
 call plug#end()
 
 fun! TrimWhitespace()
