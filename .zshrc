@@ -105,6 +105,10 @@ source $ZSH/oh-my-zsh.sh
 
 # / Oh My Zsh
 
+# Custom environment variables
+
+export CUST_SEAN_CONFIG_PATH="/Users/sean/Documents/Development/Config/"
+
 # Set up the prompt
 
 #https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
@@ -194,12 +198,14 @@ export PATH=$PATH:$GOROOT/bin
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
-alias la="ls -la"
+alias ls="ls -lah --color=auto"
 
 alias t="task"
 
 alias c="clear"
 alias cls="clear"
+
+alias cdc="cd $CUST_SEAN_CONFIG_PATH"
 
 alias cdn="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/ComputerNetworking_COMP4621/networking_fall_2021_meek"
 alias cdh="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/HumanCenteredDataSecurity\&Privacy_COMP4732/FinalProject_TorLeakUserData/code"
