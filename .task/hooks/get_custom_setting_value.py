@@ -7,7 +7,7 @@ import sys
 from numbers import Number
 from typing import Union
 
-CUSTOM_SETTING_PREFIX = "custom.sean."
+from constants import CUSTOM_SETTING_PREFIX
 
 
 def get_setting_value(

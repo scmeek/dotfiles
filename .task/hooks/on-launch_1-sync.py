@@ -9,10 +9,15 @@
 import os
 import sys
 from datetime import datetime
-from pathlib import Path
 
+from constants import (
+    DATETIME_FORMAT,
+    SETTING_NAME_SYNC,
+    TASKWARRIOR_COMMAND_SYNC_WHITELIST,
+    TASKWARRIOR_DIRECTORY_EXPANDED,
+)
 from get_custom_setting_value import get_setting_value
-from sync import DATETIME_FORMAT, TASKWARRIOR_COMMAND_SYNC_WHITELIST, task_sync
+from sync import task_sync
 
 
 def main():
@@ -20,19 +25,15 @@ def main():
     if not taskwarrior_command in TASKWARRIOR_COMMAND_SYNC_WHITELIST:
         return
 
-    setting_name_sync = "sync"
-    sync = get_setting_value(setting_name_sync)
+    sync = get_setting_value(SETTING_NAME_SYNC)
     if not sync:
         return
 
     sync_onlaunch_only_if_havent_today = True
     if sync_onlaunch_only_if_havent_today:
-        taskwarrior_directory = "~/.task"
-        taskwarrior_directory = str(Path(taskwarrior_directory).expanduser())
-
         last_sync_datetime_filename = get_setting_value("lastsyncdatetimefilename")
         last_sync_datetime_path = (
-            taskwarrior_directory + "/" + last_sync_datetime_filename
+            TASKWARRIOR_DIRECTORY_EXPANDED + last_sync_datetime_filename
         )
 
         if os.path.isfile(last_sync_datetime_path):

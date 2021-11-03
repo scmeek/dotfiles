@@ -154,11 +154,16 @@ report.completed_last_week_annotated.sort=end-,description+,id+
 report.completed_last_week_annotated.filter=end.after:sow-1wk and end.before:eow-1wk+1d and status:completed
 
 
+news.version=2.6.0
+
 # Contexts
 alias.@=context
-context.spring=+spring_labs
-context.home=-spring_labs or +personal or +home
-context.human_data=+human_centered_data
-context.comp_network=+computer_networking
-
+context.comp_network.read=+computer_networking
+context.comp_network.write=+computer_networking
+context.home.read=-spring_labs or +personal or +home
+context.human_data.read=+human_centered_data
+context.human_data.write=+human_centered_data
+context.school.read=+human_centered_data or +computer_networking
+context.spring.read=+spring_labs
+context.spring.write=+spring_labs
 context=home
