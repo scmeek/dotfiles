@@ -1569,12 +1569,16 @@
 			<false/>
 			<key>Ansi 0 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.51507854461669922</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.51507854461669922</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.51507854461669922</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -1695,12 +1699,16 @@
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.74117647058823533</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.74117647058823533</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.74117647058823533</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -1740,19 +1748,23 @@
 			<key>Blink Allowed</key>
 			<true/>
 			<key>Blinking Cursor</key>
-			<true/>
+			<false/>
 			<key>Blur</key>
 			<false/>
 			<key>Blur Radius</key>
 			<real>0.10000000000000001</real>
 			<key>Bold Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.77647058820000003</real>
+				<real>0.91012883534432376</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.7843137255</real>
+				<real>0.91703176498413086</real>
 				<key>Red Component</key>
-				<real>0.7725490196</real>
+				<real>0.90616089430170632</real>
 			</dict>
 			<key>Brighten Bold Text</key>
 			<false/>
@@ -1798,7 +1810,7 @@
 				<real>0.11372549086809158</real>
 			</dict>
 			<key>Cursor Type</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
@@ -1827,7 +1839,7 @@
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>Icon</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Use Transparency</key>
@@ -2193,10 +2205,8 @@
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
 			<integer>4</integer>
-			<key>Title Components</key>
-			<integer>7</integer>
 			<key>Transparency</key>
-			<real>0.060000000000000005</real>
+			<real>0.11597113426695478</real>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unlimited Scrollback</key>
