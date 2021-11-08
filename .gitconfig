@@ -4,6 +4,7 @@
 	signingkey = CDBD2F5C61320530
 [commit]
 	gpgsign = true
+	verbose = true
 [init]
 	defaultBranch = main
 [pull]
@@ -30,9 +31,12 @@
 	prune = true
 [diff]
 	colorMoved = zebra
+	algorithm = histogram
 [advice]
 	addEmptyPathspec = false
 [pager]
 	branch = false
 [push]
 	default = current
+[core]
+	editor = nvim
