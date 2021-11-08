@@ -10,6 +10,8 @@ set copyindent
 set preserveindent
 set autoindent
 
+set termguicolors
+
 set nocompatible
 set showmatch
 set exrc
@@ -26,7 +28,6 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
-" set termguicolors
 set scrolloff=8
 set colorcolumn=80
 set signcolumn=yes

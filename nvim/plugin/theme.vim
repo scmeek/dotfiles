@@ -8,7 +8,7 @@
 " highlight Normal ctermbg=NONE
 " highlight nonText ctermbg=NONE
 
-" colorscheme base16-default-dark
+colorscheme base16-tomorrow-night-eighties
 
 " https://github.com/hoob3rt/lualine.nvim/blob/master/THEMES.md
 let g:lualine = {
