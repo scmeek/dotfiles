@@ -72,7 +72,7 @@ export ZSH="/Users/sean/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -198,17 +198,18 @@ export PATH=$PATH:$GOROOT/bin
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
-alias ls="ls -lahG"
+alias ls="gls -lah --color --group-directories-first"
 
 alias t="task"
 
 alias c="clear"
 alias cls="clear"
 
-alias cdc="cd $CUST_SEAN_CONFIG_PATH"
+alias go.config="cd $CUST_SEAN_CONFIG_PATH"
 
-alias cdn="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/ComputerNetworking_COMP4621/networking_fall_2021_meek"
-alias cdh="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/HumanCenteredDataSecurity\&Privacy_COMP4732/FinalProject_TorLeakUserData/code"
+alias go.network="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/ComputerNetworking_COMP4621/networking_fall_2021_meek"
+alias go.privacy="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/HumanCenteredDataSecurity\&Privacy_COMP4732/FinalProject_TorLeakUserData/code"
+alias go.dev="cd /Users/sean/Documents/Development/"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
