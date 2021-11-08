@@ -198,6 +198,8 @@ export PATH=$PATH:$GOROOT/bin
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
+alias diff="nvim -d"
+
 alias ls="gls -lah --color --group-directories-first"
 
 alias t="task"
