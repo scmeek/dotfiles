@@ -43,7 +43,7 @@ urgency.scheduled.coefficient=5.0					# scheduled tasks (default: 5.0)
 #urgency.age.coefficient=2.0						# coefficient for age (default: 2.0)
 urgency.annotations.coefficient=0.0					# has annotations (default: 1.0)
 urgency.tags.coefficient=0.0						# has tags (default: 1.0)
-urgency.project.coefficient=1.0					# assigned to any project (default: 1.0)
+urgency.project.coefficient=1.0						# assigned to any project (default: 1.0)
 #urgency.user.project.My Project.coefficient=5.0	# assigned to project:"My Project" (default: 5.0)
 urgency.waiting.coefficient=-1.0					# waiting task (default: -3.0)
 #urgency.blocked.coefficient=-5.0					# blocked by other tasks (default: -5.0)
@@ -80,8 +80,8 @@ alias.ann=annotate
 #alias.ud=undelete
 alias.undelete="modify end: status:pending"
 
-alias.dutod=due:today+20h					# "due today" 8PM
-alias.dutom=due:tomorrow+20h wait:tomorrow	# "due tomorrow" 8PM
+alias.dutod=due:today+20h			# "due today" 8PM
+alias.dutom=due:tomorrow+20h		# "due tomorrow" 8PM
 
 alias.ct=completed_today
 alias.cta=completed_today_annotated
