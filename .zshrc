@@ -107,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom environment variables
 
-export CUST_SEAN_CONFIG_PATH="/Users/sean/Documents/Development/Config/"
+export CONFIG_PATH="$HOME/Documents/Development/Config/"
 
 # Set up the prompt
 
@@ -207,7 +207,7 @@ alias t="task"
 alias c="clear"
 alias cls="clear"
 
-alias go.config="cd $CUST_SEAN_CONFIG_PATH"
+alias go.config="cd $CONFIG_PATH"
 
 alias go.network="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/ComputerNetworking_COMP4621/"
 alias go.privacy="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/HumanCenteredDataSecurity\&Privacy_COMP4732/"
