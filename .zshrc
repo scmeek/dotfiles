@@ -209,8 +209,8 @@ alias cls="clear"
 
 alias go.config="cd $CUST_SEAN_CONFIG_PATH"
 
-alias go.network="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/ComputerNetworking_COMP4621/networking_fall_2021_meek"
-alias go.privacy="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/HumanCenteredDataSecurity\&Privacy_COMP4732/FinalProject_Tor/code"
+alias go.network="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/ComputerNetworking_COMP4621/"
+alias go.privacy="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/HumanCenteredDataSecurity\&Privacy_COMP4732/"
 alias go.dev="cd /Users/sean/Documents/Development/"
 
 # fzf
