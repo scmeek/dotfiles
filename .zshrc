@@ -213,6 +213,20 @@ alias go.network="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/
 alias go.privacy="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/HumanCenteredDataSecurity\&Privacy_COMP4732/"
 alias go.dev="cd /Users/sean/Documents/Development/"
 
+mrepl(){
+    if [[ $# -eq 3 ]]; then
+        read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [y/N] " -r
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            rg -l "$2" $1 | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
+        else
+            echo 'Okay, nvm'
+        fi
+    else
+        echo 'Usage: mrepl DIR search-string replace-string'
+    fi
+}
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
