@@ -1,5 +1,7 @@
+" inoremp = i (insert) + nore (no, recurssive calling IMPORTANT) + map
 inoremap jj <Esc>
 
-let mapleader = " "
+" map <leader> to space
+"nnoremap <SPACE> <Nop>
+"let mapleader = " "
 
-nnoremap <F5> :UndotreeToggle<CR>
