@@ -46,6 +46,7 @@ call plug#begin('~/.vim/plugged')
 		Plug 'jiangmiao/auto-pairs' " quote and bracket auto-completion
 		Plug 'scrooloose/nerdcommenter' " line (un/)commenter
 		Plug 'Chiel92/vim-autoformat' " auto-formatter
+		Plug 'psliwka/vim-smoothie' " smooth scrolling
 
 call plug#end()
 
