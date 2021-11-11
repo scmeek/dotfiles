@@ -22,10 +22,9 @@ call plug#begin('~/.vim/plugged')
 		" Parser / syntax highlighting - treesitter
 		Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-		" Fuzzy finder - telecope
-		"Plug 'nvim-lua/popup.nvim'
-		"Plug 'nvim-lua/plenary.nvim'
-		"Plug 'nvim-telescope/telescope.nvim'
+		" Fuzzy finder - fzf
+		Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+		Plug 'junegunn/fzf.vim'
 
 		" Markdown previewer - markdown-preview
 		" If you don't have nodejs and yarn

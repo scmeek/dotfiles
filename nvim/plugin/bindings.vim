@@ -10,5 +10,5 @@ let mapleader = "," " map <leader> to comma
 
 
 " save, similar to CMD+S
-noremap <leader>s :w<CR>
+"noremap <leader>s :w<CR>
 
