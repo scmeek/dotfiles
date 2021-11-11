@@ -49,6 +49,7 @@ call plug#begin('~/.vim/plugged')
 		"Plug 'Chiel92/vim-autoformat' " auto-formatter
 		Plug 'psliwka/vim-smoothie' " smooth scrolling
 		Plug 'dense-analysis/ale' " linter/formatter/completion
+		Plug 'christoomey/vim-tmux-navigator' " integration with tmux
 
 call plug#end()
 

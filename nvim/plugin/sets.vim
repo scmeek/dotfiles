@@ -38,3 +38,7 @@ set wildmenu
 
 set updatetime=50 " improve gitgutter responsiveness (also vim swap file)
 
+" More natural split opening
+set splitbelow
+set splitright
+
