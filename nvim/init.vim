@@ -37,6 +37,7 @@ call plug#begin('~/.vim/plugged')
 		" Misc
 		"Plug 'mbbill/undotree' " Visual undo history
 		Plug 'tpope/vim-fugitive' " git wrapper
+		Plug 'airblade/vim-gitgutter' " dit diff in the sign column
 		Plug 'semanser/vim-outdated-plugins' " check for plugin updates
 
 call plug#end()

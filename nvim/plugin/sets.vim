@@ -36,3 +36,5 @@ set completeopt=menuone,noinsert,noselect
 set wildmode=longest,list,full
 set wildmenu
 
+set updatetime=50 " improve gitgutter responsiveness (also vim swap file)
+
