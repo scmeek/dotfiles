@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 		" Auto-completion - deoplete
 		Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 		Plug 'deoplete-plugins/deoplete-jedi' " Python auto-completion
+		Plug 'zchee/deoplete-clang' " C++, clang required
 
 		" Snippets
 		"Plug 'SirVer/ultisnips' " Engine, requires msgpack

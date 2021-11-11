@@ -21,5 +21,7 @@ call deoplete#custom#source('_',
 " Use ALE and also some plugin 'foobar' as completion sources for all code.
 call deoplete#custom#option('sources', {
 	\ '_': ['ale'],
-	\ 'python': ['jedi']
+	\ 'python': ['jedi'],
+	\ 'cpp': ['clang'],
+	\ 'c': ['clang']
 	\})
