@@ -13,3 +13,7 @@ call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer']})
 " Increase max width of window
 call deoplete#custom#source('_', 'max_menu_width', 80)
 
+" Disable the candidates in Comment/String syntaxes
+call deoplete#custom#source('_',
+            \ 'disabled_syntaxes', ['Comment', 'String'])
+
