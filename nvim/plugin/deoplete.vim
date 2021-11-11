@@ -17,3 +17,9 @@ call deoplete#custom#source('_', 'max_menu_width', 80)
 call deoplete#custom#source('_',
             \ 'disabled_syntaxes', ['Comment', 'String'])
 
+" ALE
+" Use ALE and also some plugin 'foobar' as completion sources for all code.
+call deoplete#custom#option('sources', {
+	\ '_': ['ale'],
+	\ 'python': ['jedi']
+	\})

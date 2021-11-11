@@ -11,10 +11,10 @@ call plug#begin('~/.vim/plugged')
 
 		" Auto-completion - deoplete
 		Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-		Plug 'zchee/deoplete-jedi' " Python auto-completion
+		Plug 'deoplete-plugins/deoplete-jedi' " Python auto-completion
 
 		" Snippets
-		"Plug 'SirVer/ultisnips' " Engine
+		"Plug 'SirVer/ultisnips' " Engine, requires msgpack
 		"Plug 'honza/vim-snippets' " Snippets
 
 		" File system explorer - nerdtree
@@ -45,11 +45,13 @@ call plug#begin('~/.vim/plugged')
 		Plug 'semanser/vim-outdated-plugins' " check for plugin updates
 		Plug 'jiangmiao/auto-pairs' " quote and bracket auto-completion
 		Plug 'scrooloose/nerdcommenter' " line (un/)commenter
-		Plug 'Chiel92/vim-autoformat' " auto-formatter
+		"Plug 'Chiel92/vim-autoformat' " auto-formatter
 		Plug 'psliwka/vim-smoothie' " smooth scrolling
+		Plug 'dense-analysis/ale' " linter/formatter/completion
 
 call plug#end()
 
+" Manual whitespace trimming (handled now by ALE)
 fun! TrimWhitespace()
 	let l:save = winsaveview()
 	keeppatterns %s/\s\+$//e
@@ -60,3 +62,13 @@ augroup LOCAL
 	autocmd!
 	autocmd BufWritePre * :call TrimWhitespace()
 augroup END
+
+" Generate documentation tags automatically
+" Put these lines at the very end of your vimrc file.
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+"packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+"silent! helptags ALL
