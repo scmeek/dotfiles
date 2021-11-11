@@ -44,6 +44,8 @@ call plug#begin('~/.vim/plugged')
 		Plug 'airblade/vim-gitgutter' " dit diff in the sign column
 		Plug 'semanser/vim-outdated-plugins' " check for plugin updates
 		Plug 'jiangmiao/auto-pairs' " quote and bracket auto-completion
+		Plug 'scrooloose/nerdcommenter' " line (un/)commenter
+		Plug 'Chiel92/vim-autoformat' " auto-formatter
 
 call plug#end()
 
