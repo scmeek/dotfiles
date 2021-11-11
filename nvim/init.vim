@@ -9,9 +9,13 @@ call plug#begin('~/.vim/plugged')
 		" Plug 'crusoexia/vim-monokai'
 		" Plug 'rafi/awesome-vim-colorschemes'
 
-		" LSP and auto completion plugins
-		"Plug 'neovim/nvim-lspconfig'
-		"Plug 'nvim-lua/completion-nvim'
+		" Auto-completion - deoplete
+		Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+		Plug 'zchee/deoplete-jedi' " Python auto-completion
+
+		" Snippets
+		"Plug 'SirVer/ultisnips' " Engine
+		"Plug 'honza/vim-snippets' " Snippets
 
 		" File system explorer - nerdtree
 		Plug 'preservim/nerdtree'
