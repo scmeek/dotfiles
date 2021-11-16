@@ -1558,6 +1558,10 @@
 	<true/>
 	<key>IRMemory</key>
 	<integer>4</integer>
+	<key>NeverWarnAboutShortLivedSessions_D0C02CDB-8DE7-4946-8896-B0DB7120F63F</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_D0C02CDB-8DE7-4946-8896-B0DB7120F63F_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3185,6 +3189,8 @@
 			</dict>
 		</array>
 	</dict>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
