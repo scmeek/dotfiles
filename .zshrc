@@ -215,6 +215,9 @@ alias go.dev="cd /Users/sean/Documents/Development/"
 # Keep computer awake (caffeinate install required, `brew install --cask caffeinate`)
 #alias do.awake="caffeinate -dimsu &"
 
+# Git
+alias g.sip="git reset --soft HEAD~1; git commit --all --ammend --no-edit" # g.sip: "git, squash into parent"
+
 # /Aliases
 
 mrepl(){
