@@ -216,7 +216,7 @@ alias go.dev="cd /Users/sean/Documents/Development/"
 #alias do.awake="caffeinate -dimsu &"
 
 # Git
-alias g.sip="git reset --soft HEAD~1; git commit --all --ammend --no-edit" # g.sip: "git, squash into parent"
+alias g.sip="git reset --soft HEAD~1; git commit --all --amend --no-edit" # g.sip: "git, squash into parent"
 
 # /Aliases
 
