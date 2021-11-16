@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# / Oh My Zsh
+# /Oh My Zsh
 
 # Custom environment variables
 
@@ -177,12 +177,12 @@ fi
 # Python
 alias pip=pip3
 
-# pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+	# pyenv
+	if command -v pyenv 1>/dev/null 2>&1; then
+  	  eval "$(pyenv init -)"
+	fi
 
-# / Python
+# /Python
 
 export GPG_TTY=$(tty)
 export PATH="/usr/local/sbin:$PATH"
@@ -193,7 +193,9 @@ export GOPATH=$HOME/Documents/Development/Go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
-# / Golang
+# /Golang
+
+# Aliases
 
 alias vim="nvim"
 alias vi="nvim"
@@ -204,14 +206,16 @@ alias ls="gls -lah --color --group-directories-first"
 
 alias t="task"
 
-alias c="clear"
-alias cls="clear"
-
 alias go.config="cd $CONFIG_PATH"
 
 alias go.network="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/ComputerNetworking_COMP4621/"
 alias go.privacy="cd /Users/sean/Documents/School/MS_DU_Cybersecurity/2021-2022/Fall/HumanCenteredDataSecurity\&Privacy_COMP4732/"
 alias go.dev="cd /Users/sean/Documents/Development/"
+
+# Keep computer awake (caffeinate install required, `brew install --cask caffeinate`)
+#alias do.awake="caffeinate -dimsu &"
+
+# /Aliases
 
 mrepl(){
     if [[ $# -eq 3 ]]; then
