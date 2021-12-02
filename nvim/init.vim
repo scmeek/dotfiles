@@ -10,9 +10,9 @@ call plug#begin('~/.vim/plugged')
 		" Plug 'rafi/awesome-vim-colorschemes'
 
 		" Auto-completion - deoplete
-		Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-		Plug 'deoplete-plugins/deoplete-jedi' " Python auto-completion
-		Plug 'zchee/deoplete-clang' " C++, clang required
+		"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+		"Plug 'deoplete-plugins/deoplete-jedi' " Python auto-completion
+		"Plug 'zchee/deoplete-clang' " C++, clang required
 
 		" Snippets
 		"Plug 'SirVer/ultisnips' " Engine, requires msgpack
@@ -37,7 +37,11 @@ call plug#begin('~/.vim/plugged')
 		" see: https://github.com/iamcco/markdown-preview.nvim/issues/50
 		"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 		" If you have nodejs and yarn
-		Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+		Plug 'iamcco/markdown-preview.nvim', {
+					\ 'do': 'cd app && yarn install',
+					\ 'for': 'markdown',
+					\ 'on': 'MarkdownPreview'
+					\ }
 
 		" Misc
 		"Plug 'mbbill/undotree' " Visual undo history
@@ -45,10 +49,10 @@ call plug#begin('~/.vim/plugged')
 		Plug 'airblade/vim-gitgutter' " dit diff in the sign column
 		Plug 'semanser/vim-outdated-plugins' " check for plugin updates
 		Plug 'jiangmiao/auto-pairs' " quote and bracket auto-completion
-		Plug 'scrooloose/nerdcommenter' " line (un/)commenter
+		Plug 'scrooloose/nerdcommenter', { 'on': 'NERDTreeToggle' } " line (un/)commenter
 		"Plug 'Chiel92/vim-autoformat' " auto-formatter
 		Plug 'psliwka/vim-smoothie' " smooth scrolling
-		Plug 'dense-analysis/ale' " linter/formatter/completion
+		"Plug 'dense-analysis/ale' " linter/formatter/completion
 		Plug 'christoomey/vim-tmux-navigator' " integration with tmux
 
 call plug#end()
