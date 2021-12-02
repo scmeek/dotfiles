@@ -209,6 +209,8 @@ alias t="task"
 alias go.config="cd $CONFIG_PATH"
 
 alias go.dev="cd /Users/sean/Documents/Development/"
+alias go.seanmeek="cd /Users/sean/Documents/Development/seanmeek.com/"
+alias go.ttn="cd /Users/sean/Documents/TeeTimeNotify/"
 
 # Keep computer awake (caffeinate install required, `brew install --cask caffeinate`)
 #alias do.awake="caffeinate -dimsu &"
