@@ -35,7 +35,7 @@ set noshowmode
 set completeopt=menuone,noinsert,noselect
 set wildmode=longest,list,full
 set wildmenu
-set inccommand=nosplit	" Live substitution
+set inccommand=split	" Live substitution
 
 set updatetime=50 " improve gitgutter responsiveness (also vim swap file)
 

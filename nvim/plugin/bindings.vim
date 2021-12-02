@@ -1,6 +1,7 @@
 " inoremp = i (insert) + nore (no, recurssive calling IMPORTANT) + map
 
 inoremap kj <Esc> " Go back to normal mode
+nnoremap <c-s> :wa<CR> " ctrl+s -> save all buffers
 
 " map <leader> to space
 "nnoremap <SPACE> <Nop>
