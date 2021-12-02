@@ -9,6 +9,15 @@ call plug#begin('~/.vim/plugged')
 		" Plug 'crusoexia/vim-monokai'
 		" Plug 'rafi/awesome-vim-colorschemes'
 
+		" LSP
+		" https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
+		"Plug 'neovim/nvim-lspconfig'
+		"Plug 'jose-elias-alvarez/null-ls.nvim'
+
+		" Trouble
+		"Plug 'folke/trouble.nvim'
+		"Plug 'kyazdani42/nvim-web-devicons' " Already installed above
+
 		" Auto-completion - deoplete
 		"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 		"Plug 'deoplete-plugins/deoplete-jedi' " Python auto-completion
