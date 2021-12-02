@@ -18,7 +18,7 @@ set exrc
 set relativenumber
 set nu
 set nohlsearch
-set hidden
+" set hidden	" Enabled by default in neovim 0.6
 set noerrorbells
 set nowrap
 set smartcase
