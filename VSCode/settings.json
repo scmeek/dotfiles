@@ -77,6 +77,8 @@
 	"vim.smartRelativeLine": true,
 	"vim.useSystemClipboard": true,
 	"[python]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 4,
 		"editor.defaultFormatter": "ms-python.python"
 	},
 	"[json]": {
