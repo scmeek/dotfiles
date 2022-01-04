@@ -40,6 +40,12 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 doautocmd User PlugLoaded
 
+" https://github.com/junegunn/vim-plug/wiki/extra#automatically-install-missing-plugins-on-startup
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
+
 
 "--------------------------------------------------------------------------
 " Miscellaneous
