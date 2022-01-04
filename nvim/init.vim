@@ -37,6 +37,7 @@ call plug#begin('~/.vim/plugged')
 	source ~/.config/nvim/plugins/tmux-navigator.vim  " integration with tmux
 	source ~/.config/nvim/plugins/treesitter.vim  " parser / syntax highlighting
 	" source ~/.config/nvim/plugins/undotree.vim  " visual undo history
+	source ~/.config/nvim/plugins/which-key.vim
 call plug#end()
 doautocmd User PlugLoaded
 
