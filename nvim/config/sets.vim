@@ -49,7 +49,11 @@ set backupdir=~/.vim/backup
 set wrap
 set linebreak
 
-set updatetime=50  " improve gitgutter responsiveness (also vim swap file)
+" improves:
+" - gitgutter responsiveness
+" - vim swap file
+" - coc hover time
+set updatetime=50
 
 " More natural split opening
 set splitbelow

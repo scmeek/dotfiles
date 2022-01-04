@@ -1,5 +1,7 @@
 Plug 'folke/which-key.nvim'
 
+set timeoutlen=250
+
 function WhichKeySetup()
 lua << EOF
 require("which-key").setup {}
