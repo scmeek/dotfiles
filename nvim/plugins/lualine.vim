@@ -1,14 +1,5 @@
-" colorscheme gruvbox
-
-" colorscheme monokai
-" highlight Normal ctermbg=NONE
-" highlight nonText ctermbg=NONE
-
-" colorscheme molokai
-" highlight Normal ctermbg=NONE
-" highlight nonText ctermbg=NONE
-
-colorscheme base16-tomorrow-night-eighties
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " https://github.com/hoob3rt/lualine.nvim/blob/master/THEMES.md
 let g:lualine = {
@@ -36,4 +27,13 @@ let g:lualine = {
     \},
     \'extensions' : [ 'fzf' ],
     \}
+
+function LuaLineInit()
 lua require("lualine").setup()
+endfunction
+
+augroup LuaLineInit
+	autocmd!
+	autocmd User PlugLoaded call LuaLineInit()
+augroup END
+

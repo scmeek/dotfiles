@@ -4,7 +4,7 @@
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-"set expandtab
+" set expandtab
 set smartindent
 set copyindent
 set preserveindent
@@ -18,7 +18,7 @@ set exrc
 set relativenumber
 set nu
 set nohlsearch
-" set hidden	" Enabled by default in neovim 0.6
+" set hidden  " Enabled by default in neovim 0.6
 set noerrorbells
 set nowrap
 set smartcase
@@ -29,15 +29,27 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set scrolloff=8
+set sidescrolloff=8
 set colorcolumn=80
 set signcolumn=yes
 set noshowmode
 set completeopt=menuone,noinsert,noselect
 set wildmode=longest,list,full
 set wildmenu
-set inccommand=split	" Live substitution
+set inccommand=split  " Live substitution
+set showbreak=↪\
+set list
+set listchars=tab:▸\ ,trail:·
+set mouse=a
+set clipboard=unnamedplus
+set confirm
+set backup
+set backupdir=~/.vim/backup
 
-set updatetime=50 " improve gitgutter responsiveness (also vim swap file)
+set wrap
+set linebreak
+
+set updatetime=50  " improve gitgutter responsiveness (also vim swap file)
 
 " More natural split opening
 set splitbelow

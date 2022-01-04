@@ -1,11 +1,26 @@
-" https://github.com/preservim/nerdtree
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons' " icons
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " file type highlight
 
-" Keyboard shortcuts
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
 
+let g:NERDTreeDirArrowExpandable = '▹'
+let g:NERDTreeDirArrowCollapsible = '▿'
+
+nnoremap <expr> <leader>n g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
+nmap <leader>N :NERDTreeFind<CR>
+
+" If more than one window and previous buffer was NERDTree, go back to it.
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+
+" avoid crashes when calling vim-plug functions while the cursor is on the NERDTree window
+let g:plug_window = 'noautocmd vertical topleft new'
+
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:DevIconsEnableFolderExtensionPatternMatching = 1
 
 "" Open NERDTree automatically when vim starts
 
