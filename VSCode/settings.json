@@ -64,7 +64,7 @@
 		"terminal.ansiYellow": "#f0c674"
 	},
 	"window.autoDetectColorScheme": true,
-	"workbench.colorTheme": "Tomorrow",
+	"workbench.colorTheme": "Dracula",
 	"workbench.preferredLightColorTheme": "Tomorrow",
 	"workbench.preferredDarkColorTheme": "Tomorrow Night",
 	"editor.codeLensFontFamily": "'JetBrains Mono', 'Cascadia Code', 'SF Mono', Consolas, Menlo, Monaco, 'Courier New', monospace",
