@@ -23,7 +23,7 @@ call plug#begin('~/.vim/plugged')
 	" source ~/.config/nvim/plugins/auto-pairs.vim  " quote and bracket auto-completion
 	source ~/.config/nvim/plugins/coc.vim
 	source ~/.config/nvim/plugins/commentary.vim  " comment bindings
-	" source ~/.config/nvim/plugins/floaterm.vim  " in-vim terminal
+	source ~/.config/nvim/plugins/floaterm.vim  " in-vim terminal
 	source ~/.config/nvim/plugins/fugitive.vim  " git wrapper
 	source ~/.config/nvim/plugins/fzf.vim  " fuzzy finder
 	source ~/.config/nvim/plugins/gitgutter.vim  " git diff in the sign column
