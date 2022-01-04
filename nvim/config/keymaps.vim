@@ -15,7 +15,7 @@ noremap <leader>q :q<CR>
 noremap <leader>Q :q!<CR>
 
 " Close current buffer
-noremap <leader>c :bd<CR>
+noremap <silent> <leader>c :bd<CR>
 
 " Easier split navigations
 nnoremap <C-J> <C-W><C-J>
