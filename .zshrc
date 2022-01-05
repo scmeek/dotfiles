@@ -108,11 +108,13 @@ source $ZSH/oh-my-zsh.sh
 # Custom environment variables
 
 export CONFIG_PATH="$HOME/Documents/Development/Config/"
+export SCHOOL_MS_PATH="$HOME/Documents/School/MS_DU_Cybersecurity/"
+export SCHOOL_MS_2022_WINTER_PATH="$SCHOOL_MS_PATH/2021-2022/Winter"
 
 # Set up the prompt
 
 #https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
-PROMPT='%(?.%F{green}:).%F{red}:()%f %B%1~%b '
+PROMPT='%B%1~%b %(?.%F{green}:).%F{red}:()%f '
 
 autoload -Uz promptinit
 promptinit
@@ -211,6 +213,9 @@ alias go.config="cd $CONFIG_PATH"
 alias go.dev="cd /Users/sean/Documents/Development/"
 alias go.seanmeek="cd /Users/sean/Documents/Development/seanmeek.com/"
 alias go.ttn="cd /Users/sean/Documents/TeeTimeNotify/"
+
+alias go.foren="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerForensics_COMP3731/"
+alias go.secur="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerSecurity_COMP4721/"
 
 # Keep computer awake (caffeinate install required, `brew install --cask caffeinate`)
 #alias do.awake="caffeinate -dimsu &"
