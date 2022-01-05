@@ -27,6 +27,7 @@
 	aa = add --all
 	cp = cherry-pick
 	d = diff
+	ds = diff --staged
 	p = pull
 
 	# modified version of lg2 from https://stackoverflow.com/a/34467298
