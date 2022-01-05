@@ -38,23 +38,23 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-	" source ~/.config/nvim/plugins/auto-pairs.vim  " quote and bracket auto-completion
+	" source ~/.config/nvim/plugins/auto-pairs.vim  " Quote and bracket auto-completion
 	source ~/.config/nvim/plugins/coc.vim
-	source ~/.config/nvim/plugins/commentary.vim  " comment bindings
-	source ~/.config/nvim/plugins/floaterm.vim  " in-vim terminal
-	source ~/.config/nvim/plugins/fugitive.vim  " git wrapper
-	source ~/.config/nvim/plugins/fzf.vim  " fuzzy finder
-	source ~/.config/nvim/plugins/gitgutter.vim  " git diff in the sign column
-	source ~/.config/nvim/plugins/lualine.vim  " status bar
+	source ~/.config/nvim/plugins/commentary.vim  " Comment bindings
+	source ~/.config/nvim/plugins/floaterm.vim  " In-vim terminal
+	source ~/.config/nvim/plugins/fugitive.vim  " Git wrapper
+	source ~/.config/nvim/plugins/fzf.vim  " Fuzzy finder
+	source ~/.config/nvim/plugins/gitgutter.vim  " Git diff in the sign column
+	source ~/.config/nvim/plugins/lualine.vim  " Status bar
 	source ~/.config/nvim/plugins/markdown-preview.vim
-	source ~/.config/nvim/plugins/nerdtree.vim  " file system explorer
-	source ~/.config/nvim/plugins/outdated-plugins.vim  " check for plugin updates
+	source ~/.config/nvim/plugins/nerdtree.vim  " File system explorer
+	source ~/.config/nvim/plugins/outdated-plugins.vim  " Check for plugin updates
 	source ~/.config/nvim/plugins/polyglot.vim
-	source ~/.config/nvim/plugins/surround.vim  " string manipulation
+	source ~/.config/nvim/plugins/surround.vim  " String manipulation
 	source ~/.config/nvim/plugins/theme.vim
-	source ~/.config/nvim/plugins/tmux-navigator.vim  " integration with tmux
-	source ~/.config/nvim/plugins/treesitter.vim  " parser / syntax highlighting
-	" source ~/.config/nvim/plugins/undotree.vim  " visual undo history
+	source ~/.config/nvim/plugins/tmux-navigator.vim  " Integration with tmux
+	source ~/.config/nvim/plugins/treesitter.vim  " Parser / syntax highlighting
+	" source ~/.config/nvim/plugins/undotree.vim  " Visual undo history
 	source ~/.config/nvim/plugins/which-key.vim
 call plug#end()
 doautocmd User PlugLoaded
