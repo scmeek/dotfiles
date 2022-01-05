@@ -21,6 +21,6 @@ echo
 
 fortune | cowsay | sed 's/^/         /' | lolcat
 
-printf "\n              Hey there. Let's get started." | lolcat
+printf "\n              Hey there. Let's get started.\n" | lolcat
 echo
 
