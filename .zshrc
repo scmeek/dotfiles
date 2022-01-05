@@ -176,13 +176,16 @@ if [ -f /Users/sean/.tnsrc ]; then
 fi
 ###-tns-completion-end-###
 
+# Startup script
+$CONFIG_PATH/scripts/welcome.sh
+
 # Python
 alias pip=pip3
 
-	# pyenv
-	if command -v pyenv 1>/dev/null 2>&1; then
-  	  eval "$(pyenv init -)"
-	fi
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 # /Python
 
