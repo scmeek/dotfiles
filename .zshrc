@@ -1,3 +1,6 @@
+# profiling, use with `zprof` command
+# zmodload zsh/zprof
+
 # Oh My Zsh
 
 # If you come from bash you might have to change your $PATH.
