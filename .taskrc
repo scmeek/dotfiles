@@ -1,19 +1,25 @@
-# [Created by task 2.5.3 9/4/2021 15:40:05]
-# Taskwarrior program configuration file.
-# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
-# 'man task-sync' or 'man taskrc'
+#
+#                 °#@@@@@#.       *@@@@@@*           °°°°°.
+#               O@@@@o.°#@@#   .@@@@@@@@@@@.       °@@@@@@#
+#              #@@@@o    @@@  *@@°  o@@@@@@@      *@@@@@@@
+#              @@@@@@.  o@@#  @@     *@@@@@@@    o@@@@@@@@
+#              @@@@@@@#      #@*     @@@@@@@@o  #@@@@@@@@.
+#              @@@@@@@@@*    @@@.    @#@@@@@@@ @@o@@@@@@@
+#               @@@@@@@@@#   *@@@@* @@ o@@@@@@@@ O@@@@@@°
+#                *@@@@@@@@*   o@@*  @@  @@@@@@@  @@@@@@@
+#        .@@@O     @@@@@@@@        @@*  @@@@@@  O@@@@@@o  #
+#        @@@@o      @@@@@@@       #@@   #@@@@   @@@@@@@  @@
+#       O@@@@       .@@@@@°*#   *@@@    *@@@    @@@@@@@ @@
+#       °@@@@       O@@@@@ @@@@@@@@°     @@     o@@@@@@@@.
+#        #@@@*     *@@@@O   @@@@@@.      #       *@@@@@o
+#         °@@@@@#@@@@@o       °°
+#            °o##Oo.
+#
+#      Personal .taskrc file of Sean Meek <sean@seanmeek.com>
 
-# Here is an example of entries that use the default, override and blank values
-#   variable=foo   -- By specifying a value, this overrides the default
-#   variable=      -- By specifying no value, this means no default
-#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
-
-# Use the command 'task show' to see all defaults and overrides
-
-# Files
 data.location=~/.task
 
-# Color theme (uncomment one to use)
+# Theme
 #include /usr/local/Cellar/task/2.6.1/share/doc/task/rc/light-16.theme
 #include /usr/local/Cellar/task/2.6.1/share/doc/task/rc/light-256.theme
 #include /usr/local/Cellar/task/2.6.1/share/doc/task/rc/dark-16.theme
@@ -29,37 +35,31 @@ include /usr/local/Cellar/task/2.6.1/share/doc/task/rc/solarized-dark-256.theme
 #include /usr/local/Cellar/task/2.6.1/share/doc/task/rc/solarized-light-256.theme
 #include /usr/local/Cellar/task/2.6.1/share/doc/task/rc/no-color.theme
 
-nag=
+nag=  # Don't nag on more urgent tasks
 
 # Urgency
-urgency.user.tag.next.coefficient=5.0				# +next tag (default: 15.0)
-urgency.due.coefficient=5.0							# overdue or near due date (default: 12.0)
-#urgency.blocking.coefficient=8.0					# blocking other tasks (default: 8.0)
-#urgency.uda.priority.H.coefficient=6.0				# high Priority (default: 6.0)
-#urgency.uda.priority.M.coefficient=3.9				# medium Priority (default: 3.9)
-#urgency.uda.priority.L.coefficient=1.8				# low Priority (default: 1.8)
-urgency.scheduled.coefficient=5.0					# scheduled tasks (default: 5.0)
-#urgency.active.coefficient=4.0						# already started tasks (default: 4.0)
-#urgency.age.coefficient=2.0						# coefficient for age (default: 2.0)
-urgency.annotations.coefficient=0.0					# has annotations (default: 1.0)
-urgency.tags.coefficient=0.0						# has tags (default: 1.0)
-urgency.project.coefficient=1.0						# assigned to any project (default: 1.0)
-#urgency.user.project.My Project.coefficient=5.0	# assigned to project:"My Project" (default: 5.0)
-urgency.waiting.coefficient=-1.0					# waiting task (default: -3.0)
-#urgency.blocked.coefficient=-5.0					# blocked by other tasks (default: -5.0)
-
-## Custom settings
+urgency.user.tag.next.coefficient=5.0  # +next tag (default: 15.0)
+urgency.due.coefficient=5.0  # Overdue or near due date (default: 12.0)
+#urgency.blocking.coefficient=8.0  # Blocking other tasks (default: 8.0)
+#urgency.uda.priority.H.coefficient=6.0  # High Priority (default: 6.0)
+#urgency.uda.priority.M.coefficient=3.9  # Medium Priority (default: 3.9)
+#urgency.uda.priority.L.coefficient=1.8  # Low Priority (default: 1.8)
+urgency.scheduled.coefficient=5.0  # Scheduled tasks (default: 5.0)
+#urgency.active.coefficient=4.0  # Already started tasks (default: 4.0)
+#urgency.age.coefficient=2.0  # Coefficient for age (default: 2.0)
+urgency.annotations.coefficient=0.0  # Has annotations (default: 1.0)
+urgency.tags.coefficient=0.0  # Has tags (default: 1.0)
+urgency.project.coefficient=1.0  # Assigned to any project (default: 1.0)
+#urgency.user.project.My Project.coefficient=5.0  # Assigned to project:"My Project" (default: 5.0)
+urgency.waiting.coefficient=-1.0  # Waiting task (default: -3.0)
+#urgency.blocked.coefficient=-5.0  # Blocked by other tasks (default: -5.0)
 
 # Syncing
-
 custom.sean.sync=true
 custom.sean.synchooklogfilename=auto-sync.log
 custom.sean.lastsyncdatetimefilename=last_auto-sync_datetime.txt
 
-## Syncing
-
-##  Inthe.am syncing
-
+# Inthe.am syncing
 taskd.certificate=/Users/sean/.inthe.am/private.certificate.pem
 taskd.key=/Users/sean/.inthe.am/private.key.pem
 taskd.ca=/Users/sean/.inthe.am/ca.crt
@@ -67,22 +67,19 @@ taskd.server=inthe.am:53589
 taskd.credentials=inthe_am/s.c.meek/667d4fa0-d269-41fd-8c89-44dea9f9da2a
 taskd.trust=strict
 
-## Disable for non-primary clients to prevent duplication of recurring tasks
-
-recurrence=on
-
+recurrence=on  # Disable for non-primary clients to prevent duplication of recurring tasks
 
 # Aliases
-
+alias.@=context
 alias.s=sync
 #alias.a=all
 alias.ann=annotate
 #alias.ud=undelete
 alias.undelete="modify end: status:pending"
+alias.dutod=due:today+20h  # "due today" 8PM
+alias.dutom=due:tomorrow+20h  # "due tomorrow" 8PM
 
-alias.dutod=due:today+20h			# "due today" 8PM
-alias.dutom=due:tomorrow+20h		# "due tomorrow" 8PM
-
+# Report aliases
 alias.ct=completed_today
 alias.cta=completed_today_annotated
 alias.cy=completed_yesterday
@@ -92,72 +89,67 @@ alias.cwlwa=completed_within_last_week_annotated
 alias.clw=completed_last_week
 alias.clwa=completed_last_week_annotated
 
-
-# Reports
-
 dateformat.report=a b d, H:N
 
-## Completed today
+# Report - Completed today
 report.completed_today.description=Completed today
 report.completed_today.columns=status.short,description.count,tags,entry,entry.age,end
 report.completed_today.labels=Status,Task,Tags,Created,Age,Completed
 report.completed_today.sort=end-,description+,id+
 report.completed_today.filter=end:today and status:completed
 
-## Completed today (annotated)
+# Report - Completed today (annotated)
 report.completed_today_annotated.description=Completed today (annotated)
 report.completed_today_annotated.columns=status.short,description,tags,entry,entry.age,end
 report.completed_today_annotated.labels=Status,Task,Tags,Created,Age,Completed
 report.completed_today_annotated.sort=end-,description+,id+
 report.completed_today_annotated.filter=end:today and status:completed
 
-## Completed yesterday
+# Report - Completed yesterday
 report.completed_yesterday.description=Completed yesterday
 report.completed_yesterday.columns=status.short,description.count,tags,entry,entry.age,end
 report.completed_yesterday.labels=Status,Task,Tags,Created,Age,Completed
 report.completed_yesterday.sort=end-,description+,id+
 report.completed_yesterday.filter=end:yesterday and status:completed
 
-## Completed yesterday (annotated)
+# Report - Completed yesterday (annotated)
 report.completed_yesterday_annotated.description=Completed yesterday (annotated)
 report.completed_yesterday_annotated.columns=status.short,description,tags,entry,entry.age,end
 report.completed_yesterday_annotated.labels=Status,Task,Tags,Created,Age,Completed
 report.completed_yesterday_annotated.sort=end-,description+,id+
 report.completed_yesterday_annotated.filter=end:yesterday and status:completed
 
-## Completed within last week
+# Report - Completed within last week
 report.completed_within_last_week.description=Completed within last week
 report.completed_within_last_week.columns=status.short,description.count,tags,entry,entry.age,end
 report.completed_within_last_week.labels=Status,Task,Tags,Created,Age,Completed
 report.completed_within_last_week.sort=end-,description+,id+
 report.completed_within_last_week.filter=end.after:today-1wk and status:completed
 
-## Completed within last week (annotated)
+# Report - Completed within last week (annotated)
 report.completed_within_last_week_annotated.description=Completed within last week (annotated)
 report.completed_within_last_week_annotated.columns=status.short,description,tags,entry,entry.age,end
 report.completed_within_last_week_annotated.labels=Status,Task,Tags,Created,Age,Completed
 report.completed_within_last_week_annotated.sort=end-,description+,id+
 report.completed_within_last_week_annotated.filter=end.after:today-1wk and status:completed
 
-## Completed last week
+# Report - Completed last week
 report.completed_last_week.description=Completed last week
 report.completed_last_week.columns=status.short,description.count,tags,entry,entry.age,end
 report.completed_last_week.labels=Status,Task,Tags,Created,Age,Completed
 report.completed_last_week.sort=end-,description+,id+
 report.completed_last_week.filter=end.after:sow-1wk and end.before:eow-1wk+1d and status:completed
 
-## Completed last week (annotated)
+# Report - Completed last week (annotated)
 report.completed_last_week_annotated.description=Completed last week
 report.completed_last_week_annotated.columns=status.short,description,tags,entry,entry.age,end
 report.completed_last_week_annotated.labels=Status,Task,Tags,Created,Age,Completed
 report.completed_last_week_annotated.sort=end-,description+,id+
 report.completed_last_week_annotated.filter=end.after:sow-1wk and end.before:eow-1wk+1d and status:completed
 
-
 news.version=2.6.0
 
 # Contexts
-alias.@=context
 context.home.read=+personal
 context.home.write=+personal
 context.school.read=+school
@@ -171,3 +163,4 @@ context.ttn.write=+teetimenotify
 context.spring.read=+spring_labs
 context.spring.write=+spring_labs
 context=home
+
