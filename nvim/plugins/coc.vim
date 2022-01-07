@@ -8,6 +8,7 @@ let g:coc_global_extensions = [
     \ 'coc-git',
     \ 'coc-html',
     \ 'coc-json',
+    \ 'coc-lists',
     \ 'coc-markdownlint',
     \ 'coc-pairs',
     \ 'coc-prettier',
@@ -18,6 +19,15 @@ let g:coc_global_extensions = [
     \ 'coc-sql',
     \ 'coc-tsserver',
 \ ]
+
+" Use linter installed by project
+" https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim#prettier-and-eslint
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
