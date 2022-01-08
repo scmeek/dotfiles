@@ -2,6 +2,8 @@
 
 let mapleader = "\<space>"
 
+map q <Nop>  " Disable macro recording
+
 " Edit configs
 nnoremap <leader>ve :edit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>vc :edit ~/.config/nvim/coc-settings.json<cr>
