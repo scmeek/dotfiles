@@ -27,7 +27,7 @@ export SCHOOL_MS_PATH="$HOME/Documents/School/MS_DU_Cybersecurity/"
 export SCHOOL_MS_2022_WINTER_PATH="$SCHOOL_MS_PATH/2021-2022/Winter"
 
 HYPHEN_INSENSITIVE="true"  # Used in completion
-ENABLE_CORRECTION="true"  # Command auto-correction
+# ENABLE_CORRECTION="true"  # Command auto-correction
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
