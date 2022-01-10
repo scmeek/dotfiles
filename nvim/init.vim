@@ -39,8 +39,9 @@ endif
 
 call plug#begin('~/.vim/plugged')
 	" source ~/.config/nvim/plugins/auto-pairs.vim  " Quote and bracket auto-completion
-	source ~/.config/nvim/plugins/coc.vim
+	source ~/.config/nvim/plugins/coc.vim  " Completiong engine (LSP)
 	source ~/.config/nvim/plugins/commentary.vim  " Comment bindings
+	source ~/.config/nvim/plugins/doge.vim  " Documentation generator
 	source ~/.config/nvim/plugins/floaterm.vim  " In-vim terminal
 	source ~/.config/nvim/plugins/fugitive.vim  " Git wrapper
 	source ~/.config/nvim/plugins/fzf.vim  " Fuzzy finder
