@@ -1,5 +1,9 @@
 Plug 'dracula/vim',{'as':'dracula'}
 
+if (has("termguicolors"))
+    set termguicolors
+endif
+
 augroup DraculaOverrides
 	autocmd!
 	autocmd ColorScheme dracula highlight DraculaBoundary guibg=none

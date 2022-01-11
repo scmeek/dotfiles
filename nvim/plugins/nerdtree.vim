@@ -4,7 +4,7 @@ Plug 'ryanoasis/vim-devicons' " icons
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " file type highlight
 
 let NERDTreeShowHidden=1
-let NERDTreeMinimalUI=1
+let NERDTreeMinimalUI=0
 
 let g:NERDTreeDirArrowExpandable = '▹'
 let g:NERDTreeDirArrowCollapsible = '▿'

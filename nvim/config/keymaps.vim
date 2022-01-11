@@ -9,7 +9,7 @@ nnoremap <leader>ve :edit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>vc :edit ~/.config/nvim/coc-settings.json<cr>
 nnoremap <leader>vr :source ~/.config/nvim/init.vim<cr>
 
-inoremap kj <Esc> " Go to normal mode
+inoremap kj <Esc>w<CR> " Go to normal mode and save
 
 noremap <leader>s :w<CR>
 noremap <leader>S :wa<CR>

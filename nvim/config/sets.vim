@@ -10,8 +10,6 @@ set copyindent
 set preserveindent
 set autoindent
 
-set termguicolors
-
 set nocompatible
 set showmatch
 set exrc
