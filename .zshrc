@@ -143,7 +143,7 @@ alias go.ttn="cd /Users/sean/Documents/TeeTimeNotify/"
 alias go.foren="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerForensics_COMP3731/"
 alias go.secur="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerSecurity_COMP4721/"
 alias g.sip="git reset --soft HEAD~1; git commit --all --amend --no-edit" # g.sip: "git, squash into parent"
-#alias do.awake="caffeinate -dimsu &"  # Prevent sleep ('caffeinate' required)
+alias do.awake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
 
 # Replace all in directory
 repl(){
