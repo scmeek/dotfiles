@@ -31,12 +31,25 @@ HYPHEN_INSENSITIVE="true"  # Used in completion
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git colored-man-pages)
+plugins=(
+  git
+  colored-man-pages
+  shrink-path
+  )
 
 source $ZSH/oh-my-zsh.sh
 
 # https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
-PROMPT='%B%1~%b %(?.%F{green}:).%F{red}:()%f '
+PROMPT='%F{blue}$(shrink_path -l -t)%f %(?.%F{cyan}:).%F{red}:()%f '
+
+# Prompt git integration
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:git:*' formats '%F{yellow}%b%f' # %r is repo
+zstyle ':vcs_info:*' enable git
 
 autoload -Uz promptinit
 promptinit
