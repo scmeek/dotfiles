@@ -13,22 +13,7 @@
 [alias]
 	unstage = reset --
 	last = log -1 HEAD
-	st = status
-	cb = checkout -b
-	b = branch
-	co = checkout
-	db = branch -D
-	mb = branch -m
-	rnb = branch -m
-	a = add
-	c = commit -m
-	ca = commit -a -m
 	clone = clone --recursive
-	aa = add --all
-	cp = cherry-pick
-	d = diff
-	ds = diff --staged
-	p = pull
 	push = push -u
 
 	# modified version of lg2 from https://stackoverflow.com/a/34467298
