@@ -136,14 +136,14 @@ alias v="nvim"
 alias diff="nvim -d"
 alias ls="gls -lah --color --group-directories-first"
 alias t="task"
-alias go.config="cd $CONFIG_PATH"
-alias go.dev="cd /Users/sean/Documents/Development/"
-alias go.seanmeek="cd /Users/sean/Documents/Development/seanmeek.com/"
-alias go.ttn="cd /Users/sean/Documents/TeeTimeNotify/"
-alias go.foren="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerForensics_COMP3731/"
-alias go.secur="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerSecurity_COMP4721/"
-alias g.sip="git reset --soft HEAD~1; git commit --all --amend --no-edit" # g.sip: "git, squash into parent"
-alias do.awake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
+alias goconfig="cd $CONFIG_PATH"
+alias godev="cd /Users/sean/Documents/Development/"
+alias goseanmeek="cd /Users/sean/Documents/Development/seanmeek.com/"
+alias gottn="cd /Users/sean/Documents/TeeTimeNotify/"
+alias goforen="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerForensics_COMP3731/"
+alias gosecur="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerSecurity_COMP4721/"
+alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit" # gsip: "git, squash into parent"
+alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
 
 # Replace all in directory
 repl(){
