@@ -22,7 +22,7 @@
 
 export ZSH="/Users/sean/.oh-my-zsh"
 
-export CONFIG_PATH="$HOME/Documents/Development/Config/"
+export DOTFILES_PATH="$HOME/Documents/dotfiles"
 export SCHOOL_MS_PATH="$HOME/Documents/School/MS_DU_Cybersecurity/"
 export SCHOOL_MS_2022_WINTER_PATH="$SCHOOL_MS_PATH/2021-2022/Winter"
 
@@ -115,7 +115,7 @@ if [ -f /Users/sean/.tnsrc ]; then
 fi
 ###-tns-completion-end-###
 
-$CONFIG_PATH/scripts/welcome.sh  # Startup/welcome script
+$DOTFILES_PATH/scripts/welcome.sh  # Startup/welcome script
 
 # Python
 alias pip=pip3
@@ -136,7 +136,7 @@ alias v="nvim"
 alias diff="nvim -d"
 alias ls="gls -lah --color --group-directories-first"
 alias t="task"
-alias goconfig="cd $CONFIG_PATH"
+alias godotfiles="cd $DOTFILES_PATH"
 alias gonotes="cd /Users/sean/Documents/Notes"
 alias godev="cd /Users/sean/Documents/Development/"
 alias goseanmeek="cd /Users/sean/Documents/Development/seanmeek.com/"
