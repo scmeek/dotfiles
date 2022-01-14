@@ -16,6 +16,9 @@ noremap <leader>S :wa<CR>
 noremap <leader>q :q<CR>
 noremap <leader>Q :q!<CR>
 
+" Select all
+nnoremap <leader>a ggVG
+
 " Close current buffer
 noremap <silent> <leader>c :bd<CR>
 
