@@ -1,6 +1,6 @@
 # dotfiles
 
-Charity begins at $HOME
+Charity begins at `$HOME`
 
 ## License
 
