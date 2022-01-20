@@ -34,6 +34,7 @@
 	last = log -1 HEAD
 	clone = clone --recursive
 	push = push -u
+	c = commit -m
 
 	# modified version of lg2 from https://stackoverflow.com/a/34467298
 	l = log --graph --abbrev-commit --decorate --date=format:'%Y-%m-%d %I:%M %p' --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%ad%C(reset) %C(green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''%w(100,10,10)%C(white)%s%C(reset) %C(magenta)- %aN%C(reset)'
