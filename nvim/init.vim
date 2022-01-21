@@ -38,12 +38,10 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-	" source ~/.config/nvim/plugins/auto-pairs.vim  " Quote and bracket auto-completion
 	source ~/.config/nvim/plugins/coc.vim  " Completiong engine (LSP)
 	source ~/.config/nvim/plugins/commentary.vim  " Comment bindings
 	source ~/.config/nvim/plugins/doge.vim  " Documentation generator
 	source ~/.config/nvim/plugins/floaterm.vim  " In-vim terminal
-	source ~/.config/nvim/plugins/fugitive.vim  " Git wrapper
 	source ~/.config/nvim/plugins/fzf.vim  " Fuzzy finder
 	source ~/.config/nvim/plugins/gitgutter.vim  " Git diff in the sign column
 	source ~/.config/nvim/plugins/lualine.vim  " Status bar
@@ -68,6 +66,8 @@ autocmd VimEnter *
 "--------------------------------------------------------------------------
 " Miscellaneous
 "--------------------------------------------------------------------------
+
+au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
 
 " Manual whitespace trimming
 fun! TrimWhitespace()

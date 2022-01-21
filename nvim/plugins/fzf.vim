@@ -18,6 +18,4 @@ nnoremap <leader>F :AllFiles<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>h :History<cr>
 nnoremap <leader>r :Rg<cr>
-nnoremap <leader>R :Rg<space>
-nnoremap <leader>gb :GBranches<cr>
 
