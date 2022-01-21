@@ -42,6 +42,10 @@ source $ZSH/oh-my-zsh.sh
 # https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
 PROMPT='%F{blue}$(shrink_path -l -t)%f %(?.%F{cyan}:).%F{red}:()%f '
 
+# Set default editor to vim
+export EDITOR=nvim
+export VISUAL=nvim
+
 # Prompt git integration
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
@@ -157,7 +161,7 @@ repl(){
       echo 'Replaced all occurrences of $2 with $3 in $1.'
     fi
   else
-    echo 'usage: repl <directory> <search-string> <replace-string>\n' >&2
+    echo "usage: $0 <directory> <search-string> <replace-string>\n" >&2
     return 2
   fi
 }
