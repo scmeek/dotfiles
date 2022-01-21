@@ -1,6 +1,6 @@
 Plug 'voldikss/vim-floaterm'
 
-let g:floaterm_keymap_toggle = '<Leader>ft'
+let g:floaterm_keymap_toggle = '<Leader>t'
 " let g:floaterm_keymap_next   = '<F2>'
 " let g:floaterm_keymap_prev   = '<F3>'
 " let g:floaterm_keymap_new    = '<F4>'
