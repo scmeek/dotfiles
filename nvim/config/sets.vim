@@ -43,9 +43,9 @@ set clipboard=unnamedplus
 set confirm
 set backup
 set backupdir=~/.vim/backup
-
 set wrap
 set linebreak
+set timeoutlen=500
 
 " improves:
 " - gitgutter responsiveness
