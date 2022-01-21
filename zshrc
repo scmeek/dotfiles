@@ -17,64 +17,28 @@
 #
 #      Personal .zshrc file of Sean Meek <sean@seanmeek.com>
 
-# Profiling, use with `zprof` command
-#zmodload zsh/zprof
+#zmodload zsh/zprof  # Profiling, use with `zprof` command
+
+
+#--------------------------------------------------------------------------
+# Environment variables
+#--------------------------------------------------------------------------
 
 export ZSH="/Users/sean/.oh-my-zsh"
-
 export DOTFILES_PATH="$HOME/Documents/dotfiles"
 export SCHOOL_MS_PATH="$HOME/Documents/School/MS_DU_Cybersecurity/"
 export SCHOOL_MS_2022_WINTER_PATH="$SCHOOL_MS_PATH/2021-2022/Winter"
 
+
+#--------------------------------------------------------------------------
+# General config
+#--------------------------------------------------------------------------
+
+$DOTFILES_PATH/scripts/welcome.sh  # Startup/welcome script
+
 HYPHEN_INSENSITIVE="true"  # Used in completion
-# ENABLE_CORRECTION="true"  # Command auto-correction
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
-
-plugins=(
-  git
-  colored-man-pages
-  shrink-path
-  )
-
-source $ZSH/oh-my-zsh.sh
-
-# Set default editor to vim
-export EDITOR=nvim
-export VISUAL=nvim
-
-bindkey -v # vim mode
-
-# https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
-SM_PROMPT_PATH='%F{blue}$(shrink_path -l -t)%f' # Short path in blue
-SM_PROMPT_SMILEY='%(?.%F{cyan}:).%F{red}:()%f' # Smiley in green/red based on last return code
-function sm_set_prompt {
-    if [ -n "$KEYMAP" ] && [ "$KEYMAP" = "vicmd" ]; then
-      export PROMPT="$SM_PROMPT_PATH %S$SM_PROMPT_SMILEY%s "
-    else
-      export PROMPT="$SM_PROMPT_PATH $SM_PROMPT_SMILEY "
-    fi
-}
-sm_set_prompt # Call on shell init
-
-# https://linux.die.net/man/1/zshzle
-function zle-keymap-select {
-    sm_set_prompt
-    zle reset-prompt
-}
-zle -N zle-keymap-select
-
-# Prompt git integration
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-RPROMPT=\$vcs_info_msg_0_
-zstyle ':vcs_info:git:*' formats '%F{yellow}%b%f' # %r is repo
-zstyle ':vcs_info:*' enable git
-
-autoload -Uz promptinit
-promptinit
 
 # Keep n lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000000
@@ -96,6 +60,71 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
+
+
+#--------------------------------------------------------------------------
+# Oh-my-zsh
+#--------------------------------------------------------------------------
+
+plugins=(
+  git
+  colored-man-pages
+  shrink-path
+  )
+
+source $ZSH/oh-my-zsh.sh
+
+
+#--------------------------------------------------------------------------
+# Vim
+#--------------------------------------------------------------------------
+
+# Set default editor to vim
+export EDITOR=nvim
+export VISUAL=nvim
+
+bindkey -v  # vim mode
+
+
+#--------------------------------------------------------------------------
+# Prompt
+#--------------------------------------------------------------------------
+
+# https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
+SM_PROMPT_PATH='%F{blue}$(shrink_path -l -t)%f'  # Short path in blue
+SM_PROMPT_SMILEY='%(?.%F{cyan}:).%F{red}:()%f'  # Smiley in green/red based on last return code
+function sm_set_prompt {
+    if [ -n "$KEYMAP" ] && [ "$KEYMAP" = "vicmd" ]; then
+      export PROMPT="$SM_PROMPT_PATH %S$SM_PROMPT_SMILEY%s "
+    else
+      export PROMPT="$SM_PROMPT_PATH $SM_PROMPT_SMILEY "
+    fi
+}
+sm_set_prompt  # Set on shell init
+
+# https://linux.die.net/man/1/zshzle
+function zle-keymap-select {
+    sm_set_prompt
+    zle reset-prompt
+}
+zle -N zle-keymap-select
+
+# Prompt git integration
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:git:*' formats '%F{yellow}%b%f'  # %r = repo
+zstyle ':vcs_info:*' enable git
+
+autoload -Uz promptinit
+promptinit
+
+
+#--------------------------------------------------------------------------
+# Completion
+#--------------------------------------------------------------------------
 
 # Use modern completion system
 autoload -Uz compinit
@@ -129,58 +158,21 @@ export PATH="/usr/local/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-###-tns-completion-start-###
-if [ -f /Users/sean/.tnsrc ]; then
-    source /Users/sean/.tnsrc
-fi
-###-tns-completion-end-###
 
-$DOTFILES_PATH/scripts/welcome.sh  # Startup/welcome script
-
+#--------------------------------------------------------------------------
 # Python
+#--------------------------------------------------------------------------
+
 alias pip=pip3
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-# Golang
-export GOPATH=$HOME/Documents/Development/Go
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
 
-alias vim="nvim"
-alias vi="nvim"
-alias v="nvim"
-alias diff="nvim -d"
-alias ls="gls -lah --color --group-directories-first"
-alias t="task"
-alias lg="lazygit"
-alias godotfiles="cd $DOTFILES_PATH"
-alias gonotes="cd /Users/sean/Documents/Notes"
-alias godev="cd /Users/sean/Documents/Development/"
-alias goseanmeek="cd /Users/sean/Documents/Development/seanmeek.com/"
-alias gottn="cd /Users/sean/Documents/TeeTimeNotify/"
-alias goforen="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerForensics_COMP3731/; t @ foren"
-alias gosecur="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerSecurity_COMP4721/; t @ secur"
-alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit" # gsip: "git, squash into parent"
-alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
-
-# Replace all in directory
-repl(){
-  if [[ $# -eq 3 ]]; then
-    read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [y/N] " -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-      rg -l "$2" $1 | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
-      echo 'Replaced all occurrences of $2 with $3 in $1.'
-    fi
-  else
-    echo "usage: $0 <directory> <search-string> <replace-string>\n" >&2
-    return 2
-  fi
-}
+#--------------------------------------------------------------------------
+# Conda
+#--------------------------------------------------------------------------
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -196,6 +188,58 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+
+#--------------------------------------------------------------------------
+# Golang
+#--------------------------------------------------------------------------
+
+export GOPATH=$HOME/Documents/Development/Go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+
+#--------------------------------------------------------------------------
+# Aliases
+#--------------------------------------------------------------------------
+
+alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"
+alias diff="nvim -d"
+alias ls="gls -lah --color --group-directories-first"
+alias t="task"
+alias lg="lazygit"
+alias godotfiles="cd $DOTFILES_PATH"
+alias gonotes="cd /Users/sean/Documents/Notes"
+alias godev="cd /Users/sean/Documents/Development/"
+alias goseanmeek="cd /Users/sean/Documents/Development/seanmeek.com/"
+alias gottn="cd /Users/sean/Documents/TeeTimeNotify/"
+alias goforen="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerForensics_COMP3731/; t @ foren"
+alias gosecur="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerSecurity_COMP4721/; t @ secur"
+alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
+alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
+
+
+#--------------------------------------------------------------------------
+# Custom functions
+#--------------------------------------------------------------------------
+
+# Replace all in directory
+function repl {
+  if [[ $# -eq 3 ]]; then
+    read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [y/N] " -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+      rg -l "$2" $1 | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
+      echo 'Replaced all occurrences of $2 with $3 in $1.'
+    fi
+  else
+    echo "usage: $0 <directory> <search-string> <replace-string>\n" >&2
+    return 2
+  fi
+}
 
 
 #--------------------------------------------------------------------------
