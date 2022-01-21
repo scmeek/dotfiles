@@ -146,8 +146,8 @@ alias gonotes="cd /Users/sean/Documents/Notes"
 alias godev="cd /Users/sean/Documents/Development/"
 alias goseanmeek="cd /Users/sean/Documents/Development/seanmeek.com/"
 alias gottn="cd /Users/sean/Documents/TeeTimeNotify/"
-alias goforen="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerForensics_COMP3731/"
-alias gosecur="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerSecurity_COMP4721/"
+alias goforen="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerForensics_COMP3731/; t @ foren"
+alias gosecur="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerSecurity_COMP4721/; t @ secur"
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit" # gsip: "git, squash into parent"
 alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
 
