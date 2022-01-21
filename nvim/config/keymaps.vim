@@ -50,11 +50,6 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 " Make Y behave like the other capitals
 nnoremap Y y$
 
-" Keep it centered
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap J mzJ`z
-
 " Move line up
 nnoremap <leader>k :m -2<CR>
 " Move line down
