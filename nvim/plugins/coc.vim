@@ -10,6 +10,7 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-lists',
     \ 'coc-markdownlint',
+    \ 'coc-markdown-preview-enhanced',
     \ 'coc-pairs',
     \ 'coc-prettier',
     \ 'coc-pyright',
@@ -18,6 +19,7 @@ let g:coc_global_extensions = [
     \ 'coc-snippets',
     \ 'coc-sql',
     \ 'coc-tsserver',
+    \ 'coc-webview',
 \ ]
 
 " Use linter installed by project
@@ -146,4 +148,7 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+
+" Markdown Preview Enhanced
+noremap <leader>mp <Cmd>CocCommand markdown-preview-enhanced.openPreview<CR>
 
