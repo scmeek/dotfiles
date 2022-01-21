@@ -39,12 +39,30 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
-PROMPT='%F{blue}$(shrink_path -l -t)%f %(?.%F{cyan}:).%F{red}:()%f '
-
 # Set default editor to vim
 export EDITOR=nvim
 export VISUAL=nvim
+
+bindkey -v # vim mode
+
+# https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
+SM_PROMPT_PATH='%F{blue}$(shrink_path -l -t)%f' # Short path in blue
+SM_PROMPT_SMILEY='%(?.%F{cyan}:).%F{red}:()%f' # Smiley in green/red based on last return code
+function sm_set_prompt {
+    if [ -n "$KEYMAP" ] && [ "$KEYMAP" = "vicmd" ]; then
+      export PROMPT="$SM_PROMPT_PATH %S$SM_PROMPT_SMILEY%s "
+    else
+      export PROMPT="$SM_PROMPT_PATH $SM_PROMPT_SMILEY "
+    fi
+}
+sm_set_prompt # Call on shell init
+
+# https://linux.die.net/man/1/zshzle
+function zle-keymap-select {
+    sm_set_prompt
+    zle reset-prompt
+}
+zle -N zle-keymap-select
 
 # Prompt git integration
 autoload -Uz vcs_info
@@ -57,8 +75,6 @@ zstyle ':vcs_info:*' enable git
 
 autoload -Uz promptinit
 promptinit
-
-bindkey -e  # Use emacs keybindings even if our EDITOR is set to vi
 
 # Keep n lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000000
