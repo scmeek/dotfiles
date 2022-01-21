@@ -93,7 +93,7 @@ bindkey -v  # vim mode
 # https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
 SM_PROMPT_PATH='%F{blue}$(shrink_path -l -t)%f'  # Short path in blue
 SM_PROMPT_SMILEY='%(?.%F{cyan}:).%F{red}:()%f'  # Smiley in green/red based on last return code
-function sm_set_prompt {
+sm_set_prompt() {
     if [ -n "$KEYMAP" ] && [ "$KEYMAP" = "vicmd" ]; then
       export PROMPT="$SM_PROMPT_PATH %S$SM_PROMPT_SMILEY%s "
     else
@@ -103,7 +103,7 @@ function sm_set_prompt {
 sm_set_prompt  # Set on shell init
 
 # https://linux.die.net/man/1/zshzle
-function zle-keymap-select {
+zle-keymap-select() {
     sm_set_prompt
     zle reset-prompt
 }
@@ -227,7 +227,7 @@ alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
 #--------------------------------------------------------------------------
 
 # Replace all in directory
-function repl {
+repl() {
   if [[ $# -eq 3 ]]; then
     read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [y/N] " -r
     echo
