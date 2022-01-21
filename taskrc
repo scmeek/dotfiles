@@ -44,7 +44,7 @@ urgency.waiting.coefficient=0.0  # Default: -3.0
 #--------------------------------------------------------------------------
 # Syncing
 #--------------------------------------------------------------------------
-#
+
 recurrence=on  # Disable for non-primary clients to prevent duplication of recurring tasks
 
 custom.sean.sync=true
