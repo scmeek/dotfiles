@@ -53,15 +53,12 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 " Make Y behave like the other capitals
 nnoremap Y y$
 
+" Add trailling ; or .
+nnoremap ;; A;<Esc>
+nnoremap ,, A,<Esc>
+
 " Move line up
 nnoremap <leader>k :m -2<CR>
 " Move line down
 nnoremap <leader>j :m +1<CR>
-
-" Indent with TAB
-nnoremap <TAB> >>
-vnoremap <TAB> >gv
-" Dedent with S-TAB
-vnoremap <S-TAB> <gv
-nnoremap <S-TAB> <<
 
