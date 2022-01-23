@@ -31,11 +31,10 @@ nnoremap <C-H> <C-W><C-H>
 " Allow gf to open non-existent files
 map gf :edit <cfile><cr>
 
-" Easier vertical split creation
-nnoremap <silent> vv <C-w>v
-
-" Quit window
-nnoremap <leader>wq <C-W>q
+" Easier splits handling
+nnoremap <silent> \|\| <C-w>v
+nnoremap <silent> -- <C-w>s
+nnoremap <silent> qq <C-W>q
 
 " Reselect visual selection after indenting
 vnoremap < <gv
