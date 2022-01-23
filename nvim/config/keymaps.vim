@@ -14,7 +14,8 @@ inoremap kj <Esc>w<CR> " Go to normal mode and save
 noremap <leader>s :w<CR>
 noremap <leader>S :wa<CR>
 noremap <leader>q :q<CR>
-noremap <leader>Q :wq<CR>
+noremap <leader>Q :q!<CR>
+noremap <leader>W :wq<CR>
 
 " Select all
 nnoremap <leader>a ggVG
@@ -32,8 +33,8 @@ nnoremap <C-H> <C-W><C-H>
 map gf :edit <cfile><cr>
 
 " Easier splits handling
-nnoremap <silent> \|\| <C-w>v
-nnoremap <silent> -- <C-w>s
+nnoremap <silent> \| <C-w>v
+nnoremap <silent> - <C-w>s
 nnoremap <silent> qq <C-W>q
 
 " Reselect visual selection after indenting
