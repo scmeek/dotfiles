@@ -34,8 +34,6 @@ export SCHOOL_MS_2022_WINTER_PATH="$SCHOOL_MS_PATH/2021-2022/Winter"
 # General config
 #--------------------------------------------------------------------------
 
-$DOTFILES_PATH/scripts/welcome.sh  # Startup/welcome script
-
 HYPHEN_INSENSITIVE="true"  # Used in completion
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
