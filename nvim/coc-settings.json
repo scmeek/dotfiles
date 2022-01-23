@@ -12,8 +12,11 @@
     "diagnostic.hintSign": "•",
     "diagnostic-languageserver.mergeConfig": true,
     "git.enableGutters": false,
+    "javascript.suggest.autoImports": true,
     "python.formatting.provider": "black",
     "python.linting.enabled": true,
-    "python.linting.flake8Enabled": true
+    "python.linting.flake8Enabled": true,
+    "tsserver.formatOnType": true,
+    "typescript.suggest.autoImports": true
 }
 
