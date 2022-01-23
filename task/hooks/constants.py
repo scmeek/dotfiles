@@ -2,9 +2,9 @@
 
 from pathlib import Path
 
-TASKWARRIOR_DIRECTORY_SIMPLE = "~/.task/"
-TASKWARRIOR_DIRECTORY_EXPANDED = (
-    str(Path(TASKWARRIOR_DIRECTORY_SIMPLE).expanduser()) + "/"
+TASK_DATA_DIR_SIMPLE = "~/.task/data"
+TASK_DATA_DIR_EXPANDED = (
+    str(Path(TASK_DATA_DIR_SIMPLE).expanduser()) + "/"
 )
 
 DATETIME_FORMAT = "%b %d %Y %I:%M:%S%p"  # Sep 14 2021 06:15:07PM

@@ -7,7 +7,7 @@
 import os
 from datetime import datetime
 
-from constants import DATETIME_FORMAT, TASKWARRIOR_DIRECTORY_EXPANDED
+from constants import DATETIME_FORMAT, TASK_DATA_DIR_EXPANDED
 from get_custom_setting_value import get_setting_value
 
 
@@ -15,9 +15,9 @@ def task_sync():
     sync_log_filename = get_setting_value("synchooklogfilename")
     last_sync_datetime_filename = get_setting_value("lastsyncdatetimefilename")
 
-    sync_log_path = TASKWARRIOR_DIRECTORY_EXPANDED + sync_log_filename
+    sync_log_path = TASK_DATA_DIR_EXPANDED + sync_log_filename
     last_sync_datetime_path = (
-        TASKWARRIOR_DIRECTORY_EXPANDED + last_sync_datetime_filename
+        TASK_DATA_DIR_EXPANDED + last_sync_datetime_filename
     )
 
     now = datetime.now().strftime(DATETIME_FORMAT)

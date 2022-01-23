@@ -1,0 +1,119 @@
+#
+#                 °#@@@@@#.       *@@@@@@*           °°°°°.
+#               O@@@@o.°#@@#   .@@@@@@@@@@@.       °@@@@@@#
+#              #@@@@o    @@@  *@@°  o@@@@@@@      *@@@@@@@
+#              @@@@@@.  o@@#  @@     *@@@@@@@    o@@@@@@@@
+#              @@@@@@@#      #@*     @@@@@@@@o  #@@@@@@@@.
+#              @@@@@@@@@*    @@@.    @#@@@@@@@ @@o@@@@@@@
+#               @@@@@@@@@#   *@@@@* @@ o@@@@@@@@ O@@@@@@°
+#                *@@@@@@@@*   o@@*  @@  @@@@@@@  @@@@@@@
+#        .@@@O     @@@@@@@@        @@*  @@@@@@  O@@@@@@o  #
+#        @@@@o      @@@@@@@       #@@   #@@@@   @@@@@@@  @@
+#       O@@@@       .@@@@@°*#   *@@@    *@@@    @@@@@@@ @@
+#       °@@@@       O@@@@@ @@@@@@@@°     @@     o@@@@@@@@.
+#        #@@@*     *@@@@O   @@@@@@.      #       *@@@@@o
+#         °@@@@@#@@@@@o       °°
+#            °o##Oo.
+#
+#
+#   Custom 16 color theme for taskwarrior by Sean Meek <sean@seanmeek.com>
+# Intended to be used with Dracula <https://draculatheme.com> terminal theme
+
+###############################################################################
+#
+# Copyright 2006 - 2021, Tomas Babej, Paul Beckingham, Federico Hernandez.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+# https://www.opensource.org/licenses/mit-license.php
+#
+###############################################################################
+
+rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+
+# General decoration
+color.label=
+color.label.sort=
+color.alternate=black on bright black
+color.header=yellow
+color.footnote=cyan
+color.warning=bold red
+color.error=red on black
+color.debug=blue
+
+# Task state
+color.completed=
+color.deleted=
+color.active=black on green
+color.recurring=blue
+color.scheduled=cyan
+color.until=
+color.blocked=white on black
+color.blocking=yellow
+
+# Project
+color.project.none=
+
+# Priority
+color.uda.priority.H=red on black
+color.uda.priority.M=yellow
+color.uda.priority.L=bright black
+
+# Tags
+color.tag.next=yellow
+color.tag.none=
+color.tagged=
+
+# Due
+color.due.today=red
+color.due=magenta
+color.overdue=black on red
+
+# Report: burndown
+color.burndown.done=on green
+color.burndown.started=on yellow
+color.burndown.pending=on blue
+
+# Report: history
+color.history.add=bright black on magenta
+color.history.delete=bright black on yellow
+color.history.done=bright black on green
+
+# Report: summary
+color.summary.background=on bright black
+color.summary.bar=black on green
+
+# Command: calendar
+color.calendar.due.today=black on red
+color.calendar.due=bright black on magenta
+color.calendar.holiday=bright black on green
+color.calendar.overdue=black on red
+color.calendar.today=black on blue
+color.calendar.weekend=on bright black
+color.calendar.weeknumber=cyan
+
+# Command: sync
+color.sync.added=green
+color.sync.changed=yellow
+color.sync.rejected=red
+
+# Command: undo
+color.undo.after=green
+color.undo.before=magenta
+

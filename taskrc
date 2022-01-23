@@ -22,7 +22,8 @@
 # General Config
 #--------------------------------------------------------------------------
 
-data.location=~/.task
+data.location=~/.task/data
+include ~/.task/custom-dark-16.theme
 nag=  # Don't nag on more urgent tasks
 news.version=2.6.0
 
