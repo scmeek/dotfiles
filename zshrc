@@ -26,6 +26,7 @@
 
 export ZSH="/Users/sean/.oh-my-zsh"
 export DOTFILES_PATH="$HOME/Documents/dotfiles"
+export NOTES_PATH="$HOME/Documents/Notes"
 export SCHOOL_MS_PATH="$HOME/Documents/School/MS_DU_Cybersecurity/"
 export SCHOOL_MS_2022_WINTER_PATH="$SCHOOL_MS_PATH/2021-2022/Winter"
 
@@ -210,7 +211,7 @@ alias ls="gls -lah --color --group-directories-first"
 alias t="task"
 alias lg="lazygit"
 alias cddotfiles="cd $DOTFILES_PATH"
-alias cdnotes="cd /Users/sean/Documents/Notes"
+alias cdnotes="cd $NOTES_PATH"
 alias cddev="cd /Users/sean/Documents/Development/"
 alias cdseanmeek="cd /Users/sean/Documents/Development/seanmeek.com/"
 alias cdttn="cd /Users/sean/Documents/TeeTimeNotify/"
