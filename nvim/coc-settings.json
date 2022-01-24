@@ -1,7 +1,15 @@
 {
     "coc.preferences.extensionUpdateCheck": "daily",
     "coc.preferences.formatOnType": true,
-    "coc.preferences.formatOnSaveFiletypes": ["json", "markdown", "python"],
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "javascriptreact",
+        "json",
+        "markdown",
+        "python",
+        "typescript",
+        "typescriptreact"
+    ],
     "coc.preferences.willSaveHandlerTimeout": 1000,
     "diagnostic.checkCurrentLine": true,
     "diagnostic.virtualText": true,
