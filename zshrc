@@ -227,17 +227,26 @@ alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
 
 # Replace all in directory
 repl() {
-  if [[ $# -eq 3 ]]; then
-    read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [y/N] " -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-      rg -l "$2" $1 | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
-      echo 'Replaced all occurrences of $2 with $3 in $1.'
-    fi
-  else
+  if [[ $# -ne 3 ]]; then
     echo "usage: $0 <directory> <search-string> <replace-string>\n" >&2
     return 2
   fi
+  read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [y/N] " -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    rg -l "$2" $1 | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
+    echo 'Replaced all occurrences of $2 with $3 in $1.'
+  fi
+}
+
+# Make directory and open
+mkdircd() {
+  if [[ $# -ne 1 ]]; then
+    echo "usage: $0 <new-directory>\n" >&2
+    return 2
+  fi
+  mkdir $1
+  cd $1
 }
 
 
