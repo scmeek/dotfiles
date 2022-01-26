@@ -37,7 +37,7 @@ set wildmenu
 set inccommand=split  " Live substitution
 set showbreak=↪\
 set list
-set listchars=tab:▸\ ,trail:·
+set listchars=tab:\|\ ,trail:·
 set mouse=a
 set clipboard=unnamedplus
 set confirm
