@@ -46,6 +46,7 @@ call plug#begin('~/.vim/plugged')
 	source ~/.config/nvim/plugins/fzf.vim  " Fuzzy finder
 	source ~/.config/nvim/plugins/gitgutter.vim  " Git diff in the sign column
 	source ~/.config/nvim/plugins/lualine.vim  " Status bar
+	source ~/.config/nvim/plugins/minimap.vim  " File minimap
 	source ~/.config/nvim/plugins/polyglot.vim  " Language pack
 	source ~/.config/nvim/plugins/surround.vim  " String manipulation
 	source ~/.config/nvim/plugins/theme.vim
