@@ -1,7 +1,7 @@
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
-function LuaLineInit()
+function LualineInit()
 lua << EOF
 require('lualine').setup {
 	options = {
@@ -13,15 +13,6 @@ require('lualine').setup {
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { 'buffers' },
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = {},
-	},
-	inactive_sections = {},
-	tabline = {
 		lualine_a = {
 			{
 				'mode',
@@ -48,13 +39,15 @@ require('lualine').setup {
 		},
 		lualine_z = { 'branch', 'diff' }
 	},
+	inactive_sections = {},
+	tabline = {},
 	extensions = {}
 }
 EOF
 endfunction
 
-augroup LuaLineInit
+augroup LualineInit
 	autocmd!
-	autocmd User PlugLoaded call LuaLineInit()
+	autocmd User PlugLoaded call LualineInit()
 augroup END
 
