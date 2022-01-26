@@ -1,5 +1,4 @@
 " inoremp == i (insert) + nore (no, recurssive calling IMPORTANT) + map
-
 let mapleader = "\<space>"
 
 map q <Nop>  " Disable macro recording
@@ -9,7 +8,7 @@ nnoremap <leader>ve :edit ~/.config/nvim/init.vim<cr>
 nnoremap <leader>vc :edit ~/.config/nvim/coc-settings.json<cr>
 nnoremap <leader>vr :source ~/.config/nvim/init.vim<cr>
 
-inoremap kj <Esc>w<CR> " Go to normal mode and save
+inoremap kj <Esc> " Go to normal mode
 
 noremap <leader>s :w<CR>
 noremap <leader>S :wa<CR>
