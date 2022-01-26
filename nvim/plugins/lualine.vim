@@ -1,35 +1,56 @@
-Plug 'hoob3rt/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
-" https://github.com/hoob3rt/lualine.nvim/blob/master/THEMES.md
-let g:lualine = {
-    \'options' : {
-    \  'theme' : 'tomorrow',
-    \  'section_separators' : ['', ''],
-    \  'component_separators' : ['', ''],
-    \  'icons_enabled' : v:true,
-    \},
-    \'sections' : {
-    \  'lualine_a' : [ ['mode', {'upper': v:true,},], ],
-    \  'lualine_b' : [ ['branch', {'icon': '',}, ], ],
-    \  'lualine_c' : [ ['filename', {'file_status': v:true,},], ],
-    \  'lualine_x' : [ 'encoding', 'fileformat', 'filetype' ],
-    \  'lualine_y' : [ 'progress' ],
-    \  'lualine_z' : [ 'location'  ],
-    \},
-    \'inactive_sections' : {
-    \  'lualine_a' : [  ],
-    \  'lualine_b' : [  ],
-    \  'lualine_c' : [ 'filename' ],
-    \  'lualine_x' : [ 'location' ],
-    \  'lualine_y' : [  ],
-    \  'lualine_z' : [  ],
-    \},
-    \'extensions' : [ 'fzf' ],
-    \}
-
 function LuaLineInit()
-lua require("lualine").setup()
+lua << EOF
+require('lualine').setup {
+	options = {
+		icons_enabled = true,
+		theme = 'auto',
+		component_separators = { left = '', right = '' },
+		section_separators = { left = '', right = '' },
+		disabled_filetypes = {},
+		always_divide_middle = true,
+	},
+	sections = {
+		lualine_a = { 'buffers' },
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	},
+	inactive_sections = {},
+	tabline = {
+		lualine_a = {
+			{
+				'mode',
+				fmt = function(str) return str:sub(1,1):lower() end
+			}
+		},
+		lualine_b = { { 'tabs' } },
+		lualine_c = {
+			{ 'filetype', icon_only = true },
+			{
+				'filename',
+				path = 1,  -- 1 = relative path
+				symbols = {
+					modified = '*',  -- Text to show when the file is modified.
+					readonly = '[readonly]',  -- Text to show when the file is non-modifiable or readonly.
+					unnamed = '--',  -- Text to show for unnamed buffers.
+				}
+			}
+		},
+		lualine_x = {},
+		lualine_y = {
+			{ 'progress', padding = { left = 1, right = 0 } },
+			{ 'location', padding = { left = 0, right = 1 } }
+		},
+		lualine_z = { 'branch', 'diff' }
+	},
+	extensions = {}
+}
+EOF
 endfunction
 
 augroup LuaLineInit
