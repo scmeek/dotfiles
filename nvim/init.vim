@@ -41,18 +41,17 @@ call plug#begin('~/.vim/plugged')
 	source ~/.config/nvim/plugins/coc.vim  " Completiong engine (LSP)
 	source ~/.config/nvim/plugins/commentary.vim  " Comment bindings
 	source ~/.config/nvim/plugins/doge.vim  " Documentation generator
+	source ~/.config/nvim/plugins/file-explorer.vim
 	source ~/.config/nvim/plugins/floaterm.vim  " In-vim terminal
 	source ~/.config/nvim/plugins/fzf.vim  " Fuzzy finder
 	source ~/.config/nvim/plugins/gitgutter.vim  " Git diff in the sign column
 	source ~/.config/nvim/plugins/lualine.vim  " Status bar
-	source ~/.config/nvim/plugins/nerdtree.vim  " File system explorer
-	source ~/.config/nvim/plugins/outdated-plugins.vim  " Check for plugin updates
-	source ~/.config/nvim/plugins/polyglot.vim
+	source ~/.config/nvim/plugins/polyglot.vim  " Language pack
 	source ~/.config/nvim/plugins/surround.vim  " String manipulation
 	source ~/.config/nvim/plugins/theme.vim
 	source ~/.config/nvim/plugins/tmux-navigator.vim  " Integration with tmux
 	source ~/.config/nvim/plugins/treesitter.vim  " Parser / syntax highlighting
-	source ~/.config/nvim/plugins/which-key.vim
+	source ~/.config/nvim/plugins/which-key.vim  " Keymap assist
 call plug#end()
 doautocmd User PlugLoaded
 
