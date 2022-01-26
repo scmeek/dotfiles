@@ -69,6 +69,7 @@ taskd.trust=strict
 alias.@=context
 alias.s=sync
 alias.ann=annotate
+alias.cal=calendar
 alias.undelete="modify end: status:pending"
 alias.dutod=due:today+20h  # "Due today" 8PM
 alias.dutom=due:tomorrow+20h  # "Due tomorrow" 8PM
