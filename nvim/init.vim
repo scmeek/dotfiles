@@ -41,6 +41,7 @@ call plug#begin('~/.vim/plugged')
 	source ~/.config/nvim/plugins/lualine.vim  " Status bar
 	source ~/.config/nvim/plugins/minimap.vim  " File minimap
 	source ~/.config/nvim/plugins/polyglot.vim  " Language pack
+	source ~/.config/nvim/plugins/smooth-scroll.vim
 	source ~/.config/nvim/plugins/surround.vim  " String manipulation
 	source ~/.config/nvim/plugins/theme.vim
 	source ~/.config/nvim/plugins/tmux-navigator.vim  " Integration with tmux
