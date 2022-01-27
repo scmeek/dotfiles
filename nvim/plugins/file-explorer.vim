@@ -44,7 +44,7 @@ require'nvim-tree'.setup {
 	hijack_netrw = true,
 	open_on_setup = false,
 	ignore_ft_on_setup = {},
-	auto_close = false,
+	auto_close = true,
 	open_on_tab = false,
 	hijack_cursor = false,
 	update_cwd = false,
@@ -80,18 +80,18 @@ require'nvim-tree'.setup {
 		timeout = 500,
 	},
 	view = {
-		width = 30,
+		width = 35,
 		height = 30,
 		hide_root_folder = false,
 		side = 'left',
-		auto_resize = false,
+		auto_resize = true,
 		mappings = {
 			custom_only = false,
 			list = {}
 		},
 		number = false,
 		relativenumber = false,
-		signcolumn = "yes"
+		signcolumn = "no"
 	},
 	trash = {
 		cmd = "trash",
