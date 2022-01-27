@@ -19,9 +19,6 @@ noremap <leader>W :wq<CR>
 " Select all
 nnoremap <leader>a ggVG
 
-" Close current buffer
-noremap <silent> <leader>c :bd<CR>
-
 " Easier split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
