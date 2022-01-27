@@ -45,7 +45,7 @@ call plug#begin('~/.vim/plugged')
 	source ~/.config/nvim/plugins/theme.vim
 	source ~/.config/nvim/plugins/tmux-navigator.vim  " Integration with tmux
 	source ~/.config/nvim/plugins/treesitter.vim  " Parser / syntax highlighting
-	source ~/.config/nvim/plugins/unimpaired.vim  " Common paired mappings
+	" source ~/.config/nvim/plugins/unimpaired.vim  " Common paired mappings
 	source ~/.config/nvim/plugins/which-key.vim  " Keymap assist
 call plug#end()
 doautocmd User PlugLoaded
