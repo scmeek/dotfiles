@@ -12,7 +12,7 @@ require('lualine').setup {
 		disabled_filetypes = {},
 		always_divide_middle = true,
 	},
-	sections = {
+	tabline = {
 		lualine_a = {
 			{
 				'mode',
@@ -39,8 +39,8 @@ require('lualine').setup {
 		},
 		lualine_z = { 'branch', 'diff' }
 	},
+	sections = {},
 	inactive_sections = {},
-	tabline = {},
 	extensions = {}
 }
 EOF
