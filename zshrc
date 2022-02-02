@@ -106,14 +106,16 @@ bindkey -v  # vim mode
 #--------------------------------------------------------------------------
 
 # https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
-SM_PROMPT_PATH='%B%F{blue}$(shrink_path -l -t)%f%b'  # Short path in blue
-SM_PROMPT_SMILEY='%(?.%F{cyan}:).%F{red}:()%f'  # Smiley in green/red based on last return code
+SM_PROMPT_PATH='$(shrink_path -l -t)'  # Short path
 sm_set_prompt() {
     if [ -n "$KEYMAP" ] && [ "$KEYMAP" = "vicmd" ]; then
-      export PROMPT="$SM_PROMPT_PATH %S$SM_PROMPT_SMILEY%s "
+      SM_PROMPT_WITH_VIM="${SM_PROMPT_PATH}❯ "
     else
-      export PROMPT="$SM_PROMPT_PATH $SM_PROMPT_SMILEY "
+      SM_PROMPT_WITH_VIM="%S${SM_PROMPT_PATH}%s "
     fi
+
+    # With error handling
+    export PROMPT="%(?.%F{blue}${SM_PROMPT_WITH_VIM}.%F{red}${SM_PROMPT_WITH_VIM})%f"
 }
 sm_set_prompt  # Set on shell init
 
