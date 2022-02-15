@@ -2102,12 +2102,16 @@
 			<true/>
 			<key>Background Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.15977837145328522</real>
+				<real>0.14412617683410645</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.12215272337198257</real>
+				<real>0.11209632554416994</real>
 				<key>Red Component</key>
-				<real>0.11765811592340469</real>
+				<real>0.10676178296734681</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
