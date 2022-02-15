@@ -132,7 +132,7 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
-zstyle ':vcs_info:git:*' formats '%F{yellow}%b%f'  # %r = repo
+zstyle ':vcs_info:git:*' formats '%F{cyan}%b%f'  # %r = repo
 zstyle ':vcs_info:*' enable git
 
 autoload -Uz promptinit
