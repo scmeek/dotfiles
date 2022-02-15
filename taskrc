@@ -23,6 +23,7 @@
 #--------------------------------------------------------------------------
 
 data.location=~/.task/data
+hooks.location=~/.task/hooks
 include ~/.task/custom-dark-16.theme
 nag=  # Don't nag on more urgent tasks
 news.version=2.6.0
@@ -47,10 +48,6 @@ urgency.waiting.coefficient=0.0  # Default: -3.0
 #--------------------------------------------------------------------------
 
 recurrence=on  # Disable for non-primary clients to prevent duplication of recurring tasks
-
-custom.sean.sync=true
-custom.sean.synchooklogfilename=auto-sync.log
-custom.sean.lastsyncdatetimefilename=last_auto-sync_datetime.txt
 
 # Inthe.am
 taskd.certificate=/Users/sean/.inthe.am/private.certificate.pem
