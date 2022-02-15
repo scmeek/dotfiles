@@ -35,7 +35,7 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 
-nnoremap <leader>n :NvimTreeFindFileToggle<CR>
+nnoremap <leader>f :NvimTreeFindFileToggle<CR>
 
 function NvimTreeInit()
 lua << EOF
