@@ -106,16 +106,15 @@ bindkey -v  # vim mode
 #--------------------------------------------------------------------------
 
 # https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
-SM_PROMPT_PATH='$(shrink_path -l -t)'  # Short path
 sm_set_prompt() {
+    SM_PATH_SHORT='$(shrink_path -l -t)'
     if [ -n "$KEYMAP" ] && [ "$KEYMAP" = "vicmd" ]; then
-      SM_PROMPT_WITH_VIM="${SM_PROMPT_PATH}❯ "
+      SM_PATH_VIM_MODE="${SM_PATH_SHORT}  "
     else
-      SM_PROMPT_WITH_VIM="%S${SM_PROMPT_PATH}%s "
+      SM_PATH_VIM_MODE="%S${SM_PATH_SHORT}%s "
     fi
-
     # With error handling
-    export PROMPT="%(?.%F{blue}${SM_PROMPT_WITH_VIM}.%F{red}${SM_PROMPT_WITH_VIM})%f"
+    export PROMPT="%(?.%F{blue}.%F{red})${SM_PATH_VIM_MODE}%f"
 }
 sm_set_prompt  # Set on shell init
 
