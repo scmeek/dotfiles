@@ -71,12 +71,12 @@ color.blocking=yellow
 color.project.none=
 
 # Priority
-color.uda.priority.H=red on black
-color.uda.priority.M=yellow
-color.uda.priority.L=bright black
+color.uda.priority.H=red
+color.uda.priority.M=blue
+color.uda.priority.L=black
 
 # Tags
-color.tag.next=yellow
+color.tag.next=cyan
 color.tag.none=
 color.tagged=
 
