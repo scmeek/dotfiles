@@ -43,6 +43,7 @@ if [[ $TERM_PROGRAM != "tmux" ]]; then
 else
   if [[ $(tmux list-panes | wc -l) -eq 1 ]]; then  # First tmux pane
     $DOTFILES_PATH/scripts/welcome.sh
+    task context home > /dev/null 2>&1  # Reset taskwarrior context
   fi
 fi
 
