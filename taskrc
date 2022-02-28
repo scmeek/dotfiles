@@ -52,13 +52,7 @@ urgency.uda.priority.L.coefficient=-1.0 # Default: 1.8
 
 recurrence=on  # Disable for non-primary clients to prevent duplication of recurring tasks
 
-# Inthe.am
-taskd.certificate=/Users/sean/.inthe.am/private.certificate.pem
-taskd.key=/Users/sean/.inthe.am/private.key.pem
-taskd.ca=/Users/sean/.inthe.am/ca.crt
-taskd.server=inthe.am:53589
-taskd.credentials=inthe_am/s.c.meek/667d4fa0-d269-41fd-8c89-44dea9f9da2a
-taskd.trust=strict
+include ~/.task/sync_config.txt
 
 
 #--------------------------------------------------------------------------
