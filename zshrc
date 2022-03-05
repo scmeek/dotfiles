@@ -17,6 +17,7 @@
 #
 #      Personal .zshrc file of Sean Meek <sean@seanmeek.com>
 
+
 #zmodload zsh/zprof  # Profiling, use with `zprof` command
 
 
@@ -128,7 +129,7 @@ zle -N zle-keymap-select
 
 # Prompt git integration
 autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
+precmd_vcs_info() { vcs_info 2> /dev/null }  # Ignore errors, specifically within bare repositories
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
