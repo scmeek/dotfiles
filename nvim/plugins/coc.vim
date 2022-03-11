@@ -1,6 +1,7 @@
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
+    " \ 'coc-markdownlint',
 let g:coc_global_extensions = [
     \ 'coc-css',
     \ 'coc-diagnostic',
@@ -9,7 +10,6 @@ let g:coc_global_extensions = [
     \ 'coc-html',
     \ 'coc-json',
     \ 'coc-lists',
-    \ 'coc-markdownlint',
     \ 'coc-markdown-preview-enhanced',
     \ 'coc-pairs',
     \ 'coc-prettier',
