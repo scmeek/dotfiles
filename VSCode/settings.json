@@ -65,8 +65,6 @@
 	},
 	"window.autoDetectColorScheme": true,
 	"workbench.colorTheme": "Dracula",
-	"workbench.preferredLightColorTheme": "Tomorrow",
-	"workbench.preferredDarkColorTheme": "Tomorrow Night",
 	"editor.codeLensFontFamily": "'JetBrains Mono', 'Cascadia Code', 'SF Mono', Consolas, Menlo, Monaco, 'Courier New', monospace",
 	"editor.fontSize": 12.5,
 	"editor.formatOnType": true,
