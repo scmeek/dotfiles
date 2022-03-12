@@ -111,7 +111,7 @@ bindkey -v  # vim mode
 sm_set_prompt() {
     SM_PATH_SHORT='$(shrink_path -l -t)'
     if [ -n "$KEYMAP" ] && [ "$KEYMAP" = "vicmd" ]; then
-      SM_PATH_VIM_MODE="${SM_PATH_SHORT}  "
+      SM_PATH_VIM_MODE="${SM_PATH_SHORT}› "
     else
       SM_PATH_VIM_MODE="%S${SM_PATH_SHORT}%s "
     fi
