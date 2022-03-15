@@ -116,11 +116,8 @@ sm_set_prompt() {
       SM_PATH_VIM_MODE="%S${SM_PATH_SHORT}%s "
     fi
 
-    # https://zenbro.github.io/2015/07/23/show-exit-code-of-last-command-in-zsh.html
-    # No newline for line with status code since it fills width and wraps
     # %(?.) - Conditional for previous status
-    SM_LINE_STATUS_CODE="%(?.%F{blue}.%F{red})%U${(l:COLUMNS:: :)?}%u"
-    export PROMPT="${SM_LINE_STATUS_CODE}%(?.%F{blue}.%F{red})${SM_PATH_VIM_MODE}%f"
+    export PROMPT="%(?.%F{blue}.%F{red})${SM_PATH_VIM_MODE}%f"
 }
 sm_set_prompt  # Set on shell init
 
