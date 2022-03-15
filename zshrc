@@ -117,7 +117,7 @@ sm_set_prompt() {
     fi
 
     # %(?.) - Conditional for previous status
-    export PROMPT="%(?.%F{blue}.%F{red})${SM_PATH_VIM_MODE}%f"
+    export PROMPT=$'\n'"%(?.%F{blue}.%F{red})${SM_PATH_VIM_MODE}%f"
 }
 sm_set_prompt  # Set on shell init
 
