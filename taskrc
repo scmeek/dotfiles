@@ -150,8 +150,6 @@ context.home.read=+personal
 context.home.write=+personal
 context.school.read=+school
 context.school.write=+school
-context.secur.read=+computer_security
-context.secur.write=+computer_security +school
 context.spring.read=+spring_labs
 context.spring.write=+spring_labs
 

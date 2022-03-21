@@ -29,7 +29,7 @@ export ZSH="/Users/sean/.oh-my-zsh"
 export DOTFILES_PATH="$HOME/Documents/dotfiles"
 export NOTES_PATH="$HOME/Documents/Notes"
 export SCHOOL_MS_PATH="$HOME/Documents/School/MS_DU_Cybersecurity/"
-export SCHOOL_MS_2022_WINTER_PATH="$SCHOOL_MS_PATH/2021-2022/Winter"
+export SCHOOL_MS_2022_SPRING_PATH="$SCHOOL_MS_PATH/2021-2022/Spring"
 
 
 #--------------------------------------------------------------------------
@@ -235,7 +235,6 @@ alias cdnotes="cd $NOTES_PATH"
 alias cddev="cd /Users/sean/Documents/Development/"
 alias cdseanmeek="cd /Users/sean/Documents/Development/seanmeek.com/"
 alias cdttn="cd /Users/sean/Documents/Development/TeeTimeNotify/"
-alias cdsecur="cd $SCHOOL_MS_2022_WINTER_PATH/ComputerSecurity_COMP4721/; t @ secur"
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
 alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
 
