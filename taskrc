@@ -152,5 +152,9 @@ context.school.read=+school
 context.school.write=+school
 context.spring.read=+spring_labs
 context.spring.write=+spring_labs
+context.net.read=+network_security
+context.net.write=+network_security +school
+context.eng.read=+secure_software_engineering
+context.eng.write=+secure_software_engineering +school
 
 #EOF
