@@ -41,7 +41,7 @@
 [fetch]
 	prune = true
 [diff]
-	colorMoved = zebra
+	colorMoved = default
 	algorithm = histogram
 [advice]
 	addEmptyPathspec = false
@@ -51,6 +51,13 @@
 	default = current
 [core]
 	editor = nvim
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true  # Use n and N to move between diff sections
+[merge]
+	conflictstyle = diff3
 
 # Enforce SSH
 [url "ssh://git@github.com/"]
