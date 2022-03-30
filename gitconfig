@@ -43,6 +43,7 @@
 [diff]
 	colorMoved = default
 	algorithm = histogram
+	external = difft
 [advice]
 	addEmptyPathspec = false
 [pager]
