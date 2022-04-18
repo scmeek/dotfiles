@@ -1,51 +1,69 @@
 {
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.fontFamily": "'Hasklug Nerd Font', Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "editor.insertSpaces": false,
-  "git.enableSmartCommit": true,
-  "javascript.autoClosingTags": false,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "javascript.preferences.quoteStyle": "single",
-  "typescript.preferences.quoteStyle": "single",
-  "javascript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "editor.formatOnSave": true,
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": true,
-  "files.autoSave": "afterDelay",
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "html.format.wrapAttributes": "force-expand-multiline",
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true,
-    "source.fixAll.tslint": true
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.minimap.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "extensions.ignoreRecommendations": false,
-  "workbench.editor.untitled.hint": "hidden",
-  "security.workspace.trust.untrustedFiles": "open",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true,
+    "source.organizeImports": true
+  },
+  "editor.codeLensFontFamily": "'Hasklug Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'Hasklug Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.insertSpaces": false,
+  "editor.minimap.enabled": true,
+  "editor.minimap.maxColumn": 100,
+  "editor.minimap.scale": 2,
   "editor.minimap.showSlider": "always",
   "editor.minimap.size": "fit",
-  "editor.minimap.scale": 2,
-  "editor.minimap.maxColumn": 100,
+  "editor.semanticHighlighting.enabled": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": false,
+  "files.autoSave": "afterDelay",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "git.enableSmartCommit": true,
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "javascript.autoClosingTags": false,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "prettier.singleQuote": true,
+  "scm.inputFontSize": 12.5,
+  "security.workspace.trust.untrustedFiles": "open",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.easymotionDimBackground": false,
+  "vim.joinspaces": false,
+  "vim.smartRelativeLine": false,
+  "vim.useSystemClipboard": true,
+  "window.autoDetectColorScheme": true,
   "workbench.colorCustomizations": {
-    "terminal.background": "#1d1f21",
-    "terminal.foreground": "#c5c8c6",
-    "terminalCursor.background": "#1d1f21",
-    "terminalCursor.foreground": "#c5c8c6",
     "terminal.ansiBlack": "#000000",
     "terminal.ansiBlue": "#81a2be",
     "terminal.ansiBrightBlack": "#000000",
@@ -61,29 +79,14 @@
     "terminal.ansiMagenta": "#b294bb",
     "terminal.ansiRed": "#cc6666",
     "terminal.ansiWhite": "#ffffff",
-    "terminal.ansiYellow": "#f0c674"
+    "terminal.ansiYellow": "#f0c674",
+    "terminal.background": "#1d1f21",
+    "terminal.foreground": "#c5c8c6",
+    "terminalCursor.background": "#1d1f21",
+    "terminalCursor.foreground": "#c5c8c6"
   },
-  "window.autoDetectColorScheme": true,
   "workbench.colorTheme": "Dracula Soft",
-  "editor.codeLensFontFamily": "'Hasklug Nerd Font', Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 13,
-  "editor.formatOnType": true,
-  "scm.inputFontSize": 12.5,
-  "prettier.singleQuote": true,
-  "vim.easymotionDimBackground": false,
-  "vim.joinspaces": false,
-  "vim.smartRelativeLine": false,
-  "vim.useSystemClipboard": true,
-  "[python]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 4,
-    "editor.defaultFormatter": "ms-python.python"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.semanticHighlighting.enabled": true,
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "newUntitledFile"
 }
