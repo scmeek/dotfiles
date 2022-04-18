@@ -13,7 +13,6 @@ set autoindent
 set nocompatible
 set showmatch
 set exrc
-set relativenumber
 set nu
 set nohlsearch
 " set hidden  " Enabled by default in neovim 0.6
