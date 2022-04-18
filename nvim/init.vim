@@ -21,6 +21,7 @@
 "--------------------------------------------------------------------------
 
 source ~/.config/nvim/config/keymaps.vim
+source ~/.config/nvim/config/keymaps.lua
 source ~/.config/nvim/config/sets.vim
 source ~/.config/nvim/config/syntax.vim
 
