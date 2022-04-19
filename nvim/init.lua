@@ -54,6 +54,10 @@ require('sets')			-- ~/.config/nvim/lua/sets.lua
 -- Miscellaneous
 ----------------------------------------------------------------------------
 
+-- Use neovim's filtype.lua (faster) over filetype.vim for filetype detection
+vim.g.do_filetype_lua = true
+vim.g.did_load_filetypes = false
+
 -- TODO: Do these needs augroups?
 
 vim.api.nvim_create_autocmd('TextYankPost', {
