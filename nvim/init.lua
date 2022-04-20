@@ -21,7 +21,7 @@
 ----------------------------------------------------------------------------
 
 require('keymaps')	-- ~/.config/nvim/lua/keymaps.lua
-require('sets')			-- ~/.config/nvim/lua/sets.lua
+require('options')			-- ~/.config/nvim/lua/options.lua
 
 
 ----------------------------------------------------------------------------
