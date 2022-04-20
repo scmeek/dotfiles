@@ -35,7 +35,7 @@ news.version=2.6.0
 
 urgency.user.tag.next.coefficient=10.0  # +next (default: 15.0)
 urgency.due.coefficient=3.0  # Overdue or near due date (default: 12.0)
-urgency.scheduled.coefficient=2.0  # Default: 5.0
+urgency.scheduled.coefficient=0.0  # Default: 5.0
 urgency.age.coefficient=2.0  # Default: 2.0
 urgency.annotations.coefficient=0.0  # Default: 1.0
 urgency.tags.coefficient=0.0  # Default: 1.0
