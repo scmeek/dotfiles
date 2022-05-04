@@ -21,9 +21,8 @@ vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
 vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
 
 -- Easier splits handling
-vim.keymap.set('n', '<leader>vv', '<C-W>v', { silent = true })
-vim.keymap.set('n', '<leader>hh', '<C-W>s', { silent = true })
-vim.keymap.set('n', '<leader>qq', '<C-W>q', { silent = true })
+vim.keymap.set('n', '<leader>|', '<C-W>v', { silent = true })
+vim.keymap.set('n', '<leader>-', '<C-W>s', { silent = true })
 
 -- Allow 'gf' to open non-existent files
 vim.keymap.set('', 'gf', ':edit <cfile><cr>')
