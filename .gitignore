@@ -2,3 +2,5 @@ task/data
 task/sync_config.txt
 task/sync_certs
 
+nvim/plugin/packer_compiled.lua
+
