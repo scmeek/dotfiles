@@ -27,6 +27,7 @@ vim.opt.incsearch = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.colorcolumn = '80'
+vim.opt.laststatus = 3
 vim.opt.signcolumn = 'auto'
 vim.opt.showmode = false
 vim.opt.completeopt = { 'menuone', 'noinsert', 'noselect' }

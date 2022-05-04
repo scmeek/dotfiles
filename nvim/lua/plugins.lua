@@ -24,6 +24,20 @@ return require('packer').startup({
   		config = get_config('gitsigns')
 		}
 
+		-- Status line
+		use {
+  		'nvim-lualine/lualine.nvim',
+  		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+  		config = get_config('lualine')
+		}
+
+		-- Tabline
+		use {
+  		'romgrk/barbar.nvim',
+  		requires = {'kyazdani42/nvim-web-devicons'},
+  		config = get_config('barbar')
+		}
+
   end,
   config = {
     display = {
