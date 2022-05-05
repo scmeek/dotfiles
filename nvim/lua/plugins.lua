@@ -32,6 +32,22 @@ return require('packer').startup({
     	requires = 'kyazdani42/nvim-web-devicons',
     	config = get_config('nvim-tree')
 	  }
+        -- tree-sitter
+        use({
+            {
+                'nvim-treesitter/nvim-treesitter',
+                config = get_config('nvim-treesitter'),
+                run = ':TSUpdate',
+            },
+            -- Used by:
+            {
+                {
+                    'lewis6991/nvim-treesitter-context',
+                    config = get_config('nvim-treesitter-context'),
+                },
+                'nvim-treesitter/nvim-treesitter-refactor',
+            },
+        })
 
 	  -- Buffers git integration
 		use {
