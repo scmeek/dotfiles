@@ -80,6 +80,12 @@ return require('packer').startup({
             config = get_config('which-key'),
         })
 
+        -- Documentation generator
+        use({
+            'kkoomen/vim-doge',
+            config = get_config('doge'),
+        })
+
         use('tpope/vim-commentary')
         use('christoomey/vim-tmux-navigator')
     end,
