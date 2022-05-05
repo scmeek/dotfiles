@@ -73,6 +73,13 @@ return require('packer').startup({
   config = {
     display = {
       open_fn = require("packer.util").float,
+        use({
+            'folke/which-key.nvim',
+            config = get_config('which-key'),
+        })
+
+        use('tpope/vim-commentary')
+        use('christoomey/vim-tmux-navigator')
     },
     profile = {
       enable = true,
