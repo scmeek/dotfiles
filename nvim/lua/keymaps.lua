@@ -1,9 +1,12 @@
 vim.g.mapleader = ' '
 
+vim.keymap.set('n', '<leader>vr', ':source ~/.config/nvim/init.lua<cr>')  -- Refresh
 -- Edit configs
-vim.keymap.set('n', '<leader>ve', ':edit ~/.config/nvim/init.lua<cr>')
--- vim.keymap.set('n', '<leader>vl', ':edit __LSP_CONFIG__<cr>')
-vim.keymap.set('n', '<leader>vr', ':source ~/.config/nvim/init.lua<cr>')
+vim.keymap.set('n', '<leader>vi', ':edit ~/.config/nvim/init.lua<cr>')  -- init.lua
+vim.keymap.set('n', '<leader>vk', ':edit ~/.config/nvim/lua/keymaps.lua<cr>')  -- keymaps.lua
+vim.keymap.set('n', '<leader>vo', ':edit ~/.config/nvim/lua/options.lua<cr>')  -- options.lua
+vim.keymap.set('n', '<leader>vp', ':edit ~/.config/nvim/lua/plugins.lua<cr>')  -- plugins.lua
+vim.keymap.set('n', '<leader>vl', ':edit ~/.config/nvim/lua/plugin_configs/nvim-lspconfig.lua<cr>')  -- nvim-lspconfig.lua
 
 -- Leave insert mode
 vim.keymap.set('i', 'kj', '<Esc>')
