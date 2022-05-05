@@ -54,6 +54,10 @@ return require('packer').startup({
   		'lewis6991/gitsigns.nvim',
   		config = get_config('gitsigns')
 		}
+        use({
+            'mhartington/formatter.nvim',
+            config = get_config('formatter'),
+        })
 
 		-- Status line
 		use {
