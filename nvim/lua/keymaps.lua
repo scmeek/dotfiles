@@ -1,12 +1,12 @@
 vim.g.mapleader = ' '
 
-vim.keymap.set('n', '<leader>vr', ':source ~/.config/nvim/init.lua<cr>')  -- Refresh
+vim.keymap.set('n', '<leader>vr', ':source ~/.config/nvim/init.lua<cr>') -- Refresh
 -- Edit configs
-vim.keymap.set('n', '<leader>vi', ':edit ~/.config/nvim/init.lua<cr>')  -- init.lua
-vim.keymap.set('n', '<leader>vk', ':edit ~/.config/nvim/lua/keymaps.lua<cr>')  -- keymaps.lua
-vim.keymap.set('n', '<leader>vo', ':edit ~/.config/nvim/lua/options.lua<cr>')  -- options.lua
-vim.keymap.set('n', '<leader>vp', ':edit ~/.config/nvim/lua/plugins.lua<cr>')  -- plugins.lua
-vim.keymap.set('n', '<leader>vl', ':edit ~/.config/nvim/lua/plugin_configs/nvim-lspconfig.lua<cr>')  -- nvim-lspconfig.lua
+vim.keymap.set('n', '<leader>vi', ':edit ~/.config/nvim/init.lua<cr>') -- init.lua
+vim.keymap.set('n', '<leader>vk', ':edit ~/.config/nvim/lua/keymaps.lua<cr>') -- keymaps.lua
+vim.keymap.set('n', '<leader>vo', ':edit ~/.config/nvim/lua/options.lua<cr>') -- options.lua
+vim.keymap.set('n', '<leader>vp', ':edit ~/.config/nvim/lua/plugins.lua<cr>') -- plugins.lua
+vim.keymap.set('n', '<leader>vl', ':edit ~/.config/nvim/lua/plugin_configs/nvim-lspconfig.lua<cr>') -- nvim-lspconfig.lua
 
 -- Leave insert mode
 vim.keymap.set('i', 'kj', '<Esc>')
@@ -41,11 +41,11 @@ vim.keymap.set('v', 'Y', 'myY`y')
 
 -- When text is wrapped, move by terminal rows, not lines, unless a count is provided
 vim.keymap.set('', 'j', function()
-		return vim.v.count == 0 and 'gj' or 'j'
-	end, { silent = true, expr = true })
+    return vim.v.count == 0 and 'gj' or 'j'
+end, { silent = true, expr = true })
 vim.keymap.set('', 'k', function()
-		return vim.v.count == 0 and 'gk' or 'k'
-	end, { silent = true, expr = true })
+    return vim.v.count == 0 and 'gk' or 'k'
+end, { silent = true, expr = true })
 
 -- Make Y behave like the other capitals
 vim.keymap.set('n', 'Y', 'y$')
@@ -62,8 +62,9 @@ vim.keymap.set('n', '<leader>j', ':m +1<CR>')
 -- Diff with clipboard
 --  https://www.reddit.com/r/neovim/comments/sg919r/diff_with_clipboard/huy72t0/?utm_source=reddit&utm_medium=web2x&context=3
 vim.keymap.set('n', 'cp', function()
-  	local ftype = vim.api.nvim_eval("&filetype")
-  	vim.cmd(string.format([[
+    local ftype = vim.api.nvim_eval('&filetype')
+    vim.cmd(string.format(
+        [[
     	vsplit
     	enew
     	normal! P
@@ -73,6 +74,7 @@ vim.keymap.set('n', 'cp', function()
     	bprevious
     	execute "normal! \<C-w>\<C-w>"
     	diffthis
-  	]], ftype))
-	end)
-
+  	]],
+        ftype
+    ))
+end)

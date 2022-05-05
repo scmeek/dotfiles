@@ -21,7 +21,7 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv('HOME')..'/.vim/undodir'
+vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
 vim.opt.undofile = true
 vim.opt.incsearch = true
 vim.opt.scrolloff = 8
@@ -33,15 +33,15 @@ vim.opt.showmode = false
 vim.opt.completeopt = { 'menuone', 'noinsert', 'noselect' }
 vim.opt.wildmode = { 'longest', 'list', 'full' }
 vim.opt.wildmenu = true
-vim.opt.inccommand = 'split'  -- Live substitution
+vim.opt.inccommand = 'split' -- Live substitution
 vim.opt.showbreak = '↪'
 vim.opt.list = true
-vim.opt.listchars =  { tab = '| ', trail = '·' }
+vim.opt.listchars = { tab = '| ', trail = '·' }
 vim.opt.mouse = 'a'
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.confirm = true
 vim.opt.backup = true
-vim.opt.backupdir = os.getenv('HOME')..'/.vim/backup'
+vim.opt.backupdir = os.getenv('HOME') .. '/.vim/backup'
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.timeoutlen = 500
@@ -52,4 +52,3 @@ vim.opt.termguicolors = true
 -- More natural split opening
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-
