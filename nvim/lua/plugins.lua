@@ -48,6 +48,15 @@ return require('packer').startup({
             config = get_config('formatter'),
         })
 
+        use({
+            'nvim-telescope/telescope.nvim',
+            config = get_config('telescope'),
+            requires = {
+                'nvim-lua/plenary.nvim',
+                { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+            },
+        })
+
         -- File explorer
         use({
             'kyazdani42/nvim-tree.lua',
