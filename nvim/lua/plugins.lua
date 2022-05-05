@@ -2,7 +2,7 @@ vim.api.nvim_command('packadd packer.nvim')
 
 -- Get `require` statement for corresponding config file
 function get_config(name)
-    return string.format('require("plugin_configs/%s")', name)
+    return string.format('require("plugin-config/%s")', name)
 end
 
 return require('packer').startup({
