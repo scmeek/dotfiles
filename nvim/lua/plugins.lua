@@ -9,7 +9,15 @@ return require('packer').startup({
 	function(use)
     use 'wbthomason/packer.nvim'  -- Manage itself
 
-    use {'dracula/vim', as = 'dracula'}
+    use {
+    	'dracula/vim',
+    	as = 'dracula'
+    	}
+
+    use {
+    	'neovim/nvim-lspconfig',
+    	config = get_config('nvim-lspconfig')
+    	}
 
 		-- File explorer
     use {
