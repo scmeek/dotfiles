@@ -1,3 +1,13 @@
+local prettier_default = {
+    function()
+        return {
+            exe = 'prettier',
+            args = { '--stdin-filepath', vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), '--single-quote' },
+            stdin = true,
+        }
+    end,
+}
+
 require('formatter').setup({
     filetype = {
         lua = {
@@ -13,6 +23,9 @@ require('formatter').setup({
                 }
             end,
         },
+        javascript = prettier_default,
+        markdown = prettier_default,
+        typescript = prettier_default,
     },
 })
 
