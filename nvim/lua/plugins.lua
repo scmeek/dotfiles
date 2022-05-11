@@ -9,10 +9,7 @@ return require('packer').startup({
     function(use)
         use('wbthomason/packer.nvim') -- Manage itself
 
-        use({
-            'dracula/vim',
-            as = 'dracula',
-        })
+        use('bluz71/vim-nightfly-guicolors')
 
         -- Language server protocol
         use({

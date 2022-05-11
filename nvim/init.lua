@@ -24,7 +24,12 @@ require('keymaps')
 require('options')
 require('plugins')
 
-vim.cmd([[colorscheme dracula]])
+----------------------------------------------------------------------------
+-- Theme
+----------------------------------------------------------------------------
+
+vim.g.nightflyWinSeparator = 2
+vim.cmd([[colorscheme nightfly]])
 
 ----------------------------------------------------------------------------
 -- Miscellaneous
