@@ -19,8 +19,3 @@ printf '
 ' | lolcat
 echo
 
-# fortune | cowsay | sed 's/^/         /' | lolcat  # slow
-
-printf "\n              Hey there. Let's get started.\n" | lolcat
-echo
-
