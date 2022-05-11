@@ -40,7 +40,7 @@ export SCHOOL_MS_2022_SPRING_PATH="$SCHOOL_MS_PATH/2021-2022/Spring"
 # First iterm window, start tmux
 if [[ $TERM_PROGRAM != "tmux" ]]; then
   if [[ $ITERM_SESSION_ID =~ w0t0p0* ]]; then  # iTerm window 0, tab 0, pane 0
-    tmux new-session; exit
+    tmux new -s main; exit
   fi
 else
   if [[ $(tmux list-panes | wc -l) -eq 1 ]]; then  # First tmux pane
