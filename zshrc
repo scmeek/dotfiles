@@ -26,6 +26,7 @@
 #--------------------------------------------------------------------------
 
 export ZSH="/Users/sean/.oh-my-zsh"
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export DOTFILES_PATH="$HOME/Documents/dotfiles"
 export NOTES_PATH="$HOME/Documents/Notes"
 export SCHOOL_MS_PATH="$HOME/Documents/School/MS_DU_Cybersecurity/"
