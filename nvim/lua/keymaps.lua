@@ -33,6 +33,9 @@ vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('v', 'y', 'myy`y')
 vim.keymap.set('v', 'Y', 'myY`y')
 
+-- Reselect pasted text
+vim.keymap.set('n', 'gp', '`[v`]')
+
 -- When text is wrapped, move by terminal rows, not lines, unless a count is provided
 vim.keymap.set('', 'j', function()
     return vim.v.count == 0 and 'gj' or 'j'
