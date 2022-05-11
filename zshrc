@@ -111,13 +111,15 @@ bindkey -v  # vim mode
 sm_set_prompt() {
     SM_PATH_SHORT='$(shrink_path -l -t)'
     if [ -n "$KEYMAP" ] && [ "$KEYMAP" = "vicmd" ]; then
-      SM_PATH_VIM_MODE="${SM_PATH_SHORT}  "
+    	SM_PROMPT_MODE_START=""
+    	SM_PROMPT_MODE_STOP="  "
     else
-      SM_PATH_VIM_MODE="%S${SM_PATH_SHORT}%s "
+    	SM_PROMPT_MODE_START="%S"
+    	SM_PROMPT_MODE_STOP="%s "
     fi
 
     # %(?.) - Conditional for previous status
-    export PROMPT=$'\n'"%(?.%F{blue}.%F{red})${SM_PATH_VIM_MODE}%f"
+    export PROMPT=$'\n'"%(?.${SM_PROMPT_MODE_START}%F{blue}.${SM_PROMPT_MODE_START}%F{red})${SM_PATH_SHORT}${SM_PROMPT_MODE_STOP}%f"
 }
 sm_set_prompt  # Set on shell init
 
