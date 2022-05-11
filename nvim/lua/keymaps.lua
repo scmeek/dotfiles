@@ -8,9 +8,6 @@ vim.keymap.set('n', '<leader>vo', ':edit ~/.config/nvim/lua/options.lua<cr>') --
 vim.keymap.set('n', '<leader>vp', ':edit ~/.config/nvim/lua/plugins.lua<cr>') -- plugins.lua
 vim.keymap.set('n', '<leader>vl', ':edit ~/.config/nvim/lua/plugin_configs/nvim-lspconfig.lua<cr>') -- nvim-lspconfig.lua
 
--- Leave insert mode
-vim.keymap.set('i', 'kj', '<Esc>')
-
 -- Save buffer
 vim.keymap.set('', '<leader>s', ':w<CR>')
 
@@ -26,9 +23,6 @@ vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
 -- Easier splits handling
 vim.keymap.set('n', '<leader>|', '<C-W>v', { silent = true })
 vim.keymap.set('n', '<leader>-', '<C-W>s', { silent = true })
-
--- Allow 'gf' to open non-existent files
-vim.keymap.set('', 'gf', ':edit <cfile><cr>')
 
 -- Reselect visual selection after indenting
 vim.keymap.set('v', '<', '<gv')
@@ -49,10 +43,6 @@ end, { silent = true, expr = true })
 
 -- Make Y behave like the other capitals
 vim.keymap.set('n', 'Y', 'y$')
-
--- Add trailling ; or .
-vim.keymap.set('n', ',,', 'A,<Esc>')
-vim.keymap.set('n', ';;', 'A;<Esc>')
 
 -- Move line up
 vim.keymap.set('n', '<leader>k', ':m -2<CR>')
