@@ -92,6 +92,11 @@ return require('packer').startup({
             config = get_config('doge'),
         })
 
+        use({
+            'chrisbra/Colorizer',
+            config = get_config('colorizer'),
+        })
+
         use('tpope/vim-commentary')
         use('christoomey/vim-tmux-navigator')
     end,
