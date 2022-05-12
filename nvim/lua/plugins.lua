@@ -86,6 +86,12 @@ return require('packer').startup({
             config = get_config('which-key'),
         })
 
+        -- Test runner
+        use({
+            'vim-test/vim-test',
+            config = get_config('vim-test'),
+        })
+
         -- Documentation generator
         use({
             'kkoomen/vim-doge',
