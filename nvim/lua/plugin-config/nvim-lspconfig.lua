@@ -20,7 +20,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { buffer = bufnr })
 end
 
-local servers = { 'pyright' }
+local servers = { 'bashls', 'pyright' }
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
