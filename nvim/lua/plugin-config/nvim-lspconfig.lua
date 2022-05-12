@@ -20,10 +20,19 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { buffer = bufnr })
 end
 
-local servers = { 'bashls', 'clangd', 'pyright' }
+local servers = {
+    'bashls',
+    'clangd',
+    'cssls', -- vscode-langservers-extracted
+    'eslint', -- vscode-langservers-extracted
+    'html', -- vscode-langservers-extracted
+    'rust_analyzer',
+    'pyright',
+}
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 for _, lsp in pairs(servers) do
