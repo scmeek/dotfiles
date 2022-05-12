@@ -237,6 +237,7 @@ alias cddf="cddotfiles"
 alias cdnotes="cd $NOTES_PATH"
 alias cddev="cd /Users/sean/Documents/Development/"
 alias cdseanmeek="cd /Users/sean/Documents/Development/seanmeek.com/"
+alias cdsm="cdseanmeek"
 alias cdttn="cd /Users/sean/Documents/Development/TeeTimeNotify/"
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
 alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
