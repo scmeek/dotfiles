@@ -43,9 +43,10 @@ if [[ $TERM_PROGRAM != "tmux" ]]; then
     tmux new -s main; exit
   fi
 else
-  if [[ $(tmux list-panes | wc -l) -eq 1 ]]; then  # First tmux pane
-    $DOTFILES_PATH/scripts/welcome.sh
-  fi
+    # First tmux pane and not in Vim
+    if [[ $(tmux list-panes | wc -l) -eq 1 && -z ${VIM+x} ]]; then
+        $DOTFILES_PATH/scripts/welcome.sh
+    fi
 fi
 
 
