@@ -48,9 +48,9 @@ end, { silent = true, expr = true })
 vim.keymap.set('n', 'Y', 'y$')
 
 -- Move line up
-vim.keymap.set('n', '<leader>k', ':m -2<CR>')
+vim.keymap.set('n', '<leader>mk', ':m -2<CR>')
 -- Move line down
-vim.keymap.set('n', '<leader>j', ':m +1<CR>')
+vim.keymap.set('n', '<leader>mj', ':m +1<CR>')
 
 -- Diff with clipboard
 --  https://www.reddit.com/r/neovim/comments/sg919r/diff_with_clipboard/huy72t0/?utm_source=reddit&utm_medium=web2x&context=3

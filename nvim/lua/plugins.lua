@@ -54,6 +54,14 @@ return require('packer').startup({
             },
         })
 
+        use({
+            'ThePrimeagen/Harpoon',
+            config = get_config('harpoon'),
+            requires = {
+                'nvim-lua/plenary.nvim',
+            },
+        })
+
         -- File explorer
         use({
             'kyazdani42/nvim-tree.lua',
