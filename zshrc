@@ -39,9 +39,9 @@ export SCHOOL_MS_2022_SPRING_PATH="$SCHOOL_MS_PATH/2021-2022/Spring"
 
 # First iterm window, start tmux
 if [[ $TERM_PROGRAM != "tmux" ]]; then
-  if [[ $ITERM_SESSION_ID =~ w0t0p0* ]]; then  # iTerm window 0, tab 0, pane 0
-    tmux new -s main; exit
-  fi
+    if [[ $ITERM_SESSION_ID =~ w0t0p0* ]]; then  # iTerm window 0, tab 0, pane 0
+        tmux new -s main; exit
+    fi
 else
     # First tmux pane and not in Vim
     if [[ $(tmux list-panes | wc -l) -eq 1 && -z ${VIM+x} ]]; then
@@ -85,10 +85,10 @@ setopt HIST_SAVE_NO_DUPS
 #--------------------------------------------------------------------------
 
 plugins=(
-  git
-  colored-man-pages
-  shrink-path
-  )
+    git
+    colored-man-pages
+    shrink-path
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,11 +112,11 @@ bindkey -v  # vim mode
 sm_set_prompt() {
     SM_PATH_SHORT='$(shrink_path -l -t)'
     if [ -n "$KEYMAP" ] && [ "$KEYMAP" = "vicmd" ]; then
-    	SM_PROMPT_MODE_START=""
-    	SM_PROMPT_MODE_STOP="  "
+        SM_PROMPT_MODE_START=""
+        SM_PROMPT_MODE_STOP="  "
     else
-    	SM_PROMPT_MODE_START="%S"
-    	SM_PROMPT_MODE_STOP="%s "
+        SM_PROMPT_MODE_START="%S"
+        SM_PROMPT_MODE_STOP="%s "
     fi
 
     # %(?.) - Conditional for previous status
@@ -188,7 +188,7 @@ export PATH="/usr/local/bin:$PATH"
 alias pip=pip3
 
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+    eval "$(pyenv init -)"
 fi
 
 
@@ -253,26 +253,26 @@ alias cdeng="cd $SCHOOL_MS_2022_SPRING_PATH/SecureSoftwareEngineering_COMP4384"
 
 # Replace all in directory
 repl() {
-  if [[ $# -ne 3 ]]; then
-    echo "usage: $0 <directory> <search-string> <replace-string>\n" >&2
-    return 2
-  fi
-  read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [y/N] " -r
-  echo
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
-    rg -l "$2" $1 | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
-    echo 'Replaced all occurrences of $2 with $3 in $1.'
-  fi
+    if [[ $# -ne 3 ]]; then
+        echo "usage: $0 <directory> <search-string> <replace-string>\n" >&2
+        return 2
+    fi
+    read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [y/N] " -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        rg -l "$2" $1 | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
+        echo 'Replaced all occurrences of $2 with $3 in $1.'
+    fi
 }
 
 # Make directory and open
 mkdircd() {
-  if [[ $# -ne 1 ]]; then
-    echo "usage: $0 <new-directory>\n" >&2
-    return 2
-  fi
-  mkdir $1
-  cd $1
+    if [[ $# -ne 1 ]]; then
+        echo "usage: $0 <new-directory>\n" >&2
+        return 2
+    fi
+    mkdir $1
+    cd $1
 }
 
 
