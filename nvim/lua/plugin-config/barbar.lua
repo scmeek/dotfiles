@@ -1,8 +1,8 @@
 vim.g.bufferline = {
     animation = true,
     closable = true,
-    icon_separator_active = '',
-    icon_separator_inactive = '',
+    icon_separator_active = ' ',
+    icon_separator_inactive = ' ',
 }
 
 vim.keymap.set('n', '<leader>,', ':BufferPrevious<CR>')
@@ -17,5 +17,5 @@ vim.keymap.set('n', '<leader>7', ':BufferGoto 7<CR>')
 vim.keymap.set('n', '<leader>8', ':BufferGoto 8<CR>')
 vim.keymap.set('n', '<leader>9', ':BufferGoto 9<CR>')
 vim.keymap.set('n', '<leader>0', ':BufferLast<CR>')
-vim.keymap.set('n', '<leader>c', ':BufferClose<CR>')
+vim.keymap.set('n', '<leader>w', ':BufferClose<CR>')
 vim.keymap.set('n', '<leader>p', ':BufferPick<CR>')
