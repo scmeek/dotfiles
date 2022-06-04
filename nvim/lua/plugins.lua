@@ -111,7 +111,11 @@ return require('packer').startup({
             config = get_config('colorizer'),
         })
 
-        use('tpope/vim-commentary')
+        use({
+            'numToStr/Comment.nvim',
+            config = get_config('comment'),
+        })
+
         use('christoomey/vim-tmux-navigator')
     end,
     config = {
