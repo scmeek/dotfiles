@@ -7,6 +7,8 @@ vim.g.bufferline = {
 
 vim.keymap.set('n', '<leader>,', ':BufferPrevious<CR>')
 vim.keymap.set('n', '<leader>.', ':BufferNext<CR>')
+vim.keymap.set('n', 'gt', ':BufferNext<CR>')
+vim.keymap.set('n', 'gT', ':BufferPrevious<CR>')
 vim.keymap.set('n', '<leader>1', ':BufferGoto 1<CR>')
 vim.keymap.set('n', '<leader>2', ':BufferGoto 2<CR>')
 vim.keymap.set('n', '<leader>3', ':BufferGoto 3<CR>')
