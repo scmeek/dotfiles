@@ -243,9 +243,6 @@ alias cdttn="cd /Users/sean/Documents/Development/TeeTimeNotify/"
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
 alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
 
-alias cdnet="cd $SCHOOL_MS_2022_SPRING_PATH/NetworkSecurity_COMP4722"
-alias cdeng="cd $SCHOOL_MS_2022_SPRING_PATH/SecureSoftwareEngineering_COMP4384"
-
 
 #--------------------------------------------------------------------------
 # Custom functions
