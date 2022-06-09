@@ -23,6 +23,8 @@ vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
 -- Easier splits handling
 vim.keymap.set('n', '<leader>|', '<C-W>v', { silent = true })
 vim.keymap.set('n', '<leader>-', '<C-W>s', { silent = true })
+vim.keymap.set('n', '<leader>>', '<C-W>>', { silent = true })
+vim.keymap.set('n', '<leader><', '<C-W><', { silent = true })
 
 -- Reselect visual selection after indenting
 vim.keymap.set('v', '<', '<gv')
