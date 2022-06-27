@@ -2555,7 +2555,7 @@
 				<real>0.93333333730697632</real>
 			</dict>
 			<key>Brighten Bold Text</key>
-			<false/>
+			<true/>
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
