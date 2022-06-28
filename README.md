@@ -10,5 +10,6 @@ See `LICENSE` file.
 
 For macOS:
 ```
+git submodule update --init --recursive
 ./install
 ```
