@@ -12,6 +12,7 @@
 
 - link:
     ~/.config/nvim: nvim
+    ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.config/btt_autoload_preset.json: btt_autoload_preset.json
     ~/.config/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
     ~/.gitconfig: gitconfig
