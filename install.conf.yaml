@@ -14,8 +14,8 @@
     '~/Library/Application Support/nushell/env.nu': nushell/env.nu
     ~/.config/nvim: nvim
     ~/.config/alacritty/alacritty.yml: alacritty.yml
-    ~/.config/btt_autoload_preset.json: btt_autoload_preset.json
     ~/.config/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
+    ~/.btt_autoload_preset.json: btt_autoload_preset.json
     ~/.gitconfig: gitconfig
     ~/.task: task
     ~/.taskrc: taskrc
