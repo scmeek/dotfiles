@@ -9,7 +9,7 @@ return require('packer').startup({
     function(use)
         use('wbthomason/packer.nvim') -- Manage itself
 
-        use('bluz71/vim-nightfly-guicolors')
+        use('folke/tokyonight.nvim')
 
         -- Language server protocol
         use({

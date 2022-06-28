@@ -87,8 +87,8 @@
     "terminalCursor.background": "#1d1f21",
     "terminalCursor.foreground": "#c5c8c6"
   },
-  "workbench.colorTheme": "Dracula Soft",
   "workbench.editor.untitled.hint": "hidden",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "Tokyo Night"
 }

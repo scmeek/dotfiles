@@ -29,7 +29,7 @@ require('plugins')
 ----------------------------------------------------------------------------
 
 vim.g.nightflyWinSeparator = 2
-vim.cmd([[colorscheme nightfly]])
+vim.cmd([[colorscheme tokyonight]])
 
 ----------------------------------------------------------------------------
 -- Miscellaneous
