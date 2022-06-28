@@ -20,7 +20,7 @@
 [user]
 	name = scmeek
 	email = sean@seanmeek.com
-	signingkey = CDBD2F5C61320530
+	signingkey = 1CEB649DE74D59B4
 [commit]
 	gpgsign = true
 	verbose = true
