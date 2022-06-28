@@ -9,6 +9,7 @@
 - clean: ['~']  # Remove dead links
 
 - link:
+    '~/Library/Application Support/Code/User/settings.json': vscode/settings.json
     '~/Library/Application Support/nushell/config.nu': nushell/config.nu
     '~/Library/Application Support/nushell/env.nu': nushell/env.nu
     ~/.config/nvim: nvim
