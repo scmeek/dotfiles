@@ -1,7 +1,5 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  #- [rm ./install]
-  #- [cp dotbot/tools/git-submodule/install .]
 
 - defaults:
     link:
@@ -11,6 +9,8 @@
 - clean: ['~']  # Remove dead links
 
 - link:
+    '~/Library/Application Support/nushell/config.nu': nushell/config.nu
+    '~/Library/Application Support/nushell/env.nu': nushell/env.nu
     ~/.config/nvim: nvim
     ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.config/btt_autoload_preset.json: btt_autoload_preset.json
