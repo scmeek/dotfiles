@@ -1,0 +1,25 @@
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  #- [rm ./install]
+  #- [cp dotbot/tools/git-submodule/install .]
+
+- defaults:
+    link:
+      create: true  # Create parent directories as needed
+      force: true  # Removes old target, file, or folder
+
+- clean: ['~']  # Remove dead links
+
+- link:
+    ~/.config/nvim: nvim
+    ~/.config/btt_autoload_preset.json: btt_autoload_preset.json
+    ~/.config/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
+    ~/.gitconfig: gitconfig
+    ~/.task: task
+    ~/.taskrc: taskrc
+    ~/.tmux.conf: tmux.conf
+    ~/.zshrc: zshrc
+
+- create:
+    - ~/.vim/undo-history
+
