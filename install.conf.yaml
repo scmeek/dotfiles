@@ -12,6 +12,7 @@
     '~/Library/Application Support/Code/User/settings.json': vscode/settings.json
     '~/Library/Application Support/nushell/config.nu': nushell/config.nu
     '~/Library/Application Support/nushell/env.nu': nushell/env.nu
+    '/Users/sean/Library/KeyBindings/DefaultKeyBinding.dict': DefaultKeyBinding.dict
     ~/.config/nvim: nvim
     ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.config/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
@@ -23,6 +24,9 @@
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
     ~/Brewfile: Brewfile
+
+    # Make Home and End keys Windows-like, needs reboot
+    '/Users/sean/Library/KeyBindings/DefaultKeyBinding.dict': DefaultKeyBinding.dict
 
 - create:
     - ~/.vim/undo-history
