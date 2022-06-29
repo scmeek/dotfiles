@@ -6,7 +6,10 @@
       create: true  # Create parent directories as needed
       force: true  # Removes old target, file, or folder
 
-- clean: ['~']  # Remove dead links
+- clean:  # Remove dead links
+    ~/:
+    ~/.config:
+      recursive: true
 
 - link:
     '~/Library/Application Support/Code/User/settings.json': vscode/settings.json
@@ -30,4 +33,3 @@
 
 - create:
     - ~/.vim/undo-history
-
