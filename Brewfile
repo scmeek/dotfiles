@@ -8,6 +8,7 @@ brew "git-delta"                    # git pager
 brew "gnupg"                        # Gnu PGP
 brew "lazygit"                      # git TUI
 brew "lolcat"
+brew "node"                         # nodejs
 brew "nushell"                      # shell
 brew "pinentry-mac"                 # macOS integration for GPG
 brew "ripgrep"                      # fuzzy-finder
