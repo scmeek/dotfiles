@@ -22,6 +22,7 @@
     ~/.taskrc: taskrc
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
+    ~/Brewfile: Brewfile
 
 - create:
     - ~/.vim/undo-history
