@@ -6,15 +6,15 @@ Intended for macOS.
 
 ## License
 
-See `LICENSE` file.
+See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
 
 ## Installation
 
 ### macOS
 
-1. Run `./scripts/macos_defaults.sh` to automatically set some convenient defaults.
+1. Run `./scripts/macos_defaults.sh` to automatically set some convenient defaults
 
-2. To adjust key repeat settings in macOS:
+2. Adjust key repeat settings in macOS
 
    1. System Preferences -> Keyboard
    2. Key Repeat -> Fast
@@ -29,9 +29,9 @@ See `LICENSE` file.
 
 ### Packages
 
-1. Clone this repo and [sync the config files](#synchronize-configuration-files) to their appropriate locations.
+1. Clone repo and [sync the config files](#synchronize-configuration-files) to their appropriate locations
 
-   - `DefaultKeyBinding.dict` will be added/replaced which will make `Home` and `End` keys behave like Windows.
+   - `DefaultKeyBinding.dict` will be added/replaced which will make `Home` and `End` keys behave like Windows
 
 2. Install [Homebrew](https://brew.sh/)
 
