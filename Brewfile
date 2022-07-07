@@ -1,6 +1,7 @@
 brew "bat"                          # `cat` alternative
 brew "coreutils"
 brew "difftastic"                   # diff analysis and presentation
+brew "exa"                          # `ls` alternative
 brew "fd"                           # `find` alternative
 brew "fzf"                          # fuzzy-finder
 brew "git"                          # source control
