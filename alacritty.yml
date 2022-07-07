@@ -436,7 +436,7 @@ colors:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /usr/local/bin/nu
+  program: /bin/zsh
 #  args:
 #    - --login
 

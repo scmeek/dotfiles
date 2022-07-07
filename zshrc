@@ -157,11 +157,6 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 
-# GNU only ('dircolors')
-#zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
-# Replacement ('coreutils' required)
-zstyle ':completion:*' menu select=2 eval "$(gdircolors -b)"
-
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -177,6 +172,11 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 export GPG_TTY=$(tty)
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+
+# GNU only ('dircolors')
+#zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
+# Replacement ('coreutils' required)
+zstyle ':completion:*' menu select=2 eval "$(gdircolors -b)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
