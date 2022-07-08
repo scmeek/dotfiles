@@ -228,7 +228,7 @@ export PATH=$PATH:$GOROOT/bin
 
 alias ls="exa"
 alias ll="exa -l"
-alias ls="exa -la"
+alias la="exa -la"
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
