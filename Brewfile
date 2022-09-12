@@ -14,7 +14,6 @@ brew "rustup-init"                  # rust
 brew "task"                         # taskwarrior
 brew "terminal-notifier"            # macOS notifications from terminal
 brew "trash"                        # move to trash cli https://hasseg.org/trash/
-brew "tmux"                         # terminal multiplexer
 brew "tree"                         # directory display
 
 brew "neovim"                       # text editor
