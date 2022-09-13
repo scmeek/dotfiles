@@ -75,14 +75,28 @@ setopt HIST_SAVE_NO_DUPS
 
 
 #--------------------------------------------------------------------------
+# Homebrew
+#--------------------------------------------------------------------------
+
+# Before oh-my-zsh
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+#--------------------------------------------------------------------------
 # Oh-my-zsh
 #--------------------------------------------------------------------------
 
 plugins=(
     colored-man-pages
 )
-
-source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $ZSH/oh-my-zsh.sh
 
