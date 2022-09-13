@@ -59,12 +59,6 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
 
 3. Run `:PackerSync` in neovim
 
-### [tmux](https://github.com/tmux/tmux)
-
-1. Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
-
-   `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-
 ## Synchronize configuration files
 
 [dotbot](https://github.com/anishathalye/dotbot) should take care of everything by placing symlinks in the appropriate places.
