@@ -85,46 +85,6 @@ bindkey -v  # vim mode
 
 
 #--------------------------------------------------------------------------
-# Prompt
-#--------------------------------------------------------------------------
-
-# https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/
-sm_set_prompt() {
-    SM_PATH_SHORT='$(shrink_path -l -t)'
-    if [ -n "$KEYMAP" ] && [ "$KEYMAP" = "vicmd" ]; then
-        SM_PROMPT_MODE_START=""
-        SM_PROMPT_MODE_STOP="  "
-    else
-        SM_PROMPT_MODE_START="%S"
-        SM_PROMPT_MODE_STOP="%s "
-    fi
-
-    # %(?.) - Conditional for previous status
-    export PROMPT=$'\n'"%(?.${SM_PROMPT_MODE_START}%F{blue}.${SM_PROMPT_MODE_START}%F{red})${SM_PATH_SHORT}${SM_PROMPT_MODE_STOP}%f"
-}
-sm_set_prompt  # Set on shell init
-
-# https://linux.die.net/man/1/zshzle
-zle-keymap-select() {
-    sm_set_prompt
-    zle reset-prompt
-}
-zle -N zle-keymap-select
-
-# Prompt git integration
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info 2> /dev/null }  # Ignore errors, specifically within bare repositories
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-RPROMPT=\$vcs_info_msg_0_
-zstyle ':vcs_info:git:*' formats '%F{cyan}%b%f'  # %r = repo
-zstyle ':vcs_info:*' enable git
-
-autoload -Uz promptinit
-promptinit
-
-
-#--------------------------------------------------------------------------
 # Completion
 #--------------------------------------------------------------------------
 
