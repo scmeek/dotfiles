@@ -18,6 +18,7 @@ brew "tree"                                 # directory display
 tap "romkatv/powerlevel10k"                 # powerlevel10k (zsh)
 brew "romkatv/powerlevel10k/powerlevel10k"
 brew "zsh-autosuggestions"                  # zsh-autosuggestions
+brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 
 # neovim
 brew "neovim"                               # text editor
