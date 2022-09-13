@@ -9,7 +9,7 @@ return require('packer').startup({
     function(use)
         use('wbthomason/packer.nvim') -- Manage itself
 
-        use('folke/tokyonight.nvim')
+        use('RRethy/nvim-base16')
 
         -- Language server protocol
         use({
