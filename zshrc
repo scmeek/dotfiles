@@ -41,6 +41,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export DOTFILES_PATH="$HOME/Documents/dotfiles"
 export NOTES_PATH="$HOME/Documents/Notes"
+eval "$(/usr/local/bin/brew shellenv)"
 
 
 #--------------------------------------------------------------------------
@@ -80,6 +81,8 @@ setopt HIST_SAVE_NO_DUPS
 plugins=(
     colored-man-pages
 )
+
+source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $ZSH/oh-my-zsh.sh
 
