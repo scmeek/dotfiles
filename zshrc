@@ -83,7 +83,6 @@ setopt HIST_SAVE_NO_DUPS
 #--------------------------------------------------------------------------
 
 plugins=(
-    git
     colored-man-pages
     shrink-path
 )
