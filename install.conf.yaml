@@ -22,6 +22,7 @@
     ~/.btt_autoload_preset.json: btt_autoload_preset.json
     ~/.gitconfig: gitconfig
     ~/.hushlogin: hushlogin  # Hush login messages on bash/zsh open
+    ~/.p10k.zsh: p10k.zsh
     ~/.task: task
     ~/.taskrc: taskrc
     ~/.tmux.conf: tmux.conf

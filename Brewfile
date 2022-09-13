@@ -9,6 +9,7 @@ brew "gnupg"                                # Gnu PGP
 brew "node"                                 # nodejs
 brew "pinentry-mac"                         # macOS integration for GPG
 brew "ripgrep"                              # fuzzy-finder
+brew "romkatv/powerlevel10k/powerlevel10k"  # powerlevel10k (zsh)
 brew "rustup-init"                          # rust
 brew "trash"                                # move to trash cli https://hasseg.org/trash/
 brew "tree"                                 # directory display
