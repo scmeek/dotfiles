@@ -1,3 +1,4 @@
+# formulae
 brew "bat"                                  # `cat` alternative
 brew "coreutils"
 brew "difftastic"                           # diff analysis and presentation
@@ -9,11 +10,15 @@ brew "gnupg"                                # Gnu PGP
 brew "node"                                 # nodejs
 brew "pinentry-mac"                         # macOS integration for GPG
 brew "ripgrep"                              # fuzzy-finder
-brew "romkatv/powerlevel10k/powerlevel10k"  # powerlevel10k (zsh)
 brew "rustup-init"                          # rust
 brew "trash"                                # move to trash cli https://hasseg.org/trash/
 brew "tree"                                 # directory display
 
+# zsh
+tap "romkatv/powerlevel10k"                 # powerlevel10k (zsh)
+brew "romkatv/powerlevel10k/powerlevel10k"
+
+# neovim
 brew "neovim"                               # text editor
 brew "bash-language-server"                 # neovim lsp
 brew "clang-format"                         # neovim lsp
@@ -22,6 +27,7 @@ brew "pyright"                              # neovim lsp
 brew "rust-analyzer"                        # neovim lsp
 brew "stylua"                               # neovim lsp
 
+# casks
 cask "alacritty"                            # terminal
 cask "alt-tab"                              # Windows-like alt-tab application switcher
 cask "bettertouchtool"                      # macOS customizer
