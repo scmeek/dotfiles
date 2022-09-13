@@ -79,7 +79,6 @@ setopt HIST_SAVE_NO_DUPS
 
 plugins=(
     colored-man-pages
-    shrink-path
 )
 
 source $ZSH/oh-my-zsh.sh
