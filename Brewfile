@@ -12,6 +12,11 @@ brew "ripgrep"                      # fuzzy-finder
 brew "rustup-init"                  # rust
 brew "trash"                        # move to trash cli https://hasseg.org/trash/
 brew "tree"                         # directory display
+brew "capstone"                               # sm64
+brew "coreutils"                              # sm64
+brew "make"                                   # sm64
+brew "pkg-config"                             # sm64
+brew "tehzz/n64-dev/mips64-elf-binutils"      # sm64
 
 brew "neovim"                       # text editor
 brew "bash-language-server"         # neovim lsp
