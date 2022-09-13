@@ -25,7 +25,7 @@
 # Environment variables
 #--------------------------------------------------------------------------
 
-export ZSH="/Users/sean/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export DOTFILES_PATH="$HOME/Documents/dotfiles"
 export NOTES_PATH="$HOME/Documents/Notes"
@@ -235,10 +235,10 @@ alias lg="lazygit"
 alias cddotfiles="cd $DOTFILES_PATH"
 alias cddf="cddotfiles"
 alias cdnotes="cd $NOTES_PATH"
-alias cddev="cd /Users/sean/Documents/Development/"
-alias cdseanmeek="cd /Users/sean/Documents/Development/seanmeek.com/"
+alias cddev="cd ${HOME}/Documents/Development/"
+alias cdseanmeek="cd ${HOME}/Documents/Development/seanmeek.com/"
 alias cdsm="cdseanmeek"
-alias cdttn="cd /Users/sean/Documents/Development/TeeTimeNotify/"
+alias cdttn="cd ${HOME}/Documents/Development/TeeTimeNotify/"
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
 alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
 
