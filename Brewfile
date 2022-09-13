@@ -27,7 +27,7 @@ cask "bettertouchtool"              # macOS customizer
 cask "brave-browser"                # browser
 cask "caffeine"                     # prevent computer sleep
 cask "firefox"                      # browser
-cask "font-victor-mono-nerd-font"   # font
+cask "font-fantasque-sans-mono-nerd-font"   # font
 cask "iterm2"                       # terminal
 cask "spotify"                      # music player
 cask "visual-studio-code"           # text editor / IDE
