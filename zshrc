@@ -32,23 +32,6 @@ export NOTES_PATH="$HOME/Documents/Notes"
 
 
 #--------------------------------------------------------------------------
-# Startup
-#--------------------------------------------------------------------------
-
-# First iterm window, start tmux
-if [[ $TERM_PROGRAM != "tmux" ]]; then
-    if [[ $ITERM_SESSION_ID =~ w0t0p0* ]]; then  # iTerm window 0, tab 0, pane 0
-        tmux new -s main; exit
-    fi
-else
-    # First tmux pane and not in Vim
-    if [[ $(tmux list-panes | wc -l) -eq 1 && -z ${VIM+x} ]]; then
-        $DOTFILES_PATH/scripts/welcome.sh
-    fi
-fi
-
-
-#--------------------------------------------------------------------------
 # General config
 #--------------------------------------------------------------------------
 
