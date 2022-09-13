@@ -33,7 +33,6 @@
 	unstage = reset --
 	last = log -1 HEAD
 	clone = clone --recursive
-	push = push -u
 	c = commit -m
 
 	# Modified version of lg2 from https://stackoverflow.com/a/34467298
@@ -50,6 +49,7 @@
 	branch = false
 [push]
 	default = current
+	autoSetupRemote = true
 [core]
 	editor = nvim
 	pager = delta
