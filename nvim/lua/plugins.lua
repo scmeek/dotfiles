@@ -62,6 +62,13 @@ return require('packer').startup({
             },
         })
 
+        -- Tabline
+        use({
+            'romgrk/barbar.nvim',
+            config = get_config('barbar'),
+            requires = { 'kyazdani42/nvim-web-devicons' },
+        })
+
         -- File explorer
         use({
             'kyazdani42/nvim-tree.lua',
@@ -79,13 +86,6 @@ return require('packer').startup({
         use({
             'nvim-lualine/lualine.nvim',
             config = get_config('lualine'),
-            requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        })
-
-        -- Tabline
-        use({
-            'romgrk/barbar.nvim',
-            config = get_config('barbar'),
             requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         })
 
