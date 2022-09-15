@@ -127,7 +127,7 @@ return require('packer').startup({
         })
 
         use({
-            'numToStr/Comment.nvim',
+            'terrortylor/nvim-comment',
             config = get_config('comment'),
         })
 
