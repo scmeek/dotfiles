@@ -31,6 +31,13 @@ return require('packer').startup({
             },
         })
 
+        -- LSP UI
+        use({
+            'glepnir/lspsaga.nvim',
+            branch = 'main',
+            config = get_config('lspsaga'),
+        })
+
         -- tree-sitter
         use({
             {
