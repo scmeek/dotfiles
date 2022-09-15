@@ -98,3 +98,13 @@ cmp.setup({
         }),
     },
 })
+
+-- null-ls (use Neovim as a language server to inject LSP diagnostics, code
+-- actions, etc.)
+require('null-ls').setup({
+    sources = {
+        require('null-ls').builtins.formatting.stylua,
+        require('null-ls').builtins.diagnostics.eslint,
+        require('null-ls').builtins.completion.spell,
+    },
+})

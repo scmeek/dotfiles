@@ -24,6 +24,13 @@ return require('packer').startup({
             },
         })
 
+        use({
+            'jose-elias-alvarez/null-ls.nvim',
+            requires = {
+                'nvim-lua/plenary.nvim',
+            },
+        })
+
         -- tree-sitter
         use({
             {
