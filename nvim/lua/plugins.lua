@@ -124,8 +124,7 @@ return require('packer').startup({
             config = get_config('comment'),
         })
 
-        -- Autoclose brackets
-        use('max-0406/autoclose.nvim')
+        use({ 'windwp/nvim-autopairs', config = get_config('autopairs') })
 
         use('christoomey/vim-tmux-navigator')
     end,
