@@ -108,7 +108,7 @@ return require('packer').startup({
         })
 
         use({
-            'chrisbra/Colorizer',
+            'norcalli/nvim-colorizer.lua',
             config = get_config('colorizer'),
         })
 
