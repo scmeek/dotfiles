@@ -134,6 +134,11 @@ return require('packer').startup({
         use({ 'windwp/nvim-autopairs', config = get_config('autopairs') })
 
         use('christoomey/vim-tmux-navigator')
+
+        use({
+            'akinsho/toggleterm.nvim',
+            config = get_config('toggleterm'),
+        })
     end,
     config = {
         display = {
