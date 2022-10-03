@@ -40,5 +40,6 @@ cask "firefox"                              # browser
 cask "font-fantasque-sans-mono-nerd-font"   # font
 cask "iterm2"                               # terminal
 cask "spotify"                              # music player
+cask "masscode"                             # code snippets tool
 cask "visual-studio-code"                   # text editor / IDE
 cask "zoom"                                 # video conferencing
