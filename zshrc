@@ -41,6 +41,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export DOTFILES_PATH="$HOME/Documents/dotfiles"
 export NOTES_PATH="$HOME/Documents/Notes"
+export DEV_PATH="$HOME/Documents/Development"
 eval "$(/usr/local/bin/brew shellenv)"
 
 
@@ -199,6 +200,8 @@ export PATH=$PATH:$GOROOT/bin
 # Aliases
 #--------------------------------------------------------------------------
 
+alias vd='deactivate &> /dev/null || true'
+
 alias ls="exa"
 alias ll="exa -l"
 alias la="exa -la"
@@ -206,13 +209,15 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 alias diff="nvim -d"
-alias cddotfiles="cd $DOTFILES_PATH"
-alias cddf="cddotfiles"
-alias cdnotes="cd $NOTES_PATH"
-alias cddev="cd ${HOME}/Documents/Development/"
-alias cdseanmeek="cd ${HOME}/Documents/Development/seanmeek.com/"
-alias cdsm="cdseanmeek"
-alias cdttn="cd ${HOME}/Documents/Development/TeeTimeNotify/"
+
+alias cddotfiles="cd $DOTFILES_PATH && vd"
+alias cddf="cddotfiles && vd"
+alias cdnotes="cd $NOTES_PATH && vd"
+alias cddev="cd $DEV_PATH && vd"
+alias cdseanmeek="cd ${DEV_PATH}/seanmeek.com/ && vd"
+alias cdsm="cdseanmeek && vd"
+alias cdttn="cd ${DEV_PATH}/TeeTimeNotify/ && vd"
+
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
 alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
 
