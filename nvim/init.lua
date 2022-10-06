@@ -28,17 +28,11 @@ require('plugins')
 -- Theme
 ----------------------------------------------------------------------------
 
-vim.g.nightflyWinSeparator = 2
 vim.cmd([[colorscheme base16-oceanicnext]])
 
 ----------------------------------------------------------------------------
 -- Miscellaneous
 ----------------------------------------------------------------------------
-
--- 5/4/22: CURRENTLY BROKEN FOR .PY FILES
--- Use neovim's filtype.lua (faster) over filetype.vim for filetype detection
---vim.g.do_filetype_lua = true
---vim.g.did_load_filetypes = false
 
 local local_group = vim.api.nvim_create_augroup('Local', { clear = true })
 

@@ -17,7 +17,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { buffer = bufnr })
     vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { buffer = bufnr })
     vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', { buffer = bufnr })
-    vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { buffer = bufnr })
+    vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.format()<CR>', { buffer = bufnr })
 end
 
 local servers = {
