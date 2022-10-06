@@ -1,4 +1,11 @@
-require('nvim-tree').setup({})
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
+require('nvim-tree').setup({
+    view = {
+        width = 50,
+    },
+})
 
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
 
