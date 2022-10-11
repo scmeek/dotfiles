@@ -9,6 +9,12 @@ return require('packer').startup({
     function(use)
         use('wbthomason/packer.nvim') -- Manage itself
 
+        -- Improve startup time by caching lua modules
+        use({
+            'lewis6991/impatient.nvim',
+            config = get_config('impatient'),
+        })
+
         use('RRethy/nvim-base16')
 
         -- Language server protocol
