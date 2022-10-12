@@ -33,6 +33,16 @@ require('formatter').setup({
                 }
             end,
         },
+        toml = {
+            function()
+                return {
+                    exe = 'taplo',
+                    args = { 'fmt', '-' },
+                    stdin = true,
+                    try_node_modules = true,
+                }
+            end,
+        },
         typescript = prettier_default,
     },
 })
