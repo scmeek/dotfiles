@@ -145,6 +145,11 @@ return require('packer').startup({
             'akinsho/toggleterm.nvim',
             config = get_config('toggleterm'),
         })
+
+        use({
+            'karb94/neoscroll.nvim',
+            config = get_config('neoscroll'),
+        })
     end,
     config = {
         display = {
