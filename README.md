@@ -35,27 +35,37 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
 
 2. Install [Homebrew](https://brew.sh/)
 
-   `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+   ```sh
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
 
 3. Sync Homebrew packages
 
-   `brew bundle install`
+   ```sh
+   brew bundle install
+   ```
 
 ### [zsh](https://www.zsh.org/)
 
 1. Install [Oh My Zsh](https://ohmyz.sh/)
 
-   `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+   ```sh
+   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+   ```
 
 ### [neovim](https://neovim.io/)
 
 1. Add additional neovim language servers
 
-   `npm i -g vscode-langservers-extracted`
+   ```sh
+   npm i -g vscode-langservers-extracted
+   ```
 
 2. Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
-   `git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
+   ```sh
+   git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+   ```
 
 3. Run `:PackerSync` in neovim
 
@@ -63,7 +73,7 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
 
 [dotbot](https://github.com/anishathalye/dotbot) should take care of everything by placing symlinks in the appropriate places.
 
-```
+```sh
 git submodule update --init --recursive
 ./install
 ```
