@@ -25,6 +25,14 @@ require('formatter').setup({
         },
         javascript = prettier_default,
         markdown = prettier_default,
+        rust = {
+            function()
+                return {
+                    exe = 'rustfmt',
+                    stdin = true,
+                }
+            end,
+        },
         typescript = prettier_default,
     },
 })
