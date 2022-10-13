@@ -33,6 +33,14 @@ require('formatter').setup({
                 }
             end,
         },
+        sql = {
+            function()
+                return {
+                    exe = 'pg_format --inplace -',
+                    stdin = true,
+                }
+            end,
+        },
         toml = {
             function()
                 return {

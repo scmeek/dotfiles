@@ -30,6 +30,7 @@ brew "pyright"                              # neovim lsp
 brew "rust-analyzer"                        # neovim lsp
 brew "stylua"                               # neovim lsp
 brew "taplo"                                # toml toolkit, formatter
+brew "pgformatter"                          # SQL formatter
 
 # casks
 cask "alacritty"                            # terminal
