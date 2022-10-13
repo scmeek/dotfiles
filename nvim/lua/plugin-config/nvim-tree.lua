@@ -3,7 +3,7 @@ vim.g.loaded_netrwPlugin = 1
 
 require('nvim-tree').setup({
     view = {
-        width = 50,
+        width = vim.g.custom_filetree_offset, -- custom_filetree_offset assigned in init.lua
     },
 })
 

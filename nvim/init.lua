@@ -34,6 +34,8 @@ vim.cmd([[colorscheme base16-oceanicnext]])
 -- Miscellaneous
 ----------------------------------------------------------------------------
 
+vim.g.custom_filetree_offset = 50
+
 local local_group = vim.api.nvim_create_augroup('Local', { clear = true })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
