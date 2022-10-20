@@ -210,7 +210,7 @@ alias vi="nvim"
 alias v="nvim"
 alias diff="nvim -d"
 
-alias cd="cd && vd; "
+alias cd="vd && cd "
 alias cddotfiles="cd $DOTFILES_PATH"
 alias cddf="cddotfiles"
 alias cdnotes="cd $NOTES_PATH"
