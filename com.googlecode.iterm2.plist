@@ -2973,7 +2973,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>FantasqueSansMonoNerdFontCompleteM-Regular 14</string>
+			<string>FiraCodeNerdFontComplete-Regular 12.5</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -3049,7 +3049,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
-			<true/>
+			<false/>
 			<key>Vertical Spacing</key>
 			<real>1.1000000000000001</real>
 			<key>Visual Bell</key>

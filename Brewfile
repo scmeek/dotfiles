@@ -39,7 +39,9 @@ cask "bettertouchtool"                      # macOS customizer
 cask "brave-browser"                        # browser
 cask "caffeine"                             # prevent computer sleep
 cask "firefox"                              # browser
-cask "font-fantasque-sans-mono-nerd-font"   # font
+cask "font-fira-code-nerd-font"             # font
+cask "font-fira-mono-nerd-font"             # font
+cask "font-victor-mono-nerd-font"           # font
 cask "iterm2"                               # terminal
 cask "spotify"                              # music player
 cask "masscode"                             # code snippets tool
