@@ -45,7 +45,7 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
    brew bundle install
    ```
 
-### [zsh](https://www.zsh.org/)
+### [Zsh](https://www.zsh.org/)
 
 1. Install [Oh My Zsh](https://ohmyz.sh/)
 
@@ -53,27 +53,32 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
 
-### [neovim](https://neovim.io/)
+### [Neovim](https://neovim.io/)
 
-1. Add additional neovim language servers
+1. Initialize submodules to retrieve `nvim-kickstarter` `init.lua`.
+
+   ```sh
+   git submodule update --init --recursive
+   ```
+
+2. Add additional Neovim language servers
 
    ```sh
    npm i -g vscode-langservers-extracted
    ```
 
-2. Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
+3. Open Neovim
 
-   ```sh
-   git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-   ```
-
-3. Run `:PackerSync` in neovim
+   - [packer.nvim](https://github.com/wbthomason/packer.nvim) should install plugins
+      - If not, run `:PackerSync` to force
 
 ## Synchronize configuration files
 
 [dotbot](https://github.com/anishathalye/dotbot) should take care of everything by placing symlinks in the appropriate places.
 
 ```sh
+# If submodules haven't been initialized:
 git submodule update --init --recursive
+
 ./install
 ```
