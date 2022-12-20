@@ -205,8 +205,6 @@ alias vd='deactivate &> /dev/null || true'
 alias ls="exa"
 alias ll="exa -l"
 alias la="exa -la"
-alias vim="nvim"
-alias vi="nvim"
 alias v="nvim"
 alias diff="nvim -d"
 
