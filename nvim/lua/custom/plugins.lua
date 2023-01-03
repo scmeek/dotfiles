@@ -80,4 +80,9 @@ return function(use)
         'akinsho/toggleterm.nvim',
         config = get_config('toggleterm'),
     })
+
+    use({
+        'folke/trouble.nvim',
+        config = get_config('trouble'),
+    })
 end
