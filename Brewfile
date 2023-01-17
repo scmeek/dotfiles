@@ -12,6 +12,7 @@ brew "node"                                 # nodejs
 brew "pinentry-mac"                         # macOS integration for GPG
 brew "ripgrep"                              # fuzzy-finder
 brew "rustup-init"                          # rust
+brew "tig"                                  # git TUI app
 brew "tmux"                                 # terminal multiplexer
 brew "trash"                                # move to trash cli https://hasseg.org/trash/
 brew "tree"                                 # directory display
