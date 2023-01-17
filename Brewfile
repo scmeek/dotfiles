@@ -7,6 +7,7 @@ brew "fzf"                                  # fuzzy-finder
 brew "git"                                  # source control
 brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
+brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
 brew "pinentry-mac"                         # macOS integration for GPG
 brew "ripgrep"                              # fuzzy-finder
