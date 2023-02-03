@@ -26,42 +26,34 @@ font:
    x: 1
    y: 6
 
-draw_bold_text_with_bright_colors: true
-
-# Base16 OceanicNext 256 - alacritty color config
-# https://github.com/voronianski/oceanic-next-color-scheme
+# https://github.com/aarowill/base16-alacritty/blob/master/colors/base16-nord.yml
 colors:
   primary:
-    background: '#212121'
-    foreground: '#eeffff'
+    background: '#21242b'
+    foreground: '#e5e9f0'
   cursor:
-    text: '#212121'
-    cursor: '#eeffff'
+    text: '#21242b'
+    cursor: '#e5e9f0'
   normal:
-    black:   '#212121'
-    red:     '#f07178'
-    green:   '#c3e88d'
-    yellow:  '#ffcb6b'
-    blue:    '#82aaff'
-    magenta: '#c792ea'
-    cyan:    '#89ddff'
-    white:   '#eeffff'
+    black:   '#21242b'
+    red:     '#bf616a'
+    green:   '#a3be8c'
+    yellow:  '#ebcb8b'
+    blue:    '#81a1c1'
+    magenta: '#b48ead'
+    cyan:    '#88c0d0'
+    white:   '#e5e9f0'
   bright:
-    black:   '#4a4a4a'
-    red:     '#f78c6c'
-    green:   '#c3e88d'  # Used in `git diff`
-    yellow:  '#ffcb6b'  # Used in `git diff`
-    blue:    '#b2ccd6'
-    magenta: '#eeffff'
-    cyan:    '#ff5370'
-    white:   '#ffffff'
-  indexed_colors:
-    - { index: 16, color: '#f99157' }
-    - { index: 17, color: '#ab7967' }
-    - { index: 18, color: '#343d46' }
-    - { index: 19, color: '#4f5b66' }
-    - { index: 20, color: '#a7adba' }
-    - { index: 21, color: '#cdd3de' }
+    black:   '#4c566a'
+    red:     '#d08770'
+    green:   '#a7cf9f'  # Used in `git diff`
+    yellow:  '#f5eaa6'  # Used in `git diff`
+    blue:    '#d8dee9'
+    magenta: '#eceff4'
+    cyan:    '#5e81ac'
+    white:   '#8fbcbb'
+
+draw_bold_text_with_bright_colors: true
 
 shell:
   program: /bin/zsh
