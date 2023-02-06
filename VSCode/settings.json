@@ -93,8 +93,5 @@
   "workbench.editor.untitled.hint": "hidden",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.preferredDarkColorTheme": "Base16 Dark Oceanic Next",
-  "workbench.preferredLightColorTheme": "Base16 Light Ocean",
   "window.autoDetectColorScheme": true,
-  "workbench.colorTheme": "Base16 Light Ocean",
 }
