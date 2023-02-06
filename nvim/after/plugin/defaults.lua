@@ -19,6 +19,8 @@
 -- General
 ----------------------------------------------------------------------------
 
+vim.cmd[[colorscheme nord]]
+
 -- :h <option> for details
 -- :options lists all
 

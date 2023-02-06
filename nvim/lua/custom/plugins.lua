@@ -4,6 +4,8 @@ local function get_config(name)
 end
 
 return function(use)
+    use ('arcticicestudio/nord-vim')
+
     use({
         'folke/which-key.nvim',
         config = get_config('which-key'),
