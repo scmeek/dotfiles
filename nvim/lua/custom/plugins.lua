@@ -1,5 +1,5 @@
 -- Get `require` statement for corresponding config file
-function get_config(name)
+local function get_config(name)
     return string.format('require("custom/config/%s")', name)
 end
 
