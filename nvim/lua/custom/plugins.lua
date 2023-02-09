@@ -4,7 +4,7 @@ local function get_config(name)
 end
 
 return function(use)
-    use ('arcticicestudio/nord-vim')
+    use('arcticicestudio/nord-vim')
 
     use({
         'folke/which-key.nvim',
@@ -87,4 +87,6 @@ return function(use)
         'folke/trouble.nvim',
         config = get_config('trouble'),
     })
+
+    use({ 'chaoren/vim-wordmotion' })
 end
