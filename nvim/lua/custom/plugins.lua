@@ -30,6 +30,14 @@ return function(use)
     })
 
     use({
+        'simrat39/rust-tools.nvim',
+        config = get_config('rust-tools'),
+        requires = {
+            'simrat39/rust-tools.nvim',
+        },
+    })
+
+    use({
         'ThePrimeagen/Harpoon',
         config = get_config('harpoon'),
         requires = {
