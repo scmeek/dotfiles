@@ -97,4 +97,6 @@ return function(use)
     })
 
     use({ 'chaoren/vim-wordmotion' })
+
+    use({ 'github/copilot.vim' })
 end
