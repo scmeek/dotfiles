@@ -98,5 +98,10 @@ return function(use)
 
     use({ 'chaoren/vim-wordmotion' })
 
-    use({ 'github/copilot.vim' })
+    use({ 'zbirenbaum/copilot.lua', config = get_config('copilot') })
+    use({
+        'zbirenbaum/copilot-cmp',
+        config = get_config('copilot-cmp'),
+        after = { 'copilot.lua' },
+    })
 end
