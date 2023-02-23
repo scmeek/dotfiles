@@ -15,7 +15,7 @@ return {
                 lualine_c = {
                     {
                         'filename',
-                        newfile_status = true, -- Display new file status (new file means no write after created)
+                        newfile_status = true,
                         path = 1,
                         symbols = {
                             modified = '*',
