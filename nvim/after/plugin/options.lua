@@ -8,7 +8,7 @@ vim.opt.smartindent = true
 vim.opt.copyindent = true
 vim.opt.preserveindent = true
 vim.opt.autoindent = true
-
+vim.opt.cursorline = true
 vim.opt.compatible = false
 vim.opt.showmatch = true
 vim.opt.exrc = true
