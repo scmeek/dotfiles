@@ -47,6 +47,7 @@ cask "font-fira-code-nerd-font"             # font
 cask "font-fira-mono-nerd-font"             # font
 cask "font-victor-mono-nerd-font"           # font
 cask "iterm2"                               # terminal
+cask "libreoffice"                          # office tools
 cask "spotify"                              # music player
 cask "masscode"                             # code snippets tool
 cask "visual-studio-code"                   # text editor / IDE
