@@ -21,7 +21,6 @@
     ~/.config/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
     ~/.btt_autoload_preset.json: btt_autoload_preset.json
     ~/.gitconfig: gitconfig
-    ~/.hushlogin: hushlogin  # Hush login messages on bash/zsh open
     ~/.p10k.zsh: p10k.zsh
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
@@ -32,3 +31,4 @@
 
 - create:
     - ~/.vim/undo-history
+    - ~/.hushlogin  # Hush login messages on bash/zsh open
