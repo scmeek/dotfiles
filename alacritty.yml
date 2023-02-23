@@ -17,10 +17,10 @@ font:
     style: Regular
   italic:
     family: VictorMono Nerd Font Mono
-    style: Italic
+    style: 'Light Oblique'
   bold_italic:
     family: VictorMono Nerd Font Mono
-    style: Medium Italic
+    style: 'Medium Oblique'
   size: 12
   offset:
    x: 1
