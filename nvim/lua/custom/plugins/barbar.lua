@@ -24,8 +24,8 @@ return {
             animation = false,
             closable = false,
             icons = 'both',
-            icon_separator_active = '│',
-            icon_separator_inactive = '│',
+            icon_separator_active = '',
+            icon_separator_inactive = '',
             insert_at_end = true,
             no_name_title = 'Untitled',
         })
