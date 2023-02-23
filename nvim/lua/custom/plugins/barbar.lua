@@ -20,36 +20,14 @@ return {
         { '<leader>p', ':BufferPick<CR>', desc = '[P]ick buffer' },
     },
     config = function()
-        vim.g.bufferline = {
-            animation = true,
-            auto_hide = true,
-            closable = true,
+        require('bufferline').setup({
+            animation = false,
+            closable = false,
+            icons = 'both',
             icon_separator_active = '│',
             icon_separator_inactive = '│',
-            icon_close_tab = '',
-            icon_close_tab_modified = '●',
-            icon_pinned = '車',
-            insert_at_start = true,
-            maximum_padding = 0,
-        }
-
-        vim.api.nvim_create_autocmd('BufWinEnter', {
-            pattern = '*',
-            callback = function()
-                if vim.bo.filetype == 'NvimTree' then
-                    -- custom_filetree_offset assigned in init.lua
-                    require('bufferline.api').set_offset(vim.g.custom_filetree_offset, '')
-                end
-            end,
-        })
-
-        vim.api.nvim_create_autocmd('BufWinLeave', {
-            pattern = '*',
-            callback = function()
-                if vim.fn.expand('<afile>'):match('NvimTree') then
-                    require('bufferline.api').set_offset(0)
-                end
-            end,
+            insert_at_end = true,
+            no_name_title = 'Untitled',
         })
     end,
 }
