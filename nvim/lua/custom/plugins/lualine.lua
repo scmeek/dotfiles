@@ -7,7 +7,28 @@ return {
                 theme = 'auto',
                 component_separators = { left = '', right = '' },
                 section_separators = { left = '', right = '' },
-            }
+                fmt = string.lower,
+            },
+            sections = {
+                lualine_a = { 'mode' },
+                lualine_b = { 'branch', 'diff', 'diagnostics' },
+                lualine_c = {
+                    {
+                        'filename',
+                        newfile_status = true, -- Display new file status (new file means no write after created)
+                        path = 1,
+                        symbols = {
+                            modified = '*',
+                            readonly = '[-]',
+                            unnamed = 'untitled',
+                            newfile = 'untitled',
+                        },
+                    },
+                },
+                lualine_x = { 'encoding', 'fileformat', 'filetype' },
+                lualine_y = { 'progress' },
+                lualine_z = { 'location' }
+            },
         }
     end,
 }
