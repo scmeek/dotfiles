@@ -27,6 +27,8 @@ brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 brew "neovim"                               # text editor
 brew "bash-language-server"                 # neovim lsp
 brew "clang-format"                         # neovim lsp
+brew "lazygit"                              # LazyVim optional requirement
+brew "fd"                                   # LazyVim optional requirement
 brew "prettier"                             # neovim lsp
 brew "pyright"                              # neovim lsp
 brew "rust-analyzer"                        # neovim lsp
