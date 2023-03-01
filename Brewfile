@@ -48,6 +48,7 @@ cask "font-fira-mono-nerd-font"             # font
 cask "font-victor-mono-nerd-font"           # font
 cask "iterm2"                               # terminal
 cask "libreoffice"                          # office tools
+cask "openvpn-connect"                      # OpenVPN Connect client
 cask "spotify"                              # music player
 cask "masscode"                             # code snippets tool
 cask "visual-studio-code"                   # text editor / IDE
