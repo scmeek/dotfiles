@@ -46,7 +46,6 @@ cask "firefox"                              # browser
 cask "font-fira-code-nerd-font"             # font
 cask "font-fira-mono-nerd-font"             # font
 cask "font-victor-mono-nerd-font"           # font
-cask "iterm2"                               # terminal
 cask "libreoffice"                          # office tools
 cask "openvpn-connect"                      # OpenVPN Connect client
 cask "spotify"                              # music player
