@@ -1,0 +1,26 @@
+brew "bat"                                  # `cat` alternative
+brew "node"                                 # nodejs
+brew "difftastic"
+brew "exa"
+brew "fzf"
+brew "git-delta"
+brew "gnupg"
+brew "lazygit"
+brew "ripgrep"
+brew "tree"
+
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+tap "romkatv/powerlevel10k"
+brew "romkatv/powerlevel10k/powerlevel10k"
+
+brew "neovim"
+brew "bash-language-server"
+brew "clang-format"
+brew "fd"
+brew "pgformatter"
+brew "prettier"
+brew "pyright"
+brew "rust-analyzer"
+brew "stylua"
+brew "taplo"

@@ -4,6 +4,6 @@ task/data
 task/sync_config.txt
 task/sync_certs
 
-Brewfile.lock.json
+*.lock.json
 nvim/lazy-lock.json
 

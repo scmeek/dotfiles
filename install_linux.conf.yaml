@@ -1,0 +1,23 @@
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
+- defaults:
+    link:
+      create: true  # Create parent directories as needed
+      force: true  # Removes old target, file, or folder
+
+- clean:  # Remove dead links
+    ~/:
+    ~/.config:
+      recursive: true
+
+- link:
+    ~/.config/nvim: nvim
+    ~/.config/alacritty/alacritty.yml: alacritty.yml
+    ~/.gitconfig: gitconfig
+    ~/.p10k.zsh: p10k.zsh
+    ~/.zshrc: zshrc
+    ~/Brewfile: brewfile_linux
+
+- create:
+    - ~/.vim/undo-history

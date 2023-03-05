@@ -2,7 +2,7 @@
 
 ## General
 
-Intended for macOS.
+Intended for macOS and linux.
 
 ## License
 
@@ -27,23 +27,50 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
    3. Uncheck 'Correct spelling automatically'
    4. Uncheck 'Capitalize words automatically'
 
+### linux
+
+1. Install and configure [zsh](https://www.zsh.org/)
+
+2. Install [Alacritty](https://alacritty.org/)
+
+   ```sh
+   sudo add-apt-repository ppa:aslatter/ppa -y
+   sudo apt install alacritty
+   ```
+
+   - Set Alacritty as the preferred terminal emulator
+
+3. Install [Nerd Fonts](https://www.nerdfonts.com)
+
+   - [Download](https://www.nerdfonts.com/font-downloads)
+      - FiraCode Nerd Font
+      - FiraMono Nerd Font
+      - VictorMono Nerd Font
+   - Extract compressed files and move to `~/.local/share/fonts/`
+   - Update fonts cache with `fc-cache -fv`
+
+
 ### Packages
 
-1. Clone repo and [sync the config files](#synchronize-configuration-files) to their appropriate locations
-
-   - `DefaultKeyBinding.dict` will be added/replaced which will make `Home` and `End` keys behave like Windows
-
-2. Install [Homebrew](https://brew.sh/)
+1. Install [Homebrew](https://brew.sh/)
 
    ```sh
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
 
-3. Sync Homebrew packages
+2. Sync Homebrew packages
 
    ```sh
    brew bundle install --file brewfile_macos
+   # or
+   brew bundle install --file brewfile_linux
    ```
+
+   - Follow post-install instructions
+
+3. Clone repo and [sync the config files](#synchronize-configuration-files) to their appropriate locations
+
+   - macOS: `DefaultKeyBinding.dict` will be added/replaced which will make `Home` and `End` keys behave like Windows
 
 ### [Zsh](https://www.zsh.org/)
 
@@ -76,4 +103,6 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
 git submodule update --init --recursive
 
 ./install -c install_macos.conf.yaml
+# or
+./install -c install_linux.conf.yaml
 ```
