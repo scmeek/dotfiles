@@ -202,9 +202,9 @@ export PATH=$PATH:$GOROOT/bin
 
 alias vd='deactivate &> /dev/null || true'
 
-alias ls="exa"
-alias ll="exa -l"
-alias la="exa -la"
+alias ls="exa -x"
+alias ll="exa -lh --changed"
+alias la="exa -lha --changed"
 alias v="nvim"
 alias diff="nvim -d"
 
