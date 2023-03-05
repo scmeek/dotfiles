@@ -42,7 +42,7 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
 3. Sync Homebrew packages
 
    ```sh
-   brew bundle install
+   brew bundle install --file brewfile_macos
    ```
 
 ### [Zsh](https://www.zsh.org/)
@@ -50,7 +50,7 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
 1. Install [Oh My Zsh](https://ohmyz.sh/)
 
    ```sh
-   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
 
 ### [Neovim](https://neovim.io/)
@@ -67,11 +67,6 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
    npm i -g vscode-langservers-extracted
    ```
 
-3. Open Neovim
-
-   - [packer.nvim](https://github.com/wbthomason/packer.nvim) should install plugins
-      - If not, run `:PackerSync` to force
-
 ## Synchronize configuration files
 
 [dotbot](https://github.com/anishathalye/dotbot) should take care of everything by placing symlinks in the appropriate places.
@@ -80,5 +75,5 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
 # If submodules haven't been initialized:
 git submodule update --init --recursive
 
-./install
+./install -c install_macos.conf.yaml
 ```
