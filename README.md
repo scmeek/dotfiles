@@ -106,3 +106,13 @@ git submodule update --init --recursive
 # or
 ./install -c install_linux.conf.yaml
 ```
+
+## Add cron job to auto-sync notes git repo
+
+```sh
+SCHEDULE="5 10,14,18 * * 1-5"  # mon-fri at 10:05AM, 2:05PM, and 6:05PM
+NOTES_DIR=  # path of notes git repo
+# ensure ~/log directory exists
+./scripts/cron_add_job.sh "${SCHEDULE}" "$(pwd)/scripts/git_sync.sh \"${NOTES_DIR}\" >> ~/log/notes_git_sync.log 2>&1"
+```
+
