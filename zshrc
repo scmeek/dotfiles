@@ -40,7 +40,6 @@ fi
 export ZSH="${HOME}/.oh-my-zsh"
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export DOTFILES_PATH="$HOME/Documents/dotfiles"
-export NOTES_PATH="$HOME/Documents/Notes"
 export DEV_PATH="$HOME/Documents/Development"
 eval "$(/usr/local/bin/brew shellenv)"
 
@@ -211,7 +210,6 @@ alias diff="nvim -d"
 alias cd="vd && cd "
 alias cddotfiles="cd $DOTFILES_PATH"
 alias cddf="cddotfiles"
-alias cdnotes="cd $NOTES_PATH"
 alias cddev="cd $DEV_PATH"
 alias cdseanmeek="cd ${DEV_PATH}/seanmeek.com/"
 alias cdsm="cdseanmeek"
