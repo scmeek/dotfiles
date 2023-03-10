@@ -4,7 +4,6 @@
 - defaults:
     link:
       create: true  # Create parent directories as needed
-      force: true  # Removes old target, file, or folder
 
 - clean:  # Remove dead links
     ~/:
