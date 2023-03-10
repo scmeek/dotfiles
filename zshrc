@@ -206,6 +206,7 @@ alias ll="exa -lh --changed"
 alias la="exa -lha --changed"
 alias v="nvim"
 alias diff="nvim -d"
+alias j="joplin --profile /Users/sean/.config/joplin-desktop"
 
 alias cd="vd && cd "
 alias cddotfiles="cd $DOTFILES_PATH"
