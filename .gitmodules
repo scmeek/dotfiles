@@ -4,5 +4,5 @@
 	ignore = dirty
 [submodule "kickstart.nvim"]
 	path = kickstart.nvim
-	url = git@github.com:nvim-lua/kickstart.nvim.git
+	url = git@github.com:scmeek/kickstart.nvim.git
 	ignore = dirty
