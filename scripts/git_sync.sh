@@ -31,7 +31,7 @@ fi
 
 # stash changes
 git add .
-CHANGED_FILES=$(git diff HEAD)
+CHANGED_FILES=$(git diff --no-ext-diff HEAD)
 git restore --staged .
 
 if [[ "${CHANGED_FILES}" ]]; then
