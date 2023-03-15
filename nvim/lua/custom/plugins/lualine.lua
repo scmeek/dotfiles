@@ -29,6 +29,7 @@ return {
             lualine_z = { 'location' }
         },
         extensions = {
+            'neo-tree',
             'toggleterm',
         },
     },
