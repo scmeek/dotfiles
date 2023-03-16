@@ -1,7 +1,7 @@
 return {
 	'christoomey/vim-tmux-navigator',
 	keys = {
-		{ '<leader>|', '<C-W>v', desc = 'Split [|] vertical' },
+		{ '<leader>\\', '<C-W>v', desc = 'Split [\\] vertical' },
 		{ '<leader>-', '<C-W>s', desc = 'Split [-] horizontal' },
 		{ '<C-h>', '<C-W>h', desc = 'Go to previous split' },
 		{ '<C-j>', '<C-W>j', desc = 'Go down a split' },
