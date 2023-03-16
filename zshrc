@@ -207,6 +207,7 @@ alias la="exa -lha --changed"
 alias v="nvim"
 alias diff="nvim -d"
 alias j="joplin --profile $HOME/.config/joplin-desktop"
+alias lg="lazygit"
 
 alias cd="vd && cd "
 alias cddotfiles="cd $DOTFILES_PATH"
