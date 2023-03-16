@@ -16,6 +16,7 @@
     ~/.config/nvim: nvim
     ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.config/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
+    ~/.config/lazygit/config.yml: lazygit.yml
     ~/.btt_autoload_preset.json: btt_autoload_preset.json
     ~/.gitconfig: gitconfig
     ~/.p10k.zsh: p10k.zsh

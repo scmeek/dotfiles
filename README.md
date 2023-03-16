@@ -2,7 +2,7 @@
 
 ## General
 
-Intended for macOS and linux.
+Intended for macOS and Linux.
 
 ## License
 

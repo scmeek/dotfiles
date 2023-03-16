@@ -30,7 +30,7 @@ return {
         -- lazygit
         local Terminal = require('toggleterm.terminal').Terminal
         local lazygit  = Terminal:new({
-            cmd = 'lazygit',
+            cmd = 'lazygit --use-config-file="$HOME/.config/lazygit/config.yml"',
             dir = 'git_dir',
             direction = 'float',
             float_opts = {
