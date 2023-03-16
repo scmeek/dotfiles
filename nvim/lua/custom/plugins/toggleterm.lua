@@ -34,12 +34,16 @@ return {
             dir = 'git_dir',
             direction = 'float',
             float_opts = {
-                border = 'double',
+                border = 'curved',
             },
             hidden = true,
             on_open = function(term)
                 vim.cmd('startinsert!')
                 vim.api.nvim_buf_set_keymap(term.bufnr, 'n', 'q', '<Cmd>close<CR>', {
+                    noremap = true,
+                    silent = true,
+                })
+                vim.api.nvim_buf_set_keymap(term.bufnr, 't', '<esc>', '<esc>', {
                     noremap = true,
                     silent = true,
                 })
