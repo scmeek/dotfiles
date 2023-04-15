@@ -220,6 +220,8 @@ alias cdttn="cd ${DEV_PATH}/TeeTimeNotify/"
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
 alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
 
+eval "$(github-copilot-cli alias -- "$0")"
+
 
 #--------------------------------------------------------------------------
 # Custom functions
