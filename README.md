@@ -61,9 +61,9 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
 2. Sync Homebrew packages
 
    ```sh
-   brew bundle install --file brewfile_macos
+   brew bundle install --file .brewfile_macos
    # or
-   brew bundle install --file brewfile_linux
+   brew bundle install --file .brewfile_linux
    ```
 
    - Follow post-install instructions

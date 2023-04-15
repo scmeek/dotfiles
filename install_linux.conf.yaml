@@ -17,7 +17,7 @@
     ~/.gitconfig: gitconfig
     ~/.p10k.zsh: p10k.zsh
     ~/.zshrc: zshrc
-    ~/Brewfile: brewfile_linux
+    ~/Brewfile: .brewfile_linux
 
 - create:
     - ~/.vim/undo-history
