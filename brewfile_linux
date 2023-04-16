@@ -7,6 +7,7 @@ brew "git-delta"
 brew "gnupg"
 brew "lazygit"
 brew "ripgrep"
+brew "shfmt"
 
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
