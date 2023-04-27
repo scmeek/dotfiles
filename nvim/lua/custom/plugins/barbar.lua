@@ -23,11 +23,18 @@ return {
         require('bufferline').setup({
             animation = false,
             closable = true,
-            icons = 'both',
-            icon_separator_active = '',
-            icon_separator_inactive = '',
-            icon_close_tab = '',
-            icon_close_tab_modified = '*',
+            icons = {
+                buffer_index = true,
+                button = '',
+                filetype = {
+                    enabled = true,
+                },
+                inactive = {
+                    separator = { left = '' },
+                },
+                modified = { button = '*' },
+                separator = { left = '' },
+            },
             insert_at_end = true,
             no_name_title = 'untitled',
         })
