@@ -2,10 +2,15 @@
 #
 # Sync a git remote with remote
 
-set -euo pipefail # exit on error, error on unset vars, don't mask errors
+set -Eeuo pipefail # exit on error, error on unset vars, don't mask errors
+
+err_exit() {
+	echo -e "💀 $*" >&2
+	exit 1
+}
 
 usage() {
-	echo ""
+	echo "Sync a git repo with remote"
 	echo "Usage: $0 GIT_DIR"
 	echo -e "\tGIT_DIR: The git directory to sync"
 	exit 1
@@ -15,17 +20,17 @@ if [[ $# -ne 1 ]]; then
 	usage
 fi
 
-echo ""
-echo "$(date)"
+echo "-----------------------"
+date
 
 GIT_DIR="${1/#\~/$HOME}" # Bash parameter expansion
 
-[[ ! -d "${GIT_DIR}" ]] && echo "💀 ${GIT_DIR} does not exist"
+[[ -d "${GIT_DIR}" ]] || err_exit "${GIT_DIR} does not exist"
 
 cd "${GIT_DIR}"
 
 if [[ ! "$(git rev-parse --is-inside-work-tree 2>/dev/null)" ]]; then
-	echo "💀 ${GIT_DIR} is not a git repo"
+	err_exit "${GIT_DIR} is not a git repo"
 fi
 
 # stash changes
@@ -38,7 +43,7 @@ if [[ "${CHANGED_FILES}" ]]; then
 fi
 
 # get latest
-git pull --rebase
+git pull --rebase || err_exit "Unable to pull repo from remote"
 
 # unstash changes
 if [[ "${CHANGED_FILES}" ]]; then
@@ -46,11 +51,11 @@ if [[ "${CHANGED_FILES}" ]]; then
 
 	git add .
 
-	git commit -m "Automated update"
+	git commit -m "Automated update" || err_exit "Unable to push repo to remote"
 
 	git push
 fi
 
 echo "✅ Synced ${GIT_DIR}"
-echo "-----------------------"
+echo ""
 exit 0
