@@ -13,6 +13,7 @@
 - link:
     '~/Library/Application Support/Code/User/settings.json': vscode/settings.json
     '/Users/sean/Library/KeyBindings/DefaultKeyBinding.dict': DefaultKeyBinding.dict
+    ~/.cargo/config.toml: cargoconfig.toml
     ~/.config/nvim: nvim
     ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.config/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
