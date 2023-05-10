@@ -23,7 +23,7 @@
     ~/.p10k.zsh: p10k.zsh
     ~/.tmux.conf: tmux.conf
     ~/.zshrc: zshrc
-    ~/Brewfile: .brewfile_macos
+    ~/Brewfile: brewfile_macos
 
     # Make Home and End keys Windows-like, needs reboot
     '/Users/sean/Library/KeyBindings/DefaultKeyBinding.dict': DefaultKeyBinding.dict
