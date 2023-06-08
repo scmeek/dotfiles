@@ -204,6 +204,7 @@ alias vd='deactivate &> /dev/null || true'
 alias ls="exa -x"
 alias ll="exa -lh --changed"
 alias la="exa -lha --changed"
+alias cat="bat --style=plain"
 alias v="nvim"
 alias diff="nvim -d"
 alias j="joplin --profile $HOME/.config/joplin-desktop"
