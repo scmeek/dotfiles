@@ -1,5 +1,6 @@
 #!/bin/bash
 set -Eeuo pipefail
+#dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
 
 usage() {
 	echo "Backs up main user directories and files to Veracrypt encrypted volume"
@@ -20,9 +21,9 @@ user_directories=(
 	Pictures
 	Videos
 )
-backup_volume_diskuuid="ECFBF499-DBE9-4CDF-814D-A429E5964929"
-keychain_item_name="MyPassportVeraCryptVolume"
-mount_point="/Volumes/MyPassport"
+backup_volume_diskuuid="C9107440-03AB-42CE-894B-914A9FD8D84F"
+keychain_item_name="ToshibaVeraCryptVolume"
+mount_point="/Volumes/Toshiba"
 
 red="\033[0;31m"
 blue="\033[0;34m"
@@ -65,6 +66,7 @@ if [[ -z "${mounted_directory}" ]]; then
 		err_exit "Failed to find password for ${keychain_item_name}"
 
 	print_msg "Mounting volume"
+	print_msg "If the next step appears to hang, the terminal may need access to Network Devices. Attempt pressing \"Enter\" to receive a prompt to enter Administrator password to mount the device."
 	"${veracrypt_app}" --text \
 		--mount "${volume}" "${mount_point}" \
 		--password "${volume_password}" \
