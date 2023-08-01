@@ -37,10 +37,10 @@ fi
 # Environment variables
 #--------------------------------------------------------------------------
 
-export ZSH="${HOME}/.oh-my-zsh"
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
-export DOTFILES_PATH="$HOME/Documents/dotfiles"
-export DEV_PATH="$HOME/Documents/Development"
+ZSH="${HOME}/.oh-my-zsh"
+ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+DOTFILES_PATH="$HOME/Documents/dotfiles"
+DEV_PATH="$HOME/Documents/Development"
 eval "$(/usr/local/bin/brew shellenv)"
 
 
@@ -111,8 +111,8 @@ source $ZSH/oh-my-zsh.sh
 #--------------------------------------------------------------------------
 
 # Set default editor to vim
-export EDITOR=nvim
-export VISUAL=nvim
+EDITOR=nvim
+VISUAL=nvim
 
 bindkey -v  # vim mode
 
@@ -142,9 +142,9 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export GPG_TTY=$(tty)
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/bin:$PATH"
+GPG_TTY=$(tty)
+PATH="/usr/local/sbin:$PATH"
+PATH="/usr/local/bin:$PATH"
 
 # GNU only ('dircolors')
 #zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
@@ -178,7 +178,7 @@ else
     if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
         . "/usr/local/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/usr/local/anaconda3/bin:$PATH"
+        PATH="/usr/local/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -189,10 +189,10 @@ unset __conda_setup
 # Golang
 #--------------------------------------------------------------------------
 
-export GOPATH=$HOME/Documents/Development/Go
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+GOPATH=$HOME/Documents/Development/Go
+GOROOT=/usr/local/opt/go/libexec
+PATH=$PATH:$GOPATH/bin
+PATH=$PATH:$GOROOT/bin
 
 
 #--------------------------------------------------------------------------
