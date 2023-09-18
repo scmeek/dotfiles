@@ -201,6 +201,7 @@ PATH=$PATH:$GOROOT/bin
 
 alias vd='deactivate &> /dev/null || true'
 
+alias shred="shred -uvz"
 alias ls="exa -x"
 alias ll="exa -lh --changed"
 alias la="exa -lha --changed"
