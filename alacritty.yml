@@ -1,5 +1,7 @@
 # Defaults and descriptions here: https://github.com/alacritty/alacritty/blob/master/alacritty.yml
 window:
+  padding:
+    x: 2
   dynamic_padding: true
   decorations: buttonless
     #opacity: 0.9
