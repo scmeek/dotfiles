@@ -36,6 +36,9 @@ return {
                 separator = { left = '' },
             },
             insert_at_end = true,
+            sidebar_filetypes = { -- Offset
+                ['neo-tree'] = { event = 'BufWipeout' },
+            },
             no_name_title = 'untitled',
         })
     end,

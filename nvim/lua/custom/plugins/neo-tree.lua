@@ -1,5 +1,3 @@
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-
 return {
     'nvim-neo-tree/neo-tree.nvim',
     version = '*',
@@ -13,6 +11,7 @@ return {
     },
     config = function()
         vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+        vim.cmd([[ let g:nvim_tree_quit_on_open = 0 ]]) -- Doesn't play well with barbar
 
         vim.fn.sign_define('DiagnosticSignError',
             { text = ' ', texthl = 'DiagnosticSignError' })
