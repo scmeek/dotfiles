@@ -46,10 +46,11 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.timeoutlen = 500
 vim.opt.updatetime = 50
+vim.opt.wildmenu = true
+vim.opt.wildoptions = 'pum'
 
 vim.opt.termguicolors = true
 
 -- More natural split opening
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-
