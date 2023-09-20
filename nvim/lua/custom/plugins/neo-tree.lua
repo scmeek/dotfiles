@@ -25,6 +25,13 @@ return {
         require('neo-tree').setup({
             close_if_last_window = true,
             sort_case_insensitive = true,
+            default_component_configs = {
+                git_status = {
+                    symbols = {
+                        modified = "", -- Remove redundant symbol
+                    },
+                },
+            }
         })
     end,
 }
