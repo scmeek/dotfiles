@@ -13,7 +13,6 @@ return {
 				null_ls.builtins.completion.spell,
 
 				null_ls.builtins.formatting.shfmt,
-				null_ls.builtins.formatting.prettier,
 			},
 			-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
 			-- you can reuse a shared lspconfig on_attach callback here
