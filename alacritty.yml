@@ -14,7 +14,7 @@ font:
     style: Regular
   bold:
     family: FiraCode Nerd Font
-    style: Medium
+    style: Retina
   italic:
     family: VictorMono Nerd Font
     style: 'Light Oblique'
