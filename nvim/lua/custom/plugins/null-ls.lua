@@ -7,11 +7,13 @@ return {
 	},
 	config = function()
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
-		require('null-ls').setup({
+		local null_ls = require('null-ls')
+		null_ls.setup({
 			sources = {
-				require('null-ls').builtins.formatting.shfmt,
-				require('null-ls').builtins.formatting.eslint,
-				require('null-ls').builtins.formatting.prettier,
+				null_ls.builtins.completion.spell,
+
+				null_ls.builtins.formatting.shfmt,
+				null_ls.builtins.formatting.prettier,
 			},
 			-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save
 			-- you can reuse a shared lspconfig on_attach callback here
