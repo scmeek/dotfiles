@@ -26,32 +26,42 @@ font:
    x: 0
    y: 4
 
-# https://github.com/aarowill/base16-alacritty/blob/master/colors/base16-nord.yml
+# Note: colors.bright.green and colors.bright.yellow are used in `git diff`
+
+# hardhacker colorscheme for alacritty
+# by xin wu, https://github.com/hardhackerlabs/theme-alacritty
 colors:
+  # Default colors
   primary:
-    background: '#21242b'
-    foreground: '#e5e9f0'
+    background: '0x282433'
+    foreground: '0xeee9fc'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '#21242b'
-    cursor: '#e5e9f0'
+    text: '0xeee9fc'
+    cursor: '0xeee9fc'
+
+  # Normal colors
   normal:
-    black:   '#21242b'
-    red:     '#bf616a'
-    green:   '#a3be8c'
-    yellow:  '#ebcb8b'
-    blue:    '#81a1c1'
-    magenta: '#b48ead'
-    cyan:    '#88c0d0'
-    white:   '#e5e9f0'
+    black:   '0x282433'
+    red:     '0xe965a5'
+    green:   '0xb1f2a7'
+    yellow:  '0xebde76'
+    blue:    '0xb1baf4'
+    magenta: '0xe192ef'
+    cyan:    '0xb3f4f3'
+    white:   '0xeee9fc'
+
+  # Bright colors
   bright:
-    black:   '#4c566a'
-    red:     '#d08770'
-    green:   '#a7cf9f'  # Used in `git diff`
-    yellow:  '#f5eaa6'  # Used in `git diff`
-    blue:    '#d8dee9'
-    magenta: '#eceff4'
-    cyan:    '#5e81ac'
-    white:   '#8fbcbb'
+    black:   '0x3f3951'
+    red:     '0xe965a5'
+    green:   '0xb1f2a7'
+    yellow:  '0xebde76'
+    blue:    '0xb1baf4'
+    magenta: '0xe192ef'
+    cyan:    '0xb3f4f3'
+    white:   '0xeee9fc'
 
 draw_bold_text_with_bright_colors: true
 
