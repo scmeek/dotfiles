@@ -31,7 +31,16 @@ return {
                         modified = "", -- Remove redundant symbol
                     },
                 },
-            }
+            },
+            filesystem = {
+                filtered_items = {
+                    visible = true,
+                    never_show = {
+                        ".DS_Store",
+                        "thumbs.db"
+                    },
+                },
+            },
         })
     end,
 }
