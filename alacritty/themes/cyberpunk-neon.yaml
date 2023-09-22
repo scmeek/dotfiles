@@ -1,49 +1,48 @@
-schemes:
-  # Cyberpunk-Neon colours
-  # https://github.com/Roboron3042/Cyberpunk-Neon/blob/master/terminal/alacritty/alacritty.yml
-  cyberpunk-neon: &cyberpunk-neon
-    # Default colours
-    primary:
-      background: '#000b1e'
-      foreground: '#0abdc6'
+# Cyberpunk-Neon colours
+# https://github.com/Roboron3042/Cyberpunk-Neon/blob/master/terminal/alacritty/alacritty.yml
+colors:
+  # Default colours
+  primary:
+    background: '#000b1e'
+    foreground: '#0abdc6'
 
-    # Colors that should be used to draw the terminal cursor. If these are unset,
-    # the cursor colour will be the inverse of the cell colour.
-    cursor:
-      text: '#2e2e2d'
-      # text: '#000000'
-      cursor: '#ffffff'
+  # Colors that should be used to draw the terminal cursor. If these are unset,
+  # the cursor colour will be the inverse of the cell colour.
+  cursor:
+    text: '#2e2e2d'
+    # text: '#000000'
+    cursor: '#ffffff'
 
-    # Normal colors
-    normal:
-      black:   '#123e7c'
-      red:     '#ff0000'
-      green:   '#d300c4'
-      yellow:  '#f57800'
-      blue:    '#123e7c'
-      magenta: '#711c91'
-      cyan:    '#0abdc6'
-      white:   '#d7d7d5'
+  # Normal colors
+  normal:
+    black:   '#123e7c'
+    red:     '#ff0000'
+    green:   '#d300c4'
+    yellow:  '#f57800'
+    blue:    '#123e7c'
+    magenta: '#711c91'
+    cyan:    '#0abdc6'
+    white:   '#d7d7d5'
 
-    # Bright colors
-    bright:
-      black:   '#1c61c2'
-      red:     '#ff0000'
-      green:   '#d300c4'
-      yellow:  '#f57800'
-      blue:    '#00ff00'
-      magenta: '#711c91'
-      cyan:    '#0abdc6'
-      white:   '#d7d7d5'
+  # Bright colors
+  bright:
+    black:   '#1c61c2'
+    red:     '#ff0000'
+    green:   '#d300c4'
+    yellow:  '#f57800'
+    blue:    '#00ff00'
+    magenta: '#711c91'
+    cyan:    '#0abdc6'
+    white:   '#d7d7d5'
 
-    # dim colors
-    dim:
-      black:   '#1c61c2'
-      red:     '#ff0000'
-      green:   '#d300c4'
-      yellow:  '#f57800'
-      blue:    '#123e7c'
-      magenta: '#711c91'
-      cyan:    '#0abdc6'
-      white:   '#d7d7d5'
+  # dim colors
+  dim:
+    black:   '#1c61c2'
+    red:     '#ff0000'
+    green:   '#d300c4'
+    yellow:  '#f57800'
+    blue:    '#123e7c'
+    magenta: '#711c91'
+    cyan:    '#0abdc6'
+    white:   '#d7d7d5'
 
