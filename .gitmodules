@@ -6,3 +6,6 @@
 	path = kickstart.nvim
 	url = git@github.com:scmeek/kickstart.nvim.git
 	ignore = dirty
+[submodule "alacritty-theme"]
+	path = alacritty-theme
+	url = git@github.com:alacritty/alacritty-theme.git
