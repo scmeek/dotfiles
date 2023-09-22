@@ -199,7 +199,7 @@ PATH=$PATH:$GOROOT/bin
 # Aliases
 #--------------------------------------------------------------------------
 
-alias vd='deactivate &> /dev/null || true'
+alias vd="deactivate &> /dev/null || true"
 
 alias shred="shred -uvz"
 alias ls="exa -x"
@@ -220,7 +220,7 @@ alias cdsm="cdseanmeek"
 alias cdtt="cd ${DEV_PATH}/tee-trekker/"
 
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
-alias doawake="caffeinate -dimsu &"  # Prevent sleep ('caffeine' required)
+alias doawake="caffeinate -dimsu &"  # Prevent sleep (`caffeine` required)
 
 eval "$(github-copilot-cli alias -- "$0")"
 
@@ -239,7 +239,7 @@ repl() {
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         rg -l "$2" $1 | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
-        echo 'Replaced all occurrences of $2 with $3 in $1.'
+        echo "Replaced all occurrences of $2 with $3 in $1."
     fi
 }
 
