@@ -15,7 +15,7 @@
     '/Users/sean/Library/KeyBindings/DefaultKeyBinding.dict': DefaultKeyBinding.dict
     ~/.cargo/config.toml: cargoconfig.toml
     ~/.config/nvim: nvim
-    ~/.config/alacritty/alacritty.yml: alacritty.yml
+    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
     ~/.config/com.googlecode.iterm2.plist: com.googlecode.iterm2.plist
     ~/.config/lazygit/config.yml: lazygit.yml
     ~/.btt_autoload_preset.json: btt_autoload_preset.json
