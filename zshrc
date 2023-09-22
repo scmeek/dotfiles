@@ -73,6 +73,9 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
+# Helps syntax highlighting for `bat` for man pages and help text
+export LESS_TERMCAP_md=$(tput bold; tput setaf 4) # blue
+
 
 #--------------------------------------------------------------------------
 # Homebrew
@@ -100,7 +103,6 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 #--------------------------------------------------------------------------
 
 plugins=(
-    colored-man-pages
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -201,11 +203,15 @@ PATH=$PATH:$GOROOT/bin
 
 alias vd="deactivate &> /dev/null || true"
 
+BAT="bat --style=plain --theme=Coldark-Dark --paging=always --italic-text=always --color=always"
+export MANPAGER="sh -c 'col -bx | ${BAT} --language=man'"
+alias -g bat="${BAT}"
+alias -g cat="${BAT}"
+
 alias shred="shred -uvz"
 alias ls="exa -x"
 alias ll="exa -lh --changed"
 alias la="exa -lha --changed"
-alias cat="bat --style=plain"
 alias v="nvim"
 alias diff="nvim -d"
 alias j="joplin --profile $HOME/.config/joplin-desktop"
