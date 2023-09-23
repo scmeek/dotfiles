@@ -204,8 +204,9 @@ PATH=$PATH:$GOROOT/bin
 alias vd="deactivate &> /dev/null || true"
 
 BAT="bat --style=plain --theme=Coldark-Dark --paging=always --italic-text=always --color=always"
-export MANPAGER="sh -c 'col -bx | ${BAT} --language=man'"
 alias -g bat="${BAT}"
+export MANPAGER="sh -c 'col -bx | ${BAT} --language=man'"
+alias -g -- --help='--help 2>&1 | bat --language=help'
 alias -g cat="${BAT}"
 
 alias shred="shred -uvz"
