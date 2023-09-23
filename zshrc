@@ -207,7 +207,7 @@ BAT="bat --style=plain --theme=Coldark-Dark --paging=always --italic-text=always
 alias -g bat="${BAT}"
 export MANPAGER="sh -c 'col -bx | ${BAT} --language=man'"
 alias -g -- --help='--help 2>&1 | bat --language=help'
-alias -g cat="${BAT}"
+alias -g cat="bat"
 
 alias shred="shred -uvz"
 alias ls="exa -x"
