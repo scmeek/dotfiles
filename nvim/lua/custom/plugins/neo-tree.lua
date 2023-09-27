@@ -34,7 +34,7 @@ return {
             },
             filesystem = {
                 filtered_items = {
-                    visible = true,
+                    visible = false,
                     never_show = {
                         ".DS_Store",
                         "thumbs.db"
