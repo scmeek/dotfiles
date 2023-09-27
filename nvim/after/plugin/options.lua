@@ -37,7 +37,7 @@ vim.opt.wildoptions = 'pum'
 vim.opt.inccommand = 'split' -- Live substitution
 vim.opt.showbreak = '↪'
 vim.opt.list = true
-vim.opt.listchars = { tab = '| ', trail = '·', eol = '¬', extends = '>', }
+vim.opt.listchars = { tab = '| ', trail = '·', extends = '>', }
 vim.opt.mouse = 'a'
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.confirm = true
