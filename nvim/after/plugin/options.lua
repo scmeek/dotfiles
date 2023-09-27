@@ -47,6 +47,9 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.timeoutlen = 500
 vim.opt.updatetime = 50
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevelstart = 99 -- start unfolded
 
 vim.opt.termguicolors = true
 
