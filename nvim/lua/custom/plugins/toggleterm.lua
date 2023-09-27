@@ -48,6 +48,6 @@ return {
             lazygit:toggle()
         end
 
-        vim.keymap.set('n', '<leader>l', '<Cmd>lua _LAZYGIT_TOGGLE()<CR>', { desc = '[L]azygit' })
+        vim.keymap.set('n', '<leader>gl', '<Cmd>lua _LAZYGIT_TOGGLE()<CR>', { desc = '[L]azy[g]it' })
     end,
 }
