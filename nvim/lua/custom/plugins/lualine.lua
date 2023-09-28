@@ -1,3 +1,4 @@
+local constants = require('constants')
 local icons = require('icons')
 
 return {
@@ -19,10 +20,10 @@ return {
                     newfile_status = true,
                     path = 1,
                     symbols = {
-                        unnamed = 'untitled',
-                        newfile = 'untitled',
                         modified = icons.status.modified,
                         readonly = icons.status.readonly,
+                        unnamed = constants.newfile_name,
+                        newfile = constants.newfile_name,
                     },
                 },
             },

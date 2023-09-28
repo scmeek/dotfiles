@@ -1,3 +1,5 @@
+local constants = require('constants')
+
 return {
     'romgrk/barbar.nvim',
     dependencies = {
@@ -40,7 +42,7 @@ return {
             sidebar_filetypes = { -- Offset
                 ['neo-tree'] = { event = 'BufWipeout' },
             },
-            no_name_title = 'untitled',
+            no_name_title = constants.newfile_name,
         })
     end,
 }
