@@ -13,7 +13,20 @@ return {
         },
         sections = {
             lualine_a = { 'mode' },
-            lualine_b = { 'branch', 'diff', 'diagnostics' },
+            lualine_b = {
+                'branch',
+                'diff',
+                {
+                    'diagnostics',
+                    sections = { 'error', 'warn' },
+                    symbols = {
+                        error = icons.diagnostics.Error,
+                        warn = icons.diagnostics.Warn,
+                        info = icons.diagnostics.Info,
+                        hint = icons.diagnostics.Hint,
+                    },
+                },
+            },
             lualine_c = {
                 {
                     'filename',
