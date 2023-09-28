@@ -35,20 +35,26 @@ return {
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end, { desc = 'Debug: Set Breakpoint' })
 
+    local icons = require('icons')
+
     -- :h nvim-dap-ui
     dapui.setup {
-      icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+      icons = {
+        expanded = icons.select.expanded,
+        collapsed = icons.select.collapsed,
+        current_frame = icons.select.current,
+      },
       controls = {
         icons = {
-          pause = '⏸',
-          play = '▶',
-          step_into = '⏎',
-          step_over = '⏭',
-          step_out = '⏮',
-          step_back = 'b',
-          run_last = '▶▶',
-          terminate = '⏹',
-          disconnect = '⏏',
+          pause = icons.dap.pause,
+          play = icons.dap.play,
+          step_into = icons.dap.step_into,
+          step_over = icons.dap.step_over,
+          step_out = icons.dap.step_out,
+          step_back = icons.dap.step_back,
+          run_last = icons.dap.run_last,
+          terminate = icons.dap.terminate,
+          disconnect = icons.dap.disconnect,
         },
       },
     }

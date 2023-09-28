@@ -1,0 +1,75 @@
+return {
+  diagnostics = {
+    -- These names should remain capitalized for dynamic loop
+    Error = ' ',
+    Warn = ' ',
+    Hint = ' ',
+    Hint_alt = '',
+    Info = ' ',
+  },
+  git = {
+    Added        = ' ',
+    Added_alt    = ' ',
+    Added_alt2   = '',
+    Added_alt3   = '✚ ',
+    Modified     = ' ',
+    Modified_alt = ' ',
+    Removed      = ' ',
+    Deleted      = '✖ ',
+    Renamed      = '󰁕 ',
+    Untracked    = '',
+    Ignored      = '',
+    Unstaged     = '󰄱',
+    Conflict     = '',
+  },
+  dap = {
+    breakpoint = ' ',
+    breakpoint_condition = ' ',
+    log_point = ' ',
+    stopped = ' ',
+    breakpoint_rejected = ' ',
+    pause = '⏸',
+    pause_alt = ' ',
+    play = '▶',
+    play_alt = ' ',
+    step_into = ' ',
+    step_into_alt = '⏎',
+    step_over = ' ',
+    step_over_alt = '⏭',
+    step_out = ' ',
+    step_out_alt = '⏮',
+    step_back = ' ',
+    step_back_alt = 'b',
+    run_last = ' ',
+    run_last_alt = '▶▶',
+    terminae = '⏹',
+    terminate_alt = ' ',
+    disconnect = '⏏',
+  },
+  select = {
+    expanded = '▾',
+    collapsed = '▸',
+    current = '*',
+  },
+  status_bar = {
+    component_separators = {
+      left = '',
+      right = ''
+    },
+    section_separators = {
+      left = '',
+      right = ''
+    },
+  },
+  status = {
+    modified = '·',
+    modified_alt = ' ',
+    readonly = '',
+    readonly_alt = ' ',
+  },
+  file_tree = {
+    folder_closed = '',
+    folder_open = '',
+    folder_empty = '󰜌',
+  },
+}

@@ -1,11 +1,13 @@
+local icons = require('icons')
+
 return {
     'nvim-lualine/lualine.nvim',
     opts = {
         options = {
             icons_enabled = true,
             theme = 'auto',
-            component_separators = { left = '', right = '' },
-            section_separators = { left = '', right = '' },
+            component_separators = icons.status_bar.component_separators,
+            section_separators = icons.status_bar.section_separators,
             fmt = string.lower,
         },
         sections = {
@@ -17,10 +19,10 @@ return {
                     newfile_status = true,
                     path = 1,
                     symbols = {
-                        modified = '*',
-                        readonly = '[-]',
                         unnamed = 'untitled',
                         newfile = 'untitled',
+                        modified = icons.status.modified,
+                        readonly = icons.status.readonly,
                     },
                 },
             },

@@ -20,6 +20,8 @@ return {
         vim.keymap.set('n', '<leader>w', ':BufferClose<CR>', { desc = '[W] Close buffer' })
         vim.keymap.set('n', '<leader>p', ':BufferPick<CR>', { desc = '[P]ick buffer' })
 
+        local icons = require('icons')
+
         require('bufferline').setup({
             animation = false,
             closable = true,
@@ -32,7 +34,7 @@ return {
                 inactive = {
                     separator = { left = '' },
                 },
-                modified = { button = '*' },
+                modified = { button = icons.status.Modified },
                 separator = { left = '' },
             },
             insert_at_end = true,
