@@ -5,5 +5,9 @@ return {
   config = function()
     require('catppuccin').setup()
     vim.cmd.colorscheme 'catppuccin'
+    local hl_groups = { 'DiagnosticUnderlineError' }
+    for _, hl in ipairs(hl_groups) do
+      vim.cmd.highlight(hl .. ' gui=undercurl')
+    end
   end,
 }
