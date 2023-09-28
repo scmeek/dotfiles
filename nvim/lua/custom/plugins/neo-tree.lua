@@ -48,6 +48,13 @@ return {
                     },
                 },
             },
+            nesting_rules = {
+                ['js'] = { 'cjs', 'cjs.map', 'js.map' },
+                ['jsx'] = { 'module.css', 'module.scss', 'scss' },
+                ['ts'] = { 'ts.map' },
+                ['d.ts'] = { 'd.ts.map' },
+                ['tsx'] = { 'module.css', 'module.scss', 'scss' },
+            }
         })
     end,
 }
