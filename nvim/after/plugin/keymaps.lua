@@ -3,8 +3,6 @@
 --vim.g.maplocalleader = ' '
 
 vim.keymap.set('n', '<leader>f', 'ggVG', { desc = 'Select all text in [F]ile' })
-vim.keymap.set('n', '<leader>mk', ':m -2<CR>', { desc = '[M]ove line [K] up' })
-vim.keymap.set('n', '<leader>mj', ':m +1<CR>', { desc = '[M]ove line [J] down' })
 vim.keymap.set('n', 'Y', 'y$', { desc = '[Y] rest of line' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
@@ -45,4 +43,3 @@ vim.keymap.set('n', 'cb', function()
         ftype
     ))
 end, { desc = 'Diff with [C]lip[B]oard' })
-
