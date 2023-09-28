@@ -43,8 +43,8 @@ return {
                 filtered_items = {
                     visible = false,
                     never_show = {
-                        ".DS_Store",
-                        "thumbs.db"
+                        '.DS_Store',
+                        'thumbs.db'
                     },
                 },
             },

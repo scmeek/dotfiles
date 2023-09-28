@@ -16,7 +16,7 @@ return {
             hgcommit = false,
             svn = false,
             cvs = false,
-            ["."] = false,
+            ['.'] = false,
         },
         server_opts_overrides = {
             settings = {
