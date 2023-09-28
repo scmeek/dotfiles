@@ -37,7 +37,6 @@ return {
                 modified = { button = icons.status.Modified },
                 separator = { left = '' },
             },
-            insert_at_end = true,
             sidebar_filetypes = { -- Offset
                 ['neo-tree'] = { event = 'BufWipeout' },
             },
