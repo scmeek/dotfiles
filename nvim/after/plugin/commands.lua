@@ -7,6 +7,12 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     command = ':%s/\\s\\+$//e',
 })
 
+vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+    callback = function()
+        vim.diagnostic.open_float({ scope = 'line' })
+    end,
+})
+
 vim.api.nvim_create_user_command('WQ', 'wq', {})
 vim.api.nvim_create_user_command('Wq', 'wq', {})
 vim.api.nvim_create_user_command('W', 'w', {})
