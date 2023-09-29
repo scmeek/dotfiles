@@ -210,9 +210,9 @@ alias -g -- --help='--help 2>&1 | bat --language=help'
 alias -g cat="bat"
 
 alias shred="shred -uvz"
-alias ls="exa -x"
-alias ll="exa -lh --changed"
-alias la="exa -lha --changed"
+alias ls="eza -x"
+alias ll="eza -lh --changed"
+alias la="eza -lha --changed"
 alias v="nvim"
 alias diff="nvim -d"
 alias j="joplin --profile $HOME/.config/joplin-desktop"

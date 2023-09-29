@@ -1,7 +1,7 @@
 brew "bat"                                  # `cat` alternative
 brew "node"                                 # nodejs
 brew "difftastic"
-brew "exa"
+brew "eza"
 brew "fzf"
 brew "git-delta"
 brew "gnupg"
