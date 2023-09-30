@@ -1,3 +1,5 @@
+local constants = require('constants')
+
 -- pane switching
 function _G.set_terminal_keymaps()
     local opts = { buffer = 0 }
@@ -29,7 +31,7 @@ return {
             dir = 'git_dir',
             direction = 'float',
             float_opts = {
-                border = 'curved',
+                border = constants.border_style,
             },
             hidden = true,
             on_open = function(term)
