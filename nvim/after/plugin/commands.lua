@@ -9,7 +9,12 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 
 vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
     callback = function()
-        vim.diagnostic.open_float({ scope = 'line' })
+        vim.diagnostic.open_float({
+            scope = 'line',
+            show_header = false,
+            border = 'single',
+            severity_sort = true,
+        })
     end,
 })
 
