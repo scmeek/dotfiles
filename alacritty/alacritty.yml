@@ -1,12 +1,7 @@
 # Defaults and descriptions here: https://github.com/alacritty/alacritty/blob/master/alacritty.yml
 window:
-  padding:
-    x: 1
-  dynamic_padding: true
   decorations: buttonless
-    #opacity: 0.9
   dynamic_title: true
-  startup_mode: Maximized
 
 font:
   normal:
