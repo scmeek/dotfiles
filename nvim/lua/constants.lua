@@ -1,4 +1,4 @@
 return {
   newfile_name = 'untitled',
-  border_style = 'single',
+  border_style = 'rounded',
 }
