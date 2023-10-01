@@ -28,6 +28,7 @@ return {
     log_point = ' ',
     stopped = ' ',
     breakpoint_rejected = ' ',
+    breakpoint_rejected_alt = "",
     pause = '⏸',
     pause_alt = ' ',
     play = '▶',
