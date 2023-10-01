@@ -45,12 +45,7 @@ return {
               return
             end
 
-            vim.lsp.buf.format {
-              async = false,
-              filter = function(c)
-                return c.id == client.id
-              end,
-            }
+            vim.lsp.buf.format()
           end,
         })
       end,
