@@ -201,6 +201,8 @@ PATH=$PATH:$GOROOT/bin
 # Aliases
 #--------------------------------------------------------------------------
 
+alias cl="clear"
+
 alias vd="deactivate &> /dev/null || true"
 
 BAT="bat --style=plain --theme=Coldark-Dark --paging=always --italic-text=always --color=always"
