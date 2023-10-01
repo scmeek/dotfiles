@@ -1,5 +1,3 @@
-local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
-
 return {
 	'jose-elias-alvarez/null-ls.nvim',
 	dependencies = {
