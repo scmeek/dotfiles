@@ -25,7 +25,7 @@ return {
             default_component_configs = {
                 modified = {
                     symbol = icons.status.modified,
-                    highlight = "NeoTreeModified",
+                    highlight = 'NeoTreeModified',
                 },
                 git_status = {
                     symbols = {
@@ -54,7 +54,31 @@ return {
                 ['ts'] = { 'ts.map' },
                 ['d.ts'] = { 'd.ts.map' },
                 ['tsx'] = { 'module.css', 'module.scss', 'scss' },
-            }
+            },
+            event_handlers = {
+                { -- Auto close on open file
+                    event = 'file_opened',
+                    handler = function(file_path)
+                        require('neo-tree.command').execute({ action = 'close' })
+                    end
+                },
+                { -- Equalize window sizes on Neo-tree open
+                    event = 'neo_tree_window_after_open',
+                    handler = function(args)
+                        if args.position == 'left' or args.position == 'right' then
+                            vim.cmd('wincmd =')
+                        end
+                    end
+                },
+                { -- Equalize window sizes on Neo-tree close
+                    event = 'neo_tree_window_after_close',
+                    handler = function(args)
+                        if args.position == 'left' or args.position == 'right' then
+                            vim.cmd('wincmd =')
+                        end
+                    end
+                },
+            },
         })
     end,
 }
