@@ -34,6 +34,7 @@ vim.opt.completeopt = { 'menuone', 'noinsert', 'noselect' }
 vim.opt.wildmode = { 'longest', 'list', 'full' }
 vim.opt.wildmenu = true
 vim.opt.wildoptions = 'pum'
+vim.opt.pumheight = 15;      -- Completion
 vim.opt.inccommand = 'split' -- Live substitution
 vim.opt.showbreak = '↪'
 vim.opt.list = true
