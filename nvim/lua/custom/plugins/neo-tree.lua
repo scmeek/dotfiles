@@ -7,7 +7,7 @@ return {
         'MunifTanjim/nui.nvim',
     },
     keys = {
-        { '<leader>t', ':Neotree reveal=true toggle<CR>', desc = 'Toggle Neo-[T]ree', },
+        { '<leader>r', ':Neotree reveal=true toggle<CR>', desc = 'Toggle Neo-[T]ree', },
     },
     config = function()
         vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
