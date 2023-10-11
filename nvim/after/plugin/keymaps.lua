@@ -3,7 +3,7 @@
 --vim.g.maplocalleader = ' '
 
 vim.keymap.set('n', '<leader>f', 'ggVG', { desc = 'Select all text in [F]ile' })
-vim.keymap.set('n', 'Y', 'y$', { desc = '[Y] rest of line' })
+vim.keymap.set('n', 'Y', 'y$', { desc = '[Y]ank rest of line' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
 -- Reselect visual selection after indenting
@@ -11,9 +11,8 @@ vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
 -- Maintain the cursor position when yanking a visual selection
---  http://ddrscott.github.io/blog/2016/yank-without-jank/
-vim.keymap.set('v', 'y', 'myy`y')
-vim.keymap.set('v', 'Y', 'myY`y')
+vim.keymap.set('v', 'y', 'ygv<Esc>')
+vim.keymap.set('v', 'Y', 'Ygv<Esc>')
 
 vim.keymap.set('n', 'gp', '`[v`]', { desc = '[G]o reselect [P]asted text' })
 
@@ -37,7 +36,7 @@ vim.keymap.set('n', 'cb', function()
     	    set filetype=%s
     	    diffthis
     	    bprevious
-    	    execute "normal! \<C-w>\<C-w>"
+    	    execute 'normal! \<C-w>\<C-w>'
     	    diffthis
   	    ]],
         ftype
