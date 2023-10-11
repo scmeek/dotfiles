@@ -30,6 +30,10 @@ vim.keymap.set('i', '<M-BS>', '<Esc>cvb', { desc = "Backspace entire word" })
 vim.keymap.set('n', '<Tab>', ':bn<CR>', { desc = "Move to next buffer", silent = true })
 vim.keymap.set('n', '<S-Tab>', ':bp<CR>', { desc = "Move to previous buffer", silent = true });
 
+vim.keymap.set('n', 'H', '^', { desc = "Move to start of line" })
+vim.keymap.set('n', 'L', '$', { desc = "Move to end of line" });
+
+vim.keymap.set('n', ';', ':', { desc = "Open command line" });
 --  https://www.reddit.com/r/neovim/comments/sg919r/diff_with_clipboard/huy72t0/?utm_source=reddit&utm_medium=web2x&context=3
 vim.keymap.set('n', 'cb', function()
     local ftype = vim.api.nvim_eval('&filetype')
