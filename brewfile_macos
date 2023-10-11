@@ -46,4 +46,3 @@ cask "font-fira-mono-nerd-font"             # font
 cask "font-victor-mono-nerd-font"           # font
 cask "libreoffice"                          # office tools
 cask "openvpn-connect"                      # OpenVPN Connect client
-cask "visual-studio-code"                   # text editor / IDE
