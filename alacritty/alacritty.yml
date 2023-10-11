@@ -27,6 +27,9 @@ draw_bold_text_with_bright_colors: true
 import:
   - ~/.config/alacritty/themes/catppuccin.yaml
 
+key_bindings:
+  - { key: Back, mods: Control, chars: "\x17" }  # <C-BS>
+
 shell:
   program: /bin/zsh
   args:

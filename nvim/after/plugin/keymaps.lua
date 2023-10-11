@@ -24,6 +24,8 @@ vim.keymap.set('', 'k', function()
     return vim.v.count == 0 and 'gk' or 'k'
 end, { silent = true, expr = true })
 
+vim.keymap.set('i', '<M-BS>', '<Esc>cvb', { desc = "Backspace entire word" })
+
 --  https://www.reddit.com/r/neovim/comments/sg919r/diff_with_clipboard/huy72t0/?utm_source=reddit&utm_medium=web2x&context=3
 vim.keymap.set('n', 'cb', function()
     local ftype = vim.api.nvim_eval('&filetype')
