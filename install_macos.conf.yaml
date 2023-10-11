@@ -32,3 +32,7 @@
 
 - shell:
     - [brew bundle install]
+
+- shell:
+    - [git clone git@github.com:tmux-plugins/tpm.git ~/.tmux/plugins/tpm]
+    - [echo 'To install TMUX plugins, open TMUX and press `prefix + I`']
