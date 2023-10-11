@@ -34,6 +34,10 @@ vim.keymap.set('n', 'H', '^', { desc = "Move to start of line" })
 vim.keymap.set('n', 'L', '$', { desc = "Move to end of line" });
 
 vim.keymap.set('n', ';', ':', { desc = "Open command line" });
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv==kgvo<esc>=kgvo", { desc = "Move highlighted text down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv==jgvo<esc>=jgvo", { desc = "Move highlighted text up" })
+
 --  https://www.reddit.com/r/neovim/comments/sg919r/diff_with_clipboard/huy72t0/?utm_source=reddit&utm_medium=web2x&context=3
 vim.keymap.set('n', 'cb', function()
     local ftype = vim.api.nvim_eval('&filetype')
