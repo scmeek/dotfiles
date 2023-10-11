@@ -21,3 +21,6 @@
 
 - create:
     - ~/.vim/undo-history
+
+- shell:
+    - [brew bundle install]
