@@ -235,7 +235,7 @@ alias da="doawake"
 eval "$(github-copilot-cli alias -- "$0")"
 
 vcl() {
-    nvim $1; clear;
+    nvim ${@}; clear;
 }
 
 
