@@ -43,3 +43,15 @@ vim.api.nvim_create_autocmd({ 'CursorHold' }, {
     callback = OpenDiagnosticIfNoFloat,
     group = 'lsp_diagnostics_hold',
 })
+
+vim.api.nvim_create_user_command('ToggleVerboseLogging', function()
+    if (vim.opt.verbose:get() == 0) then
+        print('Enabling verbose logging')
+        vim.opt.verbosefile = vim.fn.expand('~/log/vim/verbose.log')
+        vim.opt.verbose = 15
+    else
+        print('Disabling verbose logging')
+        vim.opt.verbose = 0
+        vim.opt.verbosefile = nil
+    end
+end, {})
