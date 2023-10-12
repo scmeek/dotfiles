@@ -25,7 +25,7 @@ draw_bold_text_with_bright_colors: true
 
 # Note: colors.bright.green and colors.bright.yellow are used in `git diff`
 import:
-  - ~/.config/alacritty/themes/catppuccin.yaml
+  - ~/.config/alacritty/custom-themes/catppuccin-mocha.yaml
 
 key_bindings:
   - { key: Back, mods: Control, chars: "\x17" }  # <C-BS>
