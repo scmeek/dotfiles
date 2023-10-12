@@ -7,8 +7,6 @@ return {
         options = {
             icons_enabled = true,
             theme = 'auto',
-            component_separators = icons.status_bar.component_separators,
-            section_separators = icons.status_bar.section_separators,
             fmt = string.lower,
         },
         sections = {
