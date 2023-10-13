@@ -9,4 +9,4 @@ gui:
 git:
   paging:
     colorArg: always
-    pager: delta --paging=never --line-numbers --syntax-theme Nord --dark
+    pager: delta --paging=never --line-numbers --dark
