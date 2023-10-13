@@ -90,9 +90,9 @@ then
   compinit
 fi
 
-source "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
@@ -105,7 +105,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 plugins=(
 )
 
-source "$ZSH/oh-my-zsh.sh"
+source $ZSH/oh-my-zsh.sh
 
 
 #--------------------------------------------------------------------------
@@ -202,30 +202,27 @@ PATH=$PATH:$GOROOT/bin
 #--------------------------------------------------------------------------
 
 alias cl="clear"
+alias ls="eza -x"
+alias ll="eza -lh --changed"
+alias la="eza -lha --changed"
+alias shred="shred -uvz"
 
 BAT="bat --style=plain --theme=Coldark-Dark --paging=always --italic-text=always --color=always"
-alias -g bat='${BAT}'
+alias -g bat="${BAT}"
 export MANPAGER="sh -c 'col -bx | ${BAT} --language=man'"
 alias -g -- --help='--help 2>&1 | bat --language=help'
 alias -g cat="bat"
 
-alias shred="shred -uvz"
-alias ls="eza -x"
-alias ll="eza -lh --changed"
-alias la="eza -lha --changed"
 alias v="nvim"
 alias diff="nvim -d"
 alias lg="lazygit"
 
-alias cddotfiles='cd $DOTFILES_PATH'
-alias cddf="cddotfiles"
-alias cddev='cd $DEV_PATH'
-alias cdseanmeek='cd ${DEV_PATH}/seanmeek.com/'
-alias cdsm="cdseanmeek"
-alias cdtt='cd ${DEV_PATH}/tee-trekker/'
+alias cddf='cd $DOTFILES_PATH'
 
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
+
 alias doawake="caffeinate -dimsu &"  # Prevent sleep (`caffeine` required)
+
 alias da="doawake"
 alias killjobs='jobs | awk -F'"'"'[][]'"'"' '\''{ print $2 }'\'' | while read -r id; do builtin kill %"$id"; done'
 
