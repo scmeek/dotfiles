@@ -90,9 +90,9 @@ then
   compinit
 fi
 
-source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-source ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
@@ -105,7 +105,7 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 plugins=(
 )
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 
 #--------------------------------------------------------------------------
@@ -204,7 +204,7 @@ PATH=$PATH:$GOROOT/bin
 alias cl="clear"
 
 BAT="bat --style=plain --theme=Coldark-Dark --paging=always --italic-text=always --color=always"
-alias -g bat="${BAT}"
+alias -g bat='${BAT}'
 export MANPAGER="sh -c 'col -bx | ${BAT} --language=man'"
 alias -g -- --help='--help 2>&1 | bat --language=help'
 alias -g cat="bat"
@@ -215,15 +215,14 @@ alias ll="eza -lh --changed"
 alias la="eza -lha --changed"
 alias v="nvim"
 alias diff="nvim -d"
-alias j="joplin --profile $HOME/.config/joplin-desktop"
 alias lg="lazygit"
 
-alias cddotfiles="cd $DOTFILES_PATH"
+alias cddotfiles='cd $DOTFILES_PATH'
 alias cddf="cddotfiles"
-alias cddev="cd $DEV_PATH"
-alias cdseanmeek="cd ${DEV_PATH}/seanmeek.com/"
+alias cddev='cd $DEV_PATH'
+alias cdseanmeek='cd ${DEV_PATH}/seanmeek.com/'
 alias cdsm="cdseanmeek"
-alias cdtt="cd ${DEV_PATH}/tee-trekker/"
+alias cdtt='cd ${DEV_PATH}/tee-trekker/'
 
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
 alias doawake="caffeinate -dimsu &"  # Prevent sleep (`caffeine` required)
@@ -244,13 +243,13 @@ vcl() {
 # Replace all in directory
 repl() {
     if [[ $# -ne 3 ]]; then
-        echo "usage: $0 <directory> <search-string> <replace-string>\n" >&2
+        echo "Usage: $(basename "$0") <directory> <search-string> <replace-string>" >&2
         return 2
     fi
     read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [y/N] " -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        rg -l "$2" $1 | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
+        rg -l "$2" "$1" | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
         echo "Replaced all occurrences of $2 with $3 in $1."
     fi
 }
@@ -258,11 +257,11 @@ repl() {
 # Make directory and open
 mkdircd() {
     if [[ $# -ne 1 ]]; then
-        echo "usage: $0 <new-directory>\n" >&2
+        echo "Usage: $(basename "$0") <new-directory>" >&2
         return 2
     fi
-    mkdir $1
-    cd $1
+    mkdir "$1"
+    cd "$1" || return
 }
 
 # Auto activate virtualenv
