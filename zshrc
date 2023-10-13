@@ -203,8 +203,6 @@ PATH=$PATH:$GOROOT/bin
 
 alias cl="clear"
 
-alias vd="deactivate &> /dev/null || true"
-
 BAT="bat --style=plain --theme=Coldark-Dark --paging=always --italic-text=always --color=always"
 alias -g bat="${BAT}"
 export MANPAGER="sh -c 'col -bx | ${BAT} --language=man'"
@@ -220,7 +218,6 @@ alias diff="nvim -d"
 alias j="joplin --profile $HOME/.config/joplin-desktop"
 alias lg="lazygit"
 
-alias cd="vd && cd "
 alias cddotfiles="cd $DOTFILES_PATH"
 alias cddf="cddotfiles"
 alias cddev="cd $DEV_PATH"
@@ -266,6 +263,35 @@ mkdircd() {
     fi
     mkdir $1
     cd $1
+}
+
+# Auto activate virtualenv
+# https://stackoverflow.com/a/56309561
+function cd() {
+  builtin cd "$@" || return
+
+  ## Default path to virtualenv in your projects
+  DEFAULT_ENV_PATH="./.venv"
+
+  ## If env folder is found then activate the vitualenv
+  function activate_venv() {
+    if [[ -f "${DEFAULT_ENV_PATH}/bin/activate" ]] ; then
+      source "${DEFAULT_ENV_PATH}/bin/activate"
+    fi
+  }
+
+  if [[ -z "$VIRTUAL_ENV" ]] ; then
+    activate_venv
+  else
+    ## check the current folder belong to earlier VIRTUAL_ENV folder
+    # if yes then do nothing
+    # else deactivate then run a new env folder check
+      parentdir="$(dirname ${VIRTUAL_ENV})"
+      if [[ "$PWD"/ != "$parentdir"/* ]] ; then
+        deactivate
+        activate_venv
+      fi
+  fi
 }
 
 
