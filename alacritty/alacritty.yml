@@ -35,5 +35,5 @@ shell:
   args:
    - -l
    - -c
-   - "tmux"
+   - "tmux new-session -A -s sandbox"
 
