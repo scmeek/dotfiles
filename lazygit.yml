@@ -6,7 +6,8 @@ gui:
       - black
     unstagedChangesColor:
       - yellow
+  sidePanelWidth: 0.2
 git:
   paging:
     colorArg: always
-    pager: delta --paging=never --line-numbers --dark
+    pager: delta --paging=never --line-numbers --side-by-side --dark
