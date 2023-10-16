@@ -7,7 +7,8 @@ return {
         'MunifTanjim/nui.nvim',
     },
     keys = {
-        { '<leader>r', ':Neotree reveal=true toggle<CR>', desc = 'Toggle Neo-[T]ree', },
+        { '<leader>r',  ':Neotree position=left reveal=true toggle<CR>',  desc = 'Toggle Neo-t[r]ee', },
+        { '<leader>rf', ':Neotree position=float reveal=true toggle<CR>', desc = 'Open Neo-t[r]ee [f]loat', },
     },
     config = function()
         vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
@@ -89,7 +90,7 @@ return {
                 if (vim.fn.argc()) == 0 then
                     vim.defer_fn(
                         function()
-                            vim.cmd "Neotree toggle"
+                            vim.cmd "Neotree position=float toggle"
                         end,
                         0
                     )
