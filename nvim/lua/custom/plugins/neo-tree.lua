@@ -1,3 +1,4 @@
+local constants = require('constants')
 return {
     'nvim-neo-tree/neo-tree.nvim',
     version = '*',
@@ -22,6 +23,7 @@ return {
 
         require('neo-tree').setup({
             close_if_last_window = true,
+            popup_border_style = constants.border_style,
             sort_case_insensitive = true,
             default_component_configs = {
                 modified = {
