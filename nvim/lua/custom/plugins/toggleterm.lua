@@ -1,13 +1,5 @@
 local constants = require('constants')
 
--- pane switching
-function _G.set_terminal_keymaps()
-    local opts = { buffer = 0 }
-    vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-end
-
-vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
-
 
 return {
     'akinsho/toggleterm.nvim',
@@ -28,7 +20,7 @@ return {
         local Terminal = require('toggleterm.terminal').Terminal
         local lazygit  = Terminal:new({
             cmd = 'lazygit --use-config-file="$HOME/.config/lazygit/config.yml"',
-            dir = 'git_dir',
+            --dir = 'git_dir',
             direction = 'float',
             float_opts = {
                 border = constants.border_style,
@@ -41,7 +33,7 @@ return {
                     silent = true,
                 })
             end,
-            on_close = function(term)
+            on_close = function(_)
                 vim.cmd('startinsert!')
             end,
         })
@@ -51,5 +43,13 @@ return {
         end
 
         vim.keymap.set('n', '<leader>lg', '<Cmd>lua _LAZYGIT_TOGGLE()<CR>', { desc = '[L]azy[g]it' })
+
+        -- pane switching
+        function _G.set_terminal_keymaps()
+            local opts = { buffer = 0 }
+            vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+        end
+
+        vim.cmd('autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()')
     end,
 }
