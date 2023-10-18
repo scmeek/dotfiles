@@ -9,12 +9,7 @@ return {
             theme = 'auto',
         },
         sections = {
-            lualine_a = {
-                {
-                    'mode',
-                    fmt = function(str) return string.lower(str:sub(1, 1)) end,
-                },
-            },
+            lualine_a = { 'mode' },
             lualine_b = {
                 'branch',
                 'diff',
