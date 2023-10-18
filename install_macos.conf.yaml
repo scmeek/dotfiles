@@ -30,8 +30,8 @@
     - ~/.hushlogin  # Hush login messages on bash/zsh open
 
 - shell:
-    - [brew bundle install]
+    - [brew bundle install --file=~/Brewfile]
 
 - shell:
-    - [git clone git@github.com:tmux-plugins/tpm.git ~/.tmux/plugins/tpm]
-    - [echo 'To install TMUX plugins, open TMUX and press `prefix + I`']
+    - command: TPM_DIR=~/.tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
+      description: Install TMUX plugin manager. To install TMUX plugins, open TMUX and press `prefix + I`
