@@ -8,6 +8,7 @@ brew "git"                                  # source control
 brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
 brew "koekeishiya/formulae/yabai"           # Tiling window manager
+brew "koekeishiya/formulae/skhd"            # Hotkey daemon
 brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
 brew "pinentry-mac"                         # macOS integration for GPG

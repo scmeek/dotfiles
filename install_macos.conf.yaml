@@ -16,6 +16,7 @@
     ~/.config/alacritty: alacritty
     ~/.config/lazygit/config.yml: lazygit.yml
     ~/.config/yabai/yabairc: yabairc
+    ~/.config/skhd/skhdrc: skhdrc
     ~/.btt_autoload_preset.json: btt_autoload_preset.json
     ~/.gitconfig: gitconfig
     ~/.p10k.zsh: p10k.zsh
