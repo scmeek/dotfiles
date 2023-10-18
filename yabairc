@@ -1,0 +1,46 @@
+#
+#                 °#@@@@@#.       *@@@@@@*           °°°°°.
+#               O@@@@o.°#@@#   .@@@@@@@@@@@.       °@@@@@@#
+#              #@@@@o    @@@  *@@°  o@@@@@@@      *@@@@@@@
+#              @@@@@@.  o@@#  @@     *@@@@@@@    o@@@@@@@@
+#              @@@@@@@#      #@*     @@@@@@@@o  #@@@@@@@@.
+#              @@@@@@@@@*    @@@.    @#@@@@@@@ @@o@@@@@@@
+#               @@@@@@@@@#   *@@@@* @@ o@@@@@@@@ O@@@@@@°
+#                *@@@@@@@@*   o@@*  @@  @@@@@@@  @@@@@@@
+#        .@@@O     @@@@@@@@        @@*  @@@@@@  O@@@@@@o  #
+#        @@@@o      @@@@@@@       #@@   #@@@@   @@@@@@@  @@
+#       O@@@@       .@@@@@°*#   *@@@    *@@@    @@@@@@@ @@
+#       °@@@@       O@@@@@ @@@@@@@@°     @@     o@@@@@@@@.
+#        #@@@*     *@@@@O   @@@@@@.      #       *@@@@@o
+#         °@@@@@#@@@@@o       °°
+#            °o##Oo.
+#
+#      Personal yabairc file of Sean Meek <sean@seanmeek.com>
+
+#--------------------------------------------------------------------------
+# General
+#--------------------------------------------------------------------------
+
+YABAI_PADDING=8
+yabai -m config \
+	window_shadow float \
+	layout bsp \											# Binary split partitioning as default layout
+	window_placement second_child \		# New window spawns to vertical right or horizontal bottom
+	mouse_modifier alt \
+	mouse_action1 move \							# Modifier + left-click drag window
+	mouse_action2 resize							# Modifier + right-click resize window
+
+	# Padding
+	top_padding "${YABAI_PADDING}" \
+	bottom_padding "${YABAI_PADDING}" \
+	left_padding "${YABAI_PADDING}" \
+	right_padding "${YABAI_PADDING}" \
+	window_gap "${YABAI_PADDING}"
+
+
+#--------------------------------------------------------------------------
+# Exclusions
+#--------------------------------------------------------------------------
+
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
