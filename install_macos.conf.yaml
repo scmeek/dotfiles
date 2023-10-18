@@ -1,11 +1,11 @@
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
 
 - defaults:
     link:
-      create: true  # Create parent directories as needed
+      create: true # Create parent directories as needed
 
-- clean:  # Remove dead links
+- clean: # Remove dead links
     ~/:
     ~/.config:
       recursive: true
@@ -23,11 +23,11 @@
     ~/Brewfile: brewfile_macos
 
     # Make Home and End keys Windows-like, needs reboot
-    '/Users/sean/Library/KeyBindings/DefaultKeyBinding.dict': DefaultKeyBinding.dict
+    "/Users/sean/Library/KeyBindings/DefaultKeyBinding.dict": DefaultKeyBinding.dict
 
 - create:
     - ~/.vim/undo-history
-    - ~/.hushlogin  # Hush login messages on bash/zsh open
+    - ~/.hushlogin # Hush login messages on bash/zsh open
 
 - shell:
     - [brew bundle install --file=~/Brewfile]
