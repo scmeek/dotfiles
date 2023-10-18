@@ -41,7 +41,6 @@ brew "pgformatter"                          # SQL formatter
 # casks
 cask "alacritty"                            # terminal
 cask "alt-tab"                              # Windows-like alt-tab application switcher
-cask "bettertouchtool"                      # macOS customizer
 cask "caffeine"                             # prevent computer sleep
 cask "font-fira-code-nerd-font"             # font
 cask "font-fira-mono-nerd-font"             # font
