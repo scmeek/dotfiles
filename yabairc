@@ -40,5 +40,7 @@ yabai -m config window_gap "${YABAI_PADDING}"
 # Exclusions
 #--------------------------------------------------------------------------
 
-yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Zoom$" manage=off
