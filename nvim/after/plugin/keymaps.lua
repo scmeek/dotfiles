@@ -1,5 +1,5 @@
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = ','
 
 vim.keymap.set('n', '<leader>f', 'ggVG', { desc = 'Select all text in [F]ile' })
 vim.keymap.set('n', 'Y', 'y$', { desc = '[Y]ank rest of line' })
