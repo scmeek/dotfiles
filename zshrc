@@ -201,6 +201,7 @@ PATH=$PATH:$GOROOT/bin
 # Aliases
 #--------------------------------------------------------------------------
 
+alias cd..="cd .."
 alias cl="clear"
 alias ls="eza -x"
 alias ll="eza -lh --changed"
