@@ -1,6 +1,3 @@
-local constants = require('constants')
-
-
 return {
     'akinsho/toggleterm.nvim',
     config = function()
@@ -15,34 +12,6 @@ return {
             direction = 'vertical',
             close_on_exit = true,
         })
-
-        -- lazygit
-        local Terminal = require('toggleterm.terminal').Terminal
-        local lazygit  = Terminal:new({
-            cmd = 'lazygit --use-config-file="$HOME/.config/lazygit/config.yml"',
-            --dir = 'git_dir',
-            direction = 'float',
-            float_opts = {
-                border = constants.border_style,
-            },
-            hidden = true,
-            on_open = function(term)
-                vim.cmd('startinsert!')
-                vim.api.nvim_buf_set_keymap(term.bufnr, 't', '<esc>', '<esc>', {
-                    noremap = true,
-                    silent = true,
-                })
-            end,
-            on_close = function(_)
-                vim.cmd('startinsert!')
-            end,
-        })
-
-        function _LAZYGIT_TOGGLE()
-            lazygit:toggle()
-        end
-
-        vim.keymap.set('n', '<leader>lg', '<Cmd>lua _LAZYGIT_TOGGLE()<CR>', { desc = '[L]azy[g]it' })
 
         -- pane switching
         function _G.set_terminal_keymaps()

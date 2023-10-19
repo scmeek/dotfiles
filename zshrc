@@ -215,7 +215,6 @@ alias -g cat="bat"
 
 alias v="nvim"
 alias diff="nvim -d"
-alias lg="lazygit --use-config-file=$HOME/.config/lazygit/config.yml"
 
 alias cddf='cd $DOTFILES_PATH'
 

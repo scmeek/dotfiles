@@ -14,7 +14,6 @@
     ~/.cargo/config.toml: cargoconfig.toml
     ~/.config/nvim: nvim
     ~/.config/alacritty: alacritty
-    ~/.config/lazygit/config.yml: lazygit.yml
     ~/.config/yabai/yabairc: yabairc
     ~/.config/skhd/skhdrc: skhdrc
     ~/.gitconfig: gitconfig
