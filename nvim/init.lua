@@ -54,18 +54,18 @@ require('lazy').setup({
           if vim.wo.diff then return ']c' end
           vim.schedule(function() gs.next_hunk() end)
           return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
+        end, { expr = true, buffer = bufnr, desc = 'Jump to next hunk' })
         vim.keymap.set({ 'n', 'v' }, '[c', function()
           if vim.wo.diff then return '[c' end
           vim.schedule(function() gs.prev_hunk() end)
           return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
+        end, { expr = true, buffer = bufnr, desc = 'Jump to previous hunk' })
       end,
     },
   },
   {
     'lukas-reineke/indent-blankline.nvim',
-    main = "ibl",
+    main = 'ibl',
     opts = {},
   },
   { 'numToStr/Comment.nvim', opts = {} },
