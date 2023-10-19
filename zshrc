@@ -22,40 +22,61 @@
 
 
 #--------------------------------------------------------------------------
-# Powerlevel10k (Top of file)
+# Environment variables
+#--------------------------------------------------------------------------
+
+export XDG_DATA_HOME="${HOME}"/.local/share
+export XDG_CONFIG_HOME="${HOME}"/.config
+export XDG_STATE_HOME="${HOME}"/.local/state
+export XDG_CACHE_HOME="${HOME}"/.cache
+export XDG_RUNTIME_DIR="/run/user/${UID}"
+
+eval "$(/usr/local/bin/brew shellenv)"
+
+export AWS_SHARED_CREDENTIALS_FILE="${XDG_CONFIG_HOME}"/aws/credentials
+export AWS_CONFIG_FILE="${XDG_CONFIG_HOME}"/aws/config
+export CARGO_HOME="${XDG_DATA_HOME}"/cargo
+export DOCKER_CONFIG="${XDG_CONFIG_HOME}"/docker
+export GNUPGHOME="${XDG_DATA_HOME}"/gnupg
+export GRADLE_USER_HOME="${XDG_DATA_HOME}"/gradle
+export HISTFILE="${XDG_STATE_HOME}"/zsh/history
+export LESSHISTFILE="${XDG_CACHE_HOME}"/less/history
+export TERMINFO="${XDG_DATA_HOME}"/terminfo
+export TERMINFO_DIRS="${XDG_DATA_HOME}"/termindo:/usr/share/terminfo
+export NODE_REPL_HISTORY="${XDG_DATA_HOME}"/node_repl_history
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}"/npm/npmrc
+export ZSH="${XDG_DATA_HOME}"/oh-my-zsh
+export ZSH_COMPDUMP="${XDG_CACHE_HOME}/oh-my-zsh/.zcompdump-${HOST}"
+export PSQL_HISTORY="${XDG_DATA_HOME}"/psql_history
+export PYENV_ROOT="${XDG_DATA_HOME}"/pyenv
+export PYTHONSTARTUP="${XDG_CONFIG_HOME}"/python/pythonrc
+export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
+
+DOTFILES_PATH="${HOME}"/Documents/dotfiles
+
+
+#--------------------------------------------------------------------------
+# Powerlevel10k
 #--------------------------------------------------------------------------
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+if [[ -r "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-
-#--------------------------------------------------------------------------
-# Environment variables
-#--------------------------------------------------------------------------
-
-ZSH="${HOME}/.oh-my-zsh"
-ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
-DOTFILES_PATH="$HOME/Documents/dotfiles"
-DEV_PATH="$HOME/Documents/Development"
-eval "$(/usr/local/bin/brew shellenv)"
 
 
 #--------------------------------------------------------------------------
 # General config
 #--------------------------------------------------------------------------
 
-HYPHEN_INSENSITIVE="true"  # Used in completion
-COMPLETION_WAITING_DOTS="true"
-HIST_STAMPS="yyyy-mm-dd"
+export HYPHEN_INSENSITIVE="true"  # Used in completion
+export COMPLETION_WAITING_DOTS="true"
+export HIST_STAMPS="yyyy-mm-dd"
 
-# Keep n lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000000
-SAVEHIST=1000000
-HISTFILE=~/.zsh_history
+export SAVEHIST=${HISTSIZE}
 
 setopt histignorealldups sharehistory
 
@@ -87,25 +108,24 @@ then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
   autoload -Uz compinit
-  compinit
+  compinit -d "${XDG_CACHE_HOME}"/zsh/zcompdump-"${ZSH_VERSION}"
 fi
 
 source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[path]=none
-ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+export ZSH_HIGHLIGHT_STYLES[path]=none
+export ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 
 #--------------------------------------------------------------------------
 # Oh-my-zsh
 #--------------------------------------------------------------------------
 
-plugins=(
-)
+#plugins=()
 
-source $ZSH/oh-my-zsh.sh
+source "${ZSH}"/oh-my-zsh.sh
 
 
 #--------------------------------------------------------------------------
@@ -113,8 +133,8 @@ source $ZSH/oh-my-zsh.sh
 #--------------------------------------------------------------------------
 
 # Set default editor to vim
-EDITOR=nvim
-VISUAL=nvim
+export EDITOR=nvim
+export VISUAL=nvim
 
 bindkey -v  # vim mode
 
@@ -125,7 +145,7 @@ bindkey -v  # vim mode
 
 # Use modern completion system
 autoload -Uz compinit
-compinit
+compinit -d "${XDG_CACHE_HOME}"/zsh/zcompdump-"${ZSH_VERSION}"
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -145,8 +165,8 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 GPG_TTY=$(tty)
-PATH="/usr/local/sbin:$PATH"
-PATH="/usr/local/bin:$PATH"
+PATH=/usr/local/sbin:"${PATH}"
+PATH=/usr/local/bin:"${PATH}"
 
 # GNU only ('dircolors')
 #zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
@@ -180,7 +200,7 @@ else
     if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
         . "/usr/local/anaconda3/etc/profile.d/conda.sh"
     else
-        PATH="/usr/local/anaconda3/bin:$PATH"
+        PATH=/usr/local/anaconda3/bin:"${PATH}"
     fi
 fi
 unset __conda_setup
@@ -191,10 +211,10 @@ unset __conda_setup
 # Golang
 #--------------------------------------------------------------------------
 
-GOPATH=$HOME/Documents/Development/Go
+GOPATH="${HOME}"/Documents/Development/Go
 GOROOT=/usr/local/opt/go/libexec
-PATH=$PATH:$GOPATH/bin
-PATH=$PATH:$GOROOT/bin
+PATH="${PATH}":"${GOPATH}"/bin
+PATH="${PATH}":"${GOROOT}"/bin
 
 
 #--------------------------------------------------------------------------
@@ -207,6 +227,7 @@ alias ls="eza -x"
 alias ll="eza -lh --changed"
 alias la="eza -lha --changed"
 alias shred="shred -uvz"
+alias wget=wget --hsts-file="${XDG_DATA_HOME}/wget-hsts"
 
 BAT="bat --style=plain --theme=Coldark-Dark --paging=always --italic-text=always --color=always"
 alias -g bat="${BAT}"
@@ -217,7 +238,7 @@ alias -g cat="bat"
 alias v="nvim"
 alias diff="nvim -d"
 
-alias cddf='cd $DOTFILES_PATH'
+alias cddf="cd ${DOTFILES_PATH}"
 
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
 
@@ -229,7 +250,7 @@ alias killjobs='jobs | awk -F'"'"'[][]'"'"' '\''{ print $2 }'\'' | while read -r
 eval "$(github-copilot-cli alias -- "$0")"
 
 vcl() {
-    nvim ${@}; clear;
+    nvim "${@}"; clear;
 }
 
 
@@ -276,14 +297,14 @@ function cd() {
     fi
   }
 
-  if [[ -z "$VIRTUAL_ENV" ]] ; then
+  if [[ -z "${VIRTUAL_ENV}" ]] ; then
     activate_venv
   else
     ## check the current folder belong to earlier VIRTUAL_ENV folder
     # if yes then do nothing
     # else deactivate then run a new env folder check
       parentdir="$(dirname ${VIRTUAL_ENV})"
-      if [[ "$PWD"/ != "$parentdir"/* ]] ; then
+      if [[ "${PWD}"/ != "${parentdir}"/* ]] ; then
         deactivate
         activate_venv
       fi
@@ -302,5 +323,6 @@ function cd() {
 
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit p10k.zsh.
+P10K_CONFIG="${XDG_CONFIG_HOME}"/p10k.zsh
+[[ ! -f "${P10K_CONFIG}" ]] || source "${P10K_CONFIG}"

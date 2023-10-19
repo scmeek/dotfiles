@@ -11,14 +11,15 @@
       recursive: true
 
 - link:
-    ~/.cargo/config.toml: cargoconfig.toml
-    ~/.config/nvim: nvim
+    ~/.local/share/cargo/config.toml: cargoconfig.toml
     ~/.config/alacritty: alacritty
-    ~/.config/yabai/yabairc: yabairc
+    ~/.config/nvim: nvim
+    ~/.config/git/config: gitconfig
+    ~/.config/p10k.zsh: p10k.zsh
+    ~/.config/python/pythonrc: pythonrc
     ~/.config/skhd/skhdrc: skhdrc
-    ~/.gitconfig: gitconfig
-    ~/.p10k.zsh: p10k.zsh
-    ~/.tmux.conf: tmux.conf
+    ~/.config/tmux/tmux.conf: tmux.conf
+    ~/.config/yabai/yabairc: yabairc
     ~/.zshrc: zshrc
     ~/Brewfile: brewfile_macos
 
@@ -33,5 +34,5 @@
     - [brew bundle install --file=~/Brewfile]
 
 - shell:
-    - command: TPM_DIR=~/.tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
+    - command: TPM_DIR=~/.config/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
       description: Install TMUX plugin manager. To install TMUX plugins, open TMUX and press `prefix + I`
