@@ -15,6 +15,7 @@
     ~/.config/alacritty: alacritty
     ~/.config/nvim: nvim
     ~/.config/git/config: gitconfig
+    ~/.config/npm/npmrc: npmrc
     ~/.config/p10k.zsh: p10k.zsh
     ~/.config/python/pythonrc: pythonrc
     ~/.config/skhd/skhdrc: skhdrc
