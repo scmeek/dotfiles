@@ -2,10 +2,6 @@
 	path = dotbot
 	url = git@github.com:anishathalye/dotbot.git
 	ignore = dirty
-[submodule "kickstart.nvim"]
-	path = kickstart.nvim
-	url = git@github.com:scmeek/kickstart.nvim.git
-	ignore = dirty
 [submodule "alacritty-theme"]
 	path = alacritty-theme
 	url = git@github.com:alacritty/alacritty-theme.git
