@@ -1,3 +1,7 @@
+require('which-key').register({
+	['<leader>x'] = { name = 'Trouble', _ = 'which_key_ignore' },
+})
+
 return {
 	'folke/trouble.nvim',
 	keys = {
@@ -8,9 +12,4 @@ return {
 		{ '<leader>xq', '<cmd>TroubleToggle quickfix<cr>',              desc = '[xq] Trouble quickfix items' },
 		{ 'gR',         '<cmd>TroubleToggle lsp_references<cr>',        desc = 'Troup LSP [R]eferences' },
 	},
-	config = function()
-		require('which-key').register({
-			['<leader>x'] = { name = 'Trouble', _ = 'which_key_ignore' },
-		})
-	end,
 }
