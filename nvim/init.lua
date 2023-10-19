@@ -22,11 +22,10 @@ require('lazy').setup({
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
       'folke/neodev.nvim',
     },
   },
-
   {
     'hrsh7th/nvim-cmp',
     dependencies = {
@@ -36,7 +35,7 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -120,7 +119,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
-require('telescope').setup {
+require('telescope').setup({
   defaults = {
     mappings = {
       n = {
@@ -134,7 +133,7 @@ require('telescope').setup {
       },
     },
   },
-}
+})
 
 pcall(require('telescope').load_extension, 'fzf')
 
@@ -156,8 +155,9 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 
 vim.defer_fn(function()
-  require('nvim-treesitter.configs').setup {
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+  require('nvim-treesitter.configs').setup({
+    ensure_installed = { 'bash', 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc',
+      'vim' },
     auto_install = false,
     highlight = { enable = true },
     indent = { enable = true },
@@ -213,7 +213,7 @@ vim.defer_fn(function()
         },
       },
     },
-  }
+  })
 end, 0)
 
 -- [[ Configure LSP ]]
@@ -335,13 +335,13 @@ require('neodev').setup()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-local mason_lspconfig = require 'mason-lspconfig'
+local mason_lspconfig = require('mason-lspconfig')
 
-mason_lspconfig.setup {
+mason_lspconfig.setup({
   ensure_installed = vim.tbl_keys(servers),
-}
+})
 
-mason_lspconfig.setup_handlers {
+mason_lspconfig.setup_handlers({
   function(server_name)
     local server_settings = {
       capabilities = capabilities,
@@ -360,14 +360,14 @@ mason_lspconfig.setup_handlers {
 
     require('lspconfig')[server_name].setup(server_settings)
   end
-}
+})
 
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
+local cmp = require('cmp')
+local luasnip = require('luasnip')
 require('luasnip.loaders.from_vscode').lazy_load()
-luasnip.config.setup {}
+luasnip.config.setup({})
 
-cmp.setup {
+cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -407,7 +407,7 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'copilot' },
   },
-}
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
