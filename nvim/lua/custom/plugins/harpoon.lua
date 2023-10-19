@@ -1,3 +1,7 @@
+require('which-key').register({
+  ['<leader>h'] = { name = '[H]arpoon', _ = 'which_key_ignore' },
+})
+
 return {
   'ThePrimeagen/harpoon',
   dependencies = {
@@ -20,8 +24,5 @@ return {
       }
     })
     require("telescope").load_extension('harpoon')
-    require('which-key').register({
-      ['<leader>h'] = { name = '[H]arpoon', _ = 'which_key_ignore' },
-    })
   end,
 }
