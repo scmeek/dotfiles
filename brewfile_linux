@@ -1,13 +1,11 @@
 brew "bat"                                  # `cat` alternative
 brew "node"                                 # nodejs
-brew "difftastic"
-brew "eza"
-brew "fzf"
-brew "git-delta"
-brew "gnupg"
-brew "lazygit"
-brew "ripgrep"
-brew "shfmt"
+brew "difftastic"                           # diff analysis and presentation
+brew "eza"                                  # `ls` alternative
+brew "fzf"                                  # fuzzy-finder
+brew "git-delta"                            # git pager
+brew "gnupg"                                # Gnu PGP
+brew "ripgrep"                              # fuzzy-finder
 
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"

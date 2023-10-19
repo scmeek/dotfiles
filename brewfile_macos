@@ -14,9 +14,10 @@ brew "node"                                 # nodejs
 brew "pinentry-mac"                         # macOS integration for GPG
 brew "ripgrep"                              # fuzzy-finder
 brew "rustup-init"                          # rust
-brew "tig"                                  # git TUI app
+brew "unbound"                              # DNS resolver
 brew "tmux"                                 # terminal multiplexer
 brew "trash"                                # move to trash cli https://hasseg.org/trash/
+brew "zbar"                                 # QR code reader
 
 # zsh
 tap "romkatv/powerlevel10k"                 # powerlevel10k (zsh)
@@ -28,7 +29,6 @@ brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 brew "neovim"                               # text editor
 brew "bash-language-server"                 # neovim lsp
 brew "clang-format"                         # neovim lsp
-brew "lazygit"                              # LazyVim optional requirement
 brew "fd"                                   # LazyVim optional requirement
 brew "prettier"                             # neovim lsp
 brew "pyright"                              # neovim lsp
@@ -47,3 +47,4 @@ cask "font-fira-mono-nerd-font"             # font
 cask "font-victor-mono-nerd-font"           # font
 cask "libreoffice"                          # office tools
 cask "openvpn-connect"                      # OpenVPN Connect client
+cask "raycast"                              # macOS launcher (spotlight replacement)
