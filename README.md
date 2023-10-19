@@ -80,20 +80,6 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
 
-### [Neovim](https://neovim.io/)
-
-1. Initialize submodules to retrieve `nvim-kickstarter` `init.lua`.
-
-   ```sh
-   git submodule update --init --recursive
-   ```
-
-2. Add additional Neovim language servers
-
-   ```sh
-   npm i -g vscode-langservers-extracted
-   ```
-
 ## Synchronize configuration files
 
 [dotbot](https://github.com/anishathalye/dotbot) should take care of everything by placing symlinks in the appropriate places.
