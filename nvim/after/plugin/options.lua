@@ -8,6 +8,7 @@ vim.opt.smartindent = true
 vim.opt.copyindent = true
 vim.opt.preserveindent = true
 vim.opt.autoindent = true
+vim.opt.breakindent = true
 vim.opt.cursorline = true
 vim.opt.compatible = false
 vim.opt.showmatch = true
@@ -46,8 +47,8 @@ vim.opt.backup = true
 vim.opt.backupdir = os.getenv('HOME') .. '/.vim/backup'
 vim.opt.wrap = true
 vim.opt.linebreak = true
-vim.opt.timeoutlen = 500
-vim.opt.updatetime = 1500
+vim.opt.timeoutlen = 300
+vim.opt.updatetime = 250
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldlevelstart = 99 -- start unfolded
@@ -57,3 +58,5 @@ vim.opt.termguicolors = true
 -- More natural split opening
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+vim.wo.number = true
