@@ -1,7 +1,3 @@
-require('which-key').register({
-  ['<Leader>q'] = { name = 'Persistence', _ = 'which_key_ignore' },
-})
-
 return {
   'folke/persistence.nvim',
   event = 'BufReadPre',
@@ -21,6 +17,10 @@ return {
         'globals',
         'skiprtp'
       },
+    })
+
+    require('which-key').register({
+      ['<Leader>q'] = { name = 'Persistence', _ = 'which_key_ignore' },
     })
   end,
 }

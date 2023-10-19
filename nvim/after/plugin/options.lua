@@ -47,6 +47,7 @@ vim.opt.backup = true
 vim.opt.backupdir = os.getenv('HOME') .. '/.vim/backup'
 vim.opt.wrap = true
 vim.opt.linebreak = true
+vim.opt.timeout = true
 vim.opt.timeoutlen = 300
 vim.opt.updatetime = 250
 vim.opt.foldmethod = 'expr'
