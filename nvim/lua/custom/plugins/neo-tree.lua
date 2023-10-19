@@ -42,6 +42,15 @@ return {
                 },
                 icon = icons.file_tree,
             },
+            window = {
+                mapping_options = {
+                    noremap = true,
+                    nowait = true,
+                },
+                mappings = {
+                    ["<C-c>"] = "close_window",
+                }
+            },
             filesystem = {
                 filtered_items = {
                     visible = false,
