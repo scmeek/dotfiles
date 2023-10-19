@@ -20,7 +20,7 @@ require('lazy').setup({
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      'williamboman/mason.nvim',
+      { 'williamboman/mason.nvim', config = true }, -- TODO: fix - this supposedly should not need config = true
       'williamboman/mason-lspconfig.nvim',
       { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
       'folke/neodev.nvim',
