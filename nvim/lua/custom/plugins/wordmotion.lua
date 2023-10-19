@@ -1,7 +1,7 @@
 return {
   'chaoren/vim-wordmotion',
   keys = {
-    { 'n', 'cw', 'ce', silent = true },
-    { 'n', 'cW', 'cE', silent = true },
+    { 'cw', 'ce', silent = true },
+    { 'cW', 'cE', silent = true },
   },
 }
