@@ -1,8 +1,8 @@
 return {
   'kylechui/nvim-surround',
   version = '*',
-  event = 'VeryLazy',
+  event = 'VeryLazy', -- Note: Forces redraw which makes neovim intro screen disappear
   config = function()
-    require('nvim-surround').setup({})
+    require('nvim-surround').setup()
   end,
 }

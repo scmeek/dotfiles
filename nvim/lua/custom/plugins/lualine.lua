@@ -1,6 +1,8 @@
 local constants = require('constants')
 local icons = require('icons')
 
+-- Note: lualine sets statusline which forces a redraw making the neovim intro
+-- screen disappear
 return {
     'nvim-lualine/lualine.nvim',
     opts = {
