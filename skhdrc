@@ -23,7 +23,7 @@
 
 # https://mybyways.com/blog/global-hotkeys-for-macos-with-skhd
 cmd - 1 : open -a alacritty
-cmd - 2 : open -a firefox
+cmd - 2 : open -a safari
 cmd - 3 : open -a spotify
 cmd - 4 : open -a slack
 
