@@ -21,7 +21,6 @@
     ~/Brewfile: .brewfile_linux
 
 - create:
-    - ~/.vim/undo-history
     - ~/.hushlogin # Hush login messages on bash/zsh open
 
 - shell:

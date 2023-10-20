@@ -28,7 +28,6 @@
     "/Users/sean/Library/KeyBindings/DefaultKeyBinding.dict": DefaultKeyBinding.dict
 
 - create:
-    - ~/.vim/undo-history
     - ~/.hushlogin # Hush login messages on bash/zsh open
 
 - shell:
