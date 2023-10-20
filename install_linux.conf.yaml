@@ -11,19 +11,22 @@
       recursive: true
 
 - link:
-    ~/.config/nvim: nvim
     ~/.config/alacritty: alacritty
-    ~/.gitconfig: gitconfig
-    ~/.p10k.zsh: p10k.zsh
+    ~/.config/nvim: nvim
+    ~/.config/git/config: gitconfig
+    ~/.config/npm/npmrc: npmrc
+    ~/.config/p10k.zsh: p10k.zsh
+    ~/.config/python/pythonrc: pythonrc
     ~/.zshrc: zshrc
     ~/Brewfile: .brewfile_linux
 
 - create:
     - ~/.vim/undo-history
+    - ~/.hushlogin # Hush login messages on bash/zsh open
 
 - shell:
     - [brew bundle install]
 
 - shell:
-    - [git clone git@github.com:tmux-plugins/tpm.git ~/.tmux/plugins/tpm]
-    - [echo 'To install TMUX plugins, open TMUX and press `prefix + I`']
+    - command: TPM_DIR=~/.config/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
+      description: Install TMUX plugin manager. To install TMUX plugins, open TMUX and press `prefix + I`
