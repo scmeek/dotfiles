@@ -20,8 +20,7 @@ brew "trash"                                # move to trash cli https://hasseg.o
 brew "zbar"                                 # QR code reader
 
 # zsh
-tap "romkatv/powerlevel10k"                 # powerlevel10k (zsh)
-brew "romkatv/powerlevel10k/powerlevel10k"
+brew "romkatv/powerlevel10k/powerlevel10k"  # powerlevel10k (zsh)
 brew "zsh-autosuggestions"                  # zsh-autosuggestions
 brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 
