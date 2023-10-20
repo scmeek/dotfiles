@@ -26,16 +26,7 @@ brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 
 # neovim
 brew "neovim"                               # text editor
-brew "bash-language-server"                 # neovim lsp
-brew "clang-format"                         # neovim lsp
 brew "fd"                                   # LazyVim optional requirement
-brew "prettier"                             # neovim lsp
-brew "pyright"                              # neovim lsp
-brew "rust-analyzer"                        # neovim lsp
-brew "stylua"                               # neovim lsp
-brew "shfmt"                                # shell formatter
-brew "taplo"                                # toml toolkit, formatter
-brew "pgformatter"                          # SQL formatter
 
 # casks
 cask "alacritty"                            # terminal
