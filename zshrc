@@ -52,7 +52,7 @@ export PYENV_ROOT="${XDG_DATA_HOME}"/pyenv
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}"/python/pythonrc
 export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
 
-DOTFILES_PATH="${HOME}"/Documents/dotfiles
+export DOTFILES_PATH="${HOME}"/Documents/dotfiles
 
 
 #--------------------------------------------------------------------------
