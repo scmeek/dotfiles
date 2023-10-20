@@ -229,6 +229,17 @@ alias la="eza -lha --changed"
 alias shred="shred -uvz"
 alias wget=wget --hsts-file="${XDG_DATA_HOME}/wget-hsts"
 
+if [ -s "${XDG_CONFIG_HOME}/ssh/config" ]
+then
+    SSH_CONFIG="-F ${XDG_CONFIG_HOME}/ssh/config"
+fi
+if [ -s "${XDG_CONFIG_HOME}/ssh/id_dsa" ]
+then
+    SSH_ID="-i ${XDG_CONFIG_HOME}/ssh/id_dsa"
+fi
+alias ssh="ssh ${SSH_CONFIG} ${SSH_ID}"
+alias ssh-copy-id="ssh-copy-id ${SSH_ID}"
+
 BAT="bat --style=plain --theme=Coldark-Dark --paging=always --italic-text=always --color=always"
 alias -g bat="${BAT}"
 export MANPAGER="sh -c 'col -bx | ${BAT} --language=man'"
