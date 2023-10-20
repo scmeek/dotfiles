@@ -324,5 +324,5 @@ function cd() {
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit p10k.zsh.
-P10K_CONFIG="${XDG_CONFIG_HOME}"/p10k.zsh
-[[ ! -f "${P10K_CONFIG}" ]] || source "${P10K_CONFIG}"
+P10K_CONFIG_FILE="${XDG_CONFIG_HOME}"/p10k.zsh
+[[ ! -f "${P10K_CONFIG_FILE}" ]] || source "${P10K_CONFIG_FILE}"
