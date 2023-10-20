@@ -211,7 +211,7 @@ unset __conda_setup
 # Golang
 #--------------------------------------------------------------------------
 
-GOPATH="${HOME}"/Documents/Development/Go
+GOPATH="${XDG_DATA_HOME}"/go
 GOROOT=/usr/local/opt/go/libexec
 PATH="${PATH}":"${GOPATH}"/bin
 PATH="${PATH}":"${GOROOT}"/bin
