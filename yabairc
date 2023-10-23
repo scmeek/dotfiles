@@ -43,5 +43,7 @@ yabai -m config window_gap "${YABAI_PADDING}"
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Installer$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
+yabai -m rule --add app="^OpenVPN Connect$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^zoom.us$" manage=off
