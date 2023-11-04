@@ -1,5 +1,3 @@
-local constants = require('constants')
-
 vim.g.startify_custom_header = {
   [[                                                                       ]],
   [[  ██████   █████                   █████   █████  ███                  ]],
@@ -19,9 +17,6 @@ vim.g.startify_change_to_vcs_root = 1
 vim.g.startify_enable_special = 0
 vim.g.startify_enable_unsafe = 1
 vim.g.startify_files_number = 5
-vim.g.startify_session_dir = constants.sessions_dir
-vim.g.startify_sessions_number = 4
-vim.g.startify_session_sort = 1
 vim.g.startify_skiplist = { 'COMMIT_EDITMSG', '.DS_Store' }
 vim.g.startify_use_env = 1
 
