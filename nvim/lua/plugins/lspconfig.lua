@@ -8,60 +8,70 @@ local servers = {
   },
 }
 
-local get_server_additional_settings = {
-  arduino_language_server = function()
-    local arduino_cli_config_file = os.getenv('HOME') ..
-        '/.arduino15/arduino-cli.yaml'
-    local arduino_cli_config_file_handler = io.open(arduino_cli_config_file, 'r')
-    if arduino_cli_config_file_handler ~= nil then
-      arduino_cli_config_file_handler:close()
-      return {
-        cmd = {
-          'arduino-language-server',
-          '-cli-config', arduino_cli_config_file,
-          '-cli', 'arduino-cli',
-          '-clangd', 'clangd',
-          '-fqbn', 'arduino:avr:uno'
-        },
-      }
-    else
-      print('WARN: Missing arduino-cli configuration file while configuring ' ..
-        'arduino-language-server (' .. arduino_cli_config_file .. ')')
-      return nil
-    end
-  end,
-  tsserver = function()
+local servers_additional_settings = {}
+servers_additional_settings.arduino_language_server = function()
+  local arduino_cli_config_file = os.getenv('HOME')
+    .. '/.arduino15/arduino-cli.yaml'
+  local arduino_cli_config_file_handler = io.open(arduino_cli_config_file, 'r')
+  if arduino_cli_config_file_handler ~= nil then
+    arduino_cli_config_file_handler:close()
     return {
-      commands = {
-        OrganizeImports = {
-          function()
-            vim.lsp.buf.execute_command({
-              command = '_typescript.organizeImports',
-              arguments = { vim.api.nvim_buf_get_name(0) },
-            })
-          end,
-          description = 'Organize Imports',
-        },
+      cmd = {
+        'arduino-language-server',
+        '-cli-config',
+        arduino_cli_config_file,
+        '-cli',
+        'arduino-cli',
+        '-clangd',
+        'clangd',
+        '-fqbn',
+        'arduino:avr:uno',
       },
     }
-  end,
-  rust_analyzer = function()
-    local rust_analyzer_config_file = vim.fn.getcwd() .. '/.rust-analyzer.json'
-    local rust_analyzer_config_file_handler = io.open(rust_analyzer_config_file, 'r')
-    if rust_analyzer_config_file_handler ~= nil then
-      local config_json = rust_analyzer_config_file_handler:read('*a')
-      rust_analyzer_config_file_handler:close()
-      local config = vim.json.decode(config_json) or nil
-      if config ~= nil then
-        return {
-          settings = {
-            ['rust-analyzer'] = config,
-          },
-        }
-      end
+  else
+    print(
+      'WARN: Missing arduino-cli configuration file while configuring '
+        .. 'arduino-language-server ('
+        .. arduino_cli_config_file
+        .. ')'
+    )
+    return nil
+  end
+end
+
+servers_additional_settings.rust_analyzer = function()
+  local rust_analyzer_config_file = vim.fn.getcwd() .. '/.rust-analyzer.json'
+  local rust_analyzer_config_file_handler =
+    io.open(rust_analyzer_config_file, 'r')
+  if rust_analyzer_config_file_handler ~= nil then
+    local config_json = rust_analyzer_config_file_handler:read('*a')
+    rust_analyzer_config_file_handler:close()
+    local config = vim.json.decode(config_json) or nil
+    if config ~= nil then
+      return {
+        settings = {
+          ['rust-analyzer'] = config,
+        },
+      }
     end
-  end,
-}
+  end
+end
+
+servers_additional_settings.tsserver = function()
+  return {
+    commands = {
+      OrganizeImports = {
+        function()
+          vim.lsp.buf.execute_command({
+            command = '_typescript.organizeImports',
+            arguments = { vim.api.nvim_buf_get_name(0) },
+          })
+        end,
+        description = 'Organize Imports',
+      },
+    },
+  }
+end
 
 local on_attach = function(_, bufnr)
   local set_lsp_keymap = function(keys, func, desc)
@@ -126,8 +136,8 @@ return {
           filetypes = (servers[server_name] or {}).filetypes,
         }
 
-        local server_additional_settings = get_server_additional_settings[server_name]
-            and get_server_additional_settings[server_name]()
+        local server_additional_settings = servers_additional_settings[server_name]
+          and servers_additional_settings[server_name]()
         if server_additional_settings ~= nil then
           for k, v in pairs(server_additional_settings) do
             server_settings[k] = v
