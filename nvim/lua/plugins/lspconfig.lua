@@ -82,6 +82,26 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
+  if client.supports_method('textDocument/documentHighlight') then
+    vim.api.nvim_create_augroup('lsp_document_highlight', {
+      clear = false,
+    })
+    vim.api.nvim_clear_autocmds({
+      buffer = bufnr,
+      group = 'lsp_document_highlight',
+    })
+    vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+      group = 'lsp_document_highlight',
+      buffer = bufnr,
+      callback = vim.lsp.buf.document_highlight,
+    })
+    vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+      group = 'lsp_document_highlight',
+      buffer = bufnr,
+      callback = vim.lsp.buf.clear_references,
+    })
+  end
+
   set_lsp_keymap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   set_lsp_keymap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
