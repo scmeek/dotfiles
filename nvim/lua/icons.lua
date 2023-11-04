@@ -73,4 +73,13 @@ return {
     folder_open = '',
     folder_empty = '󰜌',
   },
+  todo = {
+    fix = ' ',
+    todo = ' ',
+    hack = ' ',
+    warning = ' ',
+    performance = '󰥔 ',
+    note = '󱞁 ',
+    test = '⏲ ',
+  },
 }
