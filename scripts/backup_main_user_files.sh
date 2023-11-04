@@ -3,7 +3,7 @@ set -Eeuo pipefail
 #dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
 
 usage() {
-	echo "Backs up main user directories and files to Veracrypt encrypted volume"
+	echo "Backs up main user directories, files, and mobile backups to Veracrypt encrypted volume. The calling terminal must have the Full Disk Access permission."
 	echo "Usage: $0"
 }
 
@@ -13,6 +13,7 @@ if [[ $# -ne 0 ]]; then
 fi
 
 user_directories=(
+	"Library/Application Support/MobileSync"
 	Desktop
 	Documents
 	Downloads
@@ -84,6 +85,8 @@ for user_directory in "${user_directories[@]}"; do
 	print_msg "Backing up ${user_directory} ($(date))"
 	directory="${HOME}/${user_directory}"
 	backup_directory="${mount_point}/${user_directory}"
+
+	mkdir -p "${backup_directory}"
 
 	rsync \
 		--archive \
