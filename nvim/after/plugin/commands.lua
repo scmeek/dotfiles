@@ -1,14 +1,5 @@
 local constants = require('constants')
 
-local local_group = vim.api.nvim_create_augroup('Local', { clear = true })
-
-vim.api.nvim_create_autocmd('BufWritePre', {
-    desc = 'Trim whitespace on save',
-    group = local_group,
-    pattern = '*',
-    command = ':%s/\\s\\+$//e',
-})
-
 vim.api.nvim_create_user_command('WQ', 'wq', {})
 vim.api.nvim_create_user_command('Wq', 'wq', {})
 vim.api.nvim_create_user_command('W', 'w', {})
