@@ -13,6 +13,7 @@ brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
 brew "pinentry-mac"                         # macOS integration for GPG
 brew "ripgrep"                              # fuzzy-finder
+brew "rsync"                                # file transfer used in backup script
 brew "rustup-init"                          # rust
 brew "unbound"                              # DNS resolver
 brew "tmux"                                 # terminal multiplexer
