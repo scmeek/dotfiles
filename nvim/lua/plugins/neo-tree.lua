@@ -9,7 +9,6 @@ return {
 	},
 	keys = {
 		{ "<leader>r", ":Neotree position=left reveal=true toggle<CR>", desc = "Toggle Neo-t[r]ee" },
-		{ "<leader>rf", ":Neotree position=float reveal=true toggle<CR>", desc = "Open Neo-t[r]ee [f]loat" },
 	},
 	config = function()
 		vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
