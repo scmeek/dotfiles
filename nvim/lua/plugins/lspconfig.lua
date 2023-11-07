@@ -81,7 +81,7 @@ servers_additional_settings.tsserver = function()
 	}
 end
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
 	local set_lsp_keymap = function(keys, func, desc)
 		if desc then
 			desc = "LSP: " .. desc
