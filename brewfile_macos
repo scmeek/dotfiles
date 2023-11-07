@@ -31,6 +31,8 @@ brew "clang-format"
 brew "cpplint"
 brew "neovim"                               # text editor
 brew "fd"                                   # LazyVim optional requirement
+brew "lua-language-server"
+brew "luacheck"
 brew "shellcheck"
 brew "shfmt"
 brew "stylua"                               # Lua code formatter

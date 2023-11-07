@@ -3,6 +3,7 @@ local mason_ensure_installed = {
 	"clang-format",
 	"clangd",
 	"cpplint",
+	"lua-language-server",
 	"shellcheck",
 	"shfmt",
 	"stylua",

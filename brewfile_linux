@@ -19,6 +19,8 @@ brew "clang-format"
 brew "cpplint"
 brew "neovim"
 brew "fd"
+brew "lua-language-server"
+brew "luacheck"
 brew "shellcheck"
 brew "shfmt"
 brew "stylua"                               # Lua code formatter
