@@ -14,6 +14,9 @@ brew "zsh-syntax-highlighting"
 brew "romkatv/powerlevel10k/powerlevel10k"
 
 # neovim
+brew "bash-language-server"
 brew "neovim"
 brew "fd"
+brew "shellcheck"
+brew "shfmt"
 brew "stylua"                               # Lua code formatter

@@ -1,5 +1,7 @@
 local formatters = {
 	lua = { "stylua" },
+	sh = { "shfmt" },
+	zsh = { "shfmt" },
 }
 
 local prettier_filetypes = {

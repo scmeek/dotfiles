@@ -1,4 +1,7 @@
 local mason_ensure_installed = {
+	"bash-language-server",
+	"shellcheck",
+	"shfmt",
 	"stylua",
 }
 local servers = {
