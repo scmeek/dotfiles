@@ -1,3 +1,4 @@
+# formulae
 brew "bat"                                  # `cat` alternative
 brew "node"                                 # nodejs
 brew "difftastic"                           # diff analysis and presentation
@@ -7,10 +8,11 @@ brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
 brew "ripgrep"                              # fuzzy-finder
 
+# zsh
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
-tap "romkatv/powerlevel10k"
 brew "romkatv/powerlevel10k/powerlevel10k"
 
+# neovim
 brew "neovim"
 brew "fd"
