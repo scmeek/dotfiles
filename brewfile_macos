@@ -29,10 +29,12 @@ brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 brew "bash-language-server"
 brew "clang-format"
 brew "cpplint"
-brew "neovim"                               # text editor
+brew "eslint"
 brew "fd"                                   # LazyVim optional requirement
 brew "lua-language-server"
 brew "luacheck"
+brew "neovim"                               # text editor
+brew "prettier"
 brew "shellcheck"
 brew "shfmt"
 brew "stylua"                               # Lua code formatter
