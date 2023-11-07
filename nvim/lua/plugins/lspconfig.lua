@@ -164,6 +164,7 @@ return {
 	},
 	config = function()
 		require("mason").setup()
+		require("mason-lspconfig").setup()
 
 		require("neodev").setup({
 			library = {
