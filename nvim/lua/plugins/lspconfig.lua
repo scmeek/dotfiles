@@ -1,4 +1,5 @@
 local mason_ensure_installed = {
+	"stylua",
 }
 local servers = {
 	bashls = { filetypes = { "sh", "zsh" } },

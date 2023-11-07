@@ -28,6 +28,7 @@ brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 # neovim
 brew "neovim"                               # text editor
 brew "fd"                                   # LazyVim optional requirement
+brew "stylua"                               # Lua code formatter
 
 # casks
 cask "alacritty"                            # terminal

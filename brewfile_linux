@@ -16,3 +16,4 @@ brew "romkatv/powerlevel10k/powerlevel10k"
 # neovim
 brew "neovim"
 brew "fd"
+brew "stylua"                               # Lua code formatter
