@@ -8,19 +8,19 @@ return {
     Info = ' ',
   },
   git = {
-    Added        = ' ',
-    Added_alt    = ' ',
-    Added_alt2   = '',
-    Added_alt3   = '✚ ',
-    Modified     = ' ',
+    Added = ' ',
+    Added_alt = ' ',
+    Added_alt2 = '',
+    Added_alt3 = '✚ ',
+    Modified = ' ',
     Modified_alt = ' ',
-    Removed      = ' ',
-    Deleted      = '✖ ',
-    Renamed      = '󰁕 ',
-    Untracked    = '',
-    Ignored      = '',
-    Unstaged     = '󰄱',
-    Conflict     = '',
+    Removed = ' ',
+    Deleted = '✖ ',
+    Renamed = '󰁕 ',
+    Untracked = '',
+    Ignored = '',
+    Unstaged = '󰄱',
+    Conflict = '',
   },
   dap = {
     breakpoint = ' ',
@@ -28,7 +28,7 @@ return {
     log_point = ' ',
     stopped = ' ',
     breakpoint_rejected = ' ',
-    breakpoint_rejected_alt = "",
+    breakpoint_rejected_alt = '',
     pause = '⏸',
     pause_alt = ' ',
     play = '▶',
@@ -55,11 +55,11 @@ return {
   status_bar = {
     component_separators = {
       left = '',
-      right = ''
+      right = '',
     },
     section_separators = {
       left = '',
-      right = ''
+      right = '',
     },
   },
   status = {
