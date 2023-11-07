@@ -1,5 +1,6 @@
 return {
   newfile_name = 'untitled',
+  theme = 'round',
   border_style = 'rounded',
   backup_colors = {
     error = '#DC2626',
