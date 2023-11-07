@@ -23,7 +23,6 @@ local options = {
   laststatus = 3,
   linebreak = true,
   list = true,
-  listchars = { tab = '| ', trail = '·', extends = '>', },
   mouse = 'a',
   preserveindent = true,
   pumheight = 15, -- Completion
@@ -52,6 +51,7 @@ local options = {
   wildmode = { 'longest', 'list', 'full' },
   wildoptions = 'pum',
   wrap = true,
+	listchars = { tab = "┊ ", trail = "·", extends = ">" },
 }
 
 for name, value in pairs(options) do
