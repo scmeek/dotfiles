@@ -58,9 +58,9 @@ servers_additional_settings.arduino_language_server = function()
 	else
 		print(
 			"WARN: Missing arduino-cli configuration file while configuring "
-				.. "arduino-language-server ("
-				.. arduino_cli_config_file
-				.. ")"
+			.. "arduino-language-server ("
+			.. arduino_cli_config_file
+			.. ")"
 		)
 		return nil
 	end
@@ -195,7 +195,7 @@ return {
 				}
 
 				local server_additional_settings = servers_additional_settings[server_name]
-					and servers_additional_settings[server_name]()
+						and servers_additional_settings[server_name]()
 				if server_additional_settings ~= nil then
 					for k, v in pairs(server_additional_settings) do
 						server_settings[k] = v
