@@ -5,6 +5,10 @@ return {
 	config = function()
 		require("catppuccin").setup({
 			flavour = "macchiato",
+			background = {
+				light = "latte",
+				dark = "macchiato",
+			},
 		})
 		vim.cmd.colorscheme("catppuccin")
 		local hl_groups = { "DiagnosticUnderlineError" }
