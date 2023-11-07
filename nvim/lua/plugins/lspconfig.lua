@@ -1,3 +1,5 @@
+local mason_ensure_installed = {
+}
 local servers = {
 	bashls = { filetypes = { "sh", "zsh" } },
 	lua_ls = {
@@ -135,6 +137,10 @@ return {
 		"folke/neodev.nvim",
 	},
 	config = function()
+		require("mason").setup({
+			ensure_installed = mason_ensure_installed,
+		})
+
 		require("neodev").setup({
 			library = {
 				enabled = true,
