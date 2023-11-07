@@ -1,24 +1,21 @@
-local mason_ensure_installed = {
-	"bash-language-server",
-	"clang-format",
-	"clangd",
-	"cpplint",
-	"eslint-lsp",
-	"lua-language-server",
-	"prettier",
-	"shellcheck",
-	"shfmt",
-	"stylua",
-}
-
 local servers = {
 	bashls = { filetypes = { "sh", "zsh" } },
+	clangd = {},
+	eslint = {},
+	html = {},
+	jsonls = {},
 	lua_ls = {
 		Lua = {
 			workspace = { checkThirdParty = false },
 			telemetry = { enable = false },
 		},
 	},
+	pyright = {},
+	rust_analyzer = {},
+	sqlls = {},
+	tsserver = {},
+	vimls = {},
+	yamlls = {},
 }
 
 local servers_additional_settings = {}
@@ -148,9 +145,7 @@ return {
 		"folke/neodev.nvim",
 	},
 	config = function()
-		require("mason").setup({
-			ensure_installed = mason_ensure_installed,
-		})
+		require("mason").setup()
 
 		require("neodev").setup({
 			library = {

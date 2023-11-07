@@ -2,6 +2,7 @@ local formatters = {
 	c = { "clang-format" },
 	cpp = { "clang-format" },
 	lua = { "stylua" },
+	python = { "black", "isort" },
 	sh = { "shfmt" },
 	zsh = { "shfmt" },
 }

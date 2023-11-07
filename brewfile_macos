@@ -27,17 +27,20 @@ brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 
 # neovim
 brew "bash-language-server"
+brew "black"
 brew "clang-format"
 brew "cpplint"
 brew "eslint"
-brew "fd"                                   # LazyVim optional requirement
+brew "flake8"
+brew "isort"
 brew "lua-language-server"
 brew "luacheck"
-brew "neovim"                               # text editor
+brew "neovim"
 brew "prettier"
+brew "pyright"
 brew "shellcheck"
 brew "shfmt"
-brew "stylua"                               # Lua code formatter
+brew "stylua"
 
 # casks
 cask "alacritty"                            # terminal
