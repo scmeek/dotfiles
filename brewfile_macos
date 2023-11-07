@@ -27,6 +27,8 @@ brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 
 # neovim
 brew "bash-language-server"
+brew "clang-format"
+brew "cpplint"
 brew "neovim"                               # text editor
 brew "fd"                                   # LazyVim optional requirement
 brew "shellcheck"

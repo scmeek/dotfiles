@@ -1,4 +1,6 @@
 local formatters = {
+	c = { "clang-format" },
+	cpp = { "clang-format" },
 	lua = { "stylua" },
 	sh = { "shfmt" },
 	zsh = { "shfmt" },

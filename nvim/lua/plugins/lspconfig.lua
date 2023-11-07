@@ -1,9 +1,13 @@
 local mason_ensure_installed = {
 	"bash-language-server",
+	"clang-format",
+	"clangd",
+	"cpplint",
 	"shellcheck",
 	"shfmt",
 	"stylua",
 }
+
 local servers = {
 	bashls = { filetypes = { "sh", "zsh" } },
 	lua_ls = {

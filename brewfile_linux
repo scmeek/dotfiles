@@ -15,6 +15,8 @@ brew "romkatv/powerlevel10k/powerlevel10k"
 
 # neovim
 brew "bash-language-server"
+brew "clang-format"
+brew "cpplint"
 brew "neovim"
 brew "fd"
 brew "shellcheck"
