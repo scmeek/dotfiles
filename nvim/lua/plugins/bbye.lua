@@ -3,6 +3,6 @@ return {
 	event = "VeryLazy",
 	cmd = { "Bdelete", "Bwipeout" },
 	keys = {
-		{ "<C-c>", vim.cmd.Bdelete, desc = "[W] Close buffer" },
+		{ "<C-w>", vim.cmd.Bdelete, desc = "[C-w] Close buffer" },
 	},
 }

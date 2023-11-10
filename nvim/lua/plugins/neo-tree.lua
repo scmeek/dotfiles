@@ -47,7 +47,7 @@ return {
 					nowait = true,
 				},
 				mappings = {
-					["<C-c>"] = "close_window",
+					["<C-w>"] = "close_window",
 				},
 			},
 			filesystem = {
