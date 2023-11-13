@@ -4,6 +4,7 @@ vim.g.undotree_SetFocusWhenToggle = 1
 
 return {
 	"mbbill/undotree",
+	event = "VeryLazy",
 	keys = {
 		{ "<leader>u", vim.cmd.UndotreeToggle, desc = "Toggle [U]ndotree" },
 	},
