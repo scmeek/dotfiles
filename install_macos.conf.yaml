@@ -6,33 +6,36 @@
       create: true # Create parent directories as needed
 
 - clean: # Remove dead links
-    ~/:
-    ~/.config:
+    "${HOME}/":
+    "${XDG_CONFIG_HOME}/":
       recursive: true
 
 - link:
-    ~/.local/share/cargo/config.toml: cargoconfig.toml
-    ~/.config/nvim: nvim
-    ~/.config/git/config: gitconfig
-    ~/.config/npm/npmrc: npmrc
-    ~/.config/p10k.zsh: p10k.zsh
-    ~/.config/python/pythonrc: pythonrc
-    ~/.config/skhd/skhdrc: skhdrc
-    ~/.config/tmux/tmux.conf: tmux.conf
-    ~/.config/yabai/yabairc: yabairc
-    ~/.config/wezterm/wezterm.lua: wezterm.lua
-    ~/.zshrc: zshrc
-    ~/Brewfile: brewfile_macos
+    "${XDG_DATA_HOME}/cargo/config.toml": cargoconfig.toml
+    "${XDG_CONFIG_HOME}/nvim": nvim
+    "${XDG_CONFIG_HOME}/git/config": gitconfig
+    "${XDG_CONFIG_HOME}/npm/npmrc": npmrc
+    "${XDG_CONFIG_HOME}/p10k.zsh": p10k.zsh
+    "${XDG_CONFIG_HOME}/python/pythonrc": pythonrc
+    "${XDG_CONFIG_HOME}/skhd/skhdrc": skhdrc
+    "${XDG_CONFIG_HOME}/tmux/tmux.conf": tmux.conf
+    "${XDG_CONFIG_HOME}/yabai/yabairc": yabairc
+    "${XDG_CONFIG_HOME}/wezterm/wezterm.lua": wezterm.lua
+    "${HOME}/.zshrc": zshrc
+    "${HOME}/Brewfile": brewfile_macos
 
     # Make Home and End keys Windows-like, needs reboot
-    "/Users/sean/Library/KeyBindings/DefaultKeyBinding.dict": DefaultKeyBinding.dict
+    "${HOME}/Library/KeyBindings/DefaultKeyBinding.dict": DefaultKeyBinding.dict
 
+# Hush login messages on bash/zsh open
 - create:
-    - ~/.hushlogin # Hush login messages on bash/zsh open
+    - "${HOME}/.hushlogin"
 
+# Install formulae and casks from brew file
 - shell:
-    - [brew bundle install --file=~/Brewfile]
+    - [brew bundle install --file=$HOME/Brewfile]
 
+# Setup TMUX plugin manager
 - shell:
-    - command: TPM_DIR=~/.config/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
+    - command: TPM_DIR=${XDG_CONFIG_HOME}/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
       description: Install TMUX plugin manager. To install TMUX plugins, open TMUX and press `prefix + I`

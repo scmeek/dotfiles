@@ -1,28 +1,30 @@
 - shell:
+    - [git submodule update --init --recursive, Installing submodules]
 
 - defaults:
     link:
+      create: true # Create parent directories as needed
 
-    ~/:
-    ~/.config:
+- clean: # Remove dead links
+    "${HOME}/":
+    "${XDG_CONFIG_HOME}/":
       recursive: true
 
 - link:
-    ~/.config/nvim: nvim
-    ~/.config/git/config: gitconfig
-    ~/.config/npm/npmrc: npmrc
-    ~/.config/p10k.zsh: p10k.zsh
-    ~/.config/python/pythonrc: pythonrc
-    ~/.config/wezterm/wezterm.lua: wexterm.lua
-    ~/.zshrc: zshrc
-    ~/Brewfile: .brewfile_linux
+    "${XDG_CONFIG_HOME}/nvim": nvim
+    "${XDG_CONFIG_HOME}/git/config": gitconfig
+    "${XDG_CONFIG_HOME}/npm/npmrc": npmrc
+    "${XDG_CONFIG_HOME}/p10k.zsh": p10k.zsh
+    "${XDG_CONFIG_HOME}/python/pythonrc": pythonrc
+    "${XDG_CONFIG_HOME}/wezterm/wezterm.lua": wezterm.lua
+    "${HOME}/.zshrc": zshrc
+    "${HOME}/Brewfile": brewfile_linux
 
+# Hush login messages on bash/zsh open
 - create:
-    - ~/.hushlogin # Hush login messages on bash/zsh open
+    - "${HOME}/.hushlogin"
 
+# Setup TMUX plugin manager
 - shell:
-    - [brew bundle install]
-
-- shell:
-    - command: TPM_DIR=~/.config/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
+    - command: TPM_DIR=${XDG_CONFIG_HOME}/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
       description: Install TMUX plugin manager. To install TMUX plugins, open TMUX and press `prefix + I`
