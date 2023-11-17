@@ -43,6 +43,7 @@ config.keys = {
 	},
 }
 config.scrollback_lines = 10000
+config.term = "wezterm"
 config.window_background_opacity = 0.9
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
