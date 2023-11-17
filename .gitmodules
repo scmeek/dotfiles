@@ -2,6 +2,3 @@
 	path = dotbot
 	url = git@github.com:anishathalye/dotbot.git
 	ignore = dirty
-[submodule "alacritty-theme"]
-	path = alacritty-theme
-	url = git@github.com:alacritty/alacritty-theme.git
