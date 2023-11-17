@@ -29,3 +29,6 @@ brew "pyright"
 brew "shellcheck"
 brew "shfmt"
 brew "stylua"
+
+# casks
+cask "wezterm"                              # terminal

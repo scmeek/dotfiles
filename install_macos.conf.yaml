@@ -12,7 +12,6 @@
 
 - link:
     ~/.local/share/cargo/config.toml: cargoconfig.toml
-    ~/.config/alacritty: alacritty
     ~/.config/nvim: nvim
     ~/.config/git/config: gitconfig
     ~/.config/npm/npmrc: npmrc
@@ -21,6 +20,7 @@
     ~/.config/skhd/skhdrc: skhdrc
     ~/.config/tmux/tmux.conf: tmux.conf
     ~/.config/yabai/yabairc: yabairc
+    ~/.config/wezterm/wezterm.lua: wezterm.lua
     ~/.zshrc: zshrc
     ~/Brewfile: brewfile_macos
 

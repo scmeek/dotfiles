@@ -1,22 +1,19 @@
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
 
 - defaults:
     link:
-      create: true  # Create parent directories as needed
 
-- clean:  # Remove dead links
     ~/:
     ~/.config:
       recursive: true
 
 - link:
-    ~/.config/alacritty: alacritty
     ~/.config/nvim: nvim
     ~/.config/git/config: gitconfig
     ~/.config/npm/npmrc: npmrc
     ~/.config/p10k.zsh: p10k.zsh
     ~/.config/python/pythonrc: pythonrc
+    ~/.config/wezterm/wezterm.lua: wexterm.lua
     ~/.zshrc: zshrc
     ~/Brewfile: .brewfile_linux
 

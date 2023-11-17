@@ -31,24 +31,12 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
 
 1. Install and configure [zsh](https://www.zsh.org/)
 
-2. Install [Alacritty](https://alacritty.org/)
-
-   ```sh
-   sudo add-apt-repository ppa:aslatter/ppa -y
-   sudo apt install alacritty
-   ```
-
-   - Set Alacritty as the preferred terminal emulator
-
-3. Install [Nerd Fonts](https://www.nerdfonts.com)
+2. Install [Nerd Fonts](https://www.nerdfonts.com)
 
    - [Download](https://www.nerdfonts.com/font-downloads)
-      - FiraCode Nerd Font
-      - FiraMono Nerd Font
-      - VictorMono Nerd Font
+     - FiraCode Nerd Font
    - Extract compressed files and move to `~/.local/share/fonts/`
    - Update fonts cache with `fc-cache -fv`
-
 
 ### Packages
 
@@ -101,4 +89,3 @@ NOTES_DIR=  # path of notes git repo
 # ensure ~/log directory exists
 ./scripts/cron_add_job.sh "${SCHEDULE}" "$(pwd)/scripts/git_sync.sh \"${NOTES_DIR}\" >> ~/log/notes_git_sync.log 2>&1"
 ```
-
