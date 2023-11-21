@@ -9,6 +9,7 @@ brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
 brew "koekeishiya/formulae/yabai"           # Tiling window manager
 brew "koekeishiya/formulae/skhd"            # Hotkey daemon
+brew "neovim"                               # text editor
 brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
 brew "pinentry-mac"                         # macOS integration for GPG
@@ -24,23 +25,6 @@ brew "zbar"                                 # QR code reader
 brew "romkatv/powerlevel10k/powerlevel10k"  # powerlevel10k (zsh)
 brew "zsh-autosuggestions"                  # zsh-autosuggestions
 brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
-
-# neovim
-brew "bash-language-server"
-brew "black"
-brew "clang-format"
-brew "cpplint"
-brew "eslint"
-brew "flake8"
-brew "isort"
-brew "lua-language-server"
-brew "luacheck"
-brew "neovim"
-brew "prettier"
-brew "pyright"
-brew "shellcheck"
-brew "shfmt"
-brew "stylua"
 
 # casks
 cask "caffeine"                             # prevent computer sleep
