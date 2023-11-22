@@ -25,7 +25,7 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.macos_window_background_blur = 3
+config.macos_window_background_blur = 10
 config.bold_brightens_ansi_colors = true
 config.color_scheme = "Catppuccin Macchiato (Gogh)"
 config.default_prog = { "/bin/zsh", "-l", "-c", "tmux new-session -A -s main" }
