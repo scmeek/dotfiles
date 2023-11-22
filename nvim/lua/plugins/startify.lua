@@ -1,5 +1,5 @@
 return {
-	"mhiz/vim-startify",
+	"mhinz/vim-startify",
 	config = function()
 		vim.g.startify_custom_header = {
 			[[                                                                       ]],
@@ -33,7 +33,7 @@ return {
 		}
 
 		vim.g.startify_commands = {
-			{ "Lazy sync", "Lazy sync" },
+			{ "Lazy sync",    "Lazy sync" },
 			{ "Mason update", "MasonUpdate" },
 		}
 
@@ -45,8 +45,8 @@ return {
 					"   Recently used - " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t"),
 				},
 			},
-			{ type = "files", header = { "   Recently used" } },
-			{ type = "commands", header = { "   Commands" } },
+			{ type = "files",     header = { "   Recently used" } },
+			{ type = "commands",  header = { "   Commands" } },
 		}
 
 		function _G.webDevIcons(path)
@@ -57,10 +57,10 @@ return {
 
 		vim.api.nvim_exec(
 			[[
-      function! StartifyEntryFormat() abort
-        return "v:lua.webDevIcons(absolute_path) . ' ' . entry_path"
-      endfunction
-      ]],
+				function! StartifyEntryFormat() abort
+					return "v:lua.webDevIcons(absolute_path) . ' ' . entry_path"
+				endfunction
+			]],
 			false
 		)
 	end,
