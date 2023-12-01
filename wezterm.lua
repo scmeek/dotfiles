@@ -27,6 +27,7 @@ end
 config.bold_brightens_ansi_colors = true
 config.color_scheme = "Catppuccin Macchiato (Gogh)"
 config.default_prog = { "/bin/zsh", "-l", "-c", "tmux new-session -A -s main" }
+config.disable_default_key_bindings = true
 config.font = wezterm.font("FiraCode Nerd Font Propo", { weight = "Light" })
 config.inactive_pane_hsb = {
 	saturation = 0.25,
@@ -34,11 +35,14 @@ config.inactive_pane_hsb = {
 }
 config.hide_tab_bar_if_only_one_tab = true
 config.keys = {
-	{
-		key = "Backspace",
-		mods = "CMD",
-		action = wezterm.action.SendKey({ key = "\x17" }),
-	},
+	{ key = "Backspace", mods = "CMD",   action = wezterm.action.SendKey({ key = "\x17" }) },
+	{ key = "C",         mods = "SUPER", action = wezterm.action.CopyTo("Clipboard") },
+	{ key = "L",         mods = "CTRL",  action = wezterm.action.ShowDebugOverlay },
+	{ key = "P",         mods = "CTRL",  action = wezterm.action.ActivateCommandPalette },
+	{ key = "V",         mods = "SUPER", action = wezterm.action.PasteFrom("Clipboard") },
+	{ key = "c",         mods = "SUPER", action = wezterm.action.CopyTo("Clipboard") },
+	{ key = "q",         mods = "SUPER", action = wezterm.action.QuitApplication },
+	{ key = "v",         mods = "SUPER", action = wezterm.action.PasteFrom("Clipboard") },
 }
 config.macos_window_background_blur = 10
 config.scrollback_lines = 10000
