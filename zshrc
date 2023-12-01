@@ -53,6 +53,7 @@ export PYTHONSTARTUP="${XDG_CONFIG_HOME}"/python/pythonrc
 export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
 
 export DOTFILES_PATH="${HOME}"/Documents/dotfiles
+export NOTES_PATH="${HOME}/Documents/Notes"
 
 
 #--------------------------------------------------------------------------
