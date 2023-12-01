@@ -129,7 +129,7 @@ source "${ZSH}"/oh-my-zsh.sh
 
 
 #--------------------------------------------------------------------------
-# Vim
+# Key bindings and editor
 #--------------------------------------------------------------------------
 
 # Set default editor to vim
@@ -137,6 +137,8 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 bindkey -v  # vim mode
+
+bindkey "^_" clear-screen # C-/
 
 
 #--------------------------------------------------------------------------
