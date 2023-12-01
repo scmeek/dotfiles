@@ -20,12 +20,10 @@
 local wezterm = require("wezterm")
 
 local config = {}
-
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.macos_window_background_blur = 10
 config.bold_brightens_ansi_colors = true
 config.color_scheme = "Catppuccin Macchiato (Gogh)"
 config.default_prog = { "/bin/zsh", "-l", "-c", "tmux new-session -A -s main" }
@@ -42,6 +40,7 @@ config.keys = {
 		action = wezterm.action.SendKey({ key = "\x17" }),
 	},
 }
+config.macos_window_background_blur = 10
 config.scrollback_lines = 10000
 config.term = "wezterm"
 config.window_background_opacity = 0.9
