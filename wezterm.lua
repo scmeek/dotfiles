@@ -24,8 +24,10 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+config.animation_fps = 60
 config.bold_brightens_ansi_colors = true
 config.color_scheme = "Catppuccin Macchiato (Gogh)"
+config.default_cursor_style = "BlinkingBlock"
 config.default_prog = { "/bin/zsh", "-l", "-c", "tmux new-session -A -s main" }
 config.disable_default_key_bindings = true
 config.font = wezterm.font("FiraCode Nerd Font Propo", { weight = "Light" })
