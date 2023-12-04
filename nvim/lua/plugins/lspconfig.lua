@@ -128,6 +128,9 @@ local on_attach = function(client, bufnr)
 		})
 	end
 
+	require("which-key").register({
+		["<leader>n"] = { name = "LSP", _ = "which_key_ignore" },
+	})
 	set_lsp_keymap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 	set_lsp_keymap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
