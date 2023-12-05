@@ -62,6 +62,7 @@ end
 
 local window_options = {
 	number = true,
+	relativenumber = true,
 }
 
 for name, value in pairs(window_options) do
