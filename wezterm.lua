@@ -35,6 +35,7 @@ config.disable_default_key_bindings = true
 config.force_reverse_video_cursor = true
 config.front_end = "WebGpu"
 config.font = wezterm.font("FiraCode Nerd Font Propo", { weight = "Regular" })
+config.font_size = 13.5
 config.inactive_pane_hsb = {
 	saturation = 0.25,
 	brightness = 0.5,
