@@ -80,6 +80,16 @@ servers_additional_settings.rust_analyzer = function()
 				},
 			}
 		end
+	else
+		return {
+			settings = {
+				["rust-analyzer"] = {
+					checkOnSave = {
+						command = "clippy",
+					},
+				},
+			},
+		}
 	end
 end
 
