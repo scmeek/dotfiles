@@ -51,7 +51,7 @@ config.keys = {
 	{ key = "q",         mods = "SUPER", action = wezterm.action.QuitApplication },
 	{ key = "v",         mods = "SUPER", action = wezterm.action.PasteFrom("Clipboard") },
 }
-config.macos_window_background_blur = 10
+config.macos_window_background_blur = 15
 config.scrollback_lines = 10000
 config.term = "wezterm"
 config.window_background_opacity = 0.9
