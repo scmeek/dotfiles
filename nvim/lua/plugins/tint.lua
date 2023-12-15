@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	config = function()
 		require("tint").setup({
-			tint = -50,
+			tint = -20,
 			window_ignore_function = function(winid)
 				local bufid = vim.api.nvim_win_get_buf(winid)
 				local buftype = vim.api.nvim_buf_get_option(bufid, "buftype")
