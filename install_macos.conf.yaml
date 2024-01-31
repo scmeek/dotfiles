@@ -16,11 +16,11 @@
     "${XDG_CONFIG_HOME}/alacritty/alacritty.toml": alacritty.toml
     "${XDG_CONFIG_HOME}/bat/config": batconfig
     "${XDG_CONFIG_HOME}/git/config": gitconfig
+    "${XDG_CONFIG_HOME}/hammerspoon/init.lua": hammerspoon_init.lua
     "${XDG_CONFIG_HOME}/npm/npmrc": npmrc
     "${XDG_CONFIG_HOME}/p10k.zsh": p10k.zsh
     "${XDG_CONFIG_HOME}/python/pythonrc": pythonrc
     "${XDG_CONFIG_HOME}/tmux/tmux.conf": tmux.conf
-    "${HOME}/.hammerspoon/init.lua": hammerspoon_init.lua
     "${HOME}/.zshrc": zshrc
     "${HOME}/Brewfile": brewfile_macos
 
@@ -34,6 +34,10 @@
 # Install formulae and casks from brew file
 - shell:
     - [brew bundle install --file=$HOME/Brewfile]
+
+# Change hammerspoon config to be portable
+- shell:
+    - command: defaults write org.hammerspoon.Hammerspoon MJConfigFile "${XDG_CONFIG_HOME}/hammerspoon/init.lua"
 
 # Setup TMUX plugin manager
 - shell:
