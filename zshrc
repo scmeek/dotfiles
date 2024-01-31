@@ -190,41 +190,9 @@ fi
 
 
 #--------------------------------------------------------------------------
-# Conda
-#--------------------------------------------------------------------------
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
-    else
-        PATH=/usr/local/anaconda3/bin:"${PATH}"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-#--------------------------------------------------------------------------
-# Golang
-#--------------------------------------------------------------------------
-
-GOPATH="${XDG_DATA_HOME}"/go
-GOROOT=/usr/local/opt/go/libexec
-PATH="${PATH}":"${GOPATH}"/bin
-PATH="${PATH}":"${GOROOT}"/bin
-
-
-#--------------------------------------------------------------------------
 # Aliases
 #--------------------------------------------------------------------------
 
-alias cd..="cd .."
-alias cl="clear"
 alias ls="eza -x"
 alias ll="eza -lh --changed"
 alias la="eza -lha --changed"
@@ -237,23 +205,13 @@ export MANPAGER="sh -c 'col -bx | ${BAT} --language=man'"
 alias -g -- --help='--help 2>&1 | bat --language=help'
 alias -g cat="bat"
 
-alias v="nvim"
-alias diff="nvim -d"
-
 alias cddf="cd ${DOTFILES_PATH}"
 
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
 
 alias doawake="caffeinate -dimsu &"  # Prevent sleep (`caffeine` required)
 
-alias da="doawake"
-alias killjobs='jobs | awk -F'"'"'[][]'"'"' '\''{ print $2 }'\'' | while read -r id; do builtin kill %"$id"; done'
-
 eval "$(github-copilot-cli alias -- "$0")"
-
-vcl() {
-    nvim "${@}"; clear;
-}
 
 
 #--------------------------------------------------------------------------
@@ -272,16 +230,6 @@ repl() {
         rg -l "$2" "$1" | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
         echo "Replaced all occurrences of $2 with $3 in $1."
     fi
-}
-
-# Make directory and open
-mkdircd() {
-    if [[ $# -ne 1 ]]; then
-        echo "Usage: $(basename "$0") <new-directory>" >&2
-        return 2
-    fi
-    mkdir "$1"
-    cd "$1" || return
 }
 
 # Auto activate virtualenv
