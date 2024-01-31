@@ -144,8 +144,6 @@ source "${ZSH}"/oh-my-zsh.sh
 export EDITOR=nvim
 export VISUAL=nvim
 
-bindkey "^_" clear-screen # C-/
-
 
 #--------------------------------------------------------------------------
 # Completion
