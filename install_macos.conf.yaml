@@ -13,6 +13,7 @@
 - link:
     "${XDG_DATA_HOME}/cargo/config.toml": cargoconfig.toml
     "${XDG_CONFIG_HOME}/nvim": nvim
+    "${XDG_CONFIG_HOME}/bat/config": batconfig
     "${XDG_CONFIG_HOME}/git/config": gitconfig
     "${XDG_CONFIG_HOME}/npm/npmrc": npmrc
     "${XDG_CONFIG_HOME}/p10k.zsh": p10k.zsh

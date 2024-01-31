@@ -199,11 +199,11 @@ alias la="eza -lha --changed"
 alias shred="shred -uvz"
 alias wget=wget --hsts-file="${XDG_DATA_HOME}/wget-hsts"
 
-BAT="bat --style=plain --theme=Coldark-Dark --paging=always --italic-text=always --color=always"
-alias -g bat="${BAT}"
-export MANPAGER="sh -c 'col -bx | ${BAT} --language=man'"
+
+# Additional `bat` configuration
+export MANPAGER="sh -c 'col -bx | bat --language=man"
 alias -g -- --help='--help 2>&1 | bat --language=help'
-alias -g cat="bat"
+alias cat='bat --paging=never'
 
 alias cddf="cd ${DOTFILES_PATH}"
 
