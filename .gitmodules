@@ -5,3 +5,4 @@
 [submodule "NvChad"]
 	path = NvChad
 	url = git@github.com:NvChad/NvChad.git
+	shallow = true
