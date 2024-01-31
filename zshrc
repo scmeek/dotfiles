@@ -63,7 +63,9 @@ export NOTES_PATH="${HOME}/Documents/Notes"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+# shellcheck disable=SC2296
 if [[ -r "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  # shellcheck disable=SC1090
   source "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
@@ -96,7 +98,8 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
 # Helps syntax highlighting for `bat` for man pages and help text
-export LESS_TERMCAP_md=$(tput bold; tput setaf 4) # blue
+LESS_DISPLAY_SETTINGS=$(tput bold; tput setaf 4)
+export LESS_TERMCAP_md=${LESS_DISPLAY_SETTINGS} # blue
 
 
 #--------------------------------------------------------------------------
@@ -112,8 +115,10 @@ then
   compinit -d "${XDG_CACHE_HOME}"/zsh/zcompdump-"${ZSH_VERSION}"
 fi
 
+# shellcheck disable=SC1091 disable=SC2086
 source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# shellcheck disable=SC1091 disable=SC2086
 source ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 export ZSH_HIGHLIGHT_STYLES[path]=none
@@ -124,8 +129,10 @@ export ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 # Oh-my-zsh
 #--------------------------------------------------------------------------
 
+# shellcheck disable=SC2034
 #plugins=()
 
+# shellcheck disable=SC1091
 source "${ZSH}"/oh-my-zsh.sh
 
 
@@ -154,6 +161,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 
+# shellcheck disable=SC2296 disable=SC2086
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -164,8 +172,10 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+# shellcheck disable=SC2016
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# shellcheck disable=SC2034
 GPG_TTY=$(tty)
 PATH=/usr/local/sbin:"${PATH}"
 PATH=/usr/local/bin:"${PATH}"
@@ -175,6 +185,7 @@ PATH=/usr/local/bin:"${PATH}"
 # Replacement ('coreutils' required)
 zstyle ':completion:*' menu select=2 eval "$(gdircolors -b)"
 
+# shellcheck disable=SC1090
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
@@ -193,19 +204,20 @@ fi
 # Aliases
 #--------------------------------------------------------------------------
 
-alias ls="eza -x"
-alias ll="eza -lh --changed"
-alias la="eza -lha --changed"
-alias shred="shred -uvz"
-alias wget=wget --hsts-file="${XDG_DATA_HOME}/wget-hsts"
+alias ls='eza -x'
+alias ll='eza -lh --changed'
+alias la='eza -lha --changed'
+alias shred='shred -uvz'
 
+# shellcheck disable=SC2139
+alias wget="wget --hsts-file=${XDG_DATA_HOME}/wget-hsts"
 
 # Additional `bat` configuration
 export MANPAGER="sh -c 'col -bx | bat --language=man"
 alias -g -- --help='--help 2>&1 | bat --language=help'
 alias cat='bat --paging=never'
 
-alias cddf="cd ${DOTFILES_PATH}"
+alias cddf='cd ${DOTFILES_PATH}'
 
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
 
@@ -219,7 +231,7 @@ eval "$(github-copilot-cli alias -- "$0")"
 #--------------------------------------------------------------------------
 
 # Replace all in directory
-repl() {
+function replace_all_in_directory() {
     if [[ $# -ne 3 ]]; then
         echo "Usage: $(basename "$0") <directory> <search-string> <replace-string>" >&2
         return 2
@@ -243,6 +255,7 @@ function cd() {
   ## If env folder is found then activate the vitualenv
   function activate_venv() {
     if [[ -f "${DEFAULT_ENV_PATH}/bin/activate" ]] ; then
+      # shellcheck disable=SC1091
       source "${DEFAULT_ENV_PATH}/bin/activate"
     fi
   }
@@ -253,7 +266,7 @@ function cd() {
     ## check the current folder belong to earlier VIRTUAL_ENV folder
     # if yes then do nothing
     # else deactivate then run a new env folder check
-      parentdir="$(dirname ${VIRTUAL_ENV})"
+      parentdir=$(dirname "${VIRTUAL_ENV}")
       if [[ "${PWD}"/ != "${parentdir}"/* ]] ; then
         deactivate
         activate_venv
@@ -271,8 +284,10 @@ function cd() {
 # Powerlevel10k (Bottom of file)
 #--------------------------------------------------------------------------
 
+# shellcheck disable=SC2046 disable=SC1091
 source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit p10k.zsh.
 P10K_CONFIG_FILE="${XDG_CONFIG_HOME}"/p10k.zsh
+# shellcheck disable=SC1090
 [[ ! -f "${P10K_CONFIG_FILE}" ]] || source "${P10K_CONFIG_FILE}"
