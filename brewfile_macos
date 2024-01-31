@@ -31,4 +31,3 @@ cask "font-fira-mono-nerd-font"             # font
 cask "font-victor-mono-nerd-font"           # font
 cask "libreoffice"                          # office tools
 cask "openvpn-connect"                      # OpenVPN Connect client
-cask "wezterm"                              # terminal
