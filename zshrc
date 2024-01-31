@@ -101,6 +101,9 @@ setopt HIST_SAVE_NO_DUPS
 LESS_DISPLAY_SETTINGS=$(tput bold; tput setaf 4)
 export LESS_TERMCAP_md=${LESS_DISPLAY_SETTINGS} # blue
 
+export EDITOR=vim
+export VISUAL=vim
+
 
 #--------------------------------------------------------------------------
 # Homebrew
@@ -134,15 +137,6 @@ export ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # shellcheck disable=SC1091
 source "${ZSH}"/oh-my-zsh.sh
-
-
-#--------------------------------------------------------------------------
-# Key bindings and editor
-#--------------------------------------------------------------------------
-
-# Set default editor to vim
-export EDITOR=nvim
-export VISUAL=nvim
 
 
 #--------------------------------------------------------------------------
