@@ -20,6 +20,7 @@
     "${XDG_CONFIG_HOME}/p10k.zsh": p10k.zsh
     "${XDG_CONFIG_HOME}/python/pythonrc": pythonrc
     "${XDG_CONFIG_HOME}/tmux/tmux.conf": tmux.conf
+    "${HOME}/.hammerspoon/init.lua": hammerspoon_init.lua
     "${HOME}/.zshrc": zshrc
     "${HOME}/Brewfile": brewfile_macos
 

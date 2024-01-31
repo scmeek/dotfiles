@@ -30,5 +30,6 @@ cask "caffeine"                             # prevent computer sleep
 cask "font-fira-code-nerd-font"             # font
 cask "font-fira-mono-nerd-font"             # font
 cask "font-victor-mono-nerd-font"           # font
+cask "hammerspoon"                          # macOS automation, window & app manager
 cask "libreoffice"                          # office tools
 cask "openvpn-connect"                      # OpenVPN Connect client
