@@ -12,7 +12,7 @@
 
 - link:
     "${XDG_DATA_HOME}/cargo/config.toml": cargoconfig.toml
-    "${XDG_CONFIG_HOME}/nvim": nvim
+    "${XDG_CONFIG_HOME}/nvim": NvChad
     "${XDG_CONFIG_HOME}/alacritty/alacritty.toml": alacritty.toml
     "${XDG_CONFIG_HOME}/bat/config": batconfig
     "${XDG_CONFIG_HOME}/git/config": gitconfig
