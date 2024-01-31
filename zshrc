@@ -137,7 +137,6 @@ source "${ZSH}"/oh-my-zsh.sh
 export EDITOR=nvim
 export VISUAL=nvim
 
-bindkey -v  # vim mode
 
 bindkey "^_" clear-screen # C-/
 
