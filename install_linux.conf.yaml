@@ -12,7 +12,7 @@
 
 - link:
     "${XDG_CONFIG_HOME}/nvim": NvChad
-    "$XDG_CONFIG_HOME/alacritty/alacritty.toml": alacritty.toml
+    "${XDG_CONFIG_HOME}/alacritty/alacritty.toml": alacritty.toml
     "${XDG_CONFIG_HOME}/bat/config": batconfig
     "${XDG_CONFIG_HOME}/git/config": gitconfig
     "${XDG_CONFIG_HOME}/npm/npmrc": npmrc
