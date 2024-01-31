@@ -323,7 +323,7 @@ function cd() {
 # Powerlevel10k (Bottom of file)
 #--------------------------------------------------------------------------
 
-source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit p10k.zsh.
 P10K_CONFIG_FILE="${XDG_CONFIG_HOME}"/p10k.zsh
