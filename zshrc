@@ -144,7 +144,6 @@ source "${ZSH}"/oh-my-zsh.sh
 export EDITOR=nvim
 export VISUAL=nvim
 
-
 bindkey "^_" clear-screen # C-/
 
 
@@ -213,7 +212,7 @@ alias shred='shred -uvz'
 alias wget="wget --hsts-file=${XDG_DATA_HOME}/wget-hsts"
 
 # Additional `bat` configuration
-export MANPAGER="sh -c 'col -bx | bat --language=man"
+export MANPAGER="sh -c 'col -bx | bat --language=man'"
 alias -g -- --help='--help 2>&1 | bat --language=help'
 alias cat='bat --paging=never'
 
