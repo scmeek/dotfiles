@@ -4,6 +4,15 @@ vim.api.nvim_create_user_command("W", "w", {})
 vim.api.nvim_create_user_command("Qa", "qa", {})
 vim.api.nvim_create_user_command("Q", "q", {})
 
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	group = highlight_group,
+	pattern = "*",
+})
+
 vim.api.nvim_create_user_command("ToggleVerboseLogging", function()
 	if vim.opt.verbose:get() == 0 then
 		print("Enabling verbose logging")
