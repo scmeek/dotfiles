@@ -1,3 +1,4 @@
+vim.loader.enable()
 require("custom.commands")
 require("custom.options")
 
