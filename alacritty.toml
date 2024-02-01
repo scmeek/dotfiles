@@ -8,6 +8,7 @@ args = ["-l", "-c", "tmux new-session -A -s main"]
 
 padding = {x = 4, y = 4}
 decorations = "Buttonless"
+option_as_alt = "OnlyLeft"
 
 
 [font]
