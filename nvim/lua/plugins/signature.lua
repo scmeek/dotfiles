@@ -1,1 +1,0 @@
-return { "kshenoy/vim-signature" }
