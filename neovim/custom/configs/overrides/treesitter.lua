@@ -1,7 +1,8 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	opts = {
-		ensure_installed = {
+	opts = function()
+		local opts = require("plugins.configs.treesitter")
+		opts.ensure_installed = {
 			"bash",
 			"c",
 			"css",
@@ -17,12 +18,13 @@ return {
 			"typescript",
 			"vim",
 			"vimdoc",
-		},
-		indent = {
+		}
+		opts.indent = {
 			enable = true,
 			-- disable = {
 			--   "python"
 			-- },
-		},
-	},
+		}
+		return opts
+	end,
 }

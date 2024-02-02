@@ -1,3 +1,4 @@
+-- Also configured in cmp
 return {
 	"zbirenbaum/copilot-cmp",
 	event = "VeryLazy",

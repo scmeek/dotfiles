@@ -23,7 +23,7 @@ return {
 			"less",
 			"markdown",
 			"scss",
-			"typescript",
+			--"typescript",  -- handled by null-ls and eslint
 			"vue",
 			"yaml",
 		}
@@ -33,13 +33,13 @@ return {
 		end
 
 		local options = {
-			lsp_fallback = true,
+			lsp_fallback = false,
 
 			formatters_by_ft = formatters,
 
 			format_on_save = {
 				timeout_ms = 500,
-				lsp_fallback = true,
+				lsp_fallback = false,
 				async = false,
 				quiet = true,
 			},
