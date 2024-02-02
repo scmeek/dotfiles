@@ -10,6 +10,7 @@ return {
 			"lua-language-server",
 			"prettierd",
 			"stylua",
+			"taplo",
 			"tailwindcss-language-server",
 			"typescript-language-server",
 		},

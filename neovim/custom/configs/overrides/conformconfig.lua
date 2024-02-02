@@ -8,6 +8,7 @@ return {
 			lua = { "stylua" },
 			python = { "black", "isort" },
 			sh = { "shfmt" },
+			toml = { "taplo" },
 			zsh = { "shfmt" },
 		}
 

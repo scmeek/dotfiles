@@ -10,6 +10,7 @@ local default_config_servers = {
 	"html",
 	"pyright",
 	"rust_analyzer",
+	"taplo",
 	"tailwindcss",
 	"vimls",
 	"yamlls",
