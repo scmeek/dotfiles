@@ -1,5 +1,6 @@
 return {
 	"nvimtools/none-ls.nvim",
+	enabled = false,
 	event = "VeryLazy",
 	opts = function()
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
