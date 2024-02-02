@@ -27,14 +27,14 @@ M.general = {
 		["H"] = { "^", "Move to start of line" }, -- corresponding "v" mapping
 		["L"] = { "$", "Move to end of line" }, -- corresponding "v" mapping
 
-		["<leader>t\\"] = {
+		["<leader>t-"] = {
 			function()
 				require("nvterm.terminal").new("horizontal")
 			end,
 			"New horizontal term",
 		},
 
-		["<leader>t-"] = {
+		["<leader>t\\"] = {
 			function()
 				require("nvterm.terminal").new("vertical")
 			end,
