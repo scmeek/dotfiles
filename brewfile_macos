@@ -28,6 +28,7 @@ brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 cask "alacritty"                            # terminal
 cask "caffeine"                             # prevent computer sleep
 cask "font-fira-code-nerd-font"             # font
+cask "font-iosevka-nerd-font"               # font
 cask "font-fira-mono-nerd-font"             # font
 cask "font-victor-mono-nerd-font"           # font
 cask "hammerspoon"                          # macOS automation, window & app manager
