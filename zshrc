@@ -198,6 +198,7 @@ fi
 alias ls='eza --across'
 alias ll='eza --long --header --changed'
 alias la='eza --long --header --all --changed'
+alias tree='eza --tree'
 alias shred='shred -uvz'
 
 # shellcheck disable=SC2139
