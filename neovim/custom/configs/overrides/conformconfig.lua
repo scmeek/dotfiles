@@ -29,7 +29,7 @@ return {
 		}
 
 		for _, filetype in pairs(prettier_filetypes) do
-			formatters[filetype] = { "prettier" }
+			formatters[filetype] = { "prettierd" }
 		end
 
 		local options = {
