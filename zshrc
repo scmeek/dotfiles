@@ -195,9 +195,9 @@ fi
 # Aliases
 #--------------------------------------------------------------------------
 
-alias ls='eza -x'
-alias ll='eza -lh --changed'
-alias la='eza -lha --changed'
+alias ls='eza --across'
+alias ll='eza --long --header --changed'
+alias la='eza --long --header --all --changed'
 alias shred='shred -uvz'
 
 # shellcheck disable=SC2139
