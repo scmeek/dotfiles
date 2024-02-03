@@ -2,6 +2,7 @@ return {
 	"williamboman/mason.nvim",
 	opts = {
 		ensure_installed = {
+			"arduino-language-server",
 			"clang-format",
 			"clangd",
 			"css-lsp",

@@ -5,6 +5,7 @@ return {
 		local formatters = {
 			c = { "clang-format" },
 			cpp = { "clang-format" },
+			--ino = { "clang-format" },
 			lua = { "stylua" },
 			python = { "black", "isort" },
 			rust = { "rustfmt" },
