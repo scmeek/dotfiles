@@ -3,6 +3,7 @@ return {
 	opts = {
 		ensure_installed = {
 			"arduino-language-server",
+			"bash-language-server",
 			"clang-format",
 			"clangd",
 			"css-lsp",
@@ -12,6 +13,8 @@ return {
 			"prettierd",
 			"rust-analyzer",
 			--"rustfmt",  -- Deprecated, use rustup to install
+			"shellcheck",
+			"shfmt",
 			"stylua",
 			"taplo",
 			"tailwindcss-language-server",
