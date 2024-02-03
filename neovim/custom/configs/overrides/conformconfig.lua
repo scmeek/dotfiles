@@ -7,6 +7,7 @@ return {
 			cpp = { "clang-format" },
 			lua = { "stylua" },
 			python = { "black", "isort" },
+			rust = { "rustfmt" },
 			sh = { "shfmt" },
 			toml = { "taplo" },
 			zsh = { "shfmt" },

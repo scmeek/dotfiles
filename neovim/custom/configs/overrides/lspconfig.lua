@@ -18,6 +18,7 @@ local default_config_servers = {
 
 local custom_config_servers = {
 	eslint = require("custom.configs.overrides.lspconfig.eslint"),
+	rust_analyzer = require("custom.configs.overrides.lspconfig.rust_analyzer"),
 	tsserver = require("custom.configs.overrides.lspconfig.tsserver"),
 }
 

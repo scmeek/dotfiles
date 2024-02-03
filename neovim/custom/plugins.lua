@@ -10,6 +10,7 @@ local plugins = {
 
 	require("custom.configs.copilot"),
 	require("custom.configs.copilotcmp"),
+	require("custom.configs.crates"),
 	require("custom.configs.dressing"),
 	require("custom.configs.lastplace"),
 	require("custom.configs.neorg"),
