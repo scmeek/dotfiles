@@ -22,21 +22,21 @@ return {
 				function()
 					toggle_neorg()
 				end,
-				desc = "Toggle [N]eorg [N]otes",
+				desc = "Toggle notes",
 			},
 			{
 				"<leader>nt",
 				function()
 					toggle_neorg("today")
 				end,
-				desc = "Toggle [N]eorg Journal [T]oday",
+				desc = "Toggle journal (today)",
 			},
 			{
 				"<leader>ny",
 				function()
 					toggle_neorg("yesterday")
 				end,
-				desc = "Toggle [N]eorg Journal [Y]esterday",
+				desc = "Toggle journal (yesterday)",
 			},
 		},
 		config = function()
