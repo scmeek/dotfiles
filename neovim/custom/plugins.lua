@@ -1,6 +1,7 @@
 ---@type NvPluginSpec[]
 local plugins = {
 	require("custom.configs.overrides.cmpconfig"),
+	require("custom.configs.overrides.commentconfig"),
 	require("custom.configs.overrides.conformconfig"),
 	require("custom.configs.overrides.lspconfig"),
 	require("custom.configs.overrides.mason"),
