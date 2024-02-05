@@ -19,6 +19,9 @@ return {
 			"taplo",
 			"tailwindcss-language-server",
 			"typescript-language-server",
+			"yaml-language-server",
+			"yamllint",
+			"yamlfmt",
 		},
 	},
 }

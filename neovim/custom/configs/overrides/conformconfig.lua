@@ -11,6 +11,7 @@ return {
 			rust = { "rustfmt" },
 			sh = { "shfmt" },
 			toml = { "taplo" },
+			yaml = { "yamlfmt" },
 			zsh = { "shfmt" },
 		}
 
