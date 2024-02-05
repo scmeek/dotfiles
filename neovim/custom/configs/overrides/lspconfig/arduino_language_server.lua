@@ -23,13 +23,6 @@ if arduino_cli_config_file_handler ~= nil then
 		"-fqbn",
 		"arduino:avr:uno",
 	}
-else
-	print(
-		"WARN: Missing arduino-cli configuration file while configuring "
-			.. "arduino-language-server ("
-			.. arduino_cli_config_file
-			.. ")"
-	)
 end
 
 return settings
