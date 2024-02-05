@@ -10,7 +10,7 @@ return {
 			"eslint-lsp",
 			"html-lsp",
 			"lua-language-server",
-			"prettierd",
+			"prettier",
 			"rust-analyzer",
 			--"rustfmt",  -- Deprecated, use rustup to install
 			"shellcheck",
