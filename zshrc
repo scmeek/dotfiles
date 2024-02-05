@@ -222,6 +222,11 @@ eval "$(github-copilot-cli alias -- "$0")"
 # Custom functions
 #--------------------------------------------------------------------------
 
+# Search for filename in directory
+function rgf {
+    rg --files $2 | rg $1
+}
+
 # Replace all in directory
 function replace_all_in_directory() {
     if [[ $# -ne 3 ]]; then
