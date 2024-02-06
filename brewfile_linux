@@ -6,6 +6,7 @@ brew "eza"                                  # `ls` alternative
 brew "fzf"                                  # fuzzy-finder
 brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
+brew "lazygit"                              # git TUI
 brew "neovim"                               # text editor
 brew "ripgrep"                              # fuzzy-finder
 
