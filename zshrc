@@ -169,6 +169,7 @@ fi
 # Aliases
 #--------------------------------------------------------------------------
 
+alias cd="change_directory_auto_activate"
 alias ls='eza --across'
 alias ll='eza --long --header --changed'
 alias la='eza --long --header --all --changed'
@@ -216,7 +217,7 @@ function replace_all_in_directory() {
 
 # Auto activate virtualenv
 # https://stackoverflow.com/a/56309561
-function cd() {
+function change_directory_auto_activate() {
 	builtin cd "$@" || echo $? && return
 
 	## Default path to virtualenv in your projects
