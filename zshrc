@@ -1,6 +1,5 @@
 #zmodload zsh/zprof  # Profiling, use with `zprof` command
 
-
 #--------------------------------------------------------------------------
 # Environment variables
 #--------------------------------------------------------------------------
@@ -35,7 +34,6 @@ export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
 export DOTFILES_PATH="${HOME}"/Documents/dotfiles
 export NOTES_PATH="${HOME}/Documents/Notes"
 
-
 #--------------------------------------------------------------------------
 # Powerlevel10k
 #--------------------------------------------------------------------------
@@ -45,16 +43,15 @@ export NOTES_PATH="${HOME}/Documents/Notes"
 # confirmations, etc.) must go above this block; everything else may go below.
 # shellcheck disable=SC2296
 if [[ -r "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  # shellcheck disable=SC1090
-  source "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh"
+	# shellcheck disable=SC1090
+	source "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 
 #--------------------------------------------------------------------------
 # General config
 #--------------------------------------------------------------------------
 
-export HYPHEN_INSENSITIVE="true"  # Used in completion
+export HYPHEN_INSENSITIVE="true" # Used in completion
 export COMPLETION_WAITING_DOTS="true"
 export HIST_STAMPS="yyyy-mm-dd"
 
@@ -63,39 +60,40 @@ export SAVEHIST=${HISTSIZE}
 
 setopt histignorealldups sharehistory
 
-setopt BANG_HIST  # Treat the '!' character specially during expansion
-setopt EXTENDED_HISTORY  # Write the history file in the "start:elapsed;command" format
-setopt INC_APPEND_HISTORY  # Write to the history file immediately, not when the shell exists
-setopt SHARE_HISTORY  # Share history between all sessions
-setopt HIST_REDUCE_BLANKS  # Remove superfluous blanks before recording entry
+setopt BANG_HIST          # Treat the '!' character specially during expansion
+setopt EXTENDED_HISTORY   # Write the history file in the "start:elapsed;command" format
+setopt INC_APPEND_HISTORY # Write to the history file immediately, not when the shell exists
+setopt SHARE_HISTORY      # Share history between all sessions
+setopt HIST_REDUCE_BLANKS # Remove superfluous blanks before recording entry
 
 # Duplicates
-setopt HIST_EXPIRE_DUPS_FIRST  # Expire duplicate entries first when trimming history
-setopt HIST_IGNORE_DUPS  # Don't record an entry that was just recorded again
+setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicate entries first when trimming history
+setopt HIST_IGNORE_DUPS       # Don't record an entry that was just recorded again
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
 # Helps syntax highlighting for `bat` for man pages and help text
-LESS_DISPLAY_SETTINGS=$(tput bold; tput setaf 4)
+LESS_DISPLAY_SETTINGS=$(
+	tput bold
+	tput setaf 4
+)
 export LESS_TERMCAP_md=${LESS_DISPLAY_SETTINGS} # blue
 
 export EDITOR=vim
 export VISUAL=vim
-
 
 #--------------------------------------------------------------------------
 # Homebrew
 #--------------------------------------------------------------------------
 
 # Before oh-my-zsh
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+if type brew &>/dev/null; then
+	FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-  autoload -Uz compinit
-  compinit -d "${XDG_CACHE_HOME}"/zsh/zcompdump-"${ZSH_VERSION}"
+	autoload -Uz compinit
+	compinit -d "${XDG_CACHE_HOME}"/zsh/zcompdump-"${ZSH_VERSION}"
 fi
 
 # shellcheck disable=SC1091 disable=SC2086
@@ -107,7 +105,6 @@ source ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.
 export ZSH_HIGHLIGHT_STYLES[path]=none
 export ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
-
 #--------------------------------------------------------------------------
 # Oh-my-zsh
 #--------------------------------------------------------------------------
@@ -117,7 +114,6 @@ export ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # shellcheck disable=SC1091
 source "${ZSH}"/oh-my-zsh.sh
-
 
 #--------------------------------------------------------------------------
 # Completion
@@ -159,7 +155,6 @@ zstyle ':completion:*' menu select=2 eval "$(gdircolors -b)"
 # shellcheck disable=SC1090
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
 #--------------------------------------------------------------------------
 # Python
 #--------------------------------------------------------------------------
@@ -167,9 +162,8 @@ zstyle ':completion:*' menu select=2 eval "$(gdircolors -b)"
 alias pip=pip3
 
 if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
+	eval "$(pyenv init -)"
 fi
-
 
 #--------------------------------------------------------------------------
 # Aliases
@@ -191,12 +185,11 @@ alias cat='bat --paging=never'
 
 alias cddf='cd ${DOTFILES_PATH}'
 
-alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit"  # gsip: "git, squash into parent"
+alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit" # gsip: "git, squash into parent"
 
-alias doawake="caffeinate -dimsu &"  # Prevent sleep (`caffeine` required)
+alias doawake="caffeinate -dimsu &" # Prevent sleep (`caffeine` required)
 
 eval "$(github-copilot-cli alias -- "$0")"
-
 
 #--------------------------------------------------------------------------
 # Custom functions
@@ -204,53 +197,52 @@ eval "$(github-copilot-cli alias -- "$0")"
 
 # Search for filename in directory
 function rgf {
-    rg --files $2 | rg $1
+	rg --files $2 | rg $1
 }
 
 # Replace all in directory
 function replace_all_in_directory() {
-    if [[ $# -ne 3 ]]; then
-        echo "Usage: $(basename "$0") <directory> <search-string> <replace-string>" >&2
-        return 2
-    fi
-    read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [y/N] " -r
-    echo
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        rg -l "$2" "$1" | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
-        echo "Replaced all occurrences of $2 with $3 in $1."
-    fi
+	if [[ $# -ne 3 ]]; then
+		echo "Usage: $(basename "$0") <directory> <search-string> <replace-string>" >&2
+		return 2
+	fi
+	read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [y/N] " -r
+	echo
+	if [[ $REPLY =~ ^[Yy]$ ]]; then
+		rg -l "$2" "$1" | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
+		echo "Replaced all occurrences of $2 with $3 in $1."
+	fi
 }
 
 # Auto activate virtualenv
 # https://stackoverflow.com/a/56309561
 function cd() {
-  builtin cd "$@" || return
+	builtin cd "$@" || echo $? && return
 
-  ## Default path to virtualenv in your projects
-  DEFAULT_ENV_PATH="./.venv"
+	## Default path to virtualenv in your projects
+	DEFAULT_ENV_PATH="./.venv"
 
-  ## If env folder is found then activate the vitualenv
-  function activate_venv() {
-    if [[ -f "${DEFAULT_ENV_PATH}/bin/activate" ]] ; then
-      # shellcheck disable=SC1091
-      source "${DEFAULT_ENV_PATH}/bin/activate"
-    fi
-  }
+	## If env folder is found then activate the vitualenv
+	function activate_venv() {
+		if [[ -f "${DEFAULT_ENV_PATH}/bin/activate" ]]; then
+			# shellcheck disable=SC1091
+			source "${DEFAULT_ENV_PATH}/bin/activate"
+		fi
+	}
 
-  if [[ -z "${VIRTUAL_ENV}" ]] ; then
-    activate_venv
-  else
-    ## check the current folder belong to earlier VIRTUAL_ENV folder
-    # if yes then do nothing
-    # else deactivate then run a new env folder check
-      parentdir=$(dirname "${VIRTUAL_ENV}")
-      if [[ "${PWD}"/ != "${parentdir}"/* ]] ; then
-        deactivate
-        activate_venv
-      fi
-  fi
+	if [[ -z "${VIRTUAL_ENV}" ]]; then
+		activate_venv
+	else
+		## check the current folder belong to earlier VIRTUAL_ENV folder
+		# if yes then do nothing
+		# else deactivate then run a new env folder check
+		parentdir=$(dirname "${VIRTUAL_ENV}")
+		if [[ "${PWD}"/ != "${parentdir}"/* ]]; then
+			deactivate
+			activate_venv
+		fi
+	fi
 }
-
 
 #--------------------------------------------------------------------------
 # Environment-specific configuration
