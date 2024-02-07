@@ -1,6 +1,15 @@
 return {
 	"stevearc/conform.nvim",
 	event = "BufWritePre",
+	keys = {
+		{
+			"<leader>fm",
+			function()
+				require("conform").format()
+			end,
+			desc = "Format",
+		},
+	},
 	config = function()
 		local formatters = {
 			c = { "clang-format" },
