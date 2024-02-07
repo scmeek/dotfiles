@@ -19,9 +19,10 @@ local plugins = {
 	require("custom.configs.signature"),
 	require("custom.configs.surround"),
 	require("custom.configs.targets"),
+	require("custom.configs.tmuxnavigator"),
 	require("custom.configs.todocomments"),
 	require("custom.configs.tsautotag"),
-	require("custom.configs.tmuxnavigator"),
+	require("custom.configs.wordmotion"),
 }
 
 return plugins
