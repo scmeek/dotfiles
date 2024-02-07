@@ -33,10 +33,12 @@ return {
 			"json",
 			"jsx",
 			"javascript",
+			"javascriptreact",
 			"less",
 			"markdown",
 			"scss",
-			--"typescript",  -- handled by null-ls and eslint
+			"typescript",
+			"typescriptreact",
 			"vue",
 			"yaml",
 		}
