@@ -4,13 +4,14 @@ vim.api.nvim_create_user_command("W", "w", {})
 vim.api.nvim_create_user_command("Qa", "qa", {})
 vim.api.nvim_create_user_command("Q", "q", {})
 
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+local general_group = vim.api.nvim_create_augroup("General settings", { clear = true })
+
 vim.api.nvim_create_autocmd("TextYankPost", {
+	pattern = "*",
 	callback = function()
 		vim.highlight.on_yank()
 	end,
-	group = highlight_group,
-	pattern = "*",
+	group = general_group,
 })
 
 vim.api.nvim_create_user_command("ToggleVerboseLogging", function()
@@ -24,3 +25,20 @@ vim.api.nvim_create_user_command("ToggleVerboseLogging", function()
 		vim.opt.verbosefile = nil
 	end
 end, {})
+
+local ignore_spelling_filetypes = {
+	nvcheatsheet = true,
+	nvdash = true,
+}
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "*" },
+	callback = function()
+		if ignore_spelling_filetypes[vim.bo.filetype] then
+			vim.opt.spell = false
+		else
+			vim.opt.spell = true
+		end
+	end,
+	group = general_group,
+})
