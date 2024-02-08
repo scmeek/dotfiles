@@ -25,7 +25,7 @@ M.general = {
 		["K"] = { ":m '<-2<CR>gv==jgvo<esc>=jgvo", "Move selected down" },
 	},
 	i = {
-		["<M-BS>"] = { "<Esc>cvb", "backspace entire word" },
+		["<M-BS>"] = { "<Esc>cvb", "Backspace entire word" },
 	},
 }
 
