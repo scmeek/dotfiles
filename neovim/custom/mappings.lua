@@ -55,6 +55,17 @@ M.macros = {
 		["@@"] = { "@@", "Re-run last ran macro", opts = { noremap = false } },
 	},
 }
+
+M.folds = {
+	n = {
+		["za"] = { "za", "Toggle fold", opts = { noremap = false } },
+		["zd"] = { "zd", "Delete fold", opts = { noremap = false } },
+		["zr"] = { "zr", "Reduce (open) all folds by one level", opts = { noremap = false } },
+		["zm"] = { "zm", "Fold more (close) all folds by one level", opts = { noremap = false } },
+		["zi"] = { "zi", "Change fold method", opts = { noremap = false } },
+	},
+}
+
 M.telescope = {
 	n = {
 		["<leader>fr"] = {
