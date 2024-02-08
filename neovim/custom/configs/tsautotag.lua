@@ -1,4 +1,3 @@
--- Also configured in treesitter
 return {
 	"windwp/nvim-ts-autotag",
 	ft = {
