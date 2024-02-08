@@ -66,6 +66,18 @@ M.folds = {
 	},
 }
 
+M.marks = {
+	n = {
+		[":marks"] = { "<nop>", "List marks" },
+		["m + {letter}"] = { "<nop>", "Set local mark" },
+		["m + {LETTER}"] = { "<nop>", "Set global mark" },
+		["` + {mark}"] = { "<nop>", "Move to mark" },
+		["' + {mark}"] = { "<nop>", "Move to first character of mark line" },
+		["dm + {mark}"] = { "<nop>", "Delete mark" },
+		[":delm {marks}"] = { "<nop>", "Delete marks" },
+	},
+}
+
 M.telescope = {
 	n = {
 		["<leader>fr"] = {
