@@ -46,6 +46,15 @@ M.text_actions = {
 		["Y"] = { "Ygv<Esc>", "Yank" },
 	},
 }
+
+M.macros = {
+	n = {
+		["q + {letter}"] = { "<nop>", "Record macro" },
+		["q"] = { "q", "Stop recording macro", opts = { noremap = false } },
+		["@ + {letter}"] = { "<nop>", "Run macro" },
+		["@@"] = { "@@", "Re-run last ran macro", opts = { noremap = false } },
+	},
+}
 M.telescope = {
 	n = {
 		["<leader>fr"] = {
