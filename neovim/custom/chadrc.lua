@@ -14,12 +14,12 @@ M.ui = {
 	nvdash = {
 		load_on_startup = true,
 		buttons = {
-			{ "  Find File", "<leader> f f", "Telescope find_files" },
-			{ "󰈚  Recent Files", "<leader> f o", "Telescope oldfiles" },
-			{ "󰈭  Find Word", "<leader> f w", "Telescope live_grep" },
-			{ "  Bookmarks", "<leader> m a", "Telescope marks" },
-			{ "  Themes", "<leader> t h", "Telescope themes" },
-			{ "  Mappings", "<leader> c h", "NvCheatsheet" },
+			{ "  Find File", "<leader> + ff", "Telescope find_files" },
+			{ "󰈚  Recent Files", "<leader> + fo", "Telescope oldfiles" },
+			{ "󰈭  Find Word", "<leader> + fw", "Telescope live_grep" },
+			{ "  Bookmarks", "<leader> + ma", "Telescope marks" },
+			{ "  Themes", "<leader> + th", "Telescope themes" },
+			{ "  Mappings", "<leader> + ch", "NvCheatsheet" },
 		},
 	},
 
