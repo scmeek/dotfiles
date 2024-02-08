@@ -19,7 +19,7 @@ M.ui = {
 			{ "󰈭  Find Word", "<leader> + fw", "Telescope live_grep" },
 			{ "  Bookmarks", "<leader> + ma", "Telescope marks" },
 			{ "  Themes", "<leader> + th", "Telescope themes" },
-			{ "  Mappings", "<leader> + ch", "NvCheatsheet" },
+			{ "  Mappings", "<leader> + ch", "Open cheatsheet" },
 		},
 	},
 
