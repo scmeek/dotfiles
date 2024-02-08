@@ -15,7 +15,6 @@ local plugins = {
 	require("custom.configs.dressing"),
 	require("custom.configs.fugitive"),
 	require("custom.configs.lastplace"),
-	require("custom.configs.neorg"),
 	require("custom.configs.nullls"),
 	require("custom.configs.signature"),
 	require("custom.configs.surround"),
