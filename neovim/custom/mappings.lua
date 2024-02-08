@@ -78,6 +78,14 @@ M.marks = {
 	},
 }
 
+M.surround = {
+	n = {
+		["ys + {motion} + {char}"] = { "<nop>", "Add surround character" },
+		["cs + {old char} + {new char}"] = { "<nop>", "Change surround character" },
+		["ds + {char}"] = { "<nop>", "Delete surround character" },
+	},
+}
+
 M.telescope = {
 	n = {
 		["<leader>fr"] = {
