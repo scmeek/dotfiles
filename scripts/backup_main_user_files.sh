@@ -13,7 +13,6 @@ if [[ $# -ne 0 ]]; then
 fi
 
 user_directories=(
-	"Library/Application Support/MobileSync"
 	Desktop
 	Documents
 	Downloads
@@ -27,6 +26,7 @@ keychain_item_name="ToshibaVeraCryptVolume"
 mount_point="/Volumes/Toshiba"
 
 red="\033[0;31m"
+yellow="\033[0;33m"
 blue="\033[0;34m"
 no_color="\033[0m"
 green="\033[0;32m"
@@ -36,7 +36,12 @@ err_exit() {
 	exit 1
 }
 print_msg() { echo -e "${blue}$*${no_color}"; }
+print_warning() { echo -e "${yellow}$*${no_color}"; }
 success() { echo -e "${green}✅ $*${no_color}"; }
+
+print_warning "NOTE: skipping \"Library/Application Support/MobileSync\". Be sure to do so manually."
+
+print_warning "TODO: Add option to stay awake while executing."
 
 veracrypt_app="/Applications/VeraCrypt.app/contents/MacOS/VeraCrypt"
 disk_info_xml=$(diskutil info -plist "${backup_volume_diskuuid}") ||
@@ -90,6 +95,10 @@ for user_directory in "${user_directories[@]}"; do
 
 	rsync \
 		--archive \
+		--no-perms \
+		--no-group \
+		--no-owner \
+		--inplace \
 		--sparse \
 		--delete \
 		--info=progress2 \
@@ -113,3 +122,5 @@ if [[ -n "${mounted_directory}" ]]; then
 
 	print_msg "Volume dismounted"
 fi
+
+print_warning "NOTE: skipped \"Library/Application Support/MobileSync\". Be sure to do so manually."
