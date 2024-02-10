@@ -1,6 +1,6 @@
 #zmodload zsh/zprof  # Profiling, use with `zprof` command
 
-neofetch
+fastfetch
 
 #--------------------------------------------------------------------------
 # Environment variables

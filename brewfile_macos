@@ -3,13 +3,13 @@ brew "bat"                                  # `cat` alternative
 brew "coreutils"
 brew "difftastic"                           # diff analysis and presentation
 brew "eza"                                  # `ls` alternative
+brew "fastfetch"                            # system information
 brew "fzf"                                  # fuzzy-finder
 brew "git"                                  # source control
 brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
 brew "lazygit"                              # git TUI
 brew "neovim"                               # text editor
-brew "neofetch"                             # system information
 brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
 brew "pinentry-mac"                         # macOS integration for GPG

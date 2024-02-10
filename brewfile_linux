@@ -1,5 +1,6 @@
 # formulae
 brew "bat"                                  # `cat` alternative
+brew "fastfetch"                            # system information
 brew "node"                                 # nodejs
 brew "difftastic"                           # diff analysis and presentation
 brew "eza"                                  # `ls` alternative
@@ -8,7 +9,6 @@ brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
 brew "lazygit"                              # git TUI
 brew "neovim"                               # text editor
-brew "neofetch"                             # system information
 brew "ripgrep"                              # fuzzy-finder
 
 # zsh
