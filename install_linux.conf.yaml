@@ -23,10 +23,6 @@
     "${HOME}/.zshrc": zshrc
     "${HOME}/Brewfile": brewfile_linux
 
-# Hush login messages on bash/zsh open
-- create:
-    - "${HOME}/.hushlogin"
-
 # Setup TMUX plugin manager
 - shell:
     - command: TPM_DIR=${XDG_CONFIG_HOME}/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"

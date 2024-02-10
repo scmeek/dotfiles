@@ -29,10 +29,6 @@
     # Make Home and End keys Windows-like, needs reboot
     "${HOME}/Library/KeyBindings/DefaultKeyBinding.dict": DefaultKeyBinding.dict
 
-# Hush login messages on bash/zsh open
-- create:
-    - "${HOME}/.hushlogin"
-
 # Install formulae and casks from brew file
 - shell:
     - [brew bundle install --file=$HOME/Brewfile]
