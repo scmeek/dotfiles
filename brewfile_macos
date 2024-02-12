@@ -36,3 +36,6 @@ cask "font-victor-mono-nerd-font"           # font
 cask "hammerspoon"                          # macOS automation, window & app manager
 cask "libreoffice"                          # office tools
 cask "openvpn-connect"                      # OpenVPN Connect client
+
+tap "bloznelis/tap"                         # typioca tap
+brew "typioca"                              # typing speed tester
