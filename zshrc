@@ -173,8 +173,8 @@ fi
 
 alias cd="change_directory_auto_activate"
 alias ls='eza --across'
-alias ll='eza --long --header --changed'
-alias la='eza --long --header --all --changed'
+alias ll='eza --long --group --header --changed'
+alias la='eza --long --group --header --all --changed'
 alias tree='eza --tree'
 alias shred='shred -uvz'
 
