@@ -12,6 +12,7 @@ return {
 		presets = {
 			bottom_search = true, -- use a classic bottom cmdline for search
 			lsp_doc_border = true, -- add a border to hover docs and signature help
+			long_message_to_split = true, -- long messages will be sent to a split
 		},
 	},
 	dependencies = {
