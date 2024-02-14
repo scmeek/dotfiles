@@ -18,12 +18,12 @@ local plugins = {
 	require("custom.configs.noice"),
 	require("custom.configs.nullls"),
 	require("custom.configs.signature"),
+	require("custom.configs.spider"),
 	require("custom.configs.surround"),
 	require("custom.configs.targets"),
 	require("custom.configs.tmuxnavigator"),
 	require("custom.configs.todocomments"),
 	require("custom.configs.tsautotag"),
-	require("custom.configs.wordmotion"),
 }
 
 return plugins
