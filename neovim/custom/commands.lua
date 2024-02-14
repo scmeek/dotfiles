@@ -29,6 +29,7 @@ end, {})
 local ignore_spelling_filetypes = {
 	nvcheatsheet = true,
 	nvdash = true,
+	terminal = true,
 }
 
 vim.api.nvim_create_autocmd("FileType", {
