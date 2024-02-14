@@ -47,22 +47,22 @@ return {
 		{
 			"cw",
 			"c<cmd>lua require('spider').motion('e', { skipInsignificantPunctuation = false })<CR>",
-			mode = { "n", "o", "x" },
+			mode = { "n" },
 		},
 		{
 			"cW",
 			"c<cmd>lua require('spider').motion('e', { subwordMovement = false })<CR>",
-			mode = { "n", "o", "x" },
+			mode = { "n" },
 		},
 		{
 			"ce",
 			"c<cmd>lua require('spider').motion('e', { skipInsignificantPunctuation = false })<CR>",
-			mode = { "n", "o", "x" },
+			mode = { "n" },
 		},
 		{
 			"cE",
 			"c<cmd>lua require('spider').motion('e', { subwordMovement = false })<CR>",
-			mode = { "n", "o", "x" },
+			mode = { "n" },
 		},
 	},
 }
