@@ -1,6 +1,8 @@
 ---@type MappingsTable
 local M = {}
 
+local constants = require("custom.constants")
+
 M.general = {
 	n = {
 		[";"] = { ":", "Enter command mode", opts = { nowait = true } },
@@ -83,6 +85,26 @@ M.surround = {
 		["ys + {motion} + {char}"] = { "<nop>", "Add surround character" },
 		["cs + {old char} + {new char}"] = { "<nop>", "Change surround character" },
 		["ds + {char}"] = { "<nop>", "Delete surround character" },
+	},
+}
+
+M.lspconfig = {
+	n = {
+		["<leader>lf"] = {
+			function()
+				vim.diagnostic.open_float({
+					border = constants.default_border,
+					severity_sort = true,
+					severity = {
+						vim.diagnostic.severity.ERROR,
+						vim.diagnostic.severity.WARN,
+						--vim.diagnostic.severity.INFO,
+						--vim.diagnostic.severity.HINT,
+					},
+				})
+			end,
+			"Floating diagnostic",
+		},
 	},
 }
 
