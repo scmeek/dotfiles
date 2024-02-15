@@ -20,6 +20,7 @@ user_directories=(
 	Music
 	Pictures
 	Videos
+	"Virtual Machines.localized"
 )
 backup_volume_diskuuid="C9107440-03AB-42CE-894B-914A9FD8D84F"
 keychain_item_name="ToshibaVeraCryptVolume"
