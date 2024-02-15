@@ -14,6 +14,7 @@ local plugins = {
 	require("custom.configs.crates"),
 	require("custom.configs.dressing"),
 	require("custom.configs.fugitive"),
+	require("custom.configs.glslview"),
 	require("custom.configs.lastplace"),
 	require("custom.configs.multicursors"),
 	require("custom.configs.noice"),

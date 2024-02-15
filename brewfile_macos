@@ -8,6 +8,7 @@ brew "fzf"                                  # fuzzy-finder
 brew "git"                                  # source control
 brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
+brew "glslviewer"                           # GLSL viewer
 brew "lazygit"                              # git TUI
 brew "neovim"                               # text editor
 brew "nnn"                                  # TUI file manager

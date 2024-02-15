@@ -1,3 +1,7 @@
+local constants = require("custom.constants")
+
+vim.treesitter.language.register("glsl", constants.glsl_filetypes)
+
 return {
 	"nvim-treesitter/nvim-treesitter",
 	opts = function()
@@ -7,6 +11,7 @@ return {
 			"c",
 			"css",
 			"cpp",
+			"glsl",
 			"html",
 			"javascript",
 			"lua",
