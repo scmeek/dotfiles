@@ -27,3 +27,6 @@
 - shell:
     - command: TPM_DIR=${XDG_CONFIG_HOME}/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
       description: Install TMUX plugin manager. To install TMUX plugins, open TMUX and press `prefix + I`
+      quiet: true
+      stdin: true
+      stderr: true

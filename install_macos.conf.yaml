@@ -29,15 +29,23 @@
     # Make Home and End keys Windows-like, needs reboot
     "${HOME}/Library/KeyBindings/DefaultKeyBinding.dict": DefaultKeyBinding.dict
 
-# Install formulae and casks from brew file
 - shell:
-    - [brew bundle install --file=$HOME/Brewfile]
+    - command: brew bundle install --file=$HOME/Brewfile
+      description: Installing homebrew packages
+      quiet: true
+      stdin: true
+      stderr: true
 
-# Change hammerspoon config to be portable
 - shell:
     - command: defaults write org.hammerspoon.Hammerspoon MJConfigFile "${XDG_CONFIG_HOME}/hammerspoon/init.lua"
+      description: Updating Hammerspoon to use portable configuration
+      quiet: true
+      stdin: true
+      stderr: true
 
-# Setup TMUX plugin manager
 - shell:
     - command: TPM_DIR=${XDG_CONFIG_HOME}/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
-      description: Install TMUX plugin manager. To install TMUX plugins, open TMUX and press `prefix + I`
+      description: Installing TMUX plugin manager. To install TMUX plugins, open TMUX and press `prefix + I`
+      quiet: true
+      stdin: true
+      stderr: true
