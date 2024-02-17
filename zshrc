@@ -33,8 +33,6 @@ export PYENV_ROOT="${XDG_DATA_HOME}"/pyenv
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}"/python/pythonrc
 export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
 
-export NOTES_PATH="${HOME}/Documents/Notes"
-
 #--------------------------------------------------------------------------
 # Powerlevel10k
 #--------------------------------------------------------------------------
