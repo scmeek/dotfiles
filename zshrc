@@ -220,13 +220,12 @@ function replace_all_in_directory() {
 # Auto activate virtualenv
 # https://stackoverflow.com/a/56309561
 function change_directory_auto_activate() {
-	builtin cd "$@" || echo $? && return
+	if ! builtin cd "$@" ; then
+	  return
+	fi
 
-	## Default path to virtualenv in your projects
-	DEFAULT_ENV_PATH="./.venv"
-
-	## If env folder is found then activate the vitualenv
-	function activate_venv() {
+	function attempt_activate_venv() {
+	  DEFAULT_ENV_PATH="./.venv"
 		if [[ -f "${DEFAULT_ENV_PATH}/bin/activate" ]]; then
 			# shellcheck disable=SC1091
 			source "${DEFAULT_ENV_PATH}/bin/activate"
@@ -234,15 +233,12 @@ function change_directory_auto_activate() {
 	}
 
 	if [[ -z "${VIRTUAL_ENV}" ]]; then
-		activate_venv
+		attempt_activate_venv
 	else
-		## check the current folder belong to earlier VIRTUAL_ENV folder
-		# if yes then do nothing
-		# else deactivate then run a new env folder check
-		parentdir=$(dirname "${VIRTUAL_ENV}")
-		if [[ "${PWD}"/ != "${parentdir}"/* ]]; then
+		# If not in subdirectory of VIRTUAL_ENV, deactivate and attempt activation
+		if [[ "${PWD}"/ != "$(dirname "${VIRTUAL_ENV}")"/* ]]; then
 			deactivate
-			activate_venv
+			attempt_activate_venv
 		fi
 	fi
 }
