@@ -33,7 +33,6 @@ export PYENV_ROOT="${XDG_DATA_HOME}"/pyenv
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}"/python/pythonrc
 export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
 
-export DOTFILES_PATH="${HOME}"/Documents/dotfiles
 export NOTES_PATH="${HOME}/Documents/Notes"
 
 #--------------------------------------------------------------------------
@@ -158,6 +157,13 @@ zstyle ':completion:*' menu select=2 eval "$(gdircolors -b)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #--------------------------------------------------------------------------
+# zoxide (smarter `cd`)
+#--------------------------------------------------------------------------
+
+# Must be after compinit call
+eval "$(zoxide init zsh)"
+
+#--------------------------------------------------------------------------
 # Python
 #--------------------------------------------------------------------------
 
@@ -172,6 +178,7 @@ fi
 #--------------------------------------------------------------------------
 
 alias cd="change_directory_auto_activate"
+alias cdi="zi"
 alias ls='eza --across'
 alias ll='eza --long --group --header --changed'
 alias la='eza --long --group --header --all --changed'
@@ -185,8 +192,6 @@ alias wget="wget --hsts-file=${XDG_DATA_HOME}/wget-hsts"
 export MANPAGER="sh -c 'col -bx | bat --language=man'"
 alias -g -- --help='--help 2>&1 | bat --language=help'
 alias cat='bat --paging=never'
-
-alias cddf='cd ${DOTFILES_PATH}'
 
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit" # gsip: "git, squash into parent"
 
@@ -220,7 +225,8 @@ function replace_all_in_directory() {
 # Auto activate virtualenv
 # https://stackoverflow.com/a/56309561
 function change_directory_auto_activate() {
-	if ! builtin cd "$@" ; then
+	# z is a cd replacement
+	if ! z "$@" ; then
 	  return
 	fi
 

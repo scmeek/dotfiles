@@ -10,6 +10,7 @@ brew "gnupg"                                # Gnu PGP
 brew "lazygit"                              # git TUI
 brew "neovim"                               # text editor
 brew "ripgrep"                              # fuzzy-finder
+brew "zoxide"                               # `cd` alternative
 
 # zsh
 brew "zsh-autosuggestions"

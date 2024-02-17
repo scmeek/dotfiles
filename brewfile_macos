@@ -20,6 +20,7 @@ brew "unbound"                              # DNS resolver
 brew "tmux"                                 # terminal multiplexer
 brew "trash"                                # move to trash cli https://hasseg.org/trash/
 brew "zbar"                                 # QR code reader
+brew "zoxide"                               # `cd` alternative
 
 # zsh
 brew "romkatv/powerlevel10k/powerlevel10k"  # powerlevel10k (zsh)
