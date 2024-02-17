@@ -29,6 +29,7 @@ end, {})
 local ignore_spelling_filetypes = {
 	nvcheatsheet = true,
 	nvdash = true,
+	TelescopePrompt = true,
 	terminal = true,
 }
 
