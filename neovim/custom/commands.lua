@@ -27,20 +27,23 @@ vim.api.nvim_create_user_command("ToggleVerboseLogging", function()
 end, {})
 
 local ignore_spelling_filetypes = {
-	nvcheatsheet = true,
-	nvdash = true,
-	TelescopePrompt = true,
-	terminal = true,
+	"nvcheatsheet",
+	"nvdash",
+	"TelescopePrompt",
+	"terminal",
 }
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "*" },
 	callback = function()
-		if ignore_spelling_filetypes[vim.bo.filetype] then
-			vim.opt.spell = false
-		else
-			vim.opt.spell = true
+		local spell = true
+		for _, filetype in pairs(ignore_spelling_filetypes) do
+			if vim.bo.filetype == filetype then
+				spell = false
+				break
+			end
 		end
+		vim.opt.spell = spell
 	end,
 	group = general_group,
 })
