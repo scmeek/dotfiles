@@ -19,3 +19,4 @@ brew "romkatv/powerlevel10k/powerlevel10k"
 
 # casks
 cask "alacritty"                            # terminal
+cask "obsidian"                             # notes
