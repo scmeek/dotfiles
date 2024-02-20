@@ -41,6 +41,7 @@ print_warning() { echo -e "${yellow}$*${no_color}"; }
 success() { echo -e "${green}✅ $*${no_color}"; }
 
 print_warning "NOTE: skipping \"Library/Application Support/MobileSync\". Be sure to do so manually."
+print_warning "NOTE: skipping iCloud Drive (Notes). Be sure to do so manually."
 
 print_warning "TODO: Add option to stay awake while executing."
 
