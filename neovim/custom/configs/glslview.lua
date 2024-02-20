@@ -1,8 +1,6 @@
-local constants = require("custom.constants")
-
 return {
 	"timtro/glslView-nvim",
-	ft = constants.glsl_filetypes,
+	ft = "glsl",
 	keys = {
 		{
 			"<leader>gv",
@@ -11,7 +9,7 @@ return {
 				noremap = true,
 				silent = true,
 			},
-			ft = constants.glsl_filetypes,
+			ft = "glsl",
 			desc = "Open in GlslViewer",
 		},
 	},

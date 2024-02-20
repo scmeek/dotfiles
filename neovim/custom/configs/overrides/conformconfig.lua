@@ -14,6 +14,7 @@ return {
 		local formatters = {
 			c = { "clang-format" },
 			cpp = { "clang-format" },
+			glsl = { "glsl_analyzer" },
 			--ino = { "clang-format" },
 			lua = { "stylua" },
 			python = { "black", "isort" },
@@ -47,15 +48,13 @@ return {
 			formatters[filetype] = { "prettier" }
 		end
 
+		local lsp_fallback = true
 		local options = {
-			lsp_fallback = false,
-
+			lsp_fallback = lsp_fallback,
 			formatters_by_ft = formatters,
-
 			format_on_save = {
 				timeout_ms = 500,
-				lsp_fallback = false,
-				async = false,
+				lsp_fallback = lsp_fallback,
 				quiet = true,
 			},
 		}

@@ -1,7 +1,3 @@
-local constants = require("custom.constants")
-
-vim.treesitter.language.register("glsl", constants.glsl_filetypes)
-
 return {
 	"nvim-treesitter/nvim-treesitter",
 	opts = function()
@@ -31,5 +27,16 @@ return {
 			-- },
 		}
 		return opts
+	end,
+	init = function()
+		local glsl_filetypes = { "comp", "frag", "geom", "glsl", "tesc", "tese", "vert" }
+		local extensions = {}
+		for _, glsl_filetype in pairs(glsl_filetypes) do
+			extensions[glsl_filetype] = "glsl"
+		end
+
+		vim.filetype.add({
+			extension = extensions,
+		})
 	end,
 }
