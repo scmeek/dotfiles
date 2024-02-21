@@ -8,6 +8,7 @@ return {
 			"clangd",
 			"css-lsp",
 			"eslint-lsp",
+			"glsl_analyzer",
 			"html-lsp",
 			"lua-language-server",
 			"prettier",
