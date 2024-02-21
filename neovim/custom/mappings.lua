@@ -3,6 +3,13 @@ local M = {}
 
 local constants = require("custom.constants")
 
+M.neovim = {
+	n = {
+		[":checkhealth"] = { "<nop>", "Run health checks" },
+		[":checkhealth <plugin>"] = { "<nop>", "Run health checks for a specific plugin" },
+	},
+}
+
 M.general = {
 	n = {
 		[";"] = { ":", "Enter command mode", opts = { nowait = true } },
