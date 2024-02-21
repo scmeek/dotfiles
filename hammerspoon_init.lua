@@ -18,6 +18,7 @@ local keyAppMapping = {
 	{ "2", "Safari" },
 	{ "3", "Spotify" },
 	{ "4", "Messages" },
+	{ "5", "Obsidian" },
 }
 
 function bindKeyToLaunchApp(key, appName)
