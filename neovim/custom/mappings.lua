@@ -116,12 +116,11 @@ M.lspconfig = {
 }
 
 M.nvimtree = {
-  n = {
-    ["c"] = { "c", "Copy file", opts = { noremap = true, silent = true } },
-    ["p"] = { "p", "Paste", opts = { noremap = true, silent = true } },
-  },
+	n = {
+		["c"] = { "c", "Copy file", opts = { noremap = true, silent = true } },
+		["p"] = { "p", "Paste", opts = { noremap = true, silent = true } },
+	},
 }
-
 
 M.telescope = {
 	n = {
