@@ -8,6 +8,7 @@
 - clean: # Remove dead links
     "${HOME}/":
     "${XDG_CONFIG_HOME}/":
+    "${XDG_DATA_HOME}/":
       recursive: true
 
 - link:
