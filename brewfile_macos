@@ -10,6 +10,7 @@ brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
 brew "glslviewer"                           # GLSL viewer
 brew "lazygit"                              # git TUI
+brew "lolcat"                               # rainbow text
 brew "neovim"                               # text editor
 brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
@@ -18,6 +19,7 @@ brew "ripgrep"                              # fuzzy-finder
 brew "rsync"                                # file transfer used in backup script
 brew "rustup-init"                          # rust
 brew "unbound"                              # DNS resolver
+brew "slides"                               # presentation tool
 brew "tmux"                                 # terminal multiplexer
 brew "trash"                                # move to trash cli https://hasseg.org/trash/
 brew "zbar"                                 # QR code reader
