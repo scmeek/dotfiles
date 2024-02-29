@@ -27,9 +27,11 @@ vim.api.nvim_create_user_command("ToggleVerboseLogging", function()
 end, {})
 
 local ignore_spelling_filetypes = {
+	"lspinfo",
 	"nvcheatsheet",
 	"nvdash",
 	"TelescopePrompt",
+	"TelescopeResults",
 	"terminal",
 }
 
