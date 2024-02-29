@@ -221,6 +221,14 @@ function replace_all_in_directory() {
 	fi
 }
 
+function attempt_activate_venv() {
+	default_env_path="./.venv"
+	if [[ -f "${default_env_path}/bin/activate" ]]; then
+		# shellcheck disable=SC1091
+		source "${default_env_path}/bin/activate"
+	fi
+}
+
 # Auto activate virtualenv
 # https://stackoverflow.com/a/56309561
 function change_directory_auto_activate() {
@@ -229,19 +237,13 @@ function change_directory_auto_activate() {
 	  return
 	fi
 
-	function attempt_activate_venv() {
-	  DEFAULT_ENV_PATH="./.venv"
-		if [[ -f "${DEFAULT_ENV_PATH}/bin/activate" ]]; then
-			# shellcheck disable=SC1091
-			source "${DEFAULT_ENV_PATH}/bin/activate"
-		fi
-	}
-
 	if [[ -z "${VIRTUAL_ENV}" ]]; then
 		attempt_activate_venv
 	else
 		# If not in subdirectory of VIRTUAL_ENV, deactivate and attempt activation
-		if [[ "${PWD}"/ != "$(dirname "${VIRTUAL_ENV}")"/* ]]; then
+		# Ignore path casing
+		virtual_env_parent_dir="$(dirname "${VIRTUAL_ENV}")"
+		if [[ "${PWD:u}"/ != "${virtual_env_parent_dir:u}"/* ]]; then
 			deactivate
 			attempt_activate_venv
 		fi
