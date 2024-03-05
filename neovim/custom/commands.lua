@@ -30,6 +30,7 @@ local ignore_spelling_filetypes = {
 	"lspinfo",
 	"nvcheatsheet",
 	"nvdash",
+	"NvimTree",
 	"TelescopePrompt",
 	"TelescopeResults",
 	"terminal",
