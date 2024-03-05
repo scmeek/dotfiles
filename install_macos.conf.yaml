@@ -19,6 +19,7 @@
     "${XDG_CONFIG_HOME}/alacritty/alacritty.toml": alacritty.toml
     "${XDG_CONFIG_HOME}/bat/config": batconfig
     "${XDG_CONFIG_HOME}/git/config": gitconfig
+    "${HOME}/.gnupg": ${XDG_DATA_HOME}/gnupg
     "${XDG_CONFIG_HOME}/hammerspoon/init.lua": hammerspoon_init.lua
     "${XDG_CONFIG_HOME}/npm/npmrc": npmrc
     "${XDG_CONFIG_HOME}/p10k.zsh": p10k.zsh
