@@ -34,6 +34,7 @@ local ignore_spelling_filetypes = {
 	"TelescopePrompt",
 	"TelescopeResults",
 	"terminal",
+	"WhichKey",
 }
 
 vim.api.nvim_create_autocmd("FileType", {
