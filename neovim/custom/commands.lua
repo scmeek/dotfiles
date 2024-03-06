@@ -4,14 +4,12 @@ vim.api.nvim_create_user_command("W", "w", {})
 vim.api.nvim_create_user_command("Qa", "qa", {})
 vim.api.nvim_create_user_command("Q", "q", {})
 
-local general_group = vim.api.nvim_create_augroup("General settings", { clear = true })
-
 vim.api.nvim_create_autocmd("TextYankPost", {
+	group = vim.api.nvim_create_augroup("Highlight on yank", { clear = true }),
 	pattern = "*",
 	callback = function()
 		vim.highlight.on_yank()
 	end,
-	group = general_group,
 })
 
 vim.api.nvim_create_user_command("ToggleVerboseLogging", function()
@@ -26,28 +24,20 @@ vim.api.nvim_create_user_command("ToggleVerboseLogging", function()
 	end
 end, {})
 
-local ignore_spelling_filetypes = {
-	"lspinfo",
-	"nvcheatsheet",
-	"nvdash",
-	"NvimTree",
-	"TelescopePrompt",
-	"TelescopeResults",
-	"terminal",
-	"WhichKey",
-}
-
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "*" },
+	group = vim.api.nvim_create_augroup("Disable spell", { clear = true }),
+	pattern = {
+		"lspinfo",
+		"noice",
+		"nvcheatsheet",
+		"nvdash",
+		"NvimTree",
+		"TelescopePrompt",
+		"TelescopeResults",
+		"terminal",
+		"WhichKey",
+	},
 	callback = function()
-		local spell = true
-		for _, filetype in pairs(ignore_spelling_filetypes) do
-			if vim.bo.filetype == filetype then
-				spell = false
-				break
-			end
-		end
-		vim.opt.spell = spell
+		vim.opt.spell = false
 	end,
-	group = general_group,
 })
