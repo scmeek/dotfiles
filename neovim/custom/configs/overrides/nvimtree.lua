@@ -1,3 +1,9 @@
+-- https://github.com/nvim-tree/nvim-tree.lua/wiki/FAQ#why-do-i-see-spelling-highlights
+vim.api.nvim_set_hl(0, "NvimTreeExecFile", { link = "Question" })
+vim.api.nvim_set_hl(0, "NvimTreeSymlink", { link = "MoreMsg" })
+vim.api.nvim_set_hl(0, "NvimTreeSpecialFile", { link = "Question" })
+vim.api.nvim_set_hl(0, "NvimTreeImageFile", { fg = "#ff80ff" })
+
 return {
 	"nvim-tree/nvim-tree.lua",
 	opts = {
