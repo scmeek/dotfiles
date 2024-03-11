@@ -20,6 +20,7 @@ M.general = {
 	v = {
 		[">"] = { ">gv", "Increase indent" },
 		["<"] = { "<gv", "Decrease indent" },
+		[":!sort"] = { "<nop>", "Sort selected text"},
 	},
 	i = {
 		["<M-BS>"] = { "<Esc>cvb", "Backspace entire word" },
