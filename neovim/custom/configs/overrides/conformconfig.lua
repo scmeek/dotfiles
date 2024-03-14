@@ -53,7 +53,7 @@ return {
 			lsp_fallback = lsp_fallback,
 			formatters_by_ft = formatters,
 			format_on_save = {
-				timeout_ms = 500,
+				timeout_ms = 1500,
 				lsp_fallback = lsp_fallback,
 				quiet = true,
 			},
