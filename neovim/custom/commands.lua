@@ -27,6 +27,7 @@ end, {})
 vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("Disable spell", { clear = true }),
 	pattern = {
+		"gitignore",
 		"lspinfo",
 		"noice",
 		"nvcheatsheet",
