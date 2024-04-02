@@ -12,6 +12,7 @@ return {
 			"html-lsp",
 			"lua-language-server",
 			"prettier",
+			"pyright",
 			"rust-analyzer",
 			--"rustfmt",  -- Deprecated, use rustup to install
 			"shellcheck",
