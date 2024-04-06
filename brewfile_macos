@@ -12,6 +12,7 @@ brew "glslviewer"                           # GLSL viewer
 brew "lazygit"                              # git TUI
 brew "lolcat"                               # rainbow text
 brew "neovim"                               # text editor
+brew "netnewswire"                          # RSS reader
 brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
 brew "pinentry-mac"                         # macOS integration for GPG
