@@ -43,6 +43,7 @@ cask "inkscape"                             # vector graphics editor
 cask "libreoffice"                          # office tools
 cask "obsidian"                             # notes
 cask "openvpn-connect"                      # OpenVPN Connect client
+cask "semulov"                              # mount/unmount drives from menu bar
 
 tap "bloznelis/tap"                         # typioca tap
 brew "typioca"                              # typing speed tester
