@@ -38,6 +38,7 @@ cask "font-fira-code-nerd-font"             # font
 cask "font-iosevka-nerd-font"               # font
 cask "font-fira-mono-nerd-font"             # font
 cask "font-victor-mono-nerd-font"           # font
+cask "gimp"                                 # image editor
 cask "hammerspoon"                          # macOS automation, window & app manager
 cask "inkscape"                             # vector graphics editor
 cask "libreoffice"                          # office tools
