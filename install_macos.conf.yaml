@@ -12,7 +12,7 @@
       recursive: true
 
 - link:
-    "${XDG_DATA_HOME}/cargo/config.toml": cargoconfig.toml
+    "${XDG_DATA_HOME}/cargo/config.toml": cargo.toml
     "${XDG_CONFIG_HOME}/lazygit/config.yml": lazygitconfig.yaml
     "${XDG_CONFIG_HOME}/nvim": neovim/NvChad
     "${XDG_CONFIG_HOME}/nvim/lua/custom": neovim/custom
