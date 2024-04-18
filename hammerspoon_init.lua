@@ -13,7 +13,7 @@ end
 
 myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 
-local keyAppMapping = {
+local key_app_mapping = {
 	{ "1", "Alacritty" },
 	{ "2", "Safari" },
 	{ "3", "Spotify" },
@@ -21,55 +21,54 @@ local keyAppMapping = {
 	{ "5", "Obsidian" },
 }
 
-function bindKeyToLaunchApp(key, appName)
+local function bind_key_to_launch_app(key, appName)
 	local modifier = "cmd"
 	hs.hotkey.bind({ modifier }, key, function()
 		hs.application.launchOrFocus(appName)
 	end)
 end
 
-for _, mapping in ipairs(keyAppMapping) do
-	bindKeyToLaunchApp(mapping[1], mapping[2])
+for _, mapping in ipairs(key_app_mapping) do
+	bind_key_to_launch_app(mapping[1], mapping[2])
 end
 
 -- Maximize window
 hs.hotkey.bind({ "cmd", "shift" }, "K", function()
-	local win = hs.window.focusedWindow()
-	local f = win:frame()
-	local screen = win:screen()
-	local max = screen:frame()
+	local window = hs.window.focusedWindow()
+	local window_frame = window:frame()
+	local screen_frame = window:screen():frame()
 
-	f.x = max.x
-	f.y = max.y
-	f.w = max.w
-	f.h = max.h
-	win:setFrame(f)
+	window_frame.x = screen_frame.x
+	window_frame.y = screen_frame.y
+	window:setFrame(window_frame)
+	window_frame.w = screen_frame.w
+	window_frame.h = screen_frame.h
+	window:setFrame(window_frame)
 end)
 
 -- Set window to left half
 hs.hotkey.bind({ "cmd", "shift" }, "H", function()
-	local win = hs.window.focusedWindow()
-	local f = win:frame()
-	local screen = win:screen()
-	local max = screen:frame()
+	local window = hs.window.focusedWindow()
+	local window_frame = window:frame()
+	local screen_frame = window:screen():frame()
 
-	f.x = max.x
-	f.y = max.y
-	f.w = max.w / 2
-	f.h = max.h
-	win:setFrame(f)
+	window_frame.w = screen_frame.w / 2
+	window_frame.h = screen_frame.h
+	window:setFrame(window_frame)
+	window_frame.x = screen_frame.x
+	window_frame.y = screen_frame.y
+	window:setFrame(window_frame)
 end)
 
 -- Set window to right half
 hs.hotkey.bind({ "cmd", "shift" }, "L", function()
-	local win = hs.window.focusedWindow()
-	local f = win:frame()
-	local screen = win:screen()
-	local max = screen:frame()
+	local window = hs.window.focusedWindow()
+	local window_frame = window:frame()
+	local screen_frame = window:screen():frame()
 
-	f.x = max.w / 2
-	f.y = max.y
-	f.w = max.w / 2
-	f.h = max.h
-	win:setFrame(f)
+	window_frame.w = screen_frame.w / 2
+	window_frame.h = screen_frame.h
+	window:setFrame(window_frame)
+	window_frame.x = screen_frame.w / 2
+	window_frame.y = screen_frame.y
 end)
