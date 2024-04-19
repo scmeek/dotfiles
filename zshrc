@@ -86,6 +86,7 @@ export VISUAL=vim
 # Homebrew
 #--------------------------------------------------------------------------
 
+HOMEBREW_NO_ENV_HINTS=1
 eval "$(/usr/local/bin/brew shellenv)"
 
 # Before oh-my-zsh
