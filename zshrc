@@ -13,6 +13,9 @@ export XDG_STATE_HOME="${HOME}"/.local/state
 export XDG_CACHE_HOME="${HOME}"/.cache
 export XDG_RUNTIME_DIR="/run/user/${UID}"
 
+# Needs to be here before other env vars
+eval "$(/usr/local/bin/brew shellenv)"
+
 export AWS_SHARED_CREDENTIALS_FILE="${XDG_CONFIG_HOME}"/aws/credentials
 export AWS_CONFIG_FILE="${XDG_CONFIG_HOME}"/aws/config
 export CARGO_HOME="${XDG_DATA_HOME}"/cargo
@@ -87,7 +90,6 @@ export VISUAL=vim
 #--------------------------------------------------------------------------
 
 HOMEBREW_NO_ENV_HINTS=1
-eval "$(/usr/local/bin/brew shellenv)"
 
 # Before oh-my-zsh
 if type brew &>/dev/null; then
