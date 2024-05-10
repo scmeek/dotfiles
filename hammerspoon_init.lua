@@ -58,7 +58,7 @@ hs.hotkey.bind({ "cmd", "shift" }, "L", function()
 	window_frame.w = screen_frame.w / 2
 	window_frame.h = screen_frame.h
 	window:setFrame(window_frame)
-	window_frame.x = screen_frame.w / 2
+	window_frame.x = (screen_frame.x + window_frame.w)
 	window_frame.y = screen_frame.y
 end)
 
