@@ -15,6 +15,7 @@ brew "neovim"                               # text editor
 brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
 brew "pinentry-mac"                         # macOS integration for GPG
+brew "powerlevel10k"                        # powerlevel10k (zsh)
 brew "ripgrep"                              # fuzzy-finder
 brew "rsync"                                # file transfer used in backup script
 brew "rustup-init"                          # rust
@@ -26,7 +27,6 @@ brew "zbar"                                 # QR code reader
 brew "zoxide"                               # `cd` alternative
 
 # zsh
-brew "romkatv/powerlevel10k/powerlevel10k"  # powerlevel10k (zsh)
 brew "zsh-autosuggestions"                  # zsh-autosuggestions
 brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 
