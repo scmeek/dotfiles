@@ -144,9 +144,9 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # shellcheck disable=SC2034
-GPG_TTY=$(tty)
-PATH=/usr/local/sbin:"${PATH}"
-PATH=/usr/local/bin:"${PATH}"
+export GPG_TTY=$(tty)
+export PATH=/usr/local/sbin:"${PATH}"
+export PATH=/usr/local/bin:"${PATH}"
 
 # GNU only ('dircolors')
 #zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
