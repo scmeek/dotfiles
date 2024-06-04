@@ -167,7 +167,7 @@ eval "$(zoxide init zsh)"
 # Python
 #--------------------------------------------------------------------------
 
-alias pip=pip3
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
 
 if command -v pyenv 1>/dev/null 2>&1; then
 	eval "$(pyenv init -)"

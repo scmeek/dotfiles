@@ -10,6 +10,7 @@ brew "gnupg"                                # Gnu PGP
 brew "lazygit"                              # git TUI
 brew "lolcat"                               # rainbow text
 brew "neovim"                               # text editor
+brew "pyenv"                                # python version manager
 brew "ripgrep"                              # fuzzy-finder
 brew "slides"                               # presentation tool
 brew "zoxide"                               # `cd` alternative
