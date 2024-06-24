@@ -11,6 +11,7 @@ brew "gnupg"                                # Gnu PGP
 brew "glslviewer"                           # GLSL viewer
 brew "lazygit"                              # git TUI
 brew "lolcat"                               # rainbow text
+brew "luarocks"                             # lua package manager
 brew "neovim"                               # text editor
 brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
