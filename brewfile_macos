@@ -33,7 +33,6 @@ brew "zsh-autosuggestions"                  # zsh-autosuggestions
 brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 
 # casks
-cask "alacritty"                            # terminal
 cask "caffeine"                             # prevent computer sleep
 cask "font-fira-code-nerd-font"             # font
 cask "font-iosevka-nerd-font"               # font
@@ -48,6 +47,7 @@ cask "netnewswire"                          # RSS reader
 cask "obsidian"                             # notes
 cask "openvpn-connect"                      # OpenVPN Connect client
 cask "semulov"                              # mount/unmount drives from menu bar
+cask "wezterm"                              # terminal
 
 tap "bloznelis/tap"                         # typioca tap
 brew "typioca"                              # typing speed tester

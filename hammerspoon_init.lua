@@ -1,5 +1,5 @@
 local key_app_mapping = {
-	{ "1", "Alacritty" },
+	{ "1", "Wezterm" },
 	{ "2", "Safari" },
 	{ "3", "Spotify" },
 	{ "4", "Messages" },
