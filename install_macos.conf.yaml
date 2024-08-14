@@ -22,8 +22,8 @@
     "${HOME}/.gnupg": ${XDG_DATA_HOME}/gnupg
     "${XDG_CONFIG_HOME}/hammerspoon/init.lua": hammerspoon_init.lua
     "${XDG_CONFIG_HOME}/npm/npmrc": npmrc
-    "${XDG_CONFIG_HOME}/p10k.zsh": p10k.zsh
     "${XDG_CONFIG_HOME}/python/pythonrc": pythonrc
+    "${XDG_CONFIG_HOME}/starship.toml": starship.toml
     "${XDG_CONFIG_HOME}/tmux/tmux.conf": tmux.conf
     "${XDG_CONFIG_HOME}/wezterm/wezterm.lua": wezterm.lua
     "${HOME}/.zshrc": zshrc

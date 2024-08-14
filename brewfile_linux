@@ -14,12 +14,12 @@ brew "neovim"                               # text editor
 brew "pyenv"                                # python version manager
 brew "ripgrep"                              # fuzzy-finder
 brew "slides"                               # presentation tool
+brew "starship"                             # shell prompt
 brew "zoxide"                               # `cd` alternative
 
 # zsh
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
-brew "romkatv/powerlevel10k/powerlevel10k"
 
 # casks
 cask "obsidian"                             # notes

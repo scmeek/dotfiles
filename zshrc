@@ -32,18 +32,6 @@ export PYENV_ROOT="${XDG_DATA_HOME}"/pyenv
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}"/python/pythonrc
 export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
 
-#--------------------------------------------------------------------------
-# Powerlevel10k
-#--------------------------------------------------------------------------
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# shellcheck disable=SC2296
-if [[ -r "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-	# shellcheck disable=SC1090
-	source "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 #--------------------------------------------------------------------------
 # General config
@@ -257,13 +245,7 @@ function change_directory_auto_activate() {
 
 
 #--------------------------------------------------------------------------
-# Powerlevel10k (Bottom of file)
+# Starship
 #--------------------------------------------------------------------------
 
-# shellcheck disable=SC2046 disable=SC1091
-source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit p10k.zsh.
-P10K_CONFIG_FILE="${XDG_CONFIG_HOME}"/p10k.zsh
-# shellcheck disable=SC1090
-[[ ! -f "${P10K_CONFIG_FILE}" ]] || source "${P10K_CONFIG_FILE}"
+eval "$(starship init zsh)"
