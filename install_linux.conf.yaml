@@ -32,7 +32,7 @@
       stderr: true
 
 - shell:
-    - command: tempfile=$(mktemp) && curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo && tic -x -o ~/.terminfo $tempfile && rm $tempfile
+    - command: tempfile=$(mktemp) && curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo && tic -x -o ~/.local/share/terminfo $tempfile && rm $tempfile
       description: Install wezterm terminfo file
       quiet: true
       stderr: true

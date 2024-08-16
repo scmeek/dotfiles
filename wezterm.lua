@@ -32,6 +32,9 @@ config.keys = {
 	{ key = "v", mods = "SUPER", action = wezterm.action.PasteFrom("Clipboard") },
 }
 config.macos_window_background_blur = 7
+config.set_environment_variables = {
+	TERMINFO_DIRS = "~/.local/share/terminfo",
+}
 config.scrollback_lines = 10000
 config.term = "wezterm"
 config.window_background_opacity = 0.85
