@@ -1,7 +1,7 @@
 # formulae
 brew "bat"                                  # `cat` alternative
 brew "cloc"                                 # code line counter
-brew "coreutils"
+brew "coreutils"                            # GNU core utilities
 brew "difftastic"                           # diff analysis and presentation
 brew "eza"                                  # `ls` alternative
 brew "fastfetch"                            # system information
