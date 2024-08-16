@@ -1,5 +1,6 @@
 # formulae
 brew "bat"                                  # `cat` alternative
+brew "cloc"                                 # code line counter
 brew "fastfetch"                            # system information
 brew "node"                                 # nodejs
 brew "difftastic"                           # diff analysis and presentation
