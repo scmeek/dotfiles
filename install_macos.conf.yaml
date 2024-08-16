@@ -33,29 +33,27 @@
     "${HOME}/Library/KeyBindings/DefaultKeyBinding.dict": DefaultKeyBinding.dict
 
 - shell:
-    - command: brew bundle install --file=$HOME/Brewfile
-      description: Installing homebrew packages
-      quiet: true
-      stdin: true
-      stderr: true
-
-- shell:
     - command: defaults write org.hammerspoon.Hammerspoon MJConfigFile "${XDG_CONFIG_HOME}/hammerspoon/init.lua"
       description: Updating Hammerspoon to use portable configuration
       quiet: true
-      stdin: true
       stderr: true
 
 - shell:
     - command: TPM_DIR=${XDG_CONFIG_HOME}/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
       description: Installing TMUX plugin manager. To install TMUX plugins, open TMUX and press `prefix + I`
       quiet: true
-      stdin: true
       stderr: true
 
 - shell:
     - command: tempfile=$(mktemp) && curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo && tic -x -o ~/.terminfo $tempfile && rm $tempfile
       description: Install wezterm terminfo file
       quiet: true
-      stdin: true
       stderr: true
+
+- shell:
+    - command: brew bundle install --file=$HOME/Brewfile
+      description: Installing homebrew packages
+      quiet: true
+      stdout: true
+      stderr: true
+
