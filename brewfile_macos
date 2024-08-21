@@ -34,6 +34,7 @@ brew "zsh-autosuggestions"                  # zsh-autosuggestions
 brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 
 # casks
+cask "nikitabobko/tap/aerospace"            # window manager
 cask "caffeine"                             # prevent computer sleep
 cask "font-fira-code-nerd-font"             # font
 cask "font-iosevka-nerd-font"               # font
