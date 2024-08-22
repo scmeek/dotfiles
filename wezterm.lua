@@ -23,6 +23,9 @@ config.inactive_pane_hsb = {
 config.hide_tab_bar_if_only_one_tab = true
 config.keys = {
 	{ key = "Backspace", mods = "CMD", action = wezterm.action.SendKey({ key = "\x17" }) },
+	{ key = "n", mods = "CMD", action = wezterm.action.SpawnWindow },
+	{ key = "h", mods = "CMD", action = wezterm.action.HideApplication },
+	{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
 	{ key = "C", mods = "SUPER", action = wezterm.action.CopyTo("Clipboard") },
 	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 	{ key = "P", mods = "CTRL", action = wezterm.action.ActivateCommandPalette },
