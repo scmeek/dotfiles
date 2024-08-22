@@ -32,6 +32,20 @@
     # Make Home and End keys Windows-like, needs reboot
     "${HOME}/Library/KeyBindings/DefaultKeyBinding.dict": DefaultKeyBinding.dict
 
+# https://nikitabobko.github.io/AeroSpace/guide#a-note-on-displays-have-separate-spaces
+- shell:
+    - command: defaults write com.apple.spaces spans-displays -bool true && killall SystemUIServer
+      description: Disable 'Displays have separate Spaces' for aerospace
+      quiet: true
+      stderr: true
+
+# https://nikitabobko.github.io/AeroSpace/guide#a-note-on-mission-control
+- shell:
+    - command: defaults write com.apple.dock expose-group-apps -bool true && killall Dock
+      description: Enable 'Group windows by application' for aerospace
+      quiet: true
+      stderror: true
+
 - shell:
     - command: TPM_DIR=${XDG_CONFIG_HOME}/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
       description: Installing TMUX plugin manager. To install TMUX plugins, open TMUX and press `prefix + I`
