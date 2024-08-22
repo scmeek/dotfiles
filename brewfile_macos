@@ -48,6 +48,7 @@ cask "libreoffice"                          # office tools
 cask "netnewswire"                          # RSS reader
 cask "obsidian"                             # notes
 cask "openvpn-connect"                      # OpenVPN Connect client
+cask "raycast"                              # macOS launcher (spotlight replacement)
 cask "semulov"                              # mount/unmount drives from menu bar
 cask "wezterm"                              # terminal
 
