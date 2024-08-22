@@ -21,7 +21,6 @@
     "${XDG_CONFIG_HOME}/git/config": gitconfig
     "${HOME}/Library/Application Support/halloy/config.toml": halloy.toml
     "${HOME}/.gnupg": ${XDG_DATA_HOME}/gnupg
-    "${XDG_CONFIG_HOME}/hammerspoon/init.lua": hammerspoon_init.lua
     "${XDG_CONFIG_HOME}/npm/npmrc": npmrc
     "${XDG_CONFIG_HOME}/python/pythonrc": pythonrc
     "${XDG_CONFIG_HOME}/starship.toml": starship.toml
@@ -32,12 +31,6 @@
 
     # Make Home and End keys Windows-like, needs reboot
     "${HOME}/Library/KeyBindings/DefaultKeyBinding.dict": DefaultKeyBinding.dict
-
-- shell:
-    - command: defaults write org.hammerspoon.Hammerspoon MJConfigFile "${XDG_CONFIG_HOME}/hammerspoon/init.lua"
-      description: Updating Hammerspoon to use portable configuration
-      quiet: true
-      stderr: true
 
 - shell:
     - command: TPM_DIR=${XDG_CONFIG_HOME}/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"

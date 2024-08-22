@@ -42,7 +42,6 @@ cask "font-fira-mono-nerd-font"             # font
 cask "font-victor-mono-nerd-font"           # font
 cask "gimp"                                 # image editor
 cask "halloy"                               # IRC client
-cask "hammerspoon"                          # macOS automation, window & app manager
 cask "inkscape"                             # vector graphics editor
 cask "libreoffice"                          # office tools
 cask "netnewswire"                          # RSS reader
