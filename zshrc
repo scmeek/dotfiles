@@ -31,6 +31,8 @@ export PSQL_HISTORY="${XDG_DATA_HOME}"/psql_history
 export PYENV_ROOT="${XDG_DATA_HOME}"/pyenv
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}"/python/pythonrc
 export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
+export STARSHIP_CONFIG="${XDG_CONFIG_HOME}"/starship/starship.toml
+export STARSHIP_CACHE="${XDG_DATA_HOME}"/starship/cache
 
 
 #--------------------------------------------------------------------------
