@@ -15,6 +15,34 @@ config.disable_default_key_bindings = true
 config.force_reverse_video_cursor = true
 config.front_end = "WebGpu"
 config.font = wezterm.font("FiraCode Nerd Font Propo", { weight = "Regular" })
+config.font_rules = {
+	{
+		intensity = "Bold",
+		italic = true,
+		font = wezterm.font({
+			family = "VictorMono Nerd Font Propo",
+			weight = "Bold",
+			style = "Italic",
+		}),
+	},
+	{
+		italic = true,
+		intensity = "Half",
+		font = wezterm.font({
+			family = "VictorMono Nerd Font Propo",
+			weight = "DemiBold",
+			style = "Italic",
+		}),
+	},
+	{
+		italic = true,
+		intensity = "Normal",
+		font = wezterm.font({
+			family = "VictorMono Nerd Font Propo",
+			style = "Italic",
+		}),
+	},
+}
 config.font_size = 16
 config.inactive_pane_hsb = {
 	saturation = 0.25,
