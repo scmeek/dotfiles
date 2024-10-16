@@ -20,8 +20,14 @@ brew "pinentry-mac"                         # macOS integration for GPG
 brew "pyenv"                                # python version manager
 brew "ripgrep"                              # fuzzy-finder
 brew "rsync"                                # file transfer used in backup script
+<<<<<<< Updated upstream
 brew "rustup-init"                          # rust
 brew "unbound"                              # DNS resolver
+||||||| Stash base
+brew "rustup-init"                          # rust
+=======
+brew "rustup"                               # rust
+>>>>>>> Stashed changes
 brew "slides"                               # presentation tool
 brew "starship"                             # shell prompt
 brew "tmux"                                 # terminal multiplexer
