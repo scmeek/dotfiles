@@ -56,8 +56,8 @@ config.keys = {
 	{ key = "c", mods = "SUPER", action = wezterm.action.CopyTo("Clipboard") },
 	{ key = "q", mods = "SUPER", action = wezterm.action.QuitApplication },
 	{ key = "v", mods = "SUPER", action = wezterm.action.PasteFrom("Clipboard") },
-	{ key = "-", mods = "SUPER", action = wezterm.action.IncreaseFontSize },
-	{ key = "+", mods = "SUPER", action = wezterm.action.DecreaseFontSize },
+	{ key = "-", mods = "SUPER", action = wezterm.action.DecreaseFontSize },
+	{ key = "+", mods = "SUPER", action = wezterm.action.IncreaseFontSize },
 }
 config.set_environment_variables = {
 	TERMINFO_DIRS = "~/.local/share/terminfo",
