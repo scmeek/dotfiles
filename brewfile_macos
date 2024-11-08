@@ -35,6 +35,7 @@ brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 
 # casks
 cask "caffeine"                             # prevent computer sleep
+cask "dbeaver-community"                    # database manager
 cask "font-fira-code-nerd-font"             # font
 cask "font-iosevka-nerd-font"               # font
 cask "font-fira-mono-nerd-font"             # font
