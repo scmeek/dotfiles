@@ -13,6 +13,7 @@ brew "glslviewer"                           # GLSL viewer
 brew "lazygit"                              # git TUI
 brew "lolcat"                               # rainbow text
 brew "luarocks"                             # lua package manager
+brew "mas"                                  # macOS app store cli
 brew "neovim"                               # text editor
 brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
@@ -53,3 +54,5 @@ cask "wezterm"                              # terminal
 
 tap "bloznelis/tap"                         # typioca tap
 brew "typioca"                              # typing speed tester
+
+mas "Tomito", id: 1526042938                # Pomodoro timer
