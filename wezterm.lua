@@ -45,7 +45,7 @@ config.font_rules = {
 		}),
 	},
 }
-config.font_size = 16
+config.font_size = 15
 config.inactive_pane_hsb = {
 	saturation = 0.25,
 	brightness = 0.5,
@@ -74,5 +74,11 @@ config.scrollback_lines = 10000
 config.term = "wezterm"
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
+config.window_padding = {
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
+}
 
 return config
