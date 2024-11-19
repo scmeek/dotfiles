@@ -175,6 +175,8 @@ alias la='eza --long --group --header --all --changed'
 alias tree='eza --tree'
 alias shred='shred -uvz'
 
+alias lg='lazygit'
+
 # shellcheck disable=SC2139
 alias wget="wget --hsts-file=${XDG_DATA_HOME}/wget-hsts"
 
