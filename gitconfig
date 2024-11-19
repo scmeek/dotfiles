@@ -19,6 +19,7 @@
 	b = branch
 	c = commit -m
 	co = checkout
+	cob = checkout -b
 	d = diff
 	ds = diff --staged
 	p = pull
