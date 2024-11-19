@@ -19,6 +19,10 @@
 	b = branch
 	c = commit -m
 	co = checkout
+	d = diff
+	ds = diff --staged
+	p = pull
+	pu = push
 	rb = rebase
 	st = status
 
