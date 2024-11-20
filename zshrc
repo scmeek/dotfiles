@@ -243,6 +243,16 @@ function change_directory_auto_activate() {
 	fi
 }
 
+# Convert macOS screen recording to GIF
+function to_gif() {
+	if [[ $# -ne 1 ]]; then
+		echo "Usage: $(basename "$0") <file-path>" >&2
+		return 2
+	fi
+
+  ffmpeg -i "$1" -filter_complex "[0:v] fps=10,scale=1080:-2:flags=lanczos,split [a][b];[a] palettegen [p];[b][p] paletteuse" -y "${1%.*}.gif"
+}
+
 #--------------------------------------------------------------------------
 # Environment-specific configuration
 #--------------------------------------------------------------------------
