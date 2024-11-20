@@ -185,6 +185,7 @@ export MANPAGER="sh -c 'col -bx | bat --language=man'"
 alias -g -- --help='--help 2>&1 | bat --language=help'
 alias cat='bat --paging=never'
 
+alias g="git"
 alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit" # gsip: "git, squash into parent"
 
 alias doawake="caffeinate -dimsu &" # Prevent sleep (`caffeine` required)
