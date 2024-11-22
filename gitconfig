@@ -17,11 +17,12 @@
 
 	a = add
 	b = branch
-	c = commit -m
+	c = commit --allow-empty -m
 	co = checkout
 	cob = checkout -b
 	d = diff
 	ds = diff --staged
+	m = merge
 	p = pull
 	pu = push
 	rb = rebase
