@@ -13,7 +13,7 @@
       recursive: true
 
 - link:
-    "${XDG_CONFIG_HOME}/lazygit/config.yml": lazygitconfig.yaml
+    "${XDG_CONFIG_HOME}/lazygit/config.yml": lazygit-config.yaml
     "${XDG_CONFIG_HOME}/nvim": neovim/NvChad_starter
     "${XDG_CONFIG_HOME}/bat/config": batconfig
     "${XDG_CONFIG_HOME}/git/config": git/config
