@@ -167,6 +167,8 @@ fi
 # Aliases
 #--------------------------------------------------------------------------
 
+alias e="$VISUAL"
+
 alias cd="change_directory_auto_activate"
 alias cdi="zi"
 alias ls='eza --across'
