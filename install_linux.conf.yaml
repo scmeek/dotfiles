@@ -16,7 +16,8 @@
     "${XDG_CONFIG_HOME}/lazygit/config.yml": lazygitconfig.yaml
     "${XDG_CONFIG_HOME}/nvim": neovim/NvChad_starter
     "${XDG_CONFIG_HOME}/bat/config": batconfig
-    "${XDG_CONFIG_HOME}/git/config": gitconfig
+    "${XDG_CONFIG_HOME}/git/config": git/config
+    "${XDG_CONFIG_HOME}/git/ignore": git/ignore
     "${XDG_CONFIG_HOME}/npm/npmrc": npmrc
     "${XDG_CONFIG_HOME}/python/pythonrc": pythonrc
     "${XDG_CONFIG_HOME}/starship.toml": starship.toml
