@@ -69,8 +69,8 @@ LESS_DISPLAY_SETTINGS=$(
 )
 export LESS_TERMCAP_md=${LESS_DISPLAY_SETTINGS} # blue
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 #--------------------------------------------------------------------------
 # Homebrew
