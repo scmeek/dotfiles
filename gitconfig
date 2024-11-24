@@ -16,8 +16,11 @@
 	clone = clone --recursive
 
 	a = add
+	aa = add . # Add all files
 	b = branch
 	c = commit --allow-empty -m
+	ca = commit --allow-empty -am # Commit all files
+	cl = clone
 	co = checkout
 	cob = checkout -b
 	d = diff
