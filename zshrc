@@ -256,6 +256,39 @@ function to_gif() {
   ffmpeg -i "$1" -filter_complex "[0:v] fps=10,scale=1080:-2:flags=lanczos,split [a][b];[a] palettegen [p];[b][p] paletteuse" -y "${1%.*}.gif"
 }
 
+# Convert a markdown file to pdf of the same name
+function md_to_pdf() {
+  if [ $# -ne 1 ]; then
+		echo "Usage: $(basename "$0") <markdown-file-name>" >&2
+    return 1
+  fi
+
+  local input_file="$1"
+  if [ ! -f "$input_file" ]; then
+    echo "Error: File '$input_file' not found!"
+    return 1
+  fi
+
+  local valid_extensions=("md" "mkd" "mdwn" "mdown" "mdtxt" "mdtext" "markdown" "text")
+  local extension="${input_file##*.}"
+
+  if [[ ! " ${valid_extensions[@]} " =~ " ${extension} " ]]; then
+    echo "Error: Unsupported file extension '.${extension}'. Supported extensions are: ${valid_extensions[*]}"
+    return 1
+  fi
+
+  local output_file="${input_file%.*}.pdf"
+  pandoc -V geometry:margin=1in "$input_file" -o "$output_file"
+
+  if [ $? -eq 0 ]; then
+    echo "Conversion successful: '$output_file' created."
+  else
+    echo "Error: Conversion failed!"
+    return 1
+  fi
+}
+
+
 #--------------------------------------------------------------------------
 # Environment-specific configuration
 #--------------------------------------------------------------------------

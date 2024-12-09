@@ -13,10 +13,12 @@ brew "glslviewer"                           # GLSL viewer
 brew "lazygit"                              # git TUI
 brew "lolcat"                               # rainbow text
 brew "luarocks"                             # lua package manager
+brew "mactex"                               # LaTeX
 brew "mas"                                  # macOS app store cli
 brew "neovim"                               # text editor
 brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
+brew "pandoc"                               # document converter
 brew "pinentry-mac"                         # macOS integration for GPG
 brew "pyenv"                                # python version manager
 brew "ripgrep"                              # fuzzy-finder
