@@ -47,10 +47,10 @@ config.term = "wezterm"
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
 config.window_padding = {
-	left = 0,
-	right = 0,
+	left = 4,
+	right = 4,
 	top = 0,
-	bottom = 0,
+	bottom = 4,
 }
 
 return config
