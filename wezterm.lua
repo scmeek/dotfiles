@@ -16,36 +16,8 @@ config.color_scheme = "Catppuccin Mocha"
 config.default_prog = { "/bin/zsh", "-l", "-c", "tmux new-session -A -s main" }
 config.disable_default_key_bindings = true
 config.force_reverse_video_cursor = true
-config.font = wezterm.font("FiraCode Nerd Font Propo", { weight = "Regular" })
-config.font_rules = {
-	{
-		intensity = "Bold",
-		italic = true,
-		font = wezterm.font({
-			family = "VictorMono Nerd Font Propo",
-			weight = "Bold",
-			style = "Italic",
-		}),
-	},
-	{
-		italic = true,
-		intensity = "Half",
-		font = wezterm.font({
-			family = "VictorMono Nerd Font Propo",
-			weight = "DemiBold",
-			style = "Italic",
-		}),
-	},
-	{
-		italic = true,
-		intensity = "Normal",
-		font = wezterm.font({
-			family = "VictorMono Nerd Font Propo",
-			style = "Italic",
-		}),
-	},
-}
-config.font_size = 15
+config.font = wezterm.font("Hack Nerd Font Propo")
+config.font_size = 14
 config.inactive_pane_hsb = {
 	saturation = 0.25,
 	brightness = 0.5,
