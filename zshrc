@@ -194,6 +194,8 @@ alias doawake="caffeinate -dimsu &" # Prevent sleep (`caffeine` required)
 
 eval "$(github-copilot-cli alias -- "$0")"
 
+alias y="yazi"
+
 #--------------------------------------------------------------------------
 # Custom functions
 #--------------------------------------------------------------------------
