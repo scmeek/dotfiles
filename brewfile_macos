@@ -53,6 +53,7 @@ cask "halloy"                               # IRC client
 cask "inkscape"                             # vector graphics editor
 cask "libreoffice"                          # office tools
 cask "netnewswire"                          # RSS reader
+cask "musescore"                            # music notation
 cask "obsidian"                             # notes
 cask "raycast"                              # macOS launcher (spotlight replacement)
 cask "wezterm"                              # terminal
