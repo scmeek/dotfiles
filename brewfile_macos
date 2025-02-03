@@ -42,7 +42,6 @@ brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 
 # casks
 cask "caffeine"                             # prevent computer sleep
-cask "darktable"                            # photo editor and GIMP plugin (RAW files)
 cask "dbeaver-community"                    # database manager
 cask "font-fira-code-nerd-font"             # font
 cask "font-hack-nerd-font"                  # font
