@@ -222,11 +222,15 @@ function replace_all_in_directory() {
 }
 
 function attempt_activate_venv() {
-	default_env_path="./.venv"
-	if [[ -f "${default_env_path}/bin/activate" ]]; then
-		# shellcheck disable=SC1091
-		source "${default_env_path}/bin/activate"
-	fi
+	declare -a env_paths=("./.venv" "${additional_env_paths[@]}")
+
+	for env_path in "${env_paths[@]}"
+	do
+	  if [[ -f "${env_path}/bin/activate" ]]; then
+		  # shellcheck disable=SC1091
+		  source "${env_path}/bin/activate"
+	  fi
+	done
 }
 
 # Auto activate virtualenv
