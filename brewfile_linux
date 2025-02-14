@@ -1,27 +1,31 @@
 # formulae
 brew "bat"                                  # `cat` alternative
+brew "coreutils"                            # Gnu file, shell, and text utilities (gdircolors)
 brew "cloc"                                 # code line counter
-brew "fastfetch"                            # system information
-brew "node"                                 # nodejs
 brew "difftastic"                           # diff analysis and presentation
 brew "eza"                                  # `ls` alternative
+brew "fastfetch"                            # system information
 brew "fzf"                                  # fuzzy-finder
+brew "git"                                  # version control
+brew "git-lfs"                              # git large file storage
 brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
+brew "imagemagick"                          # image manipulation (yazi dep)
 brew "lazygit"                              # git TUI
 brew "lolcat"                               # rainbow text
 brew "luarocks"                             # lua package manager
 brew "neovim"                               # text editor
+brew "node"                                 # nodejs
+brew "poppler"                              # PDF tools (yazi dep)
 brew "pyenv"                                # python version manager
 brew "ripgrep"                              # fuzzy-finder
+brew "sevenzip"                             # 7zip (yazi dep)
 brew "slides"                               # presentation tool
 brew "starship"                             # shell prompt
+brew "tmux"                                 # terminal multiplexer
+brew "yazi"                                 # terminal file manager
 brew "zoxide"                               # `cd` alternative
 
 # zsh
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
-
-# casks
-cask "obsidian"                             # notes
-cask "wezterm"                              # terminal
