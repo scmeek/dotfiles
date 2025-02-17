@@ -34,7 +34,6 @@ export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
 export STARSHIP_CONFIG="${XDG_CONFIG_HOME}"/starship/starship.toml
 export STARSHIP_CACHE="${XDG_DATA_HOME}"/starship/cache
 
-
 #--------------------------------------------------------------------------
 # General config
 #--------------------------------------------------------------------------
@@ -167,8 +166,8 @@ fi
 # Aliases
 #--------------------------------------------------------------------------
 
+alias brewsync="brew update && brew upgrade && brew cleanup && brew doctor"
 alias e="$VISUAL"
-
 alias cd="change_directory_auto_activate"
 alias cdi="zi"
 alias ls='eza --across'
@@ -176,7 +175,6 @@ alias ll='eza --long --group --header --changed'
 alias la='eza --long --group --header --all --changed'
 alias tree='eza --tree'
 alias shred='shred -uvz'
-
 alias lg='lazygit'
 
 # shellcheck disable=SC2139
@@ -195,7 +193,6 @@ alias doawake="caffeinate -dimsu &" # Prevent sleep (`caffeine` required)
 eval "$(github-copilot-cli alias -- "$0")"
 
 alias p="python3"
-
 alias y="yazi"
 
 #--------------------------------------------------------------------------
@@ -296,7 +293,6 @@ function md_to_pdf() {
     return 1
   fi
 }
-
 
 #--------------------------------------------------------------------------
 # Environment-specific configuration
