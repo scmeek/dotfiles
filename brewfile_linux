@@ -26,6 +26,9 @@ brew "tmux"                                 # terminal multiplexer
 brew "yazi"                                 # terminal file manager
 brew "zoxide"                               # `cd` alternative
 
+tap "bloznelis/tap"                         # typioca tap
+brew "typioca"                              # typing speed tester
+
 # zsh
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
