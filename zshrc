@@ -226,9 +226,10 @@ function attempt_activate_venv() {
 
 	for env_path in "${env_paths[@]}"
 	do
-	  if [[ -f "${env_path}/bin/activate" ]]; then
+	  activate_file_candidate="${env_path}/bin/activate"
+	  if [[ -f "${activate_file_candidate}" ]]; then
 		  # shellcheck disable=SC1091
-		  source "${env_path}/bin/activate"
+		  source "${activate_file_candidate}"
 	  fi
 	done
 }
