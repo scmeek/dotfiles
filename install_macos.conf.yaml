@@ -50,3 +50,10 @@
       quiet: true
       stdout: true
       stderr: true
+
+- shell:
+    - command: fzf --zsh > $HOME/.fzf.zsh
+      description: Setting up fzf auto-completion, like backwards search, for Zsh
+      quiet: true
+      stdout: true
+      stderr: true
