@@ -204,6 +204,10 @@ function rgf {
 	rg --files $2 | rg $1
 }
 
+function rgfa {
+  rg --files --no-ignore-vcs | rg $1
+}
+
 # Replace all in directory
 function replace_all_in_directory() {
 	if [[ $# -ne 3 ]]; then
