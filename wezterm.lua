@@ -36,7 +36,7 @@ config.keys = {
 	{ key = "q", mods = "SUPER", action = wezterm.action.QuitApplication },
 	{ key = "v", mods = "SUPER", action = wezterm.action.PasteFrom("Clipboard") },
 	{ key = "-", mods = "SUPER", action = wezterm.action.DecreaseFontSize },
-	{ key = "+", mods = "SUPER", action = wezterm.action.IncreaseFontSize },
+	{ key = "=", mods = "CTRL", action = wezterm.action.IncreaseFontSize },
 	{ key = "f", mods = "CTRL|SUPER", action = wezterm.action.ToggleFullScreen },
 }
 config.native_macos_fullscreen_mode = true
