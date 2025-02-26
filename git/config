@@ -41,6 +41,8 @@
 	colorMoved = default
 	algorithm = histogram
 	external = difft
+	mnemonicPrefix = true
+	renames = true
 [advice]
 	addEmptyPathspec = false
 [pager]
@@ -48,16 +50,35 @@
 [push]
 	default = current
 	autoSetupRemote = true
+	followTags = true
 [core]
 	editor = nvim
 	pager = delta
 	excludesFile = ~/.config/git/ignore
+	# fsmonitor = true
+  # untrackedCache = true
 [interactive]
 	diffFilter = delta --color-only
 [delta]
 	navigate = true  # Use n and N to move between diff sections
 [merge]
-	conflictstyle = diff3
+  conflictstyle = zdiff3
+  # conflictstyle = diff3 # git version < 2.3
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[help]
+  autocrrect = prompt
+[rerere]
+  enabled = true
+  autoupdate = true
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
 
 [filter "lfs"]
 	required = true
