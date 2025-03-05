@@ -80,7 +80,12 @@ export VISUAL=nvim
 #--------------------------------------------------------------------------
 
 export HOMEBREW_NO_ENV_HINTS=1
-eval "$(/usr/local/bin/brew shellenv)"
+
+if [[ "$(uname)" == "Darwin" ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+elif [[ "$(uname)" == "Linux" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 # Before oh-my-zsh
 if type brew &>/dev/null; then
