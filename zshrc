@@ -1,8 +1,5 @@
 #zmodload zsh/zprof  # Profiling, use with `zprof` command
 
-fastfetch
-echo ""
-
 #--------------------------------------------------------------------------
 # Environment variables
 #--------------------------------------------------------------------------
@@ -264,3 +261,6 @@ function change_directory_auto_activate() {
 #--------------------------------------------------------------------------
 
 eval "$(starship init zsh)"
+
+fastfetch
+echo ""
