@@ -11,6 +11,8 @@
       recursive: true
     "${XDG_DATA_HOME}/":
       recursive: true
+    "${SM_XDG_BIN_BIN_HOME}/":
+      recursive: true
 
 - link:
     "${XDG_DATA_HOME}/cargo/config.toml": cargo.toml
@@ -26,6 +28,7 @@
     "${XDG_CONFIG_HOME}/starship/starship.toml": starship.toml
     "${XDG_CONFIG_HOME}/tmux/tmux.conf": tmux.conf
     "${XDG_CONFIG_HOME}/wezterm/wezterm.lua": wezterm.lua
+    "${SM_XDG_BIN_BIN_HOME}": bin
     "${HOME}/.zshrc": zshrc
     "${HOME}/Brewfile": brewfile_macos
 

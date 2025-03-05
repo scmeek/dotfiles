@@ -12,6 +12,8 @@ export XDG_CONFIG_HOME="${HOME}"/.config
 export XDG_STATE_HOME="${HOME}"/.local/state
 export XDG_CACHE_HOME="${HOME}"/.cache
 export XDG_RUNTIME_DIR="/tmp/" # "/run/user/${UID}"  nvim plenary workaround
+export SM_XDG_BIN_HOME="${HOME}"/.local/bin # Prefixed since not XDG standard var
+export SM_XDG_BIN_BIN_HOME="${SM_XDG_BIN_HOME}"/bin # Nested for dotfiles bin
 
 export AWS_SHARED_CREDENTIALS_FILE="${XDG_CONFIG_HOME}"/aws/credentials
 export AWS_CONFIG_FILE="${XDG_CONFIG_HOME}"/aws/config
@@ -37,6 +39,8 @@ export STARSHIP_CACHE="${XDG_DATA_HOME}"/starship/cache
 #--------------------------------------------------------------------------
 # General config
 #--------------------------------------------------------------------------
+
+export PATH="${SM_XDG_BIN_HOME}":"${SM_XDG_BIN_BIN_HOME}":"${PATH}"
 
 export HYPHEN_INSENSITIVE="true" # Used in completion
 export COMPLETION_WAITING_DOTS="true"
@@ -208,20 +212,6 @@ function rgfa {
   rg --files --no-ignore-vcs | rg $1
 }
 
-# Replace all in directory
-function replace_all_in_directory() {
-	if [[ $# -ne 3 ]]; then
-		echo "Usage: $(basename "$0") <directory> <search-string> <replace-string>" >&2
-		return 2
-	fi
-	read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [y/N] " -r
-	echo
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		rg -l "$2" "$1" | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
-		echo "Replaced all occurrences of $2 with $3 in $1."
-	fi
-}
-
 function attempt_activate_venv() {
 	declare -a env_paths=("./.venv" "${additional_env_paths[@]}")
 
@@ -254,48 +244,6 @@ function change_directory_auto_activate() {
 			attempt_activate_venv
 		fi
 	fi
-}
-
-# Convert macOS screen recording to GIF
-function to_gif() {
-	if [[ $# -ne 1 ]]; then
-		echo "Usage: $(basename "$0") <file-path>" >&2
-		return 2
-	fi
-
-  ffmpeg -i "$1" -filter_complex "[0:v] fps=10,scale=1080:-2:flags=lanczos,split [a][b];[a] palettegen [p];[b][p] paletteuse" -y "${1%.*}.gif"
-}
-
-# Convert a markdown file to pdf of the same name
-function md_to_pdf() {
-  if [ $# -ne 1 ]; then
-		echo "Usage: $(basename "$0") <markdown-file-name>" >&2
-    return 1
-  fi
-
-  local input_file="$1"
-  if [ ! -f "$input_file" ]; then
-    echo "Error: File '$input_file' not found!"
-    return 1
-  fi
-
-  local valid_extensions=("md" "mkd" "mdwn" "mdown" "mdtxt" "mdtext" "markdown" "text")
-  local extension="${input_file##*.}"
-
-  if [[ ! " ${valid_extensions[@]} " =~ " ${extension} " ]]; then
-    echo "Error: Unsupported file extension '.${extension}'. Supported extensions are: ${valid_extensions[*]}"
-    return 1
-  fi
-
-  local output_file="${input_file%.*}.pdf"
-  pandoc -V geometry:margin=1in "$input_file" -o "$output_file"
-
-  if [ $? -eq 0 ]; then
-    echo "Conversion successful: '$output_file' created."
-  else
-    echo "Error: Conversion failed!"
-    return 1
-  fi
 }
 
 #--------------------------------------------------------------------------

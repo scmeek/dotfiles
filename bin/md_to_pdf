@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Convert a markdown file to pdf of the same name
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $(basename "$0") <markdown-file-name>" >&2
+  exit 1
+fi
+
+input_file="$1"
+
+if [ ! -f "$input_file" ]; then
+  echo "Error: File '$input_file' not found!"
+  exit 1
+fi
+
+valid_extensions=("md" "mkd" "mdwn" "mdown" "mdtxt" "mdtext" "markdown" "text")
+extension="${input_file##*.}"
+
+if [[ ! " ${valid_extensions[@]} " =~ " ${extension} " ]]; then
+  echo "Error: Unsupported file extension '.${extension}'. Supported extensions are: ${valid_extensions[*]}"
+  exit 1
+fi
+
+output_file="${input_file%.*}.pdf"
+pandoc -V geometry:margin=1in "$input_file" -o "$output_file"
+
+if [ $? -eq 0 ]; then
+  echo "Conversion successful: '$output_file' created."
+else
+  echo "Error: Conversion failed!"
+  exit 1
+fi
