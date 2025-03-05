@@ -32,6 +32,7 @@ brew "slides"                               # presentation tool
 brew "starship"                             # shell prompt
 brew "tmux"                                 # terminal multiplexer
 brew "trash"                                # move to trash cli https://hasseg.org/trash/
+brew "typioca"                              # typing speed tester
 brew "unbound"                              # DNS resolver
 brew "yazi"                                 # terminal file manager
 brew "zbar"                                 # QR code reader
@@ -58,8 +59,5 @@ cask "musescore"                            # music notation
 cask "obsidian"                             # notes
 cask "raycast"                              # macOS launcher (spotlight replacement)
 cask "wezterm"                              # terminal
-
-tap "bloznelis/tap"                         # typioca tap
-brew "typioca"                              # typing speed tester
 
 mas "Tomito", id: 1526042938                # Pomodoro timer

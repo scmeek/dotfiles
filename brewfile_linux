@@ -23,11 +23,9 @@ brew "sevenzip"                             # 7zip (yazi dep)
 brew "slides"                               # presentation tool
 brew "starship"                             # shell prompt
 brew "tmux"                                 # terminal multiplexer
+brew "typioca"                              # typing speed tester
 brew "yazi"                                 # terminal file manager
 brew "zoxide"                               # `cd` alternative
-
-tap "bloznelis/tap"                         # typioca tap
-brew "typioca"                              # typing speed tester
 
 # zsh
 brew "zsh-autosuggestions"
