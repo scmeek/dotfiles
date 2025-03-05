@@ -173,6 +173,7 @@ fi
 alias brewsync="brew update && brew upgrade && brew cleanup && brew doctor"
 alias e="$VISUAL"
 alias cd="change_directory_auto_activate"
+alias cd..="cd .."
 alias cdi="zi"
 alias ls='eza --across'
 alias ll='eza --long --group --header --changed'
@@ -197,7 +198,9 @@ alias doawake="caffeinate -dimsu &" # Prevent sleep (`caffeine` required)
 eval "$(github-copilot-cli alias -- "$0")"
 
 alias p="python3"
+alias sz="source ${HOME}/.zshrc"
 alias y="yazi"
+alias ez='"${EDITOR}" "${HOME}"/.zshrc && source ${HOME}/.zshrc'
 
 #--------------------------------------------------------------------------
 # Custom functions
