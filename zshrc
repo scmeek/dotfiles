@@ -200,9 +200,9 @@ alias doawake="caffeinate -dimsu &" # Prevent sleep (`caffeine` required)
 eval "$(github-copilot-cli alias -- "$0")"
 
 alias p="python3"
-alias sz="source ${HOME}/.zshrc"
+alias sz="echo 'Sourcing \".zshrc\"...'; source "${HOME}"/.zshrc"
 alias y="yazi"
-alias ez='"${EDITOR}" "${HOME}"/.zshrc && source ${HOME}/.zshrc'
+alias ez='"${EDITOR}" "${HOME}"/.zshrc'
 
 #--------------------------------------------------------------------------
 # Custom functions
