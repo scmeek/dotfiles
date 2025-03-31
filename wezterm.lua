@@ -11,8 +11,6 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.bold_brightens_ansi_colors = false
-config.color_scheme = "Catppuccin Mocha"
 config.default_prog = { "/bin/zsh", "-l", "-c", "tmux new-session -A -s main" }
 config.disable_default_key_bindings = true
 config.force_reverse_video_cursor = true

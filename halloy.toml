@@ -3,8 +3,6 @@
 # For a complete list of available options,
 # please visit https://halloy.squidowl.org/configuration/index.html
 
-theme = "ferra"
-
 [servers.liberachat]
 nickname = "timid_taste"
 server = "irc.libera.chat"
