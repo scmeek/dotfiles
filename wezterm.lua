@@ -36,6 +36,7 @@ config.keys = {
 	{ key = "-", mods = "SUPER", action = wezterm.action.DecreaseFontSize },
 	{ key = "=", mods = "SUPER", action = wezterm.action.IncreaseFontSize },
 	{ key = "f", mods = "CTRL|SUPER", action = wezterm.action.ToggleFullScreen },
+	{ key = "Enter", mods = "ALT", action = wezterm.action.ToggleFullScreen },
 }
 config.native_macos_fullscreen_mode = true
 config.set_environment_variables = {
