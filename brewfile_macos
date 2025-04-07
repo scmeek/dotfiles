@@ -16,7 +16,6 @@ brew "lazygit"                              # git TUI
 brew "lolcat"                               # rainbow text
 brew "luarocks"                             # lua package manager
 brew "mactex"                               # LaTeX
-brew "mas"                                  # macOS app store cli
 brew "neovim"                               # text editor
 brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
@@ -59,5 +58,3 @@ cask "musescore"                            # music notation
 cask "obsidian"                             # notes
 cask "raycast"                              # macOS launcher (spotlight replacement)
 cask "wezterm"                              # terminal
-
-mas "Tomito", id: 1526042938                # Pomodoro timer
