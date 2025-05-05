@@ -35,6 +35,7 @@ brew "typioca"                              # typing speed tester
 brew "unbound"                              # DNS resolver
 brew "yazi"                                 # terminal file manager
 brew "zbar"                                 # QR code reader
+brew "zola"                                 # static site generator
 brew "zoxide"                               # `cd` alternative
 
 # zsh
