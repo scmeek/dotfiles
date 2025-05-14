@@ -137,6 +137,13 @@ for user_directory in "${user_directories[@]}"; do
 		"${directory}/" "${backup_directory}/" && print_success "Backed up ${user_directory}" || print_error "Back up of ${user_directory} failed. Does the calling terminal have Full Disk Access permisision?"
 done
 
+print_warning "NOTE: skipping iCloud Drive (Notes). Be sure to do so manually."
+print_warning "NOTE: skipping ~/source. Be sure to do so manually."
+
+print_msg "You can do those now manually if you'd like. Waiting for user input to continue."
+
+read -p "Press Enter to continue" </dev/tty
+
 # Dismount volume
 mounted_directory=$(mounted_directory)
 if [[ -n "${mounted_directory}" ]]; then
@@ -153,6 +160,3 @@ if [[ -n "${keep_awake:-}" && -n "${awake_pid}" ]]; then
 		print_success "Awake process killed" ||
 		err_exit "Kill awake process failed"
 fi
-
-print_warning "NOTE: skipping iCloud Drive (Notes). Be sure to do so manually."
-print_warning "NOTE: skipping ~/source. Be sure to do so manually."
