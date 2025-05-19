@@ -55,6 +55,7 @@
 	editor = nvim
 	pager = delta
 	excludesFile = ~/.config/git/ignore
+	filemode = true
 	# fsmonitor = true
   # untrackedCache = true
 [interactive]
