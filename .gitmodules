@@ -2,6 +2,3 @@
 	path = dotbot
 	url = git@github.com:anishathalye/dotbot.git
 	ignore = dirty
-[submodule "neovim/NvChad_starter"]
-	path = neovim/NvChad_starter
-	url = git@github.com:scmeek/NvChad_starter.git
