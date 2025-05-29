@@ -200,8 +200,6 @@ alias gsip="git reset --soft HEAD~1; git commit --all --amend --no-edit" # gsip:
 
 alias doawake="caffeinate -dimsu &" # Prevent sleep (`caffeine` required)
 
-eval "$(github-copilot-cli alias -- "$0")"
-
 alias p="python3"
 alias sz="echo 'Sourcing \".zshrc\"...'; source "${HOME}"/.zshrc"
 alias y="yazi"
