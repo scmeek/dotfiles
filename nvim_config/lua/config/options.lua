@@ -7,6 +7,7 @@ local options = {
   colorcolumn = "80",
   compatible = false,
   completeopt = { "menuone", "noinsert", "noselect" },
+  conceallevel = 1,
   confirm = true,
   copyindent = true,
   errorbells = false,
