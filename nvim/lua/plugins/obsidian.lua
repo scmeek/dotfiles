@@ -1,10 +1,12 @@
+local notes_path = vim.fn.expand("~") .. [[/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes]]
+
 return {
   "epwalsh/obsidian.nvim",
   version = "*",
   lazy = false,
   event = {
-    "BufReadPre '/mnt/c/Users/SeanMeek/OneDrive - Astroscale/Documents/Notes/Astroscale/*.md'",
-    "BufNewFile '/mnt/c/Users/SeanMeek/OneDrive - Astroscale/Documents/Notes/Astroscale/*.md'",
+    "BufReadPre '" .. notes_path .. "/*.md'",
+    "BufNewFile '" .. notes_path .. "/*.md'",
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -13,13 +15,9 @@ return {
   opts = {
     workspaces = {
       {
-        name = "Astroscale",
-        path = "/mnt/c/Users/SeanMeek/OneDrive - Astroscale/Documents/Notes/Astroscale",
+        name = "notes",
+        path = notes_path,
       },
-      --   {
-      --     name = "notes",
-      --     path = "~/Documents/notes",
-      --   },
     },
 
     daily_notes = {
