@@ -1,12 +1,7 @@
-# [Created by task 3.4.1 6/10/2025 14:59:10]
-data.location=/home/sean/.task
+data.location=~/.local/share/task
+hooks.location=~/.config/task/hooks
+
 news.version=3.4.1
-
-# To use the default location of the XDG directories,
-# move this configuration file from ~/.taskrc to ~/.config/task/taskrc and update location config as follows:
-
-#data.location=~/.local/share/task
-#hooks.location=~/.config/task/hooks
 
 # Color theme (uncomment one to use)
 #include light-16.theme
