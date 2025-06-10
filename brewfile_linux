@@ -22,6 +22,7 @@ brew "ripgrep"                              # fuzzy-finder
 brew "sevenzip"                             # 7zip (yazi dep)
 brew "slides"                               # presentation tool
 brew "starship"                             # shell prompt
+brew "task"                                 # task manager
 brew "tmux"                                 # terminal multiplexer
 brew "typioca"                              # typing speed tester
 brew "yazi"                                 # terminal file manager

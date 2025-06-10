@@ -23,6 +23,7 @@
     "${XDG_CONFIG_HOME}/npm/npmrc": npmrc
     "${XDG_CONFIG_HOME}/python/pythonrc": pythonrc
     "${XDG_CONFIG_HOME}/starship/starship.toml": starship.toml
+    "${XDG_CONFIG_HOME}/task/taskrc": taskrc
     "${XDG_CONFIG_HOME}/tmux/tmux.conf": tmux.conf
     "${XDG_CONFIG_HOME}/wezterm/wezterm.lua": wezterm.lua
     "${SM_XDG_BIN_BIN_HOME}": bin
