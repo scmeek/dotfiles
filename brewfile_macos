@@ -15,7 +15,6 @@ brew "imagemagick"                          # image manipulation (yazi dep)
 brew "lazygit"                              # git TUI
 brew "lolcat"                               # rainbow text
 brew "luarocks"                             # lua package manager
-brew "mactex"                               # LaTeX
 brew "neovim"                               # text editor
 brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
@@ -56,6 +55,7 @@ cask "gimp"                                 # image editor
 cask "halloy"                               # IRC client
 cask "inkscape"                             # vector graphics editor
 cask "libreoffice"                          # office tools
+cask "mactex"                               # LaTeX
 cask "netnewswire"                          # RSS reader
 cask "musescore"                            # music notation
 cask "obsidian"                             # notes
