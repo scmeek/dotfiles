@@ -1,21 +1,21 @@
+active.indicator=🟢
+alias.dailystatus=status:completed end.after:today all
+alias.punt=modify wait:1d
+alias.somday=mod +someday wait:someday
+color=off
 data.location=~/.local/share/task
+default.command=ready
 hooks.location=~/.config/task/hooks
-
 news.version=3.4.1
+search.case.sensitive=no
+weekstart=monday
 
-# Color theme (uncomment one to use)
-#include light-16.theme
-#include light-256.theme
-#include bubblegum-256.theme
-#include dark-16.theme
-#include dark-256.theme
-#include dark-red-256.theme
-#include dark-green-256.theme
-#include dark-blue-256.theme
-#include dark-violets-256.theme
-#include dark-yellow-green.theme
-#include dark-gray-256.theme
-#include dark-gray-blue-256.theme
-#include solarized-dark-256.theme
-#include solarized-light-256.theme
-#include no-color.theme
+uda.reviewed.type=date
+uda.reviewed.label=Reviewed
+
+report.ready.columns=id,start.active,depends.indicator,project,due.relative,description.desc,tags,urgency
+report.ready.labels= ,, deps, project, due, task, tags,
+report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
+report._reviewed.columns=uuid
+report._reviewed.sort=reviewed+,modified+
+report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )

@@ -23,6 +23,7 @@ brew "sevenzip"                             # 7zip (yazi dep)
 brew "slides"                               # presentation tool
 brew "starship"                             # shell prompt
 brew "task"                                 # task manager
+brew "tasksh"                               # shell for task manager
 brew "tmux"                                 # terminal multiplexer
 brew "typioca"                              # typing speed tester
 brew "yazi"                                 # terminal file manager
