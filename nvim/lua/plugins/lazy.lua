@@ -1,6 +1,6 @@
 return {
   {
     "LazyVim/LazyVim",
-    opts = { colorscheme = "kanagawa-paper-ink" },
+    opts = { colorscheme = "default" },
   },
 }
