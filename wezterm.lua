@@ -9,7 +9,7 @@ end
 config.default_prog = { "/bin/zsh", "-l", "-c", "tmux new-session -A -s main" }
 config.disable_default_key_bindings = true
 config.force_reverse_video_cursor = true
-config.font = wezterm.font("Hack Nerd Font Propo")
+config.font = wezterm.font("Hack Nerd Font")
 config.font_size = 14.5
 config.inactive_pane_hsb = {
 	saturation = 0.25,
