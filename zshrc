@@ -264,5 +264,5 @@ function change_directory_auto_activate() {
 
 eval "$(starship init zsh)"
 
-fastfetch --logo small --config archey
+fastfetch --logo small --config screenfetch
 echo ""
