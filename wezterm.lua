@@ -6,6 +6,10 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+config.color_scheme = "Material (base16)"
+config.colors = {
+	background = "#020004",
+}
 config.default_prog = { "/bin/zsh", "-l", "-c", "tmux new-session -A -s main" }
 config.disable_default_key_bindings = true
 config.force_reverse_video_cursor = true
@@ -33,12 +37,14 @@ config.keys = {
 	{ key = "f", mods = "CTRL|SUPER", action = wezterm.action.ToggleFullScreen },
 	{ key = "Enter", mods = "ALT", action = wezterm.action.ToggleFullScreen },
 }
+config.macos_window_background_blur = 15
 config.native_macos_fullscreen_mode = true
 config.set_environment_variables = {
 	TERMINFO_DIRS = "~/.local/share/terminfo",
 }
 config.scrollback_lines = 10000
 config.term = "wezterm"
+config.window_background_opacity = 0.775
 config.window_close_confirmation = "NeverPrompt"
 config.window_decorations = "RESIZE"
 config.window_padding = {
