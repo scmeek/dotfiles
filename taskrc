@@ -1,11 +1,14 @@
 active.indicator=🟢
+
 alias.dailystatus=status:completed end.after:today all
 alias.punt=modify wait:1d
 alias.somday=mod +someday wait:someday
+
 color=off
 data.location=~/.local/share/task
 default.command=ready
 hooks.location=~/.config/task/hooks
+list.all.projects=1
 news.version=3.4.1
 search.case.sensitive=no
 weekstart=monday
