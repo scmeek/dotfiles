@@ -49,3 +49,8 @@ git submodule update --init --recursive
 # or
 ./install -c install_linux.conf.yaml
 ```
+
+Notes:
+
+- You may need to export the variables manually from zshrc if starting from scratch
+- Oh-my-zsh
