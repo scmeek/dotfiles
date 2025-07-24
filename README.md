@@ -37,8 +37,6 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
 
 2. Clone repo and [sync the config files](#synchronize-configuration-files) to their appropriate locations
 
-   - macOS: `DefaultKeyBinding.dict` will be added/replaced which will make `Home` and `End` keys behave like Windows
-
 ## 2. Synchronize configuration files
 
 [dotbot](https://github.com/anishathalye/dotbot) should take care of everything by placing symlinks in the appropriate places.
