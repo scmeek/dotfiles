@@ -82,7 +82,11 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
 
 if [[ "$(uname)" == "Darwin" ]]; then
-  eval "$(/usr/local/bin/brew shellenv)"
+  if [[ $(uname -m) == 'arm64' ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)" # Apple Silicon
+  else
+    eval "$(/usr/local/bin/brew shellenv)" # Apple Intel
+  fi
 elif [[ "$(uname)" == "Linux" ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
