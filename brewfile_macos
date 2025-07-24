@@ -36,6 +36,7 @@ brew "typioca"                              # typing speed tester
 brew "unbound"                              # DNS resolver
 brew "yazi"                                 # terminal file manager
 brew "zbar"                                 # QR code reader
+brew "zsh"                                  # z shell
 brew "zola"                                 # static site generator
 brew "zoxide"                               # `cd` alternative
 
@@ -45,19 +46,30 @@ brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
 
 # casks
 cask "caffeine"                             # prevent computer sleep
+cask "chatgpt"                              # openai chatbot
 cask "dbeaver-community"                    # database manager
+cask "docker-desktop"                       # containerization framework
 cask "font-fira-code-nerd-font"             # font
 cask "font-hack-nerd-font"                  # font
 cask "font-iosevka-nerd-font"               # font
 cask "font-fira-mono-nerd-font"             # font
 cask "font-victor-mono-nerd-font"           # font
+cask "fork"                                 # git GUI
 cask "gimp"                                 # image editor
 cask "halloy"                               # IRC client
 cask "inkscape"                             # vector graphics editor
+cask "keyboardcleantool"                    # disable keyboard for cleaning
 cask "libreoffice"                          # office tools
+cask "linearmouse"                          # mouse movement controls
 cask "mactex"                               # LaTeX
-cask "netnewswire"                          # RSS reader
 cask "musescore"                            # music notation
+cask "netnewswire"                          # RSS reader
 cask "obsidian"                             # notes
+cask "openmtp"                              # Media Transfer Protocol app
+cask "qflipper"                             # Flipper Zero GUI
 cask "raycast"                              # macOS launcher (spotlight replacement)
+cask "spotify"                              # music streaming
+cask "vlc"                                  # media player
 cask "wezterm"                              # terminal
+cask "whatsapp"                             # messaging
+cask "zoom"                                 # video conferencing
