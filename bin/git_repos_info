@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ROOT=$(pwd)
+
+find "${ROOT}" -type d -name ".git" | while IFS= read -r gitdir; do
+  repo=$(dirname "$gitdir")
+  echo "=== Repository: $repo ==="
+  cd "$repo" || {
+    echo "Failed to enter $repo"
+    continue
+  }
+
+  echo "-- Remotes --"
+  git remote -v
+
+  echo "-- Status --"
+  git status
+
+  echo "-- Local Branches --"
+  git branch
+
+  echo ""
+  cd "${ROOT}" || exit 1
+done
