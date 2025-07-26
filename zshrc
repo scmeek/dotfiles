@@ -8,8 +8,8 @@ export XDG_DATA_HOME="${HOME}"/.local/share
 export XDG_CONFIG_HOME="${HOME}"/.config
 export XDG_STATE_HOME="${HOME}"/.local/state
 export XDG_CACHE_HOME="${HOME}"/.cache
-export XDG_RUNTIME_DIR="/tmp/" # "/run/user/${UID}"  nvim plenary workaround
-export SM_XDG_BIN_HOME="${HOME}"/.local/bin # Prefixed since not XDG standard var
+export XDG_RUNTIME_DIR="/tmp/"                      # "/run/user/${UID}"  nvim plenary workaround
+export SM_XDG_BIN_HOME="${HOME}"/.local/bin         # Prefixed since not XDG standard var
 export SM_XDG_BIN_BIN_HOME="${SM_XDG_BIN_HOME}"/bin # Nested for dotfiles bin
 
 export AWS_SHARED_CREDENTIALS_FILE="${XDG_CONFIG_HOME}"/aws/credentials
@@ -67,8 +67,8 @@ setopt HIST_SAVE_NO_DUPS
 
 # Helps syntax highlighting for `bat` for man pages and help text
 LESS_DISPLAY_SETTINGS=$(
-	tput bold
-	tput setaf 4
+  tput bold
+  tput setaf 4
 )
 export LESS_TERMCAP_md=${LESS_DISPLAY_SETTINGS} # blue
 
@@ -96,10 +96,10 @@ fi
 
 # Before oh-my-zsh
 if type brew &>/dev/null; then
-	FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-	autoload -Uz compinit
-	compinit -d "${XDG_CACHE_HOME}"/zsh/zcompdump-"${ZSH_VERSION}"
+  autoload -Uz compinit
+  compinit -d "${XDG_CACHE_HOME}"/zsh/zcompdump-"${ZSH_VERSION}"
 fi
 
 # shellcheck disable=SC1091 disable=SC2086
@@ -175,7 +175,7 @@ eval "$(zoxide init zsh)"
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
 
 if command -v pyenv 1>/dev/null 2>&1; then
-	eval "$(pyenv init -)"
+  eval "$(pyenv init -)"
 fi
 
 #--------------------------------------------------------------------------
@@ -219,7 +219,7 @@ alias ez='"${EDITOR}" "${HOME}"/.zshrc'
 
 # Search for filename in directory
 function rgf {
-	rg --files $2 | rg $1
+  rg --files $2 | rg $1
 }
 
 function rgfa {
@@ -227,38 +227,42 @@ function rgfa {
 }
 
 function attempt_activate_venv() {
-	declare -a env_paths=("./.venv" "${additional_env_paths[@]}")
+  declare -a env_paths=("./.venv" "${additional_env_paths[@]}")
 
-	for env_path in "${env_paths[@]}"
-	do
-	  activate_file_candidate="${env_path}/bin/activate"
-	  if [[ -f "${activate_file_candidate}" ]]; then
-		  # shellcheck disable=SC1091
-		  source "${activate_file_candidate}"
-	  fi
-	done
+  for env_path in "${env_paths[@]}"; do
+    activate_file_candidate="${env_path}/bin/activate"
+    if [[ -f "${activate_file_candidate}" ]]; then
+      # shellcheck disable=SC1091
+      source "${activate_file_candidate}"
+    fi
+  done
 }
 
 # Auto activate virtualenv
 # https://stackoverflow.com/a/56309561
 function change_directory_auto_activate() {
-	# z is a cd replacement
-	if ! z "$@" ; then
-	  return
-	fi
+  # z is a cd replacement
+  if ! z "$@"; then
+    return
+  fi
 
-	if [[ -z "${VIRTUAL_ENV}" ]]; then
-		attempt_activate_venv
-	else
-		# If not in subdirectory of VIRTUAL_ENV, deactivate and attempt activation
-		# Ignore path casing
-		virtual_env_parent_dir="$(dirname "${VIRTUAL_ENV}")"
-		if [[ "${PWD:u}"/ != "${virtual_env_parent_dir:u}"/* ]]; then
-			deactivate
-			attempt_activate_venv
-		fi
-	fi
+  if [[ -z "${VIRTUAL_ENV}" ]]; then
+    attempt_activate_venv
+  else
+    # If not in subdirectory of VIRTUAL_ENV, deactivate and attempt activation
+    # Ignore path casing
+    virtual_env_parent_dir="$(dirname "${VIRTUAL_ENV}")"
+    if [[ "${PWD:u}"/ != "${virtual_env_parent_dir:u}"/* ]]; then
+      deactivate
+      attempt_activate_venv
+    fi
+  fi
 }
+
+#--------------------------------------------------------------------------
+# Environment-specific configuration
+#--------------------------------------------------------------------------
+
 
 
 #--------------------------------------------------------------------------
