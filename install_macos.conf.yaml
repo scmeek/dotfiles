@@ -31,6 +31,7 @@
     "${XDG_CONFIG_HOME}/wezterm/wezterm.lua": wezterm.lua
     "${SM_XDG_BIN_BIN_HOME}": bin
     "${HOME}/.zshrc": zshrc
+    "${ZSHRC_LOCAL_FILE}": zshrc_local
     "${HOME}/Brewfile": brewfile_macos
 
 - shell:

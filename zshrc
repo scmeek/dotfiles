@@ -33,6 +33,8 @@ export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
 export STARSHIP_CONFIG="${XDG_CONFIG_HOME}"/starship/starship.toml
 export STARSHIP_CACHE="${XDG_DATA_HOME}"/starship/cache
 
+export ZSHRC_LOCAL_FILE=${HOME}/.zshrc_local
+
 #--------------------------------------------------------------------------
 # General config
 #--------------------------------------------------------------------------
@@ -257,16 +259,24 @@ function change_directory_auto_activate() {
 	fi
 }
 
-#--------------------------------------------------------------------------
-# Environment-specific configuration
-#--------------------------------------------------------------------------
-
 
 #--------------------------------------------------------------------------
 # Starship
 #--------------------------------------------------------------------------
 
 eval "$(starship init zsh)"
+
+
+#--------------------------------------------------------------------------
+# Environment-specific configuration
+#--------------------------------------------------------------------------
+
+[[ -f "${ZSHRC_LOCAL_FILE}" ]] && source "${ZSHRC_LOCAL_FILE}"
+
+
+#--------------------------------------------------------------------------
+# Startup
+#--------------------------------------------------------------------------
 
 fastfetch --logo small --config screenfetch
 echo ""
