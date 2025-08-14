@@ -20,10 +20,10 @@
     "${XDG_CONFIG_HOME}/bat/config": batconfig
     "${XDG_CONFIG_HOME}/git/config": git/config
     "${XDG_CONFIG_HOME}/git/ignore": git/ignore
-    "${XDG_CONFIG_HOME}/npm/npmrc": npmrc
-    "${XDG_CONFIG_HOME}/python/pythonrc": pythonrc
-    "${XDG_CONFIG_HOME}/starship/starship.toml": starship.toml
+    "${NPM_CONFIG_USERCONFIG}": npmrc
+    "${PYTHONSTARTUP}": pythonrc
     "${RIPGREP_CONFIG_PATH}": ripgreprc
+    "${STARSHIP_CONFIG}": starship.toml
     "${XDG_CONFIG_HOME}/task/taskrc": taskrc
     "${XDG_CONFIG_HOME}/tmux/tmux.conf": tmux.conf
     "${XDG_CONFIG_HOME}/wezterm/wezterm.lua": wezterm.lua
