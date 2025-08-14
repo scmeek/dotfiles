@@ -29,6 +29,7 @@ export ZSH_COMPDUMP="${XDG_CACHE_HOME}/oh-my-zsh/.zcompdump-${HOST}"
 export PSQL_HISTORY="${XDG_DATA_HOME}"/psql_history
 export PYENV_ROOT="${XDG_DATA_HOME}"/pyenv
 export PYTHONSTARTUP="${XDG_CONFIG_HOME}"/python/pythonrc
+export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME}"/ripgrep/ripgreprc
 export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
 export STARSHIP_CONFIG="${XDG_CONFIG_HOME}"/starship/starship.toml
 export STARSHIP_CACHE="${XDG_DATA_HOME}"/starship/cache
