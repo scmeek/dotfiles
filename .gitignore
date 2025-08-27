@@ -7,3 +7,4 @@ task/sync_certs
 *.lock.json
 nvim/lazy-lock.json
 
+zshrc_local
