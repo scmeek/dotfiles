@@ -41,6 +41,9 @@ export ZSHRC_LOCAL_FILE=${HOME}/.zshrc_local
 #--------------------------------------------------------------------------
 
 export PATH="${SM_XDG_BIN_HOME}":"${SM_XDG_BIN_BIN_HOME}":"${PATH}"
+if command -v npm >/dev/null 2>&1; then
+  export PATH="$(npm config get prefix)/bin:${PATH}"
+fi
 
 export HYPHEN_INSENSITIVE="true" # Used in completion
 export COMPLETION_WAITING_DOTS="true"
