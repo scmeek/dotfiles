@@ -40,7 +40,7 @@ export ZSHRC_LOCAL_FILE=${HOME}/.zshrc_local
 # General config
 #--------------------------------------------------------------------------
 
-export PATH="${SM_XDG_BIN_HOME}":"${SM_XDG_BIN_BIN_HOME}":"${PATH}"
+export PATH="${SM_XDG_BIN_HOME}:${SM_XDG_BIN_BIN_HOME}:${PATH}"
 if command -v npm >/dev/null 2>&1; then
   export PATH="$(npm config get prefix)/bin:${PATH}"
 fi
