@@ -27,7 +27,6 @@
     "${PYTHONSTARTUP}": pythonrc
     "${RIPGREP_CONFIG_PATH}": ripgreprc
     "${STARSHIP_CONFIG}": starship.toml
-    "${XDG_CONFIG_HOME}/task/taskrc": taskrc
     "${XDG_CONFIG_HOME}/tmux/tmux.conf": tmux.conf
     "${XDG_CONFIG_HOME}/wezterm/wezterm.lua": wezterm.lua
     "${SM_XDG_BIN_BIN_HOME}": bin

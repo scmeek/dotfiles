@@ -119,7 +119,7 @@ export ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 #--------------------------------------------------------------------------
 
 # shellcheck disable=SC2034
-plugins=(taskwarrior)
+plugins=()
 
 # shellcheck disable=SC1091
 source "${ZSH}"/oh-my-zsh.sh
@@ -196,7 +196,6 @@ alias la='eza --long --group --header --all --changed --group-directories-first'
 alias tree='eza --tree'
 alias shred='shred -uvz'
 alias lg='lazygit'
-alias t=task
 
 # shellcheck disable=SC2139
 alias wget="wget --hsts-file=${XDG_DATA_HOME}/wget-hsts"
