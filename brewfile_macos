@@ -3,6 +3,7 @@ brew "bat"                                  # `cat` alternative
 brew "cloc"                                 # code line counter
 brew "coreutils"                            # GNU core utilities
 brew "difftastic"                           # diff analysis and presentation
+brew "duf"                                  # disk usage/free utility; 'df' alternative
 brew "eza"                                  # `ls` alternative
 brew "fastfetch"                            # system information
 brew "fzf"                                  # fuzzy-finder
