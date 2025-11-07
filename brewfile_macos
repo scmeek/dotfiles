@@ -70,6 +70,6 @@ cask "qflipper"                             # Flipper Zero GUI
 cask "raycast"                              # macOS launcher (spotlight replacement)
 cask "spotify"                              # music streaming
 cask "vlc"                                  # media player
-cask "wezterm"                              # terminal
+cask "wezterm@nightly"                      # terminal
 cask "whatsapp"                             # messaging
 cask "zoom"                                 # video conferencing
