@@ -21,7 +21,7 @@ return {
     },
 
     daily_notes = {
-      folder = "daily",
+      folder = "Journal",
       date_format = "%Y-%m-%d",
       alias_format = "%B %-d, %Y",
       default_tags = { "daily-note" },
