@@ -14,6 +14,7 @@ brew "gnupg"                                # Gnu PGP
 brew "glslviewer"                           # GLSL viewer
 brew "imagemagick"                          # image manipulation (yazi dep)
 brew "lazygit"                              # git TUI
+brew "lima"                                 # linux virtual machines
 brew "lolcat"                               # rainbow text
 brew "luarocks"                             # lua package manager
 brew "neovim"                               # text editor
