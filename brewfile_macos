@@ -51,9 +51,10 @@ cask "chatgpt"                              # openai chatbot
 cask "dbeaver-community"                    # database manager
 cask "docker-desktop"                       # containerization framework
 cask "font-fira-code-nerd-font"             # font
+cask "font-fira-mono-nerd-font"             # font
 cask "font-hack-nerd-font"                  # font
 cask "font-iosevka-nerd-font"               # font
-cask "font-fira-mono-nerd-font"             # font
+cask "font-sauce-code-pro-nerd-font"        # font
 cask "font-victor-mono-nerd-font"           # font
 cask "fork"                                 # git GUI
 cask "gimp"                                 # image editor
