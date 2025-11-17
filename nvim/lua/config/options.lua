@@ -46,7 +46,7 @@ for name, value in pairs(options) do
 end
 
 local window_options = {
-  -- relativenumber = true,
+  relativenumber = false,
 }
 
 for name, value in pairs(window_options) do
