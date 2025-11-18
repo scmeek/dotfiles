@@ -119,15 +119,15 @@ disabled = false
 show_always = false
 
 [directory]
-home_symbol = " "
+home_symbol = "󰠧 "
 truncation_length = 2
-truncation_symbol = "  "
-read_only = "  "
+truncation_symbol = "  "
+read_only = "  "
 use_os_path_sep = true
 style = "italic blue"
 format = '[$path]($style)[$read_only]($read_only_style)'
 repo_root_style = 'bold blue'
-repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) [](bold bright-blue)'
+repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) [](bold bright-blue)'
 
 [cmd_duration]
 format = "[◄ $duration ](italic white)"
@@ -175,7 +175,7 @@ symbol = "[△](bold italic bright-blue)"
 style = "italic bright-blue"
 truncation_symbol = "⋯"
 truncation_length = 11
-ignore_branches = ["main", "master"]
+# ignore_branches = ["main", "master"]
 only_attached = true
 
 [git_metrics]
