@@ -144,10 +144,10 @@ disabled = false
 
 [time]
 disabled = false
-format = "[ $time]($style)"
+format = "[  $time]($style)"
 time_format = "%R"
 utc_time_offset = "local"
-style = "italic dimmed white"
+style = "white"
 
 [battery]
 format = "[ $percentage $symbol]($style)"
@@ -180,8 +180,8 @@ only_attached = true
 
 [git_metrics]
 format = '([▴$added]($added_style))([▿$deleted]($deleted_style))'
-added_style = 'italic dimmed green'
-deleted_style = 'italic dimmed red'
+added_style = 'green'
+deleted_style = 'red'
 ignore_submodules = true
 disabled = false
 
@@ -249,7 +249,6 @@ version_format = "${raw}"
 
 [aws]
 disabled = true
-force_display = true
 format = " [aws](italic) [$symbol $profile $region]($style)"
 style = "bold blue"
 symbol = "▲ "
