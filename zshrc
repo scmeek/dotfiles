@@ -205,6 +205,8 @@ alias sz="echo 'Sourcing \".zshrc\"...'; source "${HOME}"/.zshrc"
 alias y="yazi"
 alias ez='"${EDITOR}" "${HOME}"/.zshrc'
 
+eval $(thefuck --alias tf)
+
 #--------------------------------------------------------------------------
 # Custom functions
 #--------------------------------------------------------------------------

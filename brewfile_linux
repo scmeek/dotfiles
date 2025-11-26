@@ -23,6 +23,7 @@ brew "ripgrep"                              # fuzzy-finder
 brew "sevenzip"                             # 7zip (yazi dep)
 brew "slides"                               # presentation tool
 brew "starship"                             # shell prompt
+brew "thefuck"                              # last console command correction
 brew "tmux"                                 # terminal multiplexer
 brew "typioca"                              # typing speed tester
 brew "yazi"                                 # terminal file manager

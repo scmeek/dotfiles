@@ -31,6 +31,7 @@ brew "rustup"                               # rust
 brew "sevenzip"                             # 7zip (yazi dep)
 brew "slides"                               # presentation tool
 brew "starship"                             # shell prompt
+brew "thefuck"                              # last console command correction
 brew "tmux"                                 # terminal multiplexer
 brew "trash"                                # move to trash cli https://hasseg.org/trash/
 brew "typioca"                              # typing speed tester
