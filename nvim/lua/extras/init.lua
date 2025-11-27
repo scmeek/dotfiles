@@ -1,4 +1,4 @@
-return {
+local extras = {
   { import = "lazyvim.plugins.extras.editor.dial" },
   { import = "lazyvim.plugins.extras.editor.inc-rename" },
 
@@ -19,3 +19,11 @@ return {
   { import = "lazyvim.plugins.extras.util.dot" },
   { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
 }
+
+local enable_copilot = os.getenv("NVIM_ENABLE_COPILOT") == "1"
+if enable_copilot then
+  table.insert(extras, { import = "lazyvim.plugins.extras.ai.copilot" })
+  vim.notify("GitHub Copilot enabled", nil, { id = "github_copilot", style = "minimal" })
+end
+
+return extras
