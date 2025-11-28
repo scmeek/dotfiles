@@ -21,7 +21,7 @@ return {
     },
 
     daily_notes = {
-      folder = "Journal",
+      folder = "journal",
       date_format = "%Y-%m-%d",
       alias_format = "%B %-d, %Y",
       default_tags = { "daily-note" },
@@ -72,15 +72,7 @@ return {
         end
       end
 
-      local year = tostring(os.date("%Y"))
-      local month = tostring(os.date("%m"))
-      local day = tostring(os.date("%d"))
-      local hour = tostring(os.date("%H"))
-      local minute = tostring(os.date("%M"))
-      local second = tostring(os.date("%S"))
-      local date_time_stamp = year .. month .. day .. dlm .. hour .. minute .. second
-
-      return date_time_stamp .. sdlm .. suffix
+      return suffix
     end,
 
     markdown_link_func = function(opts)
@@ -89,6 +81,31 @@ return {
 
     preferred_link_style = "wiki",
     disable_frontmatter = false,
+
+    note_frontmatter_func = function(note)
+      -- Add the title of the note as an alias.
+      if note.title then
+        note:add_alias(note.title)
+      end
+
+      local out = {
+        title = note.title,
+        aliases = {},
+        tags = note.tags,
+        created = os.date("%Y-%m-%dT%H:%M:%S"),
+        modified = os.date("%Y-%m-%dT%H:%M:%S"),
+      }
+
+      -- `note.metadata` contains any manually added fields in the frontmatter.
+      -- So here we just make sure those fields are kept in the frontmatter.
+      if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+        for k, v in pairs(note.metadata) do
+          out[k] = v
+        end
+      end
+
+      return out
+    end,
 
     ---@param url string
     follow_url_func = function(url)
