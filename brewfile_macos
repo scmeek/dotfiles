@@ -34,7 +34,7 @@ brew "starship"                             # shell prompt
 brew "thefuck"                              # last console command correction
 brew "tmux"                                 # terminal multiplexer
 brew "trash"                                # move to trash cli https://hasseg.org/trash/
-brew "typioca"                              # typing speed tester
+brew "typtea"                               # typing speed tester
 brew "unbound"                              # DNS resolver
 brew "yazi"                                 # terminal file manager
 brew "zbar"                                 # QR code reader
