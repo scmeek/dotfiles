@@ -9,6 +9,6 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 return {
   {
     "LazyVim/LazyVim",
-    opts = { colorscheme = "OceanicNext" },
+    -- opts = { colorscheme = "OceanicNext" },
   },
 }
