@@ -12,6 +12,7 @@ brew "git-lfs"                              # git large file storage
 brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
 brew "glslviewer"                           # GLSL viewer
+brew "golang"                               # go
 brew "imagemagick"                          # image manipulation (yazi dep)
 brew "lazygit"                              # git TUI
 brew "lima"                                 # linux virtual machines
