@@ -38,6 +38,7 @@ brew "typtea"                               # typing speed tester
 brew "unbound"                              # DNS resolver
 brew "yazi"                                 # terminal file manager
 brew "zbar"                                 # QR code reader
+brew "zig"                                  # zig
 brew "zsh"                                  # z shell
 brew "zola"                                 # static site generator
 brew "zoxide"                               # `cd` alternative
