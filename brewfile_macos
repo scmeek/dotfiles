@@ -71,7 +71,6 @@ cask "obsidian"                             # notes
 cask "openmtp"                              # Media Transfer Protocol app
 cask "qflipper"                             # Flipper Zero GUI
 cask "raycast"                              # macOS launcher (spotlight replacement)
-cask "spotify"                              # music streaming
 cask "vlc"                                  # media player
 cask "wezterm@nightly"                      # terminal
 cask "whatsapp"                             # messaging
