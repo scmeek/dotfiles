@@ -265,6 +265,19 @@ function change_directory_auto_activate() {
 
 eval "$(starship init zsh)"
 
+# Status-aware horizontal rule after each command
+precmd() {
+    [[ -z "$_last_command" ]] && return
+  _last_command=""
+
+  local line="${(l:$COLUMNS::━:)}"
+  print -P "${line}"
+}
+
+preexec() {
+  _last_command="$1"
+}
+
 
 #--------------------------------------------------------------------------
 # Environment-specific configuration
