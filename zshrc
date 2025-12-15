@@ -270,7 +270,7 @@ precmd() {
     [[ -z "$_last_command" ]] && return
   _last_command=""
 
-  local line="${(l:$COLUMNS::━:)}"
+  local line="${(l:$COLUMNS::⎯:)}"
   print -P "${line}"
 }
 
