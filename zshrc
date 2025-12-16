@@ -177,7 +177,7 @@ eval "$(zoxide init zsh)"
 
 alias brewsync="brew update && brew upgrade && brew cleanup && brew doctor"
 alias e="$VISUAL"
-alias cd="change_directory_auto_activate"
+alias cd="cd_activate_ls"
 alias cd..="cd .."
 alias cdi="zi"
 alias ls='eza --across --group-directories-first'
@@ -232,9 +232,9 @@ function attempt_activate_venv() {
   done
 }
 
-# Auto activate virtualenv
+# Auto activate virtualenv on cd and show dir files
 # https://stackoverflow.com/a/56309561
-function change_directory_auto_activate() {
+function cd_activate_ls() {
   # z is a cd replacement
   if ! z "$@"; then
     return
@@ -251,6 +251,8 @@ function change_directory_auto_activate() {
       attempt_activate_venv
     fi
   fi
+
+  ls
 }
 
 #--------------------------------------------------------------------------
