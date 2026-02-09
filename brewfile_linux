@@ -1,6 +1,7 @@
 # formulae
 brew "bat"                                  # `cat` alternative
 brew "coreutils"                            # Gnu file, shell, and text utilities (gdircolors)
+brew "devcontainer"                         # CLI for Development Containers (https://containers.dev)
 brew "difftastic"                           # diff analysis and presentation
 brew "duf"                                  # disk usage/free utility; 'df' alternative
 brew "eza"                                  # `ls` alternative
