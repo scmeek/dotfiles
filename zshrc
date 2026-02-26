@@ -95,6 +95,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   fi
 elif [[ "$(uname)" == "Linux" ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  export LD_LIBRARY_PATH="/home/linuxbrew/.linuxbrew/lib:$LD_LIBRARY_PATH"
 fi
 
 # Before oh-my-zsh
