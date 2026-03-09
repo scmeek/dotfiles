@@ -211,15 +211,15 @@ alias ez='"${EDITOR}" "${HOME}"/.zshrc'
 #--------------------------------------------------------------------------
 
 # Search for filename in directory
-function rgf {
+rgf() {
   rg --files $2 | rg $1
 }
 
-function rgfa {
+rgfa() {
   rg --files --no-ignore-vcs | rg $1
 }
 
-function attempt_activate_venv() {
+attempt_activate_venv() {
   declare -a env_paths=("./.venv" "${additional_env_paths[@]}")
 
   for env_path in "${env_paths[@]}"; do
@@ -233,7 +233,7 @@ function attempt_activate_venv() {
 
 # Auto activate virtualenv on cd and show dir files
 # https://stackoverflow.com/a/56309561
-function cd_activate_ls() {
+cd_activate_ls() {
   # z is a cd replacement
   if ! z "$@"; then
     return
