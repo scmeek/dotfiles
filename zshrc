@@ -120,7 +120,7 @@ export ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 #--------------------------------------------------------------------------
 
 # shellcheck disable=SC2034
-plugins=()
+plugins=(thefuck)
 
 # shellcheck disable=SC1091
 source "${ZSH}"/oh-my-zsh.sh
@@ -205,8 +205,6 @@ alias p="python3"
 alias sz="echo 'Sourcing \".zshrc\"...'; source "${HOME}"/.zshrc"
 alias y="yazi"
 alias ez='"${EDITOR}" "${HOME}"/.zshrc'
-
-eval $(thefuck --alias tf)
 
 #--------------------------------------------------------------------------
 # Custom functions
