@@ -13,6 +13,7 @@ brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
 brew "imagemagick"                          # image manipulation (yazi dep)
 brew "lazygit"                              # git TUI
+brew "lnav"                                 # TUI log file navigator
 brew "lolcat"                               # rainbow text
 brew "luarocks"                             # lua package manager
 brew "neovim"                               # text editor

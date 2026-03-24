@@ -17,6 +17,7 @@ brew "golang"                               # go
 brew "imagemagick"                          # image manipulation (yazi dep)
 brew "lazygit"                              # git TUI
 brew "lima"                                 # linux virtual machines
+brew "lnav"                                 # TUI log file navigator
 brew "lolcat"                               # rainbow text
 brew "luarocks"                             # lua package manager
 brew "neovim"                               # text editor
