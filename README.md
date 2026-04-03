@@ -27,6 +27,8 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
    3. Uncheck 'Correct spelling automatically'
    4. Uncheck 'Capitalize words automatically'
 
+4. Consider changing some [macOS defaults](https://macos-defaults.com)
+
 ### 1. Packages
 
 1. Install [Homebrew](https://brew.sh/)
