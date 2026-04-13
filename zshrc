@@ -282,11 +282,15 @@ eval "$(starship init zsh)"
 
 # Status-aware horizontal rule after each command
 precmd() {
-    [[ -z "$_last_command" ]] && return
-  _last_command=""
+  local exit_code=$?
 
   local line="${(l:$COLUMNS::⎯:)}"
-  print -P "${line}"
+
+  if [[ $exit_code -eq 0 ]]; then
+    print -P "%F{green}${line}%f"
+  else
+    print -P "%F{red}${line}%f"
+  fi
 }
 
 preexec() {
