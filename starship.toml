@@ -11,8 +11,8 @@ $shell\
 $env_var\
 $jobs\
 $username\
-$character\
-$sudo"""
+$sudo\
+$character"""
 
 right_format = """
 $singularity\
