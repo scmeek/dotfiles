@@ -41,6 +41,7 @@ export ZSHRC_LOCAL_FILE=${HOME}/.zshrc_local
 #--------------------------------------------------------------------------
 
 export PATH="${SM_XDG_BIN_HOME}:${SM_XDG_BIN_BIN_HOME}:${PATH}"
+export PATH="${DOCKER_CONFIG}:${PATH}"
 if command -v npm >/dev/null 2>&1; then
   export PATH="$(npm config get prefix)/bin:${PATH}"
 fi
@@ -169,6 +170,12 @@ zstyle ':completion:*' menu select=2 eval "$(gdircolors -b)"
 # shellcheck disable=SC1090
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/sean/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
 #--------------------------------------------------------------------------
 # zoxide (smarter `cd`)
 #--------------------------------------------------------------------------
@@ -266,6 +273,26 @@ tempe () {
     cd "$1"
     chmod -R 0700 .
   fi
+}
+
+git_changed_most() {
+  git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20
+}
+
+git_who_built() {
+  git shortlog -sn --no-merges
+}
+
+git_where_bugs() {
+  git log -i -E --grep="fix|bug|broken" --name-only --format='' | sort | uniq -c | sort -nr | head -20
+}
+
+git_pace() {
+  git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c
+}
+
+git_firefight() {
+  git log --oneline --since="1 year ago" | grep -iE 'revert|hotfix|emergency|rollback'
 }
 
 #--------------------------------------------------------------------------
