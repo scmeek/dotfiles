@@ -97,6 +97,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 
+[include]
+	path = ~/.config/gitalias/gitalias.txt
+
 # Enforce SSH
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
@@ -104,5 +107,3 @@
 	insteadOf = https://gitlab.com/
 [url "ssh://git@bitbucket.org/"]
 	insteadOf = https://bitbucket.org/
-[include]
-	path = ~/.config/gitalias/gitalias.txt
