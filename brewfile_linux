@@ -11,6 +11,7 @@ brew "git"                                  # version control
 brew "git-lfs"                              # git large file storage
 brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
+brew "hexyl"                                # hex viewer
 brew "imagemagick"                          # image manipulation (yazi dep)
 brew "lazygit"                              # git TUI
 brew "lnav"                                 # TUI log file navigator

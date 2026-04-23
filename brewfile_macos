@@ -14,6 +14,7 @@ brew "git-delta"                            # git pager
 brew "gnupg"                                # Gnu PGP
 brew "glslviewer"                           # GLSL viewer
 brew "golang"                               # go
+brew "hexyl"                                # hex viewer
 brew "imagemagick"                          # image manipulation (yazi dep)
 brew "lazygit"                              # git TUI
 brew "lima"                                 # linux virtual machines
