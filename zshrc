@@ -198,6 +198,7 @@ alias la='eza --long --group --header --all --changed --group-directories-first'
 alias tree='eza --tree'
 alias shred='shred -uvz'
 alias gg='lazygit' # `gg` matches keymap in nvim
+alias rmgitignored='git clean -dfX -f -f'
 
 # shellcheck disable=SC2139
 alias wget="wget --hsts-file=${XDG_DATA_HOME}/wget-hsts"
