@@ -46,6 +46,9 @@ brew "zsh"                                  # z shell
 brew "zola"                                 # static site generator
 brew "zoxide"                               # `cd` alternative
 
+tap "aarush67/tap"
+brew "aarush67/tap/devlycli"                # devlycli - CLI for Devly (https://devly.techfixpro.net)
+
 # zsh
 brew "zsh-autosuggestions"                  # zsh-autosuggestions
 brew "zsh-syntax-highlighting"              # zsh-syntax-highlighting
