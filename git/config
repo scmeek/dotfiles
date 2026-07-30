@@ -66,6 +66,7 @@
 	pager = delta
 	excludesFile = ~/.config/git/ignore
 	filemode = true
+	autocrlf = input
 	# fsmonitor = true
   # untrackedCache = true
 [interactive]
