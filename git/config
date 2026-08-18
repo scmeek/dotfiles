@@ -47,6 +47,8 @@
 	prune = true
 	all = true
 	pruneTags = true
+	forceTags = true
+	tags = true
 [diff]
 	colorMoved = default
 	algorithm = histogram
