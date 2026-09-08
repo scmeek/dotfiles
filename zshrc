@@ -116,7 +116,7 @@ source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # shellcheck disable=SC1091 disable=SC2086
 source ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+((${+ZSH_HIGHLIGHT_STYLES})) || typeset -A ZSH_HIGHLIGHT_STYLES
 export ZSH_HIGHLIGHT_STYLES[path]=none
 export ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
@@ -266,7 +266,7 @@ cd_activate_ls() {
   ls
 }
 
-tempe () {
+tempe() {
   cd "$(mktemp -d)"
   chmod -R 0700 .
   if [[ $# -eq 1 ]]; then
@@ -325,13 +325,11 @@ preexec() {
   _last_command="$1"
 }
 
-
 #--------------------------------------------------------------------------
 # Environment-specific configuration
 #--------------------------------------------------------------------------
 
 [[ -f "${ZSHRC_LOCAL_FILE}" ]] && source "${ZSHRC_LOCAL_FILE}"
-
 
 #--------------------------------------------------------------------------
 # Startup
