@@ -65,7 +65,6 @@ cask "font-victor-mono-nerd-font"           # font
 cask "fork"                                 # git GUI
 cask "gimp"                                 # image editor
 cask "inkscape"                             # vector graphics editor
-cask "keyboardcleantool"                    # disable keyboard for cleaning
 cask "libreoffice"                          # office tools
 cask "linearmouse"                          # mouse movement controls
 cask "mactex"                               # LaTeX
