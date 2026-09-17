@@ -125,7 +125,7 @@ export ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 #--------------------------------------------------------------------------
 
 # shellcheck disable=SC2034
-plugins=(thefuck)
+plugins=()
 
 # shellcheck disable=SC1091
 source "${ZSH}"/oh-my-zsh.sh
