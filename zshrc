@@ -274,6 +274,22 @@ tempe() {
   fi
 }
 
+# https://gist.github.com/GNOMES/6bf65926648e260d8023aebb9ede9573
+# Jump backwards from cwd path
+dc() {
+  cd "$(pwd | sed "s|$1\/.*|$1\/|")" || echo "Directory not found: $1"
+}
+# Function to add tab completion to dc
+_dc_complete() {
+  IFS='/' read -ra dirs <<<"$(pwd)"
+  local dir_names=("${dirs[@]:1}")
+  COMPREPLY=()
+  for dir in "${dir_names[@]}"; do
+    [[ $dir == ${COMP_WORDS[COMP_CWORD]}* ]] && COMPREPLY+=("$dir")
+  done
+}
+complete -F _dc_complete dc
+
 git_changed_most() {
   git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20
 }
