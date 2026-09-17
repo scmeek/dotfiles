@@ -275,20 +275,35 @@ tempe() {
 }
 
 # https://gist.github.com/GNOMES/6bf65926648e260d8023aebb9ede9573
-# Jump backwards from cwd path
+# Jump backwards to a named directory in the current path.
 dc() {
-  cd "$(pwd | sed "s|$1\/.*|$1\/|")" || echo "Directory not found: $1"
+  local target="$1"
+  if [[ -z "$target" ]]; then
+    echo "Usage: dc <directory>"
+    return 1
+  fi
+
+  local dest="${PWD%/$target/*}/$target"
+  if [[ "$dest" == "$PWD" || ! -d "$dest" ]]; then
+    echo "Directory not found in current path: $target"
+    return 1
+  fi
+
+  builtin cd -- "$dest"
 }
-# Function to add tab completion to dc
-_dc_complete() {
-  IFS='/' read -ra dirs <<<"$(pwd)"
-  local dir_names=("${dirs[@]:1}")
-  COMPREPLY=()
-  for dir in "${dir_names[@]}"; do
-    [[ $dir == ${COMP_WORDS[COMP_CWORD]}* ]] && COMPREPLY+=("$dir")
-  done
+
+# Complete directory names from the current path.
+_dc() {
+  local -a dirs
+  dirs=("${(@s:/:)PWD}")
+
+  # Remove empty element caused by leading /
+  dirs=("${(@)dirs:#}")
+
+  _describe 'parent directory' dirs
 }
-complete -F _dc_complete dc
+
+compdef _dc dc
 
 git_changed_most() {
   git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20
