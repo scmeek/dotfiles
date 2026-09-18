@@ -185,7 +185,7 @@ eval "$(zoxide init zsh)"
 # Aliases
 #--------------------------------------------------------------------------
 
-alias brewsync="brew update && brew upgrade && brew cleanup && brew doctor"
+alias brewsync="brew update && brew upgrade && brew cleanup && brew doctor && brew upgrade --cask wezterm@nightly --greedy-latest"
 alias e="$VISUAL"
 alias cd="cd_activate_ls"
 alias cd..="cd .."
