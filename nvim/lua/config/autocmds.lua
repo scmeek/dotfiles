@@ -15,15 +15,28 @@ autocmd("TextYankPost", {
   end,
 })
 
+local verbose_log_count = 0
 user_command("ToggleVerboseLogging", function()
   if vim.opt.verbose:get() == 0 then
-    print("Enabling verbose logging")
-    vim.opt.verbosefile = vim.fn.expand("~/log/vim/verbose.log")
+    local log_dir = "/tmp/nvim/logs"
+    vim.fn.mkdir(log_dir, "p", "0700")
+    verbose_log_count = verbose_log_count + 1
+    local log_file = string.format(
+      "%s/%s-%d-%d-verbose.log",
+      log_dir,
+      os.date("%Y-%m-%d_%H-%M-%S"),
+      vim.fn.getpid(),
+      verbose_log_count
+    )
+    vim.fn.writefile({}, log_file, "a")
+    vim.opt.verbosefile = log_file
     vim.opt.verbose = 15
+    print("Verbose logging enabled: " .. log_file)
   else
-    print("Disabling verbose logging")
+    local log_file = vim.opt.verbosefile:get()
     vim.opt.verbose = 0
-    vim.opt.verbosefile = nil
+    vim.opt.verbosefile = ""
+    print("Verbose logging disabled: " .. log_file)
   end
 end, {})
 
