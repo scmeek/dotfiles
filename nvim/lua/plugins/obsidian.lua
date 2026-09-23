@@ -90,7 +90,7 @@ return {
 
       local out = {
         title = note.title,
-        aliases = {},
+        aliases = note.aliases,
         tags = note.tags,
         created = os.date("%Y-%m-%dT%H:%M:%S"),
         modified = os.date("%Y-%m-%dT%H:%M:%S"),
@@ -104,6 +104,8 @@ return {
         end
       end
 
+      -- Existing metadata preserves created; modified reflects this write.
+      out.modified = os.date("%Y-%m-%dT%H:%M:%S")
       return out
     end,
 
