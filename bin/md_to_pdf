@@ -25,9 +25,7 @@ if [[ ! " ${valid_extensions[@]} " =~ " ${extension} " ]]; then
 fi
 
 output_file="${input_file%.*}.pdf"
-pandoc -V geometry:margin=1in "$input_file" -o "$output_file"
-
-if [ $? -eq 0 ]; then
+if pandoc -V geometry:margin=1in "$input_file" -o "$output_file"; then
   echo "Conversion successful: '$output_file' created."
 else
   echo "Error: Conversion failed!"
