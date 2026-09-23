@@ -1,40 +1,36 @@
 #!/bin/bash
-#
-# Sync a git remote with remote
+set -euo pipefail
 
-set -euo pipefail  # exit on error, error on unset vars, don't mask errors
-
-usage()
-{
-   echo ""
-   echo "Usage: $0 SCHEDULE COMMAND"
-   echo -e "\tSCHEDULE: The cron schedule in [min hr day_of_month month day_of_week]"
-   echo -e "\tCOMMAND: The command to run"
-   exit 1
-}
-
-if [[ $# -ne 2 ]]; then
-  usage
+if [[ $# -ne 2 || -z "$1" || -z "$2" ]]; then
+	printf 'Usage: %s SCHEDULE COMMAND\n' "$0" >&2
+	exit 2
 fi
-
-SCHEDULE="${1}"
-COMMAND="${2/#\~/$HOME}"  # Bash parameter expansion
-
-BLUE="\033[0;34m"
-NO_COLOR="\033[0m"
-GREEN="\033[0;32m"
-print_msg() { echo -e "${BLUE}$*${NO_COLOR}"; }
-success() { echo -e "${GREEN}✅ $*${NO_COLOR}"; }
-
-cronjob="${SCHEDULE} ${COMMAND}"
-
-if crontab -l | grep -F "${COMMAND}"; then
-  print_msg "Cron job already exists"
-  exit 0
+schedule=$1
+command=${2/#\~/$HOME}
+if [[ "$schedule$command" == *$'\n'* || "$schedule$command" == *$'\r'* ]]; then
+	printf 'Schedule and command must each be a single line.\n' >&2
+	exit 2
 fi
+cronjob="$schedule $command"
+work_dir=$(mktemp -d)
+trap 'rm -rf "$work_dir"' EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
 
-( crontab -l ; echo "$cronjob" ) | crontab -
-
-success "Cron job added"
-exit 0
-
+# A missing table is expected; permission and other errors must not replace it.
+if ! LC_ALL=C crontab -l >"$work_dir/current" 2>"$work_dir/error"; then
+	if ! grep -Eq '^crontab: no crontab for .+$' "$work_dir/error"; then
+		cat "$work_dir/error" >&2
+		exit 1
+	fi
+	: >"$work_dir/current"
+fi
+if grep -Fxq -- "$cronjob" "$work_dir/current"; then
+	printf 'Cron job already exists\n'
+	exit 0
+fi
+# awk preserves existing lines and supplies a missing final newline.
+awk '{print}' "$work_dir/current" >"$work_dir/new"
+printf '%s\n' "$cronjob" >>"$work_dir/new"
+crontab "$work_dir/new"
+printf '✅ Cron job added\n'
