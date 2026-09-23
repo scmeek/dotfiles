@@ -4,7 +4,8 @@ import os
 import atexit
 import readline
 
-history = os.path.join(os.environ['XDG_CACHE_HOME'], 'python_history')
+cache_dir = os.environ.get('XDG_CACHE_HOME') or os.path.expanduser('~/.cache')
+history = os.path.join(cache_dir, 'python_history')
 try:
     readline.read_history_file(history)
 except OSError:
@@ -12,6 +13,7 @@ except OSError:
 
 def write_history():
     try:
+        os.makedirs(cache_dir, exist_ok=True)
         readline.write_history_file(history)
     except OSError:
         pass
