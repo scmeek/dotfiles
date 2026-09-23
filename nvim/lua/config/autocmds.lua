@@ -42,7 +42,7 @@ autocmd("FileType", {
     "WhichKey",
   },
   callback = function()
-    vim.opt.spell = false
+    vim.opt_local.spell = false
   end,
 })
 
