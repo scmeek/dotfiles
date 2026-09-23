@@ -85,7 +85,7 @@
 [tag]
 	sort = version:refname
 [help]
-  autocrrect = prompt
+  autocorrect = prompt
 [rerere]
   enabled = true
   autoupdate = true
