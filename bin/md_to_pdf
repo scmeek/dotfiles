@@ -19,7 +19,7 @@ fi
 valid_extensions=("md" "mkd" "mdwn" "mdown" "mdtxt" "mdtext" "markdown" "text")
 extension="${input_file##*.}"
 
-if [[ ! " ${valid_extensions[@]} " =~ " ${extension} " ]]; then
+if [[ " ${valid_extensions[*]} " != *" ${extension} "* ]]; then
   echo "Error: Unsupported file extension '.${extension}'. Supported extensions are: ${valid_extensions[*]}"
   exit 1
 fi
