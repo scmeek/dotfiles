@@ -17,19 +17,17 @@ if hash node 2>/dev/null; then
   })
 
   process.stdin.on("end", () => {
-    console.log(
-      require("util").inspect(
-        JSON.parse(jsonString.trim()),
-        {
-          depth: 100,
-          colors: true
-        }
-      )
-    )
+    try {
+      console.log(JSON.stringify(JSON.parse(jsonString), null, 2))
+    } catch (error) {
+      console.error("jsonformat: " + error.message)
+      process.exitCode = 1
+    }
   })
   '
 elif hash jq 2>/dev/null; then
-  jq
+  jq --monochrome-output --slurp 'if length == 1 then .[0] else error("expected one JSON document") end'
 else
-  cat
+  echo 'jsonformat: node or jq is required' >&2
+  exit 1
 fi
