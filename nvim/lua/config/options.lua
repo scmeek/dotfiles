@@ -1,7 +1,9 @@
+local data_dir = vim.fn.stdpath("data")
+
 local options = {
   autoindent = true,
   backup = true,
-  backupdir = os.getenv("XDG_DATA_HOME") .. "/nvim/backup",
+  backupdir = data_dir .. "/backup",
   breakindent = true,
   cmdheight = 0,
   colorcolumn = "80",
@@ -32,12 +34,16 @@ local options = {
   splitkeep = "screen",
   swapfile = false,
   timeout = true,
-  undodir = os.getenv("XDG_DATA_HOME") .. "/nvim/undo-history",
+  undodir = data_dir .. "/undo-history",
   wildmenu = true,
   wildmode = { "longest", "list", "full" },
   wildoptions = "pum",
   wrap = true,
 }
+
+-- Ensure the backup and undo directories exist.
+vim.fn.mkdir(options.backupdir, "p")
+vim.fn.mkdir(options.undodir, "p")
 
 for name, value in pairs(options) do
   vim.opt[name] = value
