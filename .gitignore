@@ -5,6 +5,5 @@ task/sync_config.txt
 task/sync_certs
 
 *.lock.json
-nvim/lazy-lock.json
 
 zshrc_local
