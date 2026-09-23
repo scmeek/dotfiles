@@ -11,6 +11,7 @@ while test $# != 0; do
 	case "$1" in
 	-h | --help)
 		usage
+		exit 0
 		;;
 	--keep-awake)
 		keep_awake=true
@@ -20,11 +21,17 @@ while test $# != 0; do
 		break
 		;;
 	*)
-		usage
+		usage >&2
+		exit 2
 		;;
 	esac
 	shift
 done
+
+if [[ $# -ne 0 ]]; then
+	usage >&2
+	exit 2
+fi
 
 user_directories=(
 	"Library/Application Support/MobileSync"
