@@ -1,6 +1,5 @@
 #!/bin/bash
 set -Eeuo pipefail
-#dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
 
 usage() {
 	echo "Backs up main user directories, files, and mobile backups to Veracrypt encrypted volume. The calling terminal must have the Full Disk Access permission. \`caffeinate\` is required to keep the system awake."
@@ -63,107 +62,128 @@ err_exit() {
 	exit 1
 }
 
-veracrypt_app="/Applications/VeraCrypt.app/contents/MacOS/VeraCrypt"
-disk_info_xml=$(diskutil info -plist "${backup_volume_diskuuid}") ||
-	err_exit "Volume with DiskUUID ${backup_volume_diskuuid} not found." \
-		"Is it connected?"
-disk_info_json=$(echo "${disk_info_xml}" | plutil -convert json -o - -- -)
-device_identifier=$(echo "${disk_info_json}" | jq -r '.DeviceIdentifier') ||
-	err_exit "DeviceIdentifier for volume with DiskUUID" \
-		"${backup_volume_diskuuid} not found."
-volume="/dev/r${device_identifier}"
+# Prerequisites: macOS diskutil/plutil/security, jq, rsync 3.x, VeraCrypt;
+# caffeinate is required only with --keep-awake. See README.md.
+veracrypt_app="${VERACRYPT_BIN:-/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt}"
+for tool in diskutil plutil security jq rsync awk; do
+	command -v "$tool" >/dev/null || err_exit "Required tool not found: $tool"
+done
+[[ -x "$veracrypt_app" ]] || err_exit "VeraCrypt not found: $veracrypt_app"
+rsync_help=$(rsync --help)
+[[ "$rsync_help" == *--info* ]] || err_exit "rsync 3.x is required (install Homebrew rsync and put it on PATH)"
 
-mounted_directory() {
-	# shellcheck disable=SC2005
-	echo "$("${veracrypt_app}" --text -l 2>/dev/null |
-		grep "${volume}" |
-		awk '{print $2}')"
+disk_info_xml=$(diskutil info -plist "$backup_volume_diskuuid") ||
+	err_exit "Volume with DiskUUID $backup_volume_diskuuid not found. Is it connected?"
+disk_info_json=$(printf '%s\n' "$disk_info_xml" | plutil -convert json -o - -- -)
+device_identifier=$(printf '%s\n' "$disk_info_json" | jq -er '.DeviceIdentifier | select(type == "string" and test("^disk[0-9]+(s[0-9]+)*$"))') ||
+	err_exit "Invalid DeviceIdentifier for $backup_volume_diskuuid"
+volume="/dev/r$device_identifier"
+
+# VeraCrypt's short listing is: slot, encrypted device, virtual device, mount point.
+# These configured device/mount paths contain no spaces; match whole fields.
+volume_record() {
+	local listing
+	listing=$("$veracrypt_app" --text --list) || return 1
+	printf '%s\n' "$listing" | awk -v device="$volume" -v block_device="/dev/$device_identifier" '$2 == device || $2 == block_device { print }'
+}
+verify_mount() {
+	local record mount_xml mount_json virtual_device
+	record=$(volume_record) || return 1
+	[[ $(printf '%s\n' "$record" | awk -v destination="$mount_point" 'NF == 4 && $4 == destination { n++ } END { print n+0 }') == 1 ]] || return 1
+	virtual_device=$(printf '%s\n' "$record" | awk '{ print $3 }')
+	[[ "$virtual_device" == /dev/disk* ]] || return 1
+	mount_xml=$(diskutil info -plist "$mount_point") || return 1
+	mount_json=$(printf '%s\n' "$mount_xml" | plutil -convert json -o - -- -) || return 1
+	printf '%s\n' "$mount_json" | jq -e --arg path "$mount_point" --arg device "$virtual_device" '.Mounted == true and .MountPoint == $path and .DeviceNode == $device' >/dev/null || return 1
+	[[ -d "$mount_point" && ! -L "$mount_point" ]]
 }
 
-# Stay awake
-if [[ -n "${keep_awake:-}" ]]; then
-	print_msg "Keeping system awake with \`caffeinate\`..."
+awake_pid=''
+mounted_by_script=false
+cleanup() {
+	local status=$?
+	trap - EXIT INT TERM
+	# Never dismount a volume that was already mounted before this invocation.
+	if [[ "$mounted_by_script" == true ]]; then
+		if verify_mount; then
+			"$veracrypt_app" --text --dismount "$mount_point" || {
+				print_error "Dismount failed; volume may still be mounted"
+				status=1
+			}
+		else
+			print_warning "Mount identity could not be verified during cleanup; check VeraCrypt manually."
+			status=1
+		fi
+	fi
+	if [[ -n "$awake_pid" ]]; then
+		kill "$awake_pid" 2>/dev/null || true
+		wait "$awake_pid" 2>/dev/null || true
+	fi
+	exit "$status"
+}
+trap cleanup EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
 
-	# d: display; i: idle; m: disk; s: system; u: user is active
+if [[ -n "${keep_awake:-}" ]]; then
+	command -v caffeinate >/dev/null || err_exit "Required tool not found: caffeinate"
 	caffeinate -d -i -m -s -u &
 	awake_pid=$!
-
 	sleep 1
-
-	if kill -0 ${awake_pid}; then
-		print_success "System will be kept awake during backup"
-	else
-		err_exit "Awake process failed"
-	fi
-
+	kill -0 "$awake_pid" || err_exit "Awake process failed"
 fi
 
-# Mount volume
-mounted_directory=$(mounted_directory)
-if [[ -z "${mounted_directory}" ]]; then
+# --list can fail when no volumes are mounted. No writes are permitted until
+# both VeraCrypt and diskutil confirm the destination after the mount attempt.
+record=$(volume_record) || record=''
+if [[ -z "$record" ]]; then
 	print_msg "Retrieving volume password from keychain..."
-	volume_password=$(security find-generic-password -s "${keychain_item_name}" -w) && print_success "Password retrieved" ||
-		err_exit "Password for ${keychain_item_name} not found"
-
+	volume_password=$(security find-generic-password -s "$keychain_item_name" -w) || err_exit "Password for $keychain_item_name not found"
 	print_msg "Mounting volume..."
-	print_msg "If the next step appears to hang, the terminal may need access to Network Devices. Attempt pressing \"Enter\" to receive a prompt to enter Administrator password to mount the device."
-	"${veracrypt_app}" --text \
-		--mount "${volume}" "${mount_point}" \
-		--password "${volume_password}" \
-		--pim 0 \
-		--keyfiles "" \
-		--protect-hidden no &&
-		print_success "Volume mounted" ||
-		err_exit "Mount volume failed"
-else
-	print_msg "Volume already mounted"
+	"$veracrypt_app" --text --mount "$volume" "$mount_point" \
+		--password "$volume_password" --pim 0 --keyfiles "" --protect-hidden no || err_exit "Mount volume failed; check VeraCrypt for any partial mount"
+	mounted_by_script=true
+	unset volume_password
 fi
+verify_mount || err_exit "Expected VeraCrypt volume is not mounted at $mount_point; refusing backup"
 
-# Backup directories
+failures=0
 for user_directory in "${user_directories[@]}"; do
-	print_msg "Backing up ${user_directory}..."
-	directory="${HOME}/${user_directory}"
-	backup_directory="${mount_point}/${user_directory}"
-
-	mkdir -p "${backup_directory}"
-
-	rsync \
-		--archive \
-		--no-perms \
-		--no-group \
-		--no-owner \
-		--inplace \
-		--sparse \
-		--delete \
-		--info=progress2 \
-		--no-inc-recursive \
-		--human-readable \
-		--exclude ".DS_Store" \
-		--exclude ".Trashes*" \
-		--exclude ".fseventsd" \
-		"${directory}/" "${backup_directory}/" && print_success "Backed up ${user_directory}" || print_error "Back up of ${user_directory} failed. Does the calling terminal have Full Disk Access permisision?"
+	directory="$HOME/$user_directory"
+	backup_directory="$mount_point/$user_directory"
+	if [[ ! -d "$directory" ]]; then
+		print_error "Source directory missing: $directory; destination left untouched"
+		failures=$((failures + 1))
+		continue
+	fi
+	verify_mount || err_exit "Backup mount disappeared or changed; refusing further writes"
+	# Reject symlinked destination components (including intermediate Library paths).
+	component="$mount_point"
+	IFS=/ read -r -a parts <<<"$user_directory"
+	for part in "${parts[@]}"; do
+		component="$component/$part"
+		[[ ! -L "$component" ]] || err_exit "Destination contains a symlink: $component"
+	done
+	if ! mkdir -p "$backup_directory"; then
+		print_error "Cannot create $backup_directory"
+		failures=$((failures + 1))
+		continue
+	fi
+	print_msg "Backing up $user_directory..."
+	if rsync --archive --no-perms --no-group --no-owner --inplace --sparse \
+		--delete --info=progress2 --no-inc-recursive --human-readable \
+		--exclude ".DS_Store" --exclude ".Trashes*" --exclude ".fseventsd" \
+		"$directory/" "$backup_directory/"; then
+		print_success "Backed up $user_directory"
+	else
+		print_error "Backup of $user_directory failed. Check Full Disk Access and rsync output."
+		failures=$((failures + 1))
+	fi
 done
 
-print_warning "NOTE: skipping iCloud Drive (Notes). Be sure to do so manually."
-print_warning "NOTE: skipping ~/source. Be sure to do so manually."
-
-print_msg "You can do those now manually if you'd like. Waiting for user input to continue."
-
-read -p "Press Enter to continue" </dev/tty
-
-# Dismount volume
-mounted_directory=$(mounted_directory)
-if [[ -n "${mounted_directory}" ]]; then
-	print_msg "Dismounting volume..."
-
-	"${veracrypt_app}" --text --dismount "${mounted_directory}" &&
-		print_success "Volume dismounted" ||
-		print_error "Dismount volume failed"
+print_warning "NOTE: skipping iCloud Drive (Notes) and ~/source. Back them up manually."
+if [[ -t 0 ]]; then
+	read -r -p "Press Enter after any manual backups to finish" || true
 fi
-
-if [[ -n "${keep_awake:-}" && -n "${awake_pid}" ]]; then
-	print_msg "Killing awake process..."
-	kill "${awake_pid}" &&
-		print_success "Awake process killed" ||
-		err_exit "Kill awake process failed"
-fi
+[[ "$failures" == 0 ]] || err_exit "$failures directory backup(s) failed"
+print_success "All configured directories backed up"
