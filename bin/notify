@@ -8,7 +8,7 @@ def exec(*args)
   rescue Errno::ENOENT
     return false
   end
-  return Process.wait2(pid)[1].exited?
+  return Process.wait2(pid)[1].success?
 end
 
 def notify(title, description)
