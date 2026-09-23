@@ -1,104 +1,107 @@
 #!/usr/bin/env ruby
+require 'open3'
 
-SIGNALS = [
-  [15, 3],
-  [2, 3],
-  [1, 4],
-  [9, 0]
-]
-
-def i?(arg)
-  arg.to_i != 0
-end
+SIGNALS = [[15, 3], [2, 3], [1, 4], [9, 0]].freeze
 
 def running?(pid)
-  `ps -p #{pid}`.lines.length == 2
+  Process.kill(0, pid)
+  true
+rescue Errno::ESRCH
+  false
 end
 
 def go_ahead?
-  %w(y yes yas).include? $stdin.gets.strip.downcase
-end
-
-def kill(pid, code)
-  `kill -#{code} #{pid}`
+  %w[y yes yas].include?($stdin.gets.to_s.strip.downcase)
 end
 
 def murder_pid(pid)
-  SIGNALS.each do |signal|
-    break unless running? pid
+  SIGNALS.each do |code, delay|
+    break unless running?(pid)
 
-    code, wait = signal
-
-    kill(pid, code)
+    Process.kill(code, pid)
     sleep 0.5
-    sleep(wait) if running? pid
+    sleep(delay) if delay.positive? && running?(pid)
   end
+rescue Errno::ESRCH
+  # The process may exit between the existence check and signal delivery.
+end
+
+def capture(*args)
+  output, error, status = Open3.capture3(*args)
+  raise "#{args.first}: #{error.strip}" unless status.success?
+
+  output
 end
 
 def murder_names(name)
+  pattern = /(?<![[:alnum:]_])#{Regexp.escape(name)}(?![[:alnum:]_])/i
   loop do
-    should_loop = false
+    candidates = capture('ps', '-eo', 'pid=,command=').lines.map do |line|
+      pid, command = line.strip.split(nil, 2)
+      next unless pid && command && command.match?(pattern)
+      next if pid.to_i == Process.pid
 
-    running = `ps -eo 'pid command' | grep -Fiw '#{name}' | grep -Fv grep`
-    running.lines.each do |line|
-      pid, fullname = line.split(nil, 2)
-
-      next if Process.pid == pid.to_i
-
-      print "murder #{fullname.chomp} (pid #{pid})? "
-      if go_ahead?
-        murder_pid(pid)
-        should_loop = true
-        break
-      end
+      [Integer(pid, 10), command]
     end
+    selected = candidates.compact.find do |pid, command|
+      print "murder #{command} (pid #{pid})? "
+      go_ahead?
+    end
+    break unless selected
 
-    break unless should_loop
+    murder_pid(selected.first)
   end
 end
 
-def murder_port(arg)
+def murder_port(port)
   loop do
-    should_loop = false
+    output, error, status = Open3.capture3('lsof', '-nP', '-t', '-i', ":#{port}")
+    break if status.exitstatus == 1 && output.empty? && error.empty?
+    raise "lsof: #{error.strip}" unless status.success?
 
-    lsofs = `lsof -i #{arg}`
+    pids = output.lines.map { |line| Integer(line.strip, 10) }.uniq
+    selected = pids.find do |pid|
+      next if pid <= 0 || pid == Process.pid || !running?(pid)
 
-    lsofs.lines.drop(1).each do |line|
-      pid = line.split(nil, 3)[1]
-
-      fullname = `ps -eo 'command' #{pid}`.lines.drop(1).first
-
-      print "murder #{fullname.chomp} (pid #{pid})? "
-      if go_ahead?
-        murder_pid(pid)
-        should_loop = true
-        break
-      end
+      print "murder process on port #{port} (pid #{pid})? "
+      go_ahead?
     end
+    break unless selected
 
-    break unless should_loop
+    murder_pid(selected)
   end
 end
 
-def murder(arg)
-  is_pid = i?(arg)
-  is_port = arg[0] == ':' && i?(arg.slice(1, arg.size))
-
-  if is_pid
-    murder_pid arg
-  elsif is_port
-    murder_port arg
+def target(arg)
+  if arg.start_with?(':')
+    raise 'Port must be an integer from 1 to 65535' unless arg.match?(/\A:[0-9]+\z/) && (1..65535).cover?(arg[1..].to_i)
+    [:port, arg[1..].to_i]
+  elsif arg.match?(/\A[+\-0-9]/)
+    raise 'PID must be a positive integer' unless arg.match?(/\A[0-9]+\z/) && arg.to_i.positive?
+    raise 'Refusing to terminate this helper' if arg.to_i == Process.pid
+    [:pid, arg.to_i]
   else
-    murder_names arg
+    raise 'Process name must not be empty' if arg.strip.empty?
+    [:name, arg]
   end
 end
 
-if ARGV.size < 1
-  puts 'usage:'
-  puts 'murder 123    # kill by pid'
-  puts 'murder ruby   # kill by process name'
-  puts 'murder :3000  # kill by port'
-  exit 1
-else
-  ARGV.each { |arg| murder(arg) }
+if $PROGRAM_NAME == __FILE__
+  if ARGV.empty?
+    warn 'Usage: murder PID | NAME | :PORT [...]'
+    exit 2
+  end
+  begin
+    # Validate all inputs before delivering any signals.
+    ARGV.map { |arg| target(arg) }.each do |kind, value|
+      case kind
+      when :pid then murder_pid(value)
+      when :port then murder_port(value)
+      when :name then murder_names(value)
+      end
+    end
+  rescue ArgumentError, RuntimeError, SystemCallError => e
+    warn "murder: #{e.message}"
+    exit 1
+  end
 end
