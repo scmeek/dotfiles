@@ -9,7 +9,7 @@ return {
     vim.g.obsidian_default_keymap = false
   end,
   opts = {
-    legacy_commands = true,
+    legacy_commands = false,
     workspaces = { { name = "notes", path = notes_path } },
     daily_notes = {
       folder = "journal",
