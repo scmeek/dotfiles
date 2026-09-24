@@ -14,7 +14,7 @@ typeset -U path PATH
 # Environment variables
 #--------------------------------------------------------------------------
 
-export SM_XDG_BIN_HOME="${SM_XDG_BIN_HOME:-${HOME}/.local/bin}" # Prefixed since not XDG standard var
+export SM_XDG_BIN_HOME="${SM_XDG_BIN_HOME:-${HOME}/.local/bin}"             # Prefixed since not XDG standard var
 export SM_XDG_BIN_BIN_HOME="${SM_XDG_BIN_BIN_HOME:-${SM_XDG_BIN_HOME}/bin}" # Nested for dotfiles bin
 
 export AWS_SHARED_CREDENTIALS_FILE="${XDG_CONFIG_HOME}"/aws/credentials
@@ -75,7 +75,10 @@ setopt HIST_SAVE_NO_DUPS
 
 # Helps syntax highlighting for `bat` for man pages and help text
 if command -v tput >/dev/null 2>&1 && [[ -t 1 ]]; then
-  LESS_DISPLAY_SETTINGS=$(tput bold; tput setaf 4)
+  LESS_DISPLAY_SETTINGS=$(
+    tput bold
+    tput setaf 4
+  )
   export LESS_TERMCAP_md="${LESS_DISPLAY_SETTINGS}" # blue
 fi
 
@@ -119,7 +122,7 @@ fi
 
 # Optional Homebrew integrations.
 if [[ -n "${HOMEBREW_PREFIX:-}" ]]; then
-  [[ -r "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && \
+  [[ -r "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] &&
     source "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
@@ -127,23 +130,26 @@ fi
 # Oh-my-zsh
 #--------------------------------------------------------------------------
 
+# Add optional Docker Desktop completions before Oh My Zsh initializes the
+# completion system.
+[[ -d "${HOME}/.docker/completions" ]] && fpath=("${HOME}/.docker/completions" $fpath)
+
 # shellcheck disable=SC2034
 plugins=()
 
 # shellcheck disable=SC1091
-[[ -r "${ZSH}/oh-my-zsh.sh" ]] && source "${ZSH}/oh-my-zsh.sh"
+if [[ -r "${ZSH}/oh-my-zsh.sh" ]]; then
+  source "${ZSH}/oh-my-zsh.sh"
+else
+  # Keep completion available when Oh My Zsh is intentionally absent.
+  autoload -Uz compinit
+  mkdir -p "${XDG_CACHE_HOME}/zsh"
+  compinit -d "${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
+fi
 
 #--------------------------------------------------------------------------
 # Completion
 #--------------------------------------------------------------------------
-
-# Add optional Docker Desktop completions without assuming a particular user.
-[[ -d "${HOME}/.docker/completions" ]] && fpath=("${HOME}/.docker/completions" $fpath)
-
-# Use the completion system once, after all fpath additions.
-autoload -Uz compinit
-mkdir -p "${XDG_CACHE_HOME}/zsh"
-compinit -d "${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -204,7 +210,7 @@ alias brewsync="brew update && brew upgrade && brew cleanup && brew doctor && br
 alias e="$VISUAL"
 alias cd="cd_activate_ls"
 alias cd..="cd .."
-(( $+functions[zi] )) && alias cdi="zi"
+(($+functions[zi])) && alias cdi="zi"
 alias ls='eza --across --group-directories-first'
 alias ll='eza --long --group --header --changed --group-directories-first'
 alias la='eza --long --group --header --all --changed --group-directories-first'
@@ -245,7 +251,8 @@ rgfa() {
 }
 
 attempt_activate_venv() {
-  declare -a env_paths=("./.venv" "${additional_env_paths[@]}")
+  local -a env_paths=("./.venv" "${additional_env_paths[@]}")
+  local env_path activate_file_candidate
 
   for env_path in "${env_paths[@]}"; do
     activate_file_candidate="${env_path}/bin/activate"
@@ -260,7 +267,7 @@ attempt_activate_venv() {
 # https://stackoverflow.com/a/56309561
 cd_activate_ls() {
   # z is a cd replacement
-  if (( $+functions[z] )); then
+  if (($+functions[z])); then
     if ! z "$@"; then
       return
     fi
@@ -273,9 +280,9 @@ cd_activate_ls() {
   else
     # If not in subdirectory of VIRTUAL_ENV, deactivate and attempt activation
     # Ignore path casing
-    virtual_env_parent_dir="$(dirname "${VIRTUAL_ENV}")"
+    local virtual_env_parent_dir="$(dirname "${VIRTUAL_ENV}")"
     if [[ "${PWD:u}"/ != "${virtual_env_parent_dir:u}"/* ]]; then
-      deactivate
+      (($+functions[deactivate])) && deactivate
       attempt_activate_venv
     fi
   fi
