@@ -31,25 +31,28 @@ See [LICENSE](https://github.com/scmeek/dotfiles/blob/master/LICENSE).
 
 ### 1. Packages
 
-1. Install [Homebrew](https://brew.sh/)
+1. Install [`Homebrew`](https://brew.sh/)
 
    ```sh
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
 
-2. Clone repo and [sync the config files](#synchronize-configuration-files) to their appropriate locations
+2. Clone repo and [sync the config files](#synchronize-configuration-files) to
+   their appropriate locations
 
 The shell configuration expects [Oh My Zsh](https://ohmyz.sh/) under
 `$XDG_DATA_HOME/oh-my-zsh`. Install it before starting a new shell, or keep the
 guarded shell startup and install it later:
 
 ```sh
-ZSH="${XDG_DATA_HOME:-$HOME/.local/share}/oh-my-zsh" RUNZSH=no KEEP_ZSH=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+ZSH="${XDG_DATA_HOME:-$HOME/.local/share}/oh-my-zsh" RUNZSH=no KEEP_ZSH=yes \
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-## 2. Synchronize configuration files
+## Synchronize Configuration Files
 
-[dotbot](https://github.com/anishathalye/dotbot) should take care of everything by placing symlinks in the appropriate places.
+[dotbot](https://github.com/anishathalye/dotbot) should take care of everything
+by placing symlinks in the appropriate places.
 
 ```sh
 # If submodules haven't been initialized:
@@ -62,6 +65,6 @@ git submodule update --init --recursive
 
 Notes:
 
-- `./install` selects the macOS or Linux Dotbot configuration automatically; use `-c` to select one explicitly.
-- `zshrc_local` is an ignored machine-local override. Start from `zshrc_local.example` when creating it; existing settings are never overwritten.
-- The repository uses HTTPS URLs for public submodules and TPM. If your global Git configuration rewrites GitHub URLs to SSH, make sure SSH authentication is configured or remove that rewrite.
+- `./install` selects the macOS or Linux `Dotbot` configuration automatically
+  - use `-c` to select one explicitly
+- `zshrc_local` is an ignored machine-local override
