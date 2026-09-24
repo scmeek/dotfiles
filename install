@@ -26,19 +26,19 @@ mkdir -p "${XDG_DATA_HOME}/gnupg"
 config_selected=false
 for arg in "$@"; do
   case "${arg}" in
-    -c|--config|--config=*) config_selected=true ;;
+  -c | --config | --config=*) config_selected=true ;;
   esac
 done
 
 dotbot_args=("$@")
 if [[ "${config_selected}" == false ]]; then
   case "$(uname -s)" in
-    Darwin) default_config="install_macos.conf.yaml" ;;
-    Linux) default_config="install_linux.conf.yaml" ;;
-    *)
-      printf 'error: unsupported OS; pass an explicit Dotbot config with -c\n' >&2
-      exit 2
-      ;;
+  Darwin) default_config="install_macos.conf.yaml" ;;
+  Linux) default_config="install_linux.conf.yaml" ;;
+  *)
+    printf 'error: unsupported OS; pass an explicit Dotbot config with -c\n' >&2
+    exit 2
+    ;;
   esac
   dotbot_args=(-c "${default_config}" "${dotbot_args[@]}")
 fi

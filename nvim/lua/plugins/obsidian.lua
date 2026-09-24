@@ -1,4 +1,5 @@
-local notes_path = vim.fn.expand("~") .. [[/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes]]
+local notes_path = vim.fn.expand("~")
+  .. [[/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes]]
 
 return {
   "obsidian-nvim/obsidian.nvim",
@@ -21,13 +22,17 @@ return {
     new_notes_location = "notes_subdir",
     note = { template = vim.NIL },
     note_id_func = function(title, dir)
-      local base = title and title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower() or ""
+      local base = title
+          and title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+        or ""
       if base == "" then
         base = require("obsidian.builtin").zettel_id()
       end
       local candidate, suffix = base, 2
       local Path = require("obsidian.path")
-      while dir and (Path.new(dir) / candidate):with_suffix(".md", true):exists() do
+      while
+        dir and (Path.new(dir) / candidate):with_suffix(".md", true):exists()
+      do
         candidate = string.format("%s-%d", base, suffix)
         suffix = suffix + 1
       end
@@ -73,14 +78,20 @@ return {
     callbacks = {
       enter_note = function()
         vim.keymap.set("n", "gf", function()
-          return require("obsidian.api").cursor_link() and "<cmd>Obsidian follow_link<cr>" or "gf"
+          return require("obsidian.api").cursor_link()
+              and "<cmd>Obsidian follow_link<cr>"
+            or "gf"
         end, { buffer = true, expr = true, desc = "Follow note link" })
         vim.keymap.set("n", "<leader>ch", function()
           require("obsidian.actions").toggle_checkbox()
         end, { buffer = true, desc = "Toggle checkbox" })
         vim.keymap.set("n", "<CR>", function()
           return require("obsidian.actions").smart_action()
-        end, { buffer = true, expr = true, desc = "Obsidian smart action" })
+        end, {
+          buffer = true,
+          expr = true,
+          desc = "Obsidian smart action",
+        })
       end,
     },
     ui = { enable = false },
@@ -94,8 +105,13 @@ return {
       img_text_func = function(path)
         local Path = require("obsidian.path")
         local image_path = Path.new(path):resolve()
-        local ok, relative = pcall(image_path.relative_to, image_path, Obsidian.workspace.path)
-        return string.format("![%s](%s)", image_path.name, ok and relative or image_path)
+        local ok, relative =
+          pcall(image_path.relative_to, image_path, Obsidian.workspace.path)
+        return string.format(
+          "![%s](%s)",
+          image_path.name,
+          ok and relative or image_path
+        )
       end,
     },
   },

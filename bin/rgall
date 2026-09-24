@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
-# Search hidden files and ignored paths explicitly when exhaustive search is wanted.
+# Search hidden files and ignored paths explicitly when exhaustive search is
+# wanted.
 exec rg --hidden --no-ignore "$@"

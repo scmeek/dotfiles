@@ -14,7 +14,10 @@ function M.setup()
   end
 
   vim.api.nvim_create_autocmd("ColorScheme", {
-    group = vim.api.nvim_create_augroup("dotfiles_highlights", { clear = true }),
+    group = vim.api.nvim_create_augroup(
+      "dotfiles_highlights",
+      { clear = true }
+    ),
     callback = apply,
   })
   apply()

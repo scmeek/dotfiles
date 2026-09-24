@@ -3,16 +3,20 @@ vim.g.rustaceanvim = {
     default_settings = {
       ["rust-analyzer"] = {
         cachePriming = {
-          enable = false, -- Skip startup cache priming; may make the first requests slower
+          -- Skip startup cache priming; may make the first requests slower
+          enable = false,
         },
         -- diagnostics = {
-        --   disabled = { "unresolved-proc-macro" }, -- Prevent macro loops from freezing the editor
+        --   -- Prevent macro loops from freezing the editor
+        --   disabled = { "unresolved-proc-macro" },
         -- },
         cargo = {
           buildScripts = {
-            enable = true, -- Keep build-script support for crates that require it
+            -- Keep build-script support for crates that require it
+            enable = true,
           },
-          targetDir = true, -- Separate RA build artifacts from regular cargo builds
+          -- Separate RA build artifacts from regular cargo builds
+          targetDir = true,
         },
       },
     },

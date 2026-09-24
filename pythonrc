@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 
-import os
 import atexit
+import os
 import readline
 
-cache_dir = os.environ.get('XDG_CACHE_HOME') or os.path.expanduser('~/.cache')
-history = os.path.join(cache_dir, 'python_history')
+cache_dir = os.environ.get("XDG_CACHE_HOME") or os.path.expanduser("~/.cache")
+history = os.path.join(cache_dir, "python_history")
 try:
     readline.read_history_file(history)
 except OSError:
     pass
+
 
 def write_history():
     try:
@@ -17,5 +18,6 @@ def write_history():
         readline.write_history_file(history)
     except OSError:
         pass
+
 
 atexit.register(write_history)

@@ -45,5 +45,15 @@ map("v", "J", ":m '>+1<CR>gv==kgvo<esc>=kgvo", { desc = "Move selection down" })
 -- Folds
 map("n", "za", "za", { desc = "Toggle fold", noremap = false })
 map("n", "zd", "zd", { desc = "Delete fold", noremap = false })
-map("n", "zr", "zr", { desc = "Reduce (open) all folds by one level", noremap = false })
-map("n", "zm", "zm", { desc = "Fold more (close) all folds by one level", noremap = false })
+map(
+  "n",
+  "zr",
+  "zr",
+  { desc = "Reduce (open) all folds by one level", noremap = false }
+)
+map(
+  "n",
+  "zm",
+  "zm",
+  { desc = "Fold more (close) all folds by one level", noremap = false }
+)

@@ -4,7 +4,14 @@ return {
   dependencies = {
     "nvimtools/hydra.nvim",
   },
-  cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
+  cmd = {
+    "MCstart",
+    "MCvisual",
+    "MCclear",
+    "MCpattern",
+    "MCvisualPattern",
+    "MCunderCursor",
+  },
   keys = {
     {
       mode = { "n" },

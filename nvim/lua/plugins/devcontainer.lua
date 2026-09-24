@@ -18,15 +18,31 @@ return {
   end,
   keys = {
     { "<leader>Du", ":DevcontainerUp<CR>", desc = "DevContainer: up" },
-    { "<leader>Dc", ":DevcontainerConnect<CR>", desc = "DevContainer: connect" },
+    {
+      "<leader>Dc",
+      ":DevcontainerConnect<CR>",
+      desc = "DevContainer: connect",
+    },
     { "<leader>Dd", ":DevcontainerDown<CR>", desc = "DevContainer: down" },
-    { "<leader>De", ":DevcontainerExec direction='vertical' size='40'<CR>", desc = "DevContainer: exec (vsplit)" },
-    { "<leader>Db", ":DevcontainerExec cmd='cd build && make'<CR>", desc = "DevContainer: build" },
+    {
+      "<leader>De",
+      ":DevcontainerExec direction='vertical' size='40'<CR>",
+      desc = "DevContainer: exec (vsplit)",
+    },
+    {
+      "<leader>Db",
+      ":DevcontainerExec cmd='cd build && make'<CR>",
+      desc = "DevContainer: build",
+    },
     {
       "<leader>Dt",
       ":DevcontainerExec cmd='cd build && make test' direction='horizontal'<CR>",
       desc = "DevContainer: test",
     },
-    { "<leader>DT", "<CMD>DevContainerToggle<CR>", desc = "DevContainer: toggle term" },
+    {
+      "<leader>DT",
+      "<CMD>DevContainerToggle<CR>",
+      desc = "DevContainer: toggle term",
+    },
   },
 }
