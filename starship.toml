@@ -3,7 +3,7 @@
 add_newline = false
 continuation_prompt = "[▸▹ ](dimmed white)"
 
-format = """($nix_shell$container$fill$cmd_duration$git_metrics$time\n)\
+format = """\n($nix_shell$container$fill$cmd_duration$git_metrics$time\n)\
 $hostname\
 $localip\
 $shlvl\
