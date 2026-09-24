@@ -35,8 +35,8 @@ config.default_prog = {
 }
 config.disable_default_key_bindings = true
 config.force_reverse_video_cursor = true
-config.font = wezterm.font("SauceCodePro Nerd Font")
-config.font_size = 14.5
+config.font = wezterm.font("Terminess Nerd Font")
+config.font_size = 16
 config.inactive_pane_hsb = {
   saturation = 0.25,
   brightness = 0.5,
