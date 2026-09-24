@@ -2,5 +2,6 @@
 set -e
 set -u
 
-lineno="$1"; shift
+lineno="$1"
+shift
 sed -n "${lineno}p" -- "$@"

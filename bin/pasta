@@ -4,12 +4,12 @@ set -u
 set -o pipefail
 
 if hash pbpaste 2>/dev/null; then
-	exec pbpaste
+  exec pbpaste
 elif hash wl-paste 2>/dev/null; then
-	exec wl-paste
+  exec wl-paste
 elif hash xclip 2>/dev/null; then
-	exec xclip -selection clipboard -o
+  exec xclip -selection clipboard -o
 else
-	echo 'cannot find a paste program' >&2
-	exit 1
+  echo 'cannot find a paste program' >&2
+  exit 1
 fi

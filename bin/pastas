@@ -7,8 +7,7 @@ trap 'exit 0' SIGINT
 
 last_value=''
 
-while true
-do
+while true; do
   value="$(pasta)"
 
   if [ "$last_value" != "$value" ]; then
