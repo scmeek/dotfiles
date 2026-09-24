@@ -1,16 +1,21 @@
 #zmodload zsh/zprof  # Profiling, use with `zprof` command
 
+: "${HOME:?HOME must be set}"
+
+: "${XDG_DATA_HOME:=$HOME/.local/share}"
+: "${XDG_CONFIG_HOME:=$HOME/.config}"
+: "${XDG_STATE_HOME:=$HOME/.local/state}"
+: "${XDG_CACHE_HOME:=$HOME/.cache}"
+export XDG_DATA_HOME XDG_CONFIG_HOME XDG_STATE_HOME XDG_CACHE_HOME
+
+typeset -U path PATH
+
 #--------------------------------------------------------------------------
 # Environment variables
 #--------------------------------------------------------------------------
 
-export XDG_DATA_HOME="${HOME}"/.local/share
-export XDG_CONFIG_HOME="${HOME}"/.config
-export XDG_STATE_HOME="${HOME}"/.local/state
-export XDG_CACHE_HOME="${HOME}"/.cache
-export XDG_RUNTIME_DIR="/tmp/"                      # "/run/user/${UID}"  nvim plenary workaround
-export SM_XDG_BIN_HOME="${HOME}"/.local/bin         # Prefixed since not XDG standard var
-export SM_XDG_BIN_BIN_HOME="${SM_XDG_BIN_HOME}"/bin # Nested for dotfiles bin
+export SM_XDG_BIN_HOME="${SM_XDG_BIN_HOME:-${HOME}/.local/bin}" # Prefixed since not XDG standard var
+export SM_XDG_BIN_BIN_HOME="${SM_XDG_BIN_BIN_HOME:-${SM_XDG_BIN_HOME}/bin}" # Nested for dotfiles bin
 
 export AWS_SHARED_CREDENTIALS_FILE="${XDG_CONFIG_HOME}"/aws/credentials
 export AWS_CONFIG_FILE="${XDG_CONFIG_HOME}"/aws/config
@@ -34,16 +39,17 @@ export RUSTUP_HOME="${XDG_DATA_HOME}"/rustup
 export STARSHIP_CONFIG="${XDG_CONFIG_HOME}"/starship/starship.toml
 export STARSHIP_CACHE="${XDG_DATA_HOME}"/starship/cache
 
-export ZSHRC_LOCAL_FILE=${HOME}/.zshrc_local
+export ZSHRC_LOCAL_FILE="${ZSHRC_LOCAL_FILE:-${HOME}/.zshrc_local}"
 
 #--------------------------------------------------------------------------
 # General config
 #--------------------------------------------------------------------------
 
-export PATH="${SM_XDG_BIN_HOME}:${SM_XDG_BIN_BIN_HOME}:${PATH}"
-export PATH="${DOCKER_CONFIG}:${PATH}"
+path=("${SM_XDG_BIN_HOME}" "${SM_XDG_BIN_BIN_HOME}" $path)
+path=("${DOCKER_CONFIG}" $path)
 if command -v npm >/dev/null 2>&1; then
-  export PATH="$(npm config get prefix)/bin:${PATH}"
+  npm_prefix="$(npm config get prefix 2>/dev/null || true)"
+  [[ -n "${npm_prefix}" ]] && path=("${npm_prefix}/bin" $path)
 fi
 
 export HYPHEN_INSENSITIVE="true" # Used in completion
@@ -52,8 +58,6 @@ export HIST_STAMPS="yyyy-mm-dd"
 
 HISTSIZE=1000000
 export SAVEHIST=${HISTSIZE}
-
-setopt histignorealldups sharehistory
 
 setopt BANG_HIST          # Treat the '!' character specially during expansion
 setopt EXTENDED_HISTORY   # Write the history file in the "start:elapsed;command" format
@@ -70,11 +74,10 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
 # Helps syntax highlighting for `bat` for man pages and help text
-LESS_DISPLAY_SETTINGS=$(
-  tput bold
-  tput setaf 4
-)
-export LESS_TERMCAP_md=${LESS_DISPLAY_SETTINGS} # blue
+if command -v tput >/dev/null 2>&1 && [[ -t 1 ]]; then
+  LESS_DISPLAY_SETTINGS=$(tput bold; tput setaf 4)
+  export LESS_TERMCAP_md="${LESS_DISPLAY_SETTINGS}" # blue
+fi
 
 export EDITOR=nvim
 export VISUAL=nvim
@@ -88,14 +91,20 @@ export HOMEBREW_NO_ANALYTICS=1
 #export HOMEBREW_NO_EMOJI=1
 export HOMEBREW_NO_ENV_HINTS=1
 
-if [[ "$(uname)" == "Darwin" ]]; then
-  if [[ $(uname -m) == 'arm64' ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)" # Apple Silicon
-  else
-    eval "$(/usr/local/bin/brew shellenv)" # Apple Intel
+brew_bin=""
+for candidate in /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
+  if [[ -x "${candidate}" ]]; then
+    brew_bin="${candidate}"
+    break
   fi
-elif [[ "$(uname)" == "Linux" ]]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+done
+if [[ -z "${brew_bin}" ]] && command -v brew >/dev/null 2>&1; then
+  brew_bin="$(command -v brew)"
+fi
+
+if [[ -n "${brew_bin}" ]]; then
+  eval "$("${brew_bin}" shellenv)"
+  typeset -U path PATH
 
   # This may be useful in select cases but generally should be avoided as
   # libraries likely need to be supplied by the system, rather than from here
@@ -103,22 +112,16 @@ elif [[ "$(uname)" == "Linux" ]]; then
   # export LD_LIBRARY_PATH="/home/linuxbrew/.linuxbrew/lib:$LD_LIBRARY_PATH"
 fi
 
-# Before oh-my-zsh
-if type brew &>/dev/null; then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit -d "${XDG_CACHE_HOME}"/zsh/zcompdump-"${ZSH_VERSION}"
+# Add Homebrew completions before loading Oh My Zsh.
+if [[ -n "${brew_bin}" ]]; then
+  fpath=("$("${brew_bin}" --prefix)/share/zsh/site-functions" $fpath)
 fi
 
-# shellcheck disable=SC1091 disable=SC2086
-source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# shellcheck disable=SC1091 disable=SC2086
-source ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-((${+ZSH_HIGHLIGHT_STYLES})) || typeset -A ZSH_HIGHLIGHT_STYLES
-export ZSH_HIGHLIGHT_STYLES[path]=none
-export ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+# Optional Homebrew integrations.
+if [[ -n "${HOMEBREW_PREFIX:-}" ]]; then
+  [[ -r "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && \
+    source "${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
 
 #--------------------------------------------------------------------------
 # Oh-my-zsh
@@ -128,15 +131,19 @@ export ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 plugins=()
 
 # shellcheck disable=SC1091
-source "${ZSH}"/oh-my-zsh.sh
+[[ -r "${ZSH}/oh-my-zsh.sh" ]] && source "${ZSH}/oh-my-zsh.sh"
 
 #--------------------------------------------------------------------------
 # Completion
 #--------------------------------------------------------------------------
 
-# Use modern completion system
+# Add optional Docker Desktop completions without assuming a particular user.
+[[ -d "${HOME}/.docker/completions" ]] && fpath=("${HOME}/.docker/completions" $fpath)
+
+# Use the completion system once, after all fpath additions.
 autoload -Uz compinit
-compinit -d "${XDG_CACHE_HOME}"/zsh/zcompdump-"${ZSH_VERSION}"
+mkdir -p "${XDG_CACHE_HOME}/zsh"
+compinit -d "${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -158,28 +165,36 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # shellcheck disable=SC2034
-export GPG_TTY=$(tty)
+if [[ -t 1 ]]; then
+  export GPG_TTY="$(tty)"
+fi
 
 # GNU only ('dircolors')
 #zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
 # Replacement ('coreutils' required)
-zstyle ':completion:*' menu select=2 eval "$(gdircolors -b)"
+if command -v gdircolors >/dev/null 2>&1; then
+  zstyle ':completion:*' menu select=2 eval "$(gdircolors -b)"
+fi
 
 # shellcheck disable=SC1090
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/sean/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
+# Load syntax highlighting after completion and other Zsh integrations.
+if [[ -n "${HOMEBREW_PREFIX:-}" && -r "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+  source "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  ((${+ZSH_HIGHLIGHT_STYLES})) || typeset -A ZSH_HIGHLIGHT_STYLES
+  ZSH_HIGHLIGHT_STYLES[path]=none
+  ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+fi
 
 #--------------------------------------------------------------------------
 # zoxide (smarter `cd`)
 #--------------------------------------------------------------------------
 
 # Must be after compinit call
-eval "$(zoxide init zsh)"
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
 
 #--------------------------------------------------------------------------
 # Aliases
@@ -329,7 +344,9 @@ git_firefight() {
 # Starship
 #--------------------------------------------------------------------------
 
-eval "$(starship init zsh)"
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
 
 # Status-aware horizontal rule after each command
 precmd() {
@@ -352,11 +369,11 @@ preexec() {
 # Environment-specific configuration
 #--------------------------------------------------------------------------
 
-[[ -f "${ZSHRC_LOCAL_FILE}" ]] && source "${ZSHRC_LOCAL_FILE}"
+[[ -r "${ZSHRC_LOCAL_FILE}" ]] && source "${ZSHRC_LOCAL_FILE}"
 
 #--------------------------------------------------------------------------
 # Startup
 #--------------------------------------------------------------------------
 
 # Prioritize system standard tools
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+path=(/usr/bin /bin /usr/sbin /sbin $path)
