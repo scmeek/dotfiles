@@ -2,14 +2,22 @@
 set -e
 set -u
 
-OSX_AIRPORT='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
-RFKILL='sudo /usr/sbin/rfkill'
+RFKILL=(sudo /usr/sbin/rfkill)
+
+wifi_interface() {
+  networksetup -listallhardwareports | awk '/Hardware Port: (Wi-Fi|AirPort)/ {getline; sub(/^Device: /, ""); print; exit}'
+}
 
 is_wifi_enabled() {
-  local result
+  local result interface
   if [[ "$(uname)" == 'Darwin' ]]; then
-    result="$("$OSX_AIRPORT" -I)"
-    if [[ "$result" == 'AirPort: Off' ]]; then
+    interface="$(wifi_interface)"
+    [[ -n "$interface" ]] || {
+      echo "Wi-Fi interface not found" >&2
+      return 1
+    }
+    result="$(networksetup -getairportpower "$interface")"
+    if [[ "$result" == *": Off" ]]; then
       echo 'false'
     else
       echo 'true'
@@ -29,7 +37,13 @@ make_sure_wifi_is_enabled() {
 
 wifi_list() {
   if [[ "$(uname)" == 'Darwin' ]]; then
-    "$OSX_AIRPORT" -s
+    local interface
+    interface="$(wifi_interface)"
+    [[ -n "$interface" ]] || {
+      echo "Wi-Fi interface not found" >&2
+      return 1
+    }
+    networksetup -listpreferredwirelessnetworks "$interface"
   else
     echo 'not supported yet'
     exit 1
@@ -38,7 +52,13 @@ wifi_list() {
 
 wifi_join() {
   if [[ "$(uname)" == 'Darwin' ]]; then
-    networksetup -setairportnetwork en0 "$1" "$2"
+    local interface
+    interface="$(wifi_interface)"
+    [[ -n "$interface" ]] || {
+      echo "Wi-Fi interface not found" >&2
+      return 1
+    }
+    networksetup -setairportnetwork "$interface" "$1" "$2"
   else
     echo 'not supported yet'
     exit 1
@@ -47,17 +67,29 @@ wifi_join() {
 
 wifi_off() {
   if [[ "$(uname)" == 'Darwin' ]]; then
-    networksetup -setairportpower en0 off
+    local interface
+    interface="$(wifi_interface)"
+    [[ -n "$interface" ]] || {
+      echo "Wi-Fi interface not found" >&2
+      return 1
+    }
+    networksetup -setairportpower "$interface" off
   else
-    $RFKILL block wifi
+    "${RFKILL[@]}" block wifi
   fi
 }
 
 wifi_on() {
   if [[ "$(uname)" == 'Darwin' ]]; then
-    networksetup -setairportpower en0 on
+    local interface
+    interface="$(wifi_interface)"
+    [[ -n "$interface" ]] || {
+      echo "Wi-Fi interface not found" >&2
+      return 1
+    }
+    networksetup -setairportpower "$interface" on
   else
-    $RFKILL unblock wifi
+    "${RFKILL[@]}" unblock wifi
   fi
 }
 
@@ -74,7 +106,7 @@ wifi_toggle() {
 help() {
   echo 'wifi status                       print wifi status'
   echo 'wifi list                         list networks'
-  echo 'wifi join [username] [password]   join a network'
+  echo 'wifi join SSID PASSWORD   join a network'
   echo 'wifi off                          turn off wifi'
   echo 'wifi on                           turn on wifi'
   echo 'wifi toggle                       turn off wifi, then on'
@@ -98,6 +130,10 @@ elif [[ "$1" == 'list' ]]; then
   make_sure_wifi_is_enabled
   wifi_list
 elif [[ "$1" == 'join' ]]; then
+  if [[ $# -ne 3 ]]; then
+    echo 'usage: wifi join SSID PASSWORD' >&2
+    exit 2
+  fi
   make_sure_wifi_is_enabled
   wifi_join "$2" "$3"
 elif [[ "$1" == 'off' ]]; then
