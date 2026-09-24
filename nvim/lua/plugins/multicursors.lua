@@ -20,8 +20,4 @@ return {
     },
   },
   opts = {},
-  init = function()
-    vim.api.nvim_set_hl(0, "MultiCursor", { link = "St_VisualMode" })
-    vim.api.nvim_set_hl(0, "MultiCursorMain", { link = "IncSearch" })
-  end,
 }

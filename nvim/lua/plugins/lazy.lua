@@ -1,14 +1,9 @@
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    vim.cmd("highlight Normal ctermbg=NONE guibg=NONE")
-    vim.cmd("highlight EndOfBuffer ctermbg=NONE guibg=NONE")
-  end,
-})
-
 return {
   {
     "LazyVim/LazyVim",
+    init = function()
+      require("config.highlights").setup()
+    end,
     opts = {
       -- colorscheme = "tokyonight-moon"
       colorscheme = "rose-pine",

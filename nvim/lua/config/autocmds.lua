@@ -7,13 +7,9 @@ user_command("W", "w", {})
 user_command("Qa", "qa", {})
 user_command("Q", "q", {})
 
-autocmd("TextYankPost", {
-  group = vim.api.nvim_create_augroup("Highlight on yank", { clear = true }),
-  pattern = "*",
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
+-- LazyVim supplies yank highlighting. Lastplace owns cursor restoration so its
+-- exclusions and fold-opening behavior are not bypassed by LazyVim's callback.
+pcall(vim.api.nvim_del_augroup_by_name, "lazyvim_last_loc")
 
 local verbose_log_count = 0
 user_command("ToggleVerboseLogging", function()
@@ -56,21 +52,5 @@ autocmd("FileType", {
   },
   callback = function()
     vim.opt_local.spell = false
-  end,
-})
-
--- Restore cursor position on file open
-autocmd("BufReadPost", {
-  pattern = "*",
-  callback = function()
-    local line = vim.fn.line("'\"")
-    if
-      line > 1
-      and line <= vim.fn.line("$")
-      and vim.bo.filetype ~= "commit"
-      and vim.fn.index({ "xxd", "gitrebase" }, vim.bo.filetype) == -1
-    then
-      vim.cmd('normal! g`"')
-    end
   end,
 })
