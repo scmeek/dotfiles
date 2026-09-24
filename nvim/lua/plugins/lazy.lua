@@ -5,8 +5,7 @@ return {
       require("config.highlights").setup()
     end,
     opts = {
-      -- colorscheme = "tokyonight-moon"
-      colorscheme = "rose-pine",
+      colorscheme = "tokyonight-moon",
     },
   },
 }
