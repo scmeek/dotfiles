@@ -7,7 +7,10 @@ return {
       sidebars = "dark",
       floats = "dark",
       comments = { italic = true },
-      keywords = { italic = false },
+      keywords = {
+        italic = false,
+        bold = true,
+      },
     },
   },
 }
