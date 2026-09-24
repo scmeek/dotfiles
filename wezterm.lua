@@ -5,6 +5,25 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.background = {
+  {
+    source = {
+      File = wezterm.home_dir .. "/.config/wezterm/marine_bg.png",
+    },
+
+    horizontal_align = "Center",
+    vertical_align = "Middle",
+
+    repeat_x = "NoRepeat",
+    repeat_y = "NoRepeat",
+
+    hsb = {
+      hue = 1.0,
+      saturation = 0.75,
+      brightness = 0.20,
+    },
+  },
+}
 config.color_scheme = "Material (base16)"
 config.colors = {
   background = "#020004",
