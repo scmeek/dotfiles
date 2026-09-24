@@ -1,5 +1,4 @@
 local wezterm = require("wezterm")
-local mux = wezterm.mux
 
 local config = {}
 if wezterm.config_builder then
@@ -10,7 +9,11 @@ config.color_scheme = "Material (base16)"
 config.colors = {
 	background = "#020004",
 }
-config.default_prog = { "/bin/zsh", "-l", "-c", "tmux new-session -A -s main" }
+config.default_prog = {
+	"/bin/sh",
+	"-lc",
+	"if command -v tmux >/dev/null 2>&1; then exec tmux new-session -A -s main; else exec zsh -l; fi",
+}
 config.disable_default_key_bindings = true
 config.force_reverse_video_cursor = true
 config.font = wezterm.font("SauceCodePro Nerd Font")
@@ -40,7 +43,7 @@ config.keys = {
 config.macos_window_background_blur = 15
 config.native_macos_fullscreen_mode = true
 config.set_environment_variables = {
-	TERMINFO_DIRS = "~/.local/share/terminfo",
+	TERMINFO_DIRS = (os.getenv("XDG_DATA_HOME") or (os.getenv("HOME") .. "/.local/share")) .. "/terminfo",
 }
 config.scrollback_lines = 10000
 config.term = "wezterm"
