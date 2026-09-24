@@ -55,12 +55,13 @@ ZSH="${XDG_DATA_HOME:-$HOME/.local/share}/oh-my-zsh" RUNZSH=no KEEP_ZSH=yes sh -
 # If submodules haven't been initialized:
 git submodule update --init --recursive
 
+./install
+# Or select a configuration explicitly:
 ./install -c install_macos.conf.yaml
-# or
-./install -c install_linux.conf.yaml
 ```
 
 Notes:
 
 - `./install` selects the macOS or Linux Dotbot configuration automatically; use `-c` to select one explicitly.
 - `zshrc_local` is an ignored machine-local override. Start from `zshrc_local.example` when creating it; existing settings are never overwritten.
+- The repository uses HTTPS URLs for public submodules and TPM. If your global Git configuration rewrites GitHub URLs to SSH, make sure SSH authentication is configured or remove that rewrite.

@@ -1,1 +1,47 @@
-dotbot/tools/git-submodule/install
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+DOTBOT_DIR="dotbot"
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${BASEDIR}"
+: "${HOME:?error: HOME must be set}"
+
+export XDG_DATA_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}"
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}"
+export XDG_STATE_HOME="${XDG_STATE_HOME:-${HOME}/.local/state}"
+export XDG_CACHE_HOME="${XDG_CACHE_HOME:-${HOME}/.cache}"
+export SM_XDG_BIN_HOME="${SM_XDG_BIN_HOME:-${HOME}/.local/bin}"
+export SM_XDG_BIN_BIN_HOME="${SM_XDG_BIN_BIN_HOME:-${SM_XDG_BIN_HOME}/bin}"
+export NPM_CONFIG_USERCONFIG="${NPM_CONFIG_USERCONFIG:-${XDG_CONFIG_HOME}/npm/npmrc}"
+export PYTHONSTARTUP="${PYTHONSTARTUP:-${XDG_CONFIG_HOME}/python/pythonrc}"
+export RIPGREP_CONFIG_PATH="${RIPGREP_CONFIG_PATH:-${XDG_CONFIG_HOME}/ripgrep/ripgreprc}"
+export STARSHIP_CONFIG="${STARSHIP_CONFIG:-${XDG_CONFIG_HOME}/starship/starship.toml}"
+export ZSHRC_LOCAL_FILE="${ZSHRC_LOCAL_FILE:-${HOME}/.zshrc_local}"
+
+config_selected=false
+for arg in "$@"; do
+  case "${arg}" in
+    -c|--config|--config=*) config_selected=true ;;
+  esac
+done
+
+dotbot_args=("$@")
+if [[ "${config_selected}" == false ]]; then
+  case "$(uname -s)" in
+    Darwin) default_config="install_macos.conf.yaml" ;;
+    Linux) default_config="install_linux.conf.yaml" ;;
+    *)
+      printf 'error: unsupported OS; pass an explicit Dotbot config with -c\n' >&2
+      exit 2
+      ;;
+  esac
+  dotbot_args=(-c "${default_config}" "${dotbot_args[@]}")
+fi
+
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+exec "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" "${dotbot_args[@]}"

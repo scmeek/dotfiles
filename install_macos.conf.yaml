@@ -36,26 +36,41 @@
     "${HOME}/Brewfile": brewfile_macos
 
 - shell:
-    - command: TPM_DIR=${XDG_CONFIG_HOME}/tmux/plugins/tpm; git -C "$TPM_DIR" pull || git clone git@github.com:tmux-plugins/tpm.git "$TPM_DIR"
+    - command: |
+        TPM_DIR="${XDG_CONFIG_HOME}/tmux/plugins/tpm"
+        if [ -d "${TPM_DIR}/.git" ]; then
+          exit 0
+        fi
+        if [ -e "${TPM_DIR}" ]; then
+          echo "TPM path exists but is not a Git checkout: ${TPM_DIR}" >&2
+          exit 1
+        fi
+        mkdir -p "$(dirname "${TPM_DIR}")"
+        git clone https://github.com/tmux-plugins/tpm.git "${TPM_DIR}"
       description: Installing TMUX plugin manager. To install TMUX plugins, open TMUX and press `prefix + I`
       quiet: true
       stderr: true
 
 - shell:
-    - command: tempfile=$(mktemp) && curl -o $tempfile https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo && tic -x -o ~/.local/share/terminfo $tempfile && rm $tempfile
+    - command: |
+        tempfile=$(mktemp)
+        trap 'rm -f "${tempfile}"' EXIT
+        curl --fail --silent --show-error --location --output "${tempfile}" https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo
+        mkdir -p "${XDG_DATA_HOME}/terminfo"
+        tic -x -o "${XDG_DATA_HOME}/terminfo" "${tempfile}"
       description: Install wezterm terminfo file
       quiet: true
       stderr: true
 
 - shell:
-    - command: brew bundle install --file=$HOME/Brewfile
+    - command: brew bundle install --file="${HOME}/Brewfile"
       description: Installing homebrew packages
       quiet: true
       stdout: true
       stderr: true
 
 - shell:
-    - command: fzf --zsh > $HOME/.fzf.zsh
+    - command: fzf --zsh > "${HOME}/.fzf.zsh"
       description: Setting up fzf auto-completion, like backwards search, for Zsh
       quiet: true
       stdout: true
