@@ -204,7 +204,7 @@ alias brewsync="brew update && brew upgrade && brew cleanup && brew doctor && br
 alias e="$VISUAL"
 alias cd="cd_activate_ls"
 alias cd..="cd .."
-alias cdi="zi"
+(( $+functions[zi] )) && alias cdi="zi"
 alias ls='eza --across --group-directories-first'
 alias ll='eza --long --group --header --changed --group-directories-first'
 alias la='eza --long --group --header --all --changed --group-directories-first'
@@ -260,7 +260,11 @@ attempt_activate_venv() {
 # https://stackoverflow.com/a/56309561
 cd_activate_ls() {
   # z is a cd replacement
-  if ! z "$@"; then
+  if (( $+functions[z] )); then
+    if ! z "$@"; then
+      return
+    fi
+  elif ! builtin cd -- "$@"; then
     return
   fi
 
