@@ -3,6 +3,6 @@ return {
   "kshenoy/vim-signature",
   event = "VeryLazy",
   init = function()
-    vim.api.nvim_set_hl(0, "SignatureMarkText", { link = "DiffAdd" })
+    vim.g.SignatureMarkTextHL = "DiffAdd" -- Use the plugin's setting so its own ColorScheme handler cannot undo it.
   end,
 }
