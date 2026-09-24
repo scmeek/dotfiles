@@ -2,9 +2,8 @@
 --max-columns=150
 --max-columns-preview
 
-# Search hidden and ignored files / directories (e.g. dotfiles) by default
+# Search hidden files / directories (e.g. dotfiles) by default; respect ignore files
 --hidden
---no-ignore
 
 # Using glob patterns to include/exclude files or folders
 --glob=!.git/*
