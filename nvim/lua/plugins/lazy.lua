@@ -4,8 +4,5 @@ return {
     init = function()
       require("config.highlights").setup()
     end,
-    opts = {
-      colorscheme = "tokyonight-moon",
-    },
   },
 }
