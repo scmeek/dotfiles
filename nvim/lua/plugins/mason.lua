@@ -11,6 +11,7 @@ return {
       "clangd",
       "codelldb",
       "css-lsp",
+      "debugpy", -- nvim-dap-python (from the Python extra) uses debugpy-adapter
       "eslint-lsp",
       --"glsl_analyzer",
       "html-lsp",
