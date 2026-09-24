@@ -1,7 +1,64 @@
-local map = vim.keymap.set
-
 return {
   "mfussenegger/nvim-dap",
+  dependencies = { "rcarriga/nvim-dap-ui" },
+  keys = {
+    {
+      "<leader>dl",
+      function()
+        require("dap").step_into()
+      end,
+      desc = "Debugger Step into",
+    },
+    {
+      "<leader>dj",
+      function()
+        require("dap").step_over()
+      end,
+      desc = "Debugger Step over",
+    },
+    {
+      "<leader>dk",
+      function()
+        require("dap").step_out()
+      end,
+      desc = "Debugger Step out",
+    },
+    {
+      "<leader>dc",
+      function()
+        require("dap").continue()
+      end,
+      desc = "Debugger Continue",
+    },
+    {
+      "<leader>db",
+      function()
+        require("dap").toggle_breakpoint()
+      end,
+      desc = "Debugger Toggle breakpoint",
+    },
+    {
+      "<leader>dd",
+      function()
+        require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+      end,
+      desc = "Debugger Set conditional breakpoint",
+    },
+    {
+      "<leader>de",
+      function()
+        require("dap").terminate()
+      end,
+      desc = "Debugger Reset",
+    },
+    {
+      "<leader>dr",
+      function()
+        require("dap").run_last()
+      end,
+      desc = "Debugger Run last",
+    },
+  },
   config = function()
     local dap, dapui = require("dap"), require("dapui")
     dap.listeners.before.attach.dapui_config = function()
@@ -16,19 +73,5 @@ return {
     dap.listeners.before.event_exited.dapui_config = function()
       dapui.close()
     end
-
-    map("n", "<leader>dl", "<cmd>lua require'dap'.step_into()<CR>", { desc = "debugger Step into" })
-    map("n", "<leader>dj", "<cmd>lua require'dap'.step_over()<CR>", { desc = "debugger Step over" })
-    map("n", "<leader>dk", "<cmd>lua require'dap'.step_out()<CR>", { desc = "debugger Step out" })
-    map("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", { desc = "debugger Continue" })
-    map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "debugger Toggle breakpoint" })
-    map(
-      "n",
-      "<leader>dd",
-      "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
-      { desc = "debugger Set conditional breakpoint" }
-    )
-    map("n", "<leader>de", "<cmd>lua require'dap'.terminate()<CR>", { desc = "debugger Reset" })
-    map("n", "<leader>dr", "<cmd>lua require'dap'.run_last()<CR>", { desc = "debugger Run last" })
   end,
 }
