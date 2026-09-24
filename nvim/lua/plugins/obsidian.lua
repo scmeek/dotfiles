@@ -1,165 +1,101 @@
 local notes_path = vim.fn.expand("~") .. [[/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes]]
 
 return {
-  "epwalsh/obsidian.nvim",
+  "obsidian-nvim/obsidian.nvim",
   version = "*",
   lazy = false,
-  event = {
-    "BufReadPre '" .. notes_path .. "/*.md'",
-    "BufNewFile '" .. notes_path .. "/*.md'",
-  },
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "ibhagwan/fzf-lua", -- Optional
-  },
+  dependencies = { "ibhagwan/fzf-lua" },
+  init = function()
+    vim.g.obsidian_default_keymap = false
+  end,
   opts = {
-    workspaces = {
-      {
-        name = "notes",
-        path = notes_path,
-      },
-    },
-
+    legacy_commands = true,
+    workspaces = { { name = "notes", path = notes_path } },
     daily_notes = {
       folder = "journal",
-      date_format = "%Y-%m-%d",
-      alias_format = "%B %-d, %Y",
+      date_format = "YYYY-MM-DD",
+      alias_format = "MMMM D, YYYY",
       default_tags = { "daily-note" },
-      template = nil,
     },
-
-    completion = {
-      nvim_cmp = false,
-      min_chars = 2,
-    },
-
-    mappings = {
-      ["gf"] = {
-        action = function()
-          return require("obsidian").util.gf_passthrough()
-        end,
-        opts = { noremap = false, expr = true, buffer = true },
-      },
-      ["<leader>ch"] = {
-        action = function()
-          return require("obsidian").util.toggle_checkbox()
-        end,
-        opts = { buffer = true },
-      },
-      ["<cr>"] = {
-        action = function()
-          return require("obsidian").util.smart_action()
-        end,
-        opts = { buffer = true, expr = true },
-      },
-    },
-
+    completion = { min_chars = 2 },
     new_notes_location = "notes_subdir",
-
-    ---@param title string|?
-    ---@return string
-    note_id_func = function(title)
-      local dlm = "-"
-      local sdlm = "_"
-
-      local suffix = ""
-      if title ~= nil then
-        suffix = title:gsub(" ", dlm):gsub("[^A-Za-z0-9-]", ""):lower()
-      else
-        -- If title is nil, just add 4 random uppercase letters to the suffix.
-        for _ = 1, 4 do
-          suffix = suffix .. string.char(math.random(65, 90))
+    note = { template = vim.NIL },
+    note_id_func = function(title, dir)
+      local base = title and title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower() or ""
+      if base == "" then
+        base = require("obsidian.builtin").zettel_id()
+      end
+      local candidate, suffix = base, 2
+      local Path = require("obsidian.path")
+      while dir and (Path.new(dir) / candidate):with_suffix(".md", true):exists() do
+        candidate = string.format("%s-%d", base, suffix)
+        suffix = suffix + 1
+      end
+      return candidate
+    end,
+    link = { style = "wiki" },
+    frontmatter = {
+      enabled = true,
+      func = function(note)
+        if note.title then
+          note:add_alias(note.title)
         end
-      end
 
-      return suffix
-    end,
+        local out = {
+          title = note.title,
+          aliases = note.aliases,
+          tags = note.tags,
+          created = os.date("%Y-%m-%dT%H:%M:%S"),
+          modified = os.date("%Y-%m-%dT%H:%M:%S"),
+        }
 
-    markdown_link_func = function(opts)
-      return require("obsidian.util").markdown_link(opts)
-    end,
-
-    preferred_link_style = "wiki",
-    disable_frontmatter = false,
-
-    note_frontmatter_func = function(note)
-      -- Add the title of the note as an alias.
-      if note.title then
-        note:add_alias(note.title)
-      end
-
-      local out = {
-        title = note.title,
-        aliases = note.aliases,
-        tags = note.tags,
-        created = os.date("%Y-%m-%dT%H:%M:%S"),
-        modified = os.date("%Y-%m-%dT%H:%M:%S"),
-      }
-
-      -- `note.metadata` contains any manually added fields in the frontmatter.
-      -- So here we just make sure those fields are kept in the frontmatter.
-      if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-        for k, v in pairs(note.metadata) do
-          out[k] = v
+        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+          for k, v in pairs(note.metadata) do
+            out[k] = v
+          end
         end
-      end
 
-      -- Existing metadata preserves created; modified reflects this write.
-      out.modified = os.date("%Y-%m-%dT%H:%M:%S")
-      return out
-    end,
-
-    ---@param url string
-    follow_url_func = function(url)
-      vim.ui.open(url)
-    end,
-
-    open_app_foreground = false,
+        out.modified = os.date("%Y-%m-%dT%H:%M:%S")
+        return out
+      end,
+    },
     picker = { name = "fzf-lua" },
-    sort_by = "modified",
-    sort_reversed = true,
-    search_max_lines = 1000,
+    search = { sort_by = "modified", sort_reversed = true, max_lines = 1000 },
     open_notes_in = "current",
-
+    open = {
+      func = function(uri)
+        if vim.fn.has("macunix") == 1 then
+          return vim.ui.open(uri, { cmd = { "open", "-g" } })
+        end
+        return vim.ui.open(uri)
+      end,
+    },
     callbacks = {
-      ---@param client obsidian.Client
-      post_setup = function(client) end,
-
-      ---@param client obsidian.Client
-      ---@param note obsidian.Note
-      enter_note = function(client, note) end,
-
-      ---@param client obsidian.Client
-      ---@param note obsidian.Note
-      leave_note = function(client, note) end,
-
-      ---@param client obsidian.Client
-      ---@param note obsidian.Note
-      pre_write_note = function(client, note) end,
-
-      ---@param client obsidian.Client
-      ---@param workspace obsidian.Workspace
-      post_set_workspace = function(client, workspace) end,
+      enter_note = function()
+        vim.keymap.set("n", "gf", function()
+          return require("obsidian.api").cursor_link() and "<cmd>Obsidian follow_link<cr>" or "gf"
+        end, { buffer = true, expr = true, desc = "Follow note link" })
+        vim.keymap.set("n", "<leader>ch", function()
+          require("obsidian.actions").toggle_checkbox()
+        end, { buffer = true, desc = "Toggle checkbox" })
+        vim.keymap.set("n", "<CR>", function()
+          return require("obsidian.actions").smart_action()
+        end, { buffer = true, expr = true, desc = "Obsidian smart action" })
+      end,
     },
-
-    ui = {
-      enable = false,
-    },
-
+    ui = { enable = false },
+    footer = { enabled = false },
+    statusline = { enabled = false },
     attachments = {
-      img_folder = "assets/imgs",
-
-      ---@return string
+      folder = "assets/imgs",
       img_name_func = function()
         return string.format("%s-", os.time())
       end,
-
-      ---@param client obsidian.Client
-      ---@param path obsidian.Path the absolute path to the image file
-      ---@return string
-      img_text_func = function(client, path)
-        path = client:vault_relative_path(path) or path
-        return string.format("![%s](%s)", path.name, path)
+      img_text_func = function(path)
+        local Path = require("obsidian.path")
+        local image_path = Path.new(path):resolve()
+        local ok, relative = pcall(image_path.relative_to, image_path, Obsidian.workspace.path)
+        return string.format("![%s](%s)", image_path.name, ok and relative or image_path)
       end,
     },
   },
