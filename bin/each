@@ -52,17 +52,14 @@ def main():
     delimiters = ["\n", "\r"]
     delimiters_re = delimiters_to_re(delimiters)
 
-    # TODO: Don't read everything into memory
-    all_stdin = sys.stdin.read()
-    command_args = delimiters_re.split(all_stdin)
-
-    for command_arg in command_args:
-        if command_arg == "":
-            continue
-        run(
-            command=args.command,
-            command_arg=command_arg,
-        )
+    for line in sys.stdin:
+        for command_arg in delimiters_re.split(line):
+            if command_arg == "":
+                continue
+            run(
+                command=args.command,
+                command_arg=command_arg,
+            )
 
 
 if __name__ == "__main__":
