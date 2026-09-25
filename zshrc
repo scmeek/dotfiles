@@ -251,11 +251,14 @@ rgfa() {
 }
 
 attempt_activate_venv() {
-  local -a env_paths=("./.venv" "${additional_env_paths[@]}")
+  local -a env_paths=("./.venv" "./venv" "${additional_env_paths[@]}")
   local env_path activate_file_candidate
 
   for env_path in "${env_paths[@]}"; do
+    [[ -z "${env_path}" ]] && continue
+
     activate_file_candidate="${env_path}/bin/activate"
+
     if [[ -f "${activate_file_candidate}" ]]; then
       # shellcheck disable=SC1091
       source "${activate_file_candidate}"
