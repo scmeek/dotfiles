@@ -24,6 +24,7 @@ brew "luarocks"                             # lua package manager
 brew "neovim"                               # text editor
 brew "nnn"                                  # TUI file manager
 brew "node"                                 # nodejs
+brew "opencode"                             # LLM code editor
 brew "pandoc"                               # document converter
 brew "pinentry-mac"                         # macOS integration for GPG
 brew "poppler"                              # PDF tools (yazi dep)
@@ -71,6 +72,7 @@ cask "mactex"                               # LaTeX
 cask "musescore"                            # music notation
 cask "netnewswire"                          # RSS reader
 cask "obsidian"                             # notes
+cask "ollama-app"                           # LLM GUI
 cask "openmtp"                              # Media Transfer Protocol app
 cask "qflipper"                             # Flipper Zero GUI
 cask "raycast"                              # macOS launcher (spotlight replacement)
