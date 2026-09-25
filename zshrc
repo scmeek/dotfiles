@@ -135,7 +135,13 @@ fi
 [[ -d "${HOME}/.docker/completions" ]] && fpath=("${HOME}/.docker/completions" $fpath)
 
 # shellcheck disable=SC2034
-plugins=()
+plugins=(
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  encode64
+  extract
+  history
+)
 
 # shellcheck disable=SC1091
 if [[ -r "${ZSH}/oh-my-zsh.sh" ]]; then
