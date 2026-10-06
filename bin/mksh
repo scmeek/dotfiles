@@ -10,12 +10,21 @@ elif [ -e "$1" ]; then
   exit 1
 fi
 
-{
-  echo '#!/usr/bin/env bash'
-  echo ''
-  echo 'set -euo pipefail'
-  echo ''
-} >"$1"
+cat >"$1" <<'EOF'
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+main() {
+    for arg in "$@"; do
+        echo "$arg"
+    done
+
+    echo "Hello, world!"
+}
+
+main "$@"
+EOF
 
 chmod u+x "$1"
 
