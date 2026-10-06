@@ -5,6 +5,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.animation_fps = 24
 config.background = {
   {
     source = {
@@ -28,11 +29,15 @@ config.color_scheme = "Material (base16)"
 config.colors = {
   background = "#020004",
 }
+config.cursor_blink_rate = 1000
+config.cursor_blink_ease_in = "EaseOut"
+config.cursor_blink_ease_out = "EaseOut"
 config.default_prog = {
   "/bin/sh",
   "-lc",
   "if command -v tmux >/dev/null 2>&1; then exec tmux new-session -A -s main; else exec zsh -l; fi",
 }
+config.default_cursor_style = "BlinkingBar"
 config.disable_default_key_bindings = true
 config.force_reverse_video_cursor = true
 config.font = wezterm.font("Terminess Nerd Font")
