@@ -17,6 +17,7 @@ local options = {
   foldlevelstart = 99, -- Start unfolded
   grepprg = "rg --vimgrep --no-heading --smart-case --hidden",
   grepformat = "%f:%l:%c:%m",
+  guicursor = "n-v-c-sm:block-blinkwait500-blinkon500-blinkoff500,i-ci-ve:ver25,r-cr-o:hor20",
   hlsearch = false,
   inccommand = "split", -- Live substitution
   incsearch = true,
