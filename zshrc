@@ -153,6 +153,40 @@ else
   compinit -d "${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
 fi
 
+# Status-aware horizontal rule after each command
+autoload -Uz add-zsh-hook
+
+typeset -g _status_rule_started=0
+typeset -g _status_rule_pending=0
+
+_status_rule_preexec() {
+  _status_rule_pending=1
+}
+
+_status_rule_precmd() {
+  local exit_code=$?
+
+  if ((!_status_rule_started)); then
+    _status_rule_started=1
+    return 0
+  fi
+
+  local line="${(l:$COLUMNS::─:)}"
+
+  if ((!_status_rule_pending)); then
+    print -P "%F{8}${line}%f"
+  elif ((exit_code == 0)); then
+    print -P "%F{green}${line}%f"
+  else
+    print -P "%B%F{red}${line}%f%b"
+  fi
+
+  _status_rule_pending=0
+}
+
+add-zsh-hook preexec _status_rule_preexec
+add-zsh-hook precmd _status_rule_precmd
+
 #--------------------------------------------------------------------------
 # Completion
 #--------------------------------------------------------------------------
@@ -367,23 +401,6 @@ git_firefight() {
 if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
-
-# Status-aware horizontal rule after each command
-precmd() {
-  local exit_code=$?
-
-  local line="${(l:$COLUMNS::⎯:)}"
-
-  if [[ $exit_code -eq 0 ]]; then
-    print -P "%F{green}${line}%f"
-  else
-    print -P "%F{red}${line}%f"
-  fi
-}
-
-preexec() {
-  _last_command="$1"
-}
 
 #--------------------------------------------------------------------------
 # Environment-specific configuration
