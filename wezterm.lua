@@ -72,6 +72,7 @@ config.keys = {
   { key = "f", mods = "CTRL|SUPER", action = wezterm.action.ToggleFullScreen },
   { key = "Enter", mods = "ALT", action = wezterm.action.ToggleFullScreen },
 }
+config.line_height = 1.1
 config.macos_window_background_blur = 15
 config.native_macos_fullscreen_mode = true
 config.set_environment_variables = {
