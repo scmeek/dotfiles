@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+spectrum_ls() {
+  local i
+  for ((i = 0; i < 256; i++)); do
+    printf '\033[38;5;%dm%03d: %s\033[0m\n' \
+      "$i" "$i" "${SPECTRUM_TEXT:-████████████████████████████████████████}"
+  done
+}
+
+terminal_colors() {
+  local i
+  for ((i = 0; i < 16; i++)); do
+    printf '\033[48;5;%dm\033[38;5;15m %3d \033[0m ' "$i" "$i"
+    if (((i + 1) % 8 == 0)); then
+      printf '\n'
+    fi
+  done
+}
+
+main() {
+  spectrum_ls
+  terminal_colors
+}
+
+main "$@"
