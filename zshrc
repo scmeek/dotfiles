@@ -174,7 +174,7 @@ _status_rule_precmd() {
   local line="${(l:$COLUMNS::─:)}"
 
   if ((!_status_rule_pending)); then
-    print -P "%F{8}${line}%f"
+    print -P "\n%F{8}${line}%f"
   elif ((exit_code == 0)); then
     print -P "%F{green}${line}%f"
   else
