@@ -29,7 +29,7 @@ config.color_scheme = "Material (base16)"
 config.cursor_blink_rate = 1000
 config.cursor_blink_ease_in = "EaseOut"
 config.cursor_blink_ease_out = "EaseOut"
-config.default_cursor_style = "BlinkingBar"
+config.default_cursor_style = "BlinkingBlock"
 config.default_prog = {
   "/bin/sh",
   "-lc",
