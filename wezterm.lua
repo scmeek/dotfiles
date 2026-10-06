@@ -26,9 +26,6 @@ config.background = {
   },
 }
 config.color_scheme = "Material (base16)"
-config.colors = {
-  background = "#020004",
-}
 config.cursor_blink_rate = 1000
 config.cursor_blink_ease_in = "EaseOut"
 config.cursor_blink_ease_out = "EaseOut"
