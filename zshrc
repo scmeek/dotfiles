@@ -166,14 +166,14 @@ _status_rule_preexec() {
 _status_rule_precmd() {
   local exit_code=$?
 
-  if ((!_status_rule_started)); then
+  if ((! _status_rule_started)); then
     _status_rule_started=1
     return 0
   fi
 
   local line="${(l:$COLUMNS::─:)}"
 
-  if ((!_status_rule_pending)); then
+  if ((! _status_rule_pending)); then
     print -P "\n%F{8}${line}%f"
   elif ((exit_code == 0)); then
     print -P "%F{green}${line}%f"
@@ -274,7 +274,6 @@ alias doawake="caffeinate -dimsu &" # Prevent sleep (`caffeine` required)
 
 alias p="python3"
 alias sz="echo 'Sourcing \".zshrc\"...'; source "${HOME}"/.zshrc"
-alias y="yazi"
 alias ez='"${EDITOR}" "${HOME}"/.zshrc'
 
 #--------------------------------------------------------------------------
@@ -392,6 +391,19 @@ git_pace() {
 
 git_firefight() {
   git log --oneline --since="1 year ago" | grep -iE 'revert|hotfix|emergency|rollback'
+}
+
+# Yazi
+# https://yazi-rs.github.io/docs/quick-start/#shell-wrapper
+# Change the current working directory when exiting
+# `q`` to quit, `Q` to quit without changing CWD
+function y() {
+  local tmp cwd
+  tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd <"$tmp"
+  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
+  command rm -f -- "$tmp"
 }
 
 #--------------------------------------------------------------------------
