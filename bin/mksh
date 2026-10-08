@@ -13,14 +13,76 @@ fi
 cat >"$1" <<'EOF'
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -e          # Exit if any command returns non-zero status
+set -u          # Unset variables error when referenced
+set -o pipefail # Fail pipelines if any commands fail
+
+if [[ -t 1 && -z "${NO_COLOR:-}" ]]; then
+  readonly RED=$'\033[0;31m'
+  readonly GREEN=$'\033[0;32m'
+  readonly YELLOW=$'\033[0;33m'
+  readonly BLUE=$'\033[0;34m'
+  readonly MAGENTA=$'\033[0;35m'
+  readonly RESET=$'\033[0m'
+else
+  readonly RED=''
+  readonly GREEN=''
+  readonly YELLOW=''
+  readonly BLUE=''
+  readonly MAGENTA=''
+  readonly RESET=''
+fi
+
+_print() {
+  local color="$1"
+  local prefix="$2"
+  shift 2
+
+  printf '%s%s' "$color" "$prefix"
+
+  for message in "$@"; do
+    printf '%s' "$message"
+  done
+
+  printf '%s\n' "$RESET"
+}
+
+info() {
+  _print "$YELLOW" '==> ' "$@"
+}
+
+note() {
+  _print "$BLUE" '' "$@"
+}
+
+warn() {
+  _print "$MAGENTA" '⚠️  ' "$@"
+}
+
+success() {
+  _print "$GREEN" '✅ ' "$@"
+}
+
+error() {
+  _print "$RED" '🚨 ' "$@"
+}
+
+die() {
+  error "$@"
+  exit 1
+}
+
+exit_success() {
+  _print "$GREEN" '🎉 ' "$@"
+  exit 0
+}
 
 main() {
     for arg in "$@"; do
         echo "$arg"
     done
 
-    echo "Hello, world!"
+    die "Unimplemented!"
 }
 
 main "$@"
