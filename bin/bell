@@ -3,11 +3,23 @@ set -euo pipefail
 
 exit_code="${1:-0}"
 
-tput bel
+if [[ -n "${WSL_DISTRO_NAME:-}" ]]; then
+  # Windows (WSL) - Play configured system event sounds
+  sound="$( ((exit_code)) && echo DeviceFail || echo Notification.IM)"
+  powershell.exe -NoProfile -Command \
+    "\$path = (Get-Item 'HKCU:\AppEvents\Schemes\Apps\.Default\\${sound}\.Current').GetValue(''); (New-Object System.Media.SoundPlayer ([Environment]::ExpandEnvironmentVariables(\$path))).PlaySync()"
 
-if ((exit_code != 0)); then
-  sleep 0.3
+elif [[ "$(uname)" == "Darwin" ]]; then
+  # macOS - Play built-in system sounds
+  afplay "/System/Library/Sounds/$( ((exit_code)) && echo Basso || echo Glass).aiff"
+
+elif command -v canberra-gtk-play &>/dev/null; then
+  # Linux - Play sounds using the system sound theme
+  canberra-gtk-play -i "$( ((exit_code)) && echo dialog-error || echo complete)"
+
+else
+  # Other platforms - Fall back to terminal bell
   tput bel
-fi
+fi &>/dev/null || true
 
 exit "$exit_code"
