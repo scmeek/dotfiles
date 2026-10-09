@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
-set -e
-set -u
-set -o pipefail
+set -euo pipefail
+
+exit_code="${1:-0}"
 
 tput bel
+
+if ((exit_code != 0)); then
+  sleep 0.3
+  tput bel
+fi
+
+exit "$exit_code"

@@ -276,6 +276,8 @@ alias p="python3"
 alias sz="echo 'Sourcing \".zshrc\"...'; source "${HOME}"/.zshrc"
 alias ez='"${EDITOR}" "${HOME}"/.zshrc'
 
+alias -g B='; bell $?'
+
 #--------------------------------------------------------------------------
 # Custom functions
 #--------------------------------------------------------------------------
