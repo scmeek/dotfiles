@@ -45,6 +45,8 @@ export ZSHRC_LOCAL_FILE="${ZSHRC_LOCAL_FILE:-${HOME}/.zshrc_local}"
 # General config
 #--------------------------------------------------------------------------
 
+bindkey '^_' clear-screen
+
 path=("${SM_XDG_BIN_HOME}" "${SM_XDG_BIN_BIN_HOME}" $path)
 path=("${DOCKER_CONFIG}" $path)
 if command -v npm >/dev/null 2>&1; then
