@@ -1,5 +1,7 @@
 local data_dir = vim.fn.stdpath("data")
 
+vim.g.root_spec = { "cwd" }
+
 local options = {
   autoindent = true,
   backup = true,
