@@ -22,6 +22,7 @@
     "${XDG_CONFIG_HOME}/bat/config": batconfig
     "${XDG_CONFIG_HOME}/git/config": git/config
     "${XDG_CONFIG_HOME}/git/ignore": git/ignore
+    "${XDG_CONFIG_HOME}/yazi": yazi
     "${NPM_CONFIG_USERCONFIG}": npmrc
     "${PYTHONSTARTUP}": pythonrc
     "${RIPGREP_CONFIG_PATH}": ripgreprc

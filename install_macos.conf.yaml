@@ -22,6 +22,7 @@
     "${XDG_CONFIG_HOME}/bat/config": batconfig
     "${XDG_CONFIG_HOME}/git/config": git/config
     "${XDG_CONFIG_HOME}/git/ignore": git/ignore
+    "${XDG_CONFIG_HOME}/yazi": yazi
     "${HOME}/Library/Application Support/halloy/config.toml": halloy.toml
     "${HOME}/.gnupg": ${XDG_DATA_HOME}/gnupg
     "${NPM_CONFIG_USERCONFIG}": npmrc
