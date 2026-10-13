@@ -39,5 +39,13 @@ return {
     for filetype, names in pairs(formatters) do
       opts.formatters_by_ft[filetype] = names
     end
+
+    opts.formatters = opts.formatters or {}
+    opts.formatters.rustfmt =
+      vim.tbl_deep_extend("force", opts.formatters.rustfmt or {}, {
+        cwd = function(_, ctx)
+          return ctx.dirname
+        end,
+      })
   end,
 }
