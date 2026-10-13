@@ -3,24 +3,19 @@
 return {
   "emrearmagan/atlas.nvim",
   dependencies = {
-    "nvim-tree/nvim-web-devicons", -- optional but recommended
-    "esmuellert/codediff.nvim", -- optional (PullRequest diff)
-    "sindrets/diffview.nvim", -- optional; or "dlyongemallo/diffview-plus.nvim"
+    "nvim-tree/nvim-web-devicons",
+    "esmuellert/codediff.nvim",
+    "dlyongemallo/diffview-plus.nvim",
   },
   lazy = false,
-  -- See Configuration below
-  ---@type AtlasConfig
   opts = {
     ui = {
-      -- Set either to false to keep your existing statusline.
       statusline = {
         atlas = true, -- Dashboards, details, and other non-diff Atlas views.
-        diff = true, -- Diff and review views.
+        diff = true,
       },
-      -- "auto", "default", "snacks", or "fzf-lua".
-      picker = "auto",
-      -- Make the main Atlas dashboard a listed buffer.
-      listed_buffer = false,
+      picker = "snacks", -- "auto", "default", "snacks", or "fzf-lua".
+      listed_buffer = true,
     },
 
     providers = {
@@ -29,40 +24,13 @@ return {
         -- hostname = "github.company.com", -- Defaults to GH_HOST, then github.com.
         cache_ttl = 300, -- Set to 0 to disable caching.
       },
-
-      ------@type AtlasGitLabConfig
-      ---gitlab = {
-      ---  base_url = "https://gitlab.com",
-      ---  -- Personal Access Token with `api` scope:
-      ---  -- https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html
-      ---  token = vim.env.GITLAB_TOKEN,
-      ---  cache_ttl = 300, -- Set to 0 to disable caching.
-      ---},
-
-      ------@type AtlasBitbucketConfig
-      ---bitbucket = {
-      ---  user = vim.env.BITBUCKET_USER,
-      ---  token = vim.env.BITBUCKET_TOKEN,
-      ---  cache_ttl = 300, -- Set to 0 to disable caching.
-      ---},
-
-      ------@type AtlasJiraConfig
-      ---jira = {
-      ---  base_url = "https://your-site.atlassian.net",
-      ---  email = "you@example.com", -- Required for basic authentication only.
-      ---  --- See: https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/
-      ---  token = "your_jira_api_token",
-      ---  auth_method = "basic", -- "basic" or "bearer", defaults to "basic". If using bearer, set `token` to your API token.
-      ---  api_type = "cloud", -- either "cloud" or "server", defaults to "cloud". Cloud API is v3, server API is v2
-      ---  cache_ttl = 300, -- Set to 0 to disable caching.
-      ---},
     },
 
     pulls = {
       delete_notes = false, -- Delete notes after approval or merge.
-      default_merge_method = "merge", -- "merge" or "squash".
+      default_merge_method = "squash",
       default_delete_source_branch = false,
-      git_transport = "https", -- "https" or "ssh" for Atlas-managed Git remotes.
+      git_transport = "ssh",
 
       description = {
         include_summary = true,
@@ -71,7 +39,6 @@ return {
         include_diffstat = false,
       },
 
-      -- Replaces the built-in Conventional Comments templates.
       comment_templates = {
         insert_mode = true, -- Enter Insert mode after applying a template.
         items = {
@@ -116,22 +83,21 @@ return {
           ignore = { ".git/**", ".jj/**" },
         },
       },
-      -- repo_config = {
-      --   -- Maps `namespace/repo` to local paths. Used for checkout, diffs, and custom actions.
-      --   paths = {
-      --     ["your-workspace/*"] = "~/code/repos/*",
-      --     ["your-workspace/atlas"] = "~/code/atlas",
-      --     ["group/subgroup/*"] = "~/code/subgroup/*",
-      --   },
-      --   settings = {
-      --     ["your-workspace/atlas"] = {
-      --       readme = "README.md", -- optional, defaults to README.md
-      --       pr_template = ".github/pull_request_template.md", -- optional, defaults to .github/pull_request_template.md
-      --       merge_method = "squash", -- Overrides default_merge_method.
-      --       delete_source_branch = true, -- Overrides default_delete_source_branch when merging.
-      --     },
-      --   },
-      -- },
+      repo_config = {
+        -- Maps `namespace/repo` to local paths. Used for checkout, diffs, and custom actions.
+        paths = {
+          ["ASUS/*"] = "~/source/frigg/*",
+          ["ASUS/frigg"] = "~/code/frigg",
+        },
+        -- settings = {
+        --   ["your-workspace/atlas"] = {
+        --     readme = "README.md", -- optional, defaults to README.md
+        --     pr_template = ".github/pull_request_template.md", -- optional, defaults to .github/pull_request_template.md
+        --     merge_method = "squash", -- Overrides default_merge_method.
+        --     delete_source_branch = true, -- Overrides default_delete_source_branch when merging.
+        --   },
+        -- },
+      },
       custom_actions = {}, -- See :help atlas-custom-actions.
     },
 
