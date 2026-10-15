@@ -21,7 +21,6 @@ return {
       "lua-language-server",
       "prettier",
       "pyright",
-      "rust-analyzer",
       "shellcheck",
       "shfmt",
       "stylua",
