@@ -1,3 +1,6 @@
+-- Add Mason binaries directory to Neovim's internal PATH
+vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
+
 return {
   "mason-org/mason.nvim",
   opts = {
