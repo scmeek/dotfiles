@@ -4,7 +4,7 @@
   programs.starship = {
     enable = true;
 
-    enableZshIntegration = false;
+    enableZshIntegration = true;
   };
 
   xdg.configFile."starship/starship.toml".source =
