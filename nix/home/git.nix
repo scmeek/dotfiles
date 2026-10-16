@@ -4,6 +4,11 @@
   programs.git = {
     enable = true;
 
+    includes = [
+      { path = "${../../git/aliases}"; }
+      { path = "${../../gitalias/gitalias.txt}"; }
+    ];
+
     settings = {
       user = {
         name = "scmeek";
@@ -96,11 +101,6 @@
         cl = "clone";
         pu = "push";
       };
-
-      includes = [
-        { path = "${../../git/aliases}"; }
-        { path = "${../../gitalias/gitalias.txt}"; }
-      ];
     };
   };
 
