@@ -2,6 +2,7 @@
 
 {
   programs.zsh = {
+    autosuggestion.enable = true;
     enable = true;
     enableCompletion = true;
 
@@ -14,6 +15,14 @@
       ignoreDups = true;
       ignoreSpace = true;
       expireDuplicatesFirst = true;
+    };
+
+    syntaxHighlighting = {
+      enable = true;
+      styles = {
+        path = "none";
+        path_prefix = "none";
+      };
     };
 
     shellGlobalAliases = {
@@ -40,7 +49,17 @@
       gsip = "git reset --soft HEAD~1; git commit --all --amend --no-edit";
     };
 
-    initContent = builtins.readFile ./zsh_functions.zsh;
+    initContent = ''
+      ${builtins.readFile ./zsh-completion.zsh}
+      ${builtins.readFile ./zsh-functions.zsh}
+      ${builtins.readFile ./zsh-keymaps.zsh}
+      ${builtins.readFile ./zsh-status-rule.zsh}
+
+      # GPG signing
+      if [[ -t 1 ]]; then
+        export GPG_TTY="$(tty)"
+      fi
+    '';
   };
 
   # home.sessionVariables = {
