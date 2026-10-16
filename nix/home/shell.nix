@@ -16,6 +16,10 @@
       expireDuplicatesFirst = true;
     };
 
+    shellGlobalAliases = {
+      B = "; bell $?";
+    };
+
     shellAliases = {
       "cd.." = "cd ..";
 
@@ -34,6 +38,8 @@
       rmgitignored = "git clean -dfX -f -f";
       gsip = "git reset --soft HEAD~1; git commit --all --amend --no-edit";
     };
+
+    initContent = builtins.readFile ./zsh_functions.zsh;
   };
 
   # home.sessionVariables = {
