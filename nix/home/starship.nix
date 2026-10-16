@@ -7,6 +7,6 @@
     enableZshIntegration = true;
   };
 
-  xdg.configFile."starship/starship.toml".source =
+  xdg.configFile."starship.toml".source =
     ../../starship.toml;
 }

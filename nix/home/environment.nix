@@ -31,7 +31,6 @@ in
     SM_XDG_BIN_HOME = "${home}/.local/bin";
     SM_XDG_BIN_BIN_HOME = "${home}/.local/bin/bin";
 
-    STARSHIP_CONFIG = "${xdg.configHome}/starship/starship.toml";
     STARSHIP_CACHE = "${xdg.dataHome}/starship/cache";
   };
 
