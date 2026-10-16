@@ -5,6 +5,7 @@
 
   imports = [
     ./cli.nix
+    ./environment.nix
     ./git.nix
     ./shell.nix
     ./starship.nix
