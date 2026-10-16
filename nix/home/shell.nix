@@ -22,6 +22,7 @@
 
     shellAliases = {
       "cd.." = "cd ..";
+      cd = "cd_activate_ls";
 
       e = "$VISUAL";
       g = "git";
