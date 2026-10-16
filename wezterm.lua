@@ -6,24 +6,8 @@ if wezterm.config_builder then
 end
 
 config.animation_fps = 24
-config.background = {
-  {
-    source = {
-      File = wezterm.home_dir .. "/.config/wezterm/marine_bg.png",
-    },
-
-    horizontal_align = "Center",
-    vertical_align = "Middle",
-
-    repeat_x = "NoRepeat",
-    repeat_y = "NoRepeat",
-
-    hsb = {
-      hue = 1.0,
-      saturation = 0.9,
-      brightness = 0.05,
-    },
-  },
+config.colors = {
+  background = "#000000",
 }
 config.color_scheme = "Idle Toes (Gogh)"
 config.cursor_blink_rate = 1000
@@ -70,7 +54,7 @@ config.keys = {
   { key = "Enter", mods = "ALT", action = wezterm.action.ToggleFullScreen },
 }
 config.line_height = 1.1
-config.macos_window_background_blur = 15
+config.macos_window_background_blur = 4
 config.native_macos_fullscreen_mode = true
 config.set_environment_variables = {
   TERMINFO_DIRS = (
