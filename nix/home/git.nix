@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.git = {
@@ -16,7 +16,6 @@
       };
 
       commit = {
-        gpgsign = true;
         verbose = true;
       };
 
@@ -106,4 +105,10 @@
 
   # Retain the existing global ignore definitions.
   xdg.configFile."git/ignore".source = ../../git/ignore;
+
+  home.packages = with pkgs; [
+    delta
+    difftastic
+    git-lfs
+  ];
 }
