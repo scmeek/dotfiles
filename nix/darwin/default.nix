@@ -30,6 +30,7 @@
         ./git.nix
         ../home/shell.nix
         ../home/starship.nix
+        ../home/tmux.nix
       ];
 
       programs.zsh.initContent = ''
