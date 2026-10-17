@@ -33,15 +33,14 @@
         ../home/git.nix
         ../home/nvim.nix
         ../home/shell.nix
+        ../darwin/shell.nix
         ../home/starship.nix
         ../home/tmux.nix
 
         ../profiles/darwin.nix
+        ../profiles/development.nix
+        ../profiles/gpg-darwin.nix
       ];
-
-      programs.zsh.initContent = ''
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-      '';
     };
   };
 

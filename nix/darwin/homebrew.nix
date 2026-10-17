@@ -1,4 +1,3 @@
-
 { ... }:
 
 {
@@ -6,10 +5,25 @@
     enable = true;
 
     onActivation = {
-      cleanup = "none";
-      autoUpdate = false;
-      upgrade = false;
+      cleanup = "check";
+      autoUpdate = true;
+      upgrade = true;
+      extraEnv.XDG_CONFIG_HOME = "/Users/sean/.config";
     };
+
+    taps = [
+      "aarush67/tap"
+      {
+        name = "jurplel/tap";
+        trusted = true;
+      }
+    ];
+
+    brews = [
+      "aarush67/tap/devlycli"
+      "trash"
+      "typtea"
+    ];
 
     casks = [
       # Utilities
@@ -19,6 +33,7 @@
       "the-unarchiver"
 
       # Development
+      "codex"
       "dbeaver-community"
       "fork"
       "wezterm@nightly"
@@ -36,11 +51,6 @@
       "musescore"
       "vlc"
 
-      # Other applications
-      "ollama-app"
-      "openmtp"
-      "qflipper"
-
       # LaTeX
       "mactex"
 
@@ -52,7 +62,28 @@
       "font-sauce-code-pro-nerd-font"
       "font-terminess-ttf-nerd-font"
       "font-victor-mono-nerd-font"
+
+      "battle-net"
+      "blender"
+      "brave-browser"
+      "discord"
+      "godot"
+      "gpg-suite"
+      "keyboardcleantool"
+      "macfuse"
+      "ollama-app"
+      "openmtp"
+      "orbstack"
+      "projectlibre"
+      "qflipper"
+      "steam"
+      "transmission"
+      "virtualbox"
+
+      {
+        name = "jurplel/tap/instant-space-switcher";
+        trusted = true;
+      }
     ];
   };
 }
-

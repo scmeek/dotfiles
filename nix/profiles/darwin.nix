@@ -1,17 +1,7 @@
-
 { pkgs, ... }:
 
 {
   home.packages = with pkgs; [
-    # Development
-    gh
-    go
-    nodejs
-    python3
-    pyenv
-    zig
-    pandoc
-
     # Terminal utilities
     bash
     coreutils
@@ -19,16 +9,26 @@
     fastfetch
     hexyl
     imagemagick
-    lazydocker
     lnav
-    poppler
-    rsync
+    nnn
+    lolcat
     p7zip
+    poppler-utils
+    rsync
+    slides
     zbar
-    zola
 
-    # GPG
-    gnupg
+    # Virtualization
+    lima
+
+    # Networking and DNS
+    arp-scan
+    bind
+    unbound
+
+    # Media utilities
+    ffmpeg
+    librsvg
   ];
 
   programs.git.settings = {
@@ -36,4 +36,3 @@
     commit.gpgsign = true;
   };
 }
-

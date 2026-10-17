@@ -3,20 +3,36 @@
 {
   home.packages = with pkgs; [
     # Development tools
+    actionlint
     gh
-    rustup
-    gcc
+    go
     gnumake
+    gcc
+    just
+    opencode
+    pandoc
     pkg-config
-    nodejs
+    pyenv
+    rustup
+    zig
+    zola
+
+    # Runtimes
+    nodejs_24
+    python315
+    luarocks
+
+    # Containers
     devcontainer
+    docker-client
+    docker-compose
+    lazydocker
 
     # Neovim dependencies
     fd
     viu
     chafa
     ueberzugpp
-    luarocks
     ghostscript
     mermaid-cli
 
