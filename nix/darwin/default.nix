@@ -25,6 +25,7 @@
 
       imports = [
         ../home/git.nix
+        ./git.nix
       ];
     };
   };
