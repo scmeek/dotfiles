@@ -4,13 +4,13 @@ add_newline = false
 continuation_prompt = "[▸▹ ](dimmed white)"
 
 format = """($nix_shell$container$fill$cmd_duration$git_metrics$time \n)\
+$username\
 $hostname\
 $localip\
 $shlvl\
 $shell\
 $env_var\
 $jobs\
-$username\
 $sudo\
 $character"""
 
@@ -113,8 +113,7 @@ disabled = false
 [username]
 style_user = "bright-yellow bold italic"
 style_root = "purple bold italic"
-format = "[⭘ $user]($style) "
-disabled = false
+format = "[$user]($style)"
 show_always = false
 
 [directory]
@@ -136,9 +135,14 @@ format = "[$symbol$number]($style) "
 style = "white"
 symbol = "[▶](blue italic)"
 
+[hostname]
+ssh_only = true
+format = "[@$hostname](bold white)"
+disabled = false
+
 [localip]
 ssh_only = true
-format = " ◯[$localipv4](bold magenta)"
+format = ' [\($localipv4\)](dimmed magenta) '
 disabled = false
 
 [time]
