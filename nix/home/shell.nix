@@ -69,8 +69,8 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "vim";
-    VISUAL = "vim";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
     MANPAGER = "sh -c 'col -bx | bat --language=man'";
   };
 }
