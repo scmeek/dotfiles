@@ -1,6 +1,10 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
+  imports = [
+    ./homebrew.nix
+  ];
+
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   nix.settings.experimental-features = [
@@ -27,11 +31,12 @@
         ../home/cli.nix
         ../home/environment.nix
         ../home/git.nix
-        ./git.nix
         ../home/nvim.nix
         ../home/shell.nix
         ../home/starship.nix
         ../home/tmux.nix
+
+        ../profiles/darwin.nix
       ];
 
       programs.zsh.initContent = ''
@@ -46,17 +51,5 @@
     enable = true;
     user = "sean";
     autoMigrate = true;
-  };
-
-  homebrew = {
-    enable = true;
-
-    onActivation = {
-      cleanup = "none";
-      autoUpdate = false;
-      upgrade = false;
-    };
-
-    casks = [];
   };
 }
