@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
+    (pkgs.callPackage ../packages/devlycli.nix { })
+
     # Terminal utilities
     bash
     coreutils

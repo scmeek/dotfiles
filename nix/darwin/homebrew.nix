@@ -12,15 +12,10 @@
     };
 
     taps = [
-      "aarush67/tap"
       {
         name = "jurplel/tap";
         trusted = true;
       }
-    ];
-
-    brews = [
-      "aarush67/tap/devlycli"
     ];
 
     casks = [
