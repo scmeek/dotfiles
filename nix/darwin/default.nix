@@ -28,6 +28,7 @@
         ../home/environment.nix
         ../home/git.nix
         ./git.nix
+        ../home/nvim.nix
         ../home/shell.nix
         ../home/starship.nix
         ../home/tmux.nix

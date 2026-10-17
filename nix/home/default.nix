@@ -11,5 +11,7 @@
     ./shell.nix
     ./starship.nix
     ./tmux.nix
+
+    ../profiles/development.nix
   ];
 }
