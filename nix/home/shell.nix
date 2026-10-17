@@ -38,25 +38,20 @@
     };
 
     shellAliases = {
+      cat = "bat --paging=never";
       "cd.." = "cd ..";
       cd = "cd_activate_ls";
-
+      cdi = "zi";
       e = "$VISUAL";
       g = "git";
-      p = "python3";
-
-      ls = "eza --across --group-directories-first";
-      ll = "eza --long --group --header --changed --group-directories-first";
-      la = "eza --long --group --header --all --changed --group-directories-first";
-      tree = "eza --tree";
-
       gg = "lazygit";
-      cat = "bat --paging=never";
-
-      rmgitignored = "git clean -dfX -f -f";
       gsip = "git reset --soft HEAD~1; git commit --all --amend --no-edit";
-
-      cdi = "zi";
+      la = "eza --long --group --header --all --changed --group-directories-first";
+      ll = "eza --long --group --header --changed --group-directories-first";
+      ls = "eza --across --group-directories-first";
+      p = "python3";
+      rmgitignored = "git clean -dfX -f -f";
+      tree = "eza --tree";
       wget = "wget --hsts-file=$XDG_DATA_HOME/wget-hsts";
     };
 
