@@ -26,6 +26,7 @@
       imports = [
         ../home/git.nix
         ./git.nix
+        ../home/starship.nix
       ];
     };
   };
