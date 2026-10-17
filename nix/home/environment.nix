@@ -38,4 +38,16 @@ in
     "${home}/.local/bin"
     "${home}/.local/bin/bin"
   ];
+
+  # Bat configuration
+  xdg.configFile."bat/config".source = ../../batconfig;
+
+  # Ripgrep configuration
+  xdg.configFile."ripgrep/ripgreprc".source = ../../ripgreprc;
+
+  # Yazi configuration
+  xdg.configFile."yazi" = {
+    source = ../../yazi;
+    recursive = true;
+  };
 }
