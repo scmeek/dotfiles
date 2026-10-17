@@ -16,6 +16,8 @@
     poppler-utils
     rsync
     slides
+    darwin.trash
+    typtea
     zbar
 
     # Virtualization

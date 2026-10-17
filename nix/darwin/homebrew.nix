@@ -21,8 +21,6 @@
 
     brews = [
       "aarush67/tap/devlycli"
-      "trash"
-      "typtea"
     ];
 
     casks = [
