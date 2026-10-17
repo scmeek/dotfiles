@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -45,6 +45,16 @@
   };
 
   programs.zsh.enable = true;
+
+  fonts.packages = with pkgs.nerd-fonts; [
+    fira-code
+    fira-mono
+    hack
+    iosevka
+    sauce-code-pro
+    terminess-ttf
+    victor-mono
+  ];
 
   nix-homebrew = {
     enable = true;

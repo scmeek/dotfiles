@@ -52,15 +52,6 @@
       # LaTeX
       "mactex"
 
-      # Fonts
-      "font-fira-code-nerd-font"
-      "font-fira-mono-nerd-font"
-      "font-hack-nerd-font"
-      "font-iosevka-nerd-font"
-      "font-sauce-code-pro-nerd-font"
-      "font-terminess-ttf-nerd-font"
-      "font-victor-mono-nerd-font"
-
       "battle-net"
       "blender"
       "brave-browser"
