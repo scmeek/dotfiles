@@ -100,6 +100,8 @@
         cl = "clone";
         pu = "push";
       };
+
+      safe.directory = "/etc/nixos";
     };
   };
 
