@@ -5,6 +5,9 @@
     autosuggestion.enable = true;
     enable = true;
     enableCompletion = true;
+    findNoDups = true;
+    ignoreAllDups = true;
+    saveNoDups = true;
 
     history = {
       size = 1000000;
@@ -16,6 +19,11 @@
       ignoreSpace = true;
       expireDuplicatesFirst = true;
     };
+
+    setOptions = [
+      "BANG_HIST"
+      "HIST_REDUCE_BLANKS"
+    ];
 
     syntaxHighlighting = {
       enable = true;
@@ -47,6 +55,9 @@
 
       rmgitignored = "git clean -dfX -f -f";
       gsip = "git reset --soft HEAD~1; git commit --all --amend --no-edit";
+
+      cdi = "zi";
+      wget = "wget --hsts-file=$XDG_DATA_HOME/wget-hsts";
     };
 
     initContent = ''
@@ -62,8 +73,9 @@
     '';
   };
 
-  # home.sessionVariables = {
-  #   EDITOR = "nvim";
-  #   VISUAL = "nvim";
-  # };
+  home.sessionVariables = {
+    EDITOR = "vim";
+    VISUAL = "vim";
+    MANPAGER = "sh -c 'col -bx | bat --language=man'";
+  };
 }
