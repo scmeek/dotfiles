@@ -23,7 +23,9 @@
       home.homeDirectory = "/Users/sean";
       home.stateVersion = "26.05";
 
-      imports = [];
+      imports = [
+        ../home/git.nix
+      ];
     };
   };
 

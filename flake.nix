@@ -2,6 +2,8 @@
   description = "Personal dotfiles and system configuration";
 
   inputs = {
+    self.submodules = true;
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
 
     nix-darwin = {
