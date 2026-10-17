@@ -5,19 +5,19 @@
     autosuggestion.enable = true;
     enable = true;
     enableCompletion = true;
-    findNoDups = true;
-    ignoreAllDups = true;
-    saveNoDups = true;
 
     history = {
-      size = 1000000;
-      save = 1000000;
-      path = "${config.xdg.stateHome}/zsh/history";
-      share = true;
+      expireDuplicatesFirst = true;
       extended = true;
+      findNoDups = true;
+      path = "${config.xdg.stateHome}/zsh/history";
+      ignoreAllDups = true;
       ignoreDups = true;
       ignoreSpace = true;
-      expireDuplicatesFirst = true;
+      save = 1000000;
+      saveNoDups = true;
+      share = true;
+      size = 1000000;
     };
 
     setOptions = [
