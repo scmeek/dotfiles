@@ -24,10 +24,17 @@
       home.stateVersion = "26.05";
 
       imports = [
+        ../home/cli.nix
+        ../home/environment.nix
         ../home/git.nix
         ./git.nix
+        ../home/shell.nix
         ../home/starship.nix
       ];
+
+      programs.zsh.initContent = ''
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      '';
     };
   };
 
