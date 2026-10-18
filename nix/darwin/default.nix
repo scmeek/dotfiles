@@ -13,11 +13,19 @@
     "flakes"
   ];
 
-  system.primaryUser = "sean";
+  system = {
+    stateVersion = 6;
+    primaryUser = "sean";
+
+    activationScripts.postActivation.text = ''
+      # Fix sudoers permissions
+      if [ -f /etc/sudoers.d/10-nix-darwin-extra-config ]; then
+        chmod 0440 /etc/sudoers.d/10-nix-darwin-extra-config
+      fi
+    '';
+  };
 
   users.users.sean.home = "/Users/sean";
-
-  system.stateVersion = 6;
 
   home-manager = {
     useGlobalPkgs = true;
