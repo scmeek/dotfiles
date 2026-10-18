@@ -39,6 +39,7 @@
       imports = [
         ../home/cli.nix
         ../home/environment.nix
+        ../darwin/environment.nix
         ../home/git.nix
         ../home/nvim.nix
         ../home/shell.nix
@@ -46,11 +47,10 @@
         ../home/starship.nix
         ../home/tmux.nix
 
-        ../profiles/notes-darwin.nix
-
         ../profiles/darwin.nix
         ../profiles/development.nix
         ../profiles/gpg-darwin.nix
+        ../profiles/notes-darwin.nix
       ];
     };
   };
