@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./bat.nix
     ./cli.nix
     ./environment.nix
     ./git.nix

@@ -2,8 +2,6 @@
 
 {
   programs = {
-    bat.enable = true;
-
     eza = {
       enable = true;
       enableZshIntegration = false;
