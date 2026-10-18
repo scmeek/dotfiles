@@ -1,8 +1,9 @@
 { pkgs, ... }:
 
 {
+  imports = [ ./gpg.nix ];
+
   home.packages = [
-    pkgs.gnupg
     pkgs.pinentry_mac
   ];
 

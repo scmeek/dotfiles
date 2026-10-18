@@ -50,7 +50,6 @@
       ll = "eza --long --group --header --changed --group-directories-first";
       ls = "eza --across --group-directories-first";
       nfmt = "find . -type f -name \"*.nix\" -exec nixfmt {} +";
-      p = "python3";
       rmgitignored = "git clean -dfX -f -f";
       sz = "source \"$ZDOTDIR/.zshrc\"";
       tree = "eza --tree";
@@ -66,11 +65,6 @@
       # Machine-specific configuration (not managed by Nix)
       if [[ -f "$HOME/.config/zsh_local" ]]; then
         source "$HOME/.config/zsh_local"
-      fi
-
-      # GPG signing
-      if [[ -t 1 ]]; then
-        export GPG_TTY="$(tty)"
       fi
     '';
   };

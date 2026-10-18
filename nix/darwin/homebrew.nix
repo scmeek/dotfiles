@@ -8,7 +8,6 @@
       cleanup = "check";
       autoUpdate = true;
       upgrade = true;
-      extraEnv.XDG_CONFIG_HOME = "/Users/sean/.config";
     };
 
     taps = [
@@ -51,6 +50,7 @@
       "discord"
       "godot"
       "gpg-suite"
+      "jurplel/tap/instant-space-switcher"
       "keyboardcleantool"
       "macfuse"
       "ollama-app"
@@ -61,11 +61,6 @@
       "steam"
       "transmission"
       "virtualbox"
-
-      {
-        name = "jurplel/tap/instant-space-switcher";
-        trusted = true;
-      }
     ];
   };
 }

@@ -1,18 +1,14 @@
-{ ... }:
+{ config, ... }:
 
 {
   programs.zsh = {
     initContent = ''
       # Prefer Nix-managed tools over Homebrew.
       path=(
-        /etc/profiles/per-user/sean/bin
-        ''${path:#/etc/profiles/per-user/sean/bin}
+        /etc/profiles/per-user/${config.home.username}/bin
+        ''${path:#/etc/profiles/per-user/${config.home.username}/bin}
       )
       typeset -U path PATH
     '';
-
-    shellAliases = {
-      drs = "darwin-rebuild build --flake .#S-MBA && sudo darwin-rebuild switch --flake .#S-MBA";
-    };
   };
 }

@@ -27,11 +27,14 @@
     }:
     {
       formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt;
-      homeManagerModules.default = import ./nix/home;
+      homeManagerModules = {
+        default = import ./nix/home;
+        rigel = import ./nix/hosts/rigel.nix;
+      };
 
       darwinConfigurations."S-MBA" = nix-darwin.lib.darwinSystem {
         modules = [
-          ./nix/darwin/default.nix
+          ./nix/hosts/S-MBA.nix
 
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew

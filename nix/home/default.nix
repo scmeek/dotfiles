@@ -1,8 +1,6 @@
 { ... }:
 
 {
-  # Shared Home Manager configuration for Linux and macOS.
-
   imports = [
     ./cli.nix
     ./environment.nix
@@ -11,7 +9,5 @@
     ./shell.nix
     ./starship.nix
     ./tmux.nix
-
-    ../profiles/development.nix
   ];
 }
