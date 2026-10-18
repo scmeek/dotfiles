@@ -1,6 +1,8 @@
-{ lib, ... }:
+{ config, lib, ... }:
 
 {
+  home.sessionVariables.STARSHIP_CACHE = "${config.xdg.dataHome}/starship/cache";
+
   programs.starship = {
     enable = true;
     enableZshIntegration = true;

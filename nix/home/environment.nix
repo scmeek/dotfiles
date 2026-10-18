@@ -12,8 +12,6 @@ in
 
     SM_XDG_BIN_HOME = "${home}/.local/bin";
     SM_XDG_BIN_BIN_HOME = "${home}/.local/bin/bin";
-
-    STARSHIP_CACHE = "${xdg.dataHome}/starship/cache";
   };
 
   home.sessionPath = [
