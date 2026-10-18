@@ -27,7 +27,6 @@
       "codex"
       "dbeaver-community"
       "fork"
-      "wezterm@nightly"
 
       # Productivity
       "libreoffice"

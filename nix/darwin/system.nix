@@ -1,7 +1,10 @@
 { ... }:
 
 {
-  imports = [ ./homebrew.nix ];
+  imports = [
+    ./homebrew.nix
+    ./wezterm.nix
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"
