@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    (pkgs.callPackage ../packages/devlycli.nix { })
+    (pkgs.callPackage ../packages/devlycli-darwin.nix { })
 
     raycast
 

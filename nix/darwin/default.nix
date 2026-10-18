@@ -38,7 +38,7 @@
         ../home/starship.nix
         ../home/tmux.nix
 
-        ../features/notes.nix
+        ../profiles/notes-darwin.nix
 
         ../profiles/darwin.nix
         ../profiles/development.nix
