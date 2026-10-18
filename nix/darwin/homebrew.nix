@@ -22,7 +22,6 @@
       # Utilities
       "caffeine"
       "linearmouse"
-      "raycast"
       "the-unarchiver"
 
       # Development

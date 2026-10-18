@@ -4,6 +4,8 @@
   home.packages = with pkgs; [
     (pkgs.callPackage ../packages/devlycli.nix { })
 
+    raycast
+
     # Terminal utilities
     bash
     coreutils
