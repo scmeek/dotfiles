@@ -105,9 +105,6 @@ let
     line_height = 1.1;
     macos_window_background_blur = 4;
     native_macos_fullscreen_mode = true;
-    set_environment_variables.TERMINFO_DIRS = lua ''
-      (os.getenv("XDG_DATA_HOME") or (os.getenv("HOME") .. "/.local/share")) .. "/terminfo"
-    '';
     scrollback_lines = 10000;
     term = "wezterm";
     window_background_opacity = 0.775;
@@ -130,11 +127,21 @@ in
   ];
 
   home-manager.sharedModules = [
-    {
+    ({ config, pkgs, ... }: {
+      home.packages = [ pkgs.wezterm.terminfo ];
+      home.sessionVariables.TERMINFO_DIRS = "${pkgs.wezterm.terminfo}/share/terminfo:";
+
       xdg.configFile."wezterm/wezterm.lua".text = ''
         local wezterm = require("wezterm")
         local config = wezterm.config_builder and wezterm.config_builder() or {}
-        local settings = ${lib.generators.toLua { } settings}
+        local settings = ${
+          lib.generators.toLua { } (
+            settings
+            // {
+              set_environment_variables.TERMINFO_DIRS = config.home.sessionVariables.TERMINFO_DIRS;
+            }
+          )
+        }
 
         for key, value in pairs(settings) do
           config[key] = value
@@ -142,6 +149,6 @@ in
 
         return config
       '';
-    }
+    })
   ];
 }
