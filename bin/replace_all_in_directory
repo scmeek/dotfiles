@@ -14,6 +14,6 @@ read -p "Are you sure you want to replace all occurrences of $2 with $3 in $1? [
 echo
 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  rg -l "$2" "$1" | xargs -n1 -I{} gsed -i "s/$2/$3/g" {}
+  rg -l "$2" "$1" | xargs -n1 -I{} sed -i "s/$2/$3/g" {}
   echo "Replaced all occurrences of $2 with $3 in $1."
 fi
