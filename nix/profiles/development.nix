@@ -13,13 +13,10 @@
     NPM_CONFIG_PREFIX = "${config.xdg.dataHome}/npm";
     PSQL_HISTORY = "${config.xdg.dataHome}/psql_history";
     PYENV_ROOT = "${config.xdg.dataHome}/pyenv";
-    PYTHON_HISTORY = "${config.xdg.cacheHome}/python_history";
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
   };
 
   home.sessionPath = [ "${config.home.sessionVariables.NPM_CONFIG_PREFIX}/bin" ];
-
-  programs.zsh.shellAliases.p = "python3";
 
   home.packages = with pkgs; [
     # Development tools
@@ -40,7 +37,6 @@
     # Runtimes
     deno
     nodejs_24
-    python315
     luarocks
 
     # Containers

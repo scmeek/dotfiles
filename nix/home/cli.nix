@@ -29,6 +29,7 @@
     p7zip
     perl
     poppler-utils
+    python3
     rsync
     ruby
     slides

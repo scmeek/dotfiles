@@ -50,6 +50,7 @@
       ll = "eza --long --group --header --changed --group-directories-first";
       ls = "eza --across --group-directories-first";
       nfmt = "find . -type f -name \"*.nix\" -exec nixfmt {} +";
+      p = "python3";
       rmgitignored = "git clean -dfX -f -f";
       shred = "shred -uvz";
       sz = "source \"$ZDOTDIR/.zshrc\"";
@@ -74,5 +75,6 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
     MANPAGER = "sh -c 'col -bx | bat --language=man'";
+    PYTHON_HISTORY = "${config.xdg.cacheHome}/python_history";
   };
 }
