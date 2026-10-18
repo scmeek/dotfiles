@@ -38,6 +38,7 @@
     zola
 
     # Runtimes
+    deno
     nodejs_24
     python315
     luarocks
