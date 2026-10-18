@@ -2,24 +2,9 @@
 
 {
   programs = {
-    eza = {
-      enable = true;
-      enableZshIntegration = false;
-    };
-
-    fzf = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-
     yazi = {
       enable = true;
       enableZshIntegration = false;
-    };
-
-    zoxide = {
-      enable = true;
-      enableZshIntegration = true;
     };
   };
 
