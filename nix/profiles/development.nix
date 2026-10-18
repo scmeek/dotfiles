@@ -12,7 +12,7 @@
     NPM_CONFIG_PREFIX = "${config.xdg.dataHome}/npm";
     PSQL_HISTORY = "${config.xdg.dataHome}/psql_history";
     PYENV_ROOT = "${config.xdg.dataHome}/pyenv";
-    PYTHONSTARTUP = "${config.xdg.configHome}/python/pythonrc";
+    PYTHON_HISTORY = "${config.xdg.cacheHome}/python_history";
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
   };
 
