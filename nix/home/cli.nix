@@ -37,7 +37,6 @@
     ffmpeg
     hexyl
     imagemagick
-    lazygit
     librsvg
     lnav
     lolcat
