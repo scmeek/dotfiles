@@ -10,8 +10,6 @@ in
   home.sessionVariables = {
     LESSHISTFILE = "${xdg.stateHome}/less/history";
 
-    RIPGREP_CONFIG_PATH = "${xdg.configHome}/ripgrep/ripgreprc";
-
     SM_XDG_BIN_HOME = "${home}/.local/bin";
     SM_XDG_BIN_BIN_HOME = "${home}/.local/bin/bin";
 
@@ -22,9 +20,6 @@ in
     "${home}/.local/bin"
     "${home}/.local/bin/bin"
   ];
-
-  # Ripgrep configuration
-  xdg.configFile."ripgrep/ripgreprc".source = ../../ripgreprc;
 
   # Yazi configuration
   xdg.configFile."yazi" = {

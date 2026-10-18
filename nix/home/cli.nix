@@ -12,8 +12,6 @@
       enableZshIntegration = true;
     };
 
-    ripgrep.enable = true;
-
     yazi = {
       enable = true;
       enableZshIntegration = false;
