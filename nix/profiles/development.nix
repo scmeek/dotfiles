@@ -16,6 +16,8 @@
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
   };
 
+  home.sessionPath = [ "${config.home.sessionVariables.NPM_CONFIG_PREFIX}/bin" ];
+
   programs.zsh.shellAliases.p = "python3";
 
   home.packages = with pkgs; [
