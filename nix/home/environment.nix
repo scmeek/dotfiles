@@ -21,9 +21,4 @@ in
 
   home.file.".local/bin/bin".source = ../../bin;
 
-  # Yazi configuration
-  xdg.configFile."yazi" = {
-    source = ../../yazi;
-    recursive = true;
-  };
 }

@@ -109,16 +109,3 @@ git_pace() {
 git_firefight() {
   git log --oneline --since="1 year ago" | grep -iE 'revert|hotfix|emergency|rollback'
 }
-
-# Yazi
-# https://yazi-rs.github.io/docs/quick-start/#shell-wrapper
-# Change the current working directory when exiting
-# `q`` to quit, `Q` to quit without changing CWD
-function y() {
-  local tmp cwd
-  tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-  command yazi "$@" --cwd-file="$tmp"
-  IFS= read -r -d '' cwd <"$tmp"
-  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
-  command rm -f -- "$tmp"
-}

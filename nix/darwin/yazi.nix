@@ -1,0 +1,10 @@
+{ ... }:
+
+{
+  programs.yazi.keymap.mgr.prepend_keymap = [
+    {
+      on = "<C-p>";
+      run = "shell -- qlmanage -p %s";
+    }
+  ];
+}

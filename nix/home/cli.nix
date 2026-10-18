@@ -1,13 +1,6 @@
 { pkgs, ... }:
 
 {
-  programs = {
-    yazi = {
-      enable = true;
-      enableZshIntegration = false;
-    };
-  };
-
   home.packages = with pkgs; [
     arp-scan
     bash

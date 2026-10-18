@@ -4,6 +4,7 @@
   imports = [
     ./halloy.nix
     ./shell.nix
+    ./yazi.nix
   ];
 
   home.packages = [
