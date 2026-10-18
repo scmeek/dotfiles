@@ -15,7 +15,7 @@ in
     DOCKER_CONFIG = "${xdg.configHome}/docker";
     GRADLE_USER_HOME = "${xdg.dataHome}/gradle";
 
-    LESSHISTFILE = "${xdg.cacheHome}/less/history";
+    LESSHISTFILE = "${xdg.stateHome}/less/history";
 
     NODE_REPL_HISTORY = "${xdg.dataHome}/node_repl_history";
     NPM_CONFIG_USERCONFIG = "${xdg.configHome}/npm/npmrc";
