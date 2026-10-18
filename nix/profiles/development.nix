@@ -5,6 +5,7 @@
     AWS_SHARED_CREDENTIALS_FILE = "${config.xdg.configHome}/aws/credentials";
     AWS_CONFIG_FILE = "${config.xdg.configHome}/aws/config";
     CARGO_HOME = "${config.xdg.dataHome}/cargo";
+    CARGO_NET_GIT_FETCH_WITH_CLI = "true";
     DOCKER_CONFIG = "${config.xdg.configHome}/docker";
     GRADLE_USER_HOME = "${config.xdg.dataHome}/gradle";
     NODE_REPL_HISTORY = "${config.xdg.dataHome}/node_repl_history";
