@@ -63,6 +63,11 @@
       ${builtins.readFile ./zsh-keymaps.zsh}
       ${builtins.readFile ./zsh-status-rule.zsh}
 
+      # Machine-specific configuration (not managed by Nix)
+      if [[ -f "$HOME/.config/zsh_local" ]]; then
+        source "$HOME/.config/zsh_local"
+      fi
+
       # GPG signing
       if [[ -t 1 ]]; then
         export GPG_TTY="$(tty)"
