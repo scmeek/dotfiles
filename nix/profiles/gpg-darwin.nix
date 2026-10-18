@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [ ./gpg.nix ];
@@ -7,7 +7,7 @@
     pkgs.pinentry_mac
   ];
 
-  home.file.".gnupg/gpg-agent.conf".text = ''
+  home.file."${config.home.sessionVariables.GNUPGHOME}/gpg-agent.conf".text = ''
     pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
 
     default-cache-ttl 600

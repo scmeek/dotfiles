@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = [ pkgs.gnupg ];
+  home.sessionVariables.GNUPGHOME = "${config.xdg.dataHome}/gnupg";
 
   programs.git.settings.commit.gpgsign = true;
 

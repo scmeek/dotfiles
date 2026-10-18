@@ -15,4 +15,6 @@
       theme = "ansi";
     };
   };
+
+  programs.zsh.shellGlobalAliases."--help" = "--help 2>&1 | bat --language=help";
 }

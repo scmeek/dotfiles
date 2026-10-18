@@ -51,6 +51,7 @@
       ls = "eza --across --group-directories-first";
       nfmt = "find . -type f -name \"*.nix\" -exec nixfmt {} +";
       rmgitignored = "git clean -dfX -f -f";
+      shred = "shred -uvz";
       sz = "source \"$ZDOTDIR/.zshrc\"";
       tree = "eza --tree";
       wget = "wget --hsts-file=$XDG_DATA_HOME/wget-hsts";

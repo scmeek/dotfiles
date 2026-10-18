@@ -2,6 +2,8 @@
 
 {
   programs.zsh = {
+    shellAliases.doawake = "caffeinate -dimsu &";
+
     initContent = ''
       # Prefer Nix-managed tools over Homebrew.
       path=(
