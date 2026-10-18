@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./shell.nix ];
+  imports = [
+    ./halloy.nix
+    ./shell.nix
+  ];
 
   home.packages = [
     pkgs.raycast
