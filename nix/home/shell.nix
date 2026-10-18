@@ -52,6 +52,7 @@
       nfmt = "find . -type f -name \"*.nix\" -exec nixfmt {} +";
       p = "python3";
       rmgitignored = "git clean -dfX -f -f";
+      sz = "source \"$ZDOTDIR/.zshrc\"";
       tree = "eza --tree";
       wget = "wget --hsts-file=$XDG_DATA_HOME/wget-hsts";
     };
