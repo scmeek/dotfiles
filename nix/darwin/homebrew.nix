@@ -34,7 +34,6 @@
       # Productivity
       "libreoffice"
       "netnewswire"
-      "obsidian"
       "whatsapp"
       "zoom"
 

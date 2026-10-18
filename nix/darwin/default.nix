@@ -6,6 +6,7 @@
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -36,6 +37,8 @@
         ../darwin/shell.nix
         ../home/starship.nix
         ../home/tmux.nix
+
+        ../features/notes.nix
 
         ../profiles/darwin.nix
         ../profiles/development.nix
