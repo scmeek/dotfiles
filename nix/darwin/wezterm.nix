@@ -128,7 +128,6 @@ in
 
   home-manager.sharedModules = [
     ({ config, pkgs, ... }: {
-      home.packages = [ pkgs.wezterm.terminfo ];
       home.sessionVariables.TERMINFO_DIRS = "${pkgs.wezterm.terminfo}/share/terminfo:";
 
       xdg.configFile."wezterm/wezterm.lua".text = ''
