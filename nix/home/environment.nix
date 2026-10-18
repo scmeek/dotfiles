@@ -19,6 +19,8 @@ in
     "${home}/.local/bin/bin"
   ];
 
+  home.file.".local/bin/bin".source = ../../bin;
+
   # Yazi configuration
   xdg.configFile."yazi" = {
     source = ../../yazi;
