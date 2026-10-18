@@ -122,7 +122,12 @@ let
   };
 in
 {
-  homebrew.casks = [ "wezterm@nightly" ];
+  homebrew.casks = [
+    {
+      name = "wezterm@nightly";
+      greedy = true;
+    }
+  ];
 
   home-manager.sharedModules = [
     {
