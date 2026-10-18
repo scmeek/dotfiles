@@ -8,7 +8,8 @@
     DOCKER_CONFIG = "${config.xdg.configHome}/docker";
     GRADLE_USER_HOME = "${config.xdg.dataHome}/gradle";
     NODE_REPL_HISTORY = "${config.xdg.dataHome}/node_repl_history";
-    NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
+    NPM_CONFIG_CACHE = "${config.xdg.cacheHome}/npm";
+    NPM_CONFIG_PREFIX = "${config.xdg.dataHome}/npm";
     PSQL_HISTORY = "${config.xdg.dataHome}/psql_history";
     PYENV_ROOT = "${config.xdg.dataHome}/pyenv";
     PYTHONSTARTUP = "${config.xdg.configHome}/python/pythonrc";
