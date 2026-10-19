@@ -11,9 +11,9 @@
     ./lazygit.nix
     ./nvim.nix
     ./ripgrep.nix
-    ./shell.nix
+    ./shell
     ./starship.nix
-    ./tmux.nix
+    ./tmux
     ./yazi.nix
     ./zoxide.nix
   ];
