@@ -3,6 +3,7 @@
 {
   imports = [
     ./halloy.nix
+    ./keybindings.nix
     ./shell.nix
     ./yazi.nix
   ];
