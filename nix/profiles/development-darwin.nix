@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./development.nix ];
+  imports = [ ./development ];
 
   home.packages = [
     (pkgs.callPackage ../packages/devlycli-darwin.nix { })

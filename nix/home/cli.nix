@@ -10,6 +10,7 @@
       coreutils
       duf
       fastfetch
+      fd
       ffmpeg
       gnused
       hexyl

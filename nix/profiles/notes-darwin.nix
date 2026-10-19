@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  imports = [ ./notes.nix ];
+  imports = [ ./notes ];
 
   # Enable repeat key when holding down
   targets.darwin.defaults."md.obsidian".ApplePressAndHoldEnabled = false;

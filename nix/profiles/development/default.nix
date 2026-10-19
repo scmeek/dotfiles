@@ -1,11 +1,16 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
+  imports = [ ./nvim ];
+
   home.sessionVariables = {
     AWS_SHARED_CREDENTIALS_FILE = "${config.xdg.configHome}/aws/credentials";
     AWS_CONFIG_FILE = "${config.xdg.configHome}/aws/config";
-    CARGO_HOME = "${config.xdg.dataHome}/cargo";
-    CARGO_NET_GIT_FETCH_WITH_CLI = "true";
     DOCKER_CONFIG = "${config.xdg.configHome}/docker";
     GRADLE_USER_HOME = "${config.xdg.dataHome}/gradle";
     NODE_REPL_HISTORY = "${config.xdg.dataHome}/node_repl_history";
@@ -13,47 +18,45 @@
     NPM_CONFIG_PREFIX = "${config.xdg.dataHome}/npm";
     PSQL_HISTORY = "${config.xdg.dataHome}/psql_history";
     PYENV_ROOT = "${config.xdg.dataHome}/pyenv";
-    RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
   };
 
   home.sessionPath = [ "${config.home.sessionVariables.NPM_CONFIG_PREFIX}/bin" ];
 
-  home.packages = with pkgs; [
-    # Development tools
-    actionlint
-    gh
-    go
-    gnumake
-    gcc
-    just
-    opencode
-    pandoc
-    pkg-config
-    pyenv
-    rustup
-    zig
-    zola
+  home.packages =
+    with pkgs;
+    [
+      # Development tools
+      actionlint
+      gh
+      go
+      gnumake
+      just
+      opencode
+      pandoc
+      pkg-config
+      pyenv
+      zig
+      zola
 
-    # Runtimes
-    deno
-    nodejs_24
-    luarocks
+      # Runtimes
+      deno
+      nodejs_24
+      luarocks
 
-    # Containers
-    devcontainer
-    docker-client
-    docker-compose
-    lazydocker
+      # Containers
+      docker-client
+      docker-compose
+      lazydocker
 
-    # Neovim dependencies
-    fd
-    viu
-    chafa
-    ueberzugpp
-    ghostscript
-    mermaid-cli
+      # Neovim dependencies
+      viu
+      chafa
+      ueberzugpp
+      ghostscript
+      mermaid-cli
 
-    # LaTeX
-    texliveSmall
-  ];
+      # LaTeX
+      texliveSmall
+    ]
+    ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.gcc;
 }

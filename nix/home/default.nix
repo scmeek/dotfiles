@@ -9,7 +9,7 @@
     ./fzf.nix
     ./git.nix
     ./lazygit.nix
-    ./nvim.nix
+    ./nvim
     ./ripgrep.nix
     ./shell
     ./starship.nix
