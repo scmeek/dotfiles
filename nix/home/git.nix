@@ -4,6 +4,14 @@
   programs.git = {
     enable = true;
 
+    ignores = [
+      # macOS folder metadata files
+      ".DS_Store"
+      "._.DS_Store"
+      "**/.DS_Store"
+      "**/._.DS_Store"
+    ];
+
     includes = [
       { path = "${../../git/aliases}"; }
       { path = "${../../gitalias/gitalias.txt}"; }
@@ -54,7 +62,6 @@
       core = {
         editor = "nvim";
         pager = "delta";
-        excludesFile = "~/.config/git/ignore";
         filemode = true;
         autocrlf = "input";
       };
@@ -104,9 +111,6 @@
       safe.directory = "/etc/nixos";
     };
   };
-
-  # Retain the existing global ignore definitions.
-  xdg.configFile."git/ignore".source = ../../git/ignore;
 
   home.packages = with pkgs; [
     delta
