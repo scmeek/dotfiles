@@ -35,7 +35,7 @@
 
         ../profiles/development-darwin.nix
         ../profiles/gpg-darwin.nix
-        ../profiles/notes.nix
+        ../profiles/notes-darwin.nix
       ];
 
       programs.git.settings.user.signingkey = "8F73E7B76CBD3188";

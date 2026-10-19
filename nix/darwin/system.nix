@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./defaults.nix
     ./homebrew.nix
     ./wezterm.nix
   ];
