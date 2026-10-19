@@ -39,7 +39,7 @@
       ];
 
       programs.git.settings.user.signingkey = "8F73E7B76CBD3188";
-      programs.zsh.shellAliases.drs = "darwin-rebuild build --flake .#S-MBA && sudo darwin-rebuild switch --flake .#S-MBA";
+      programs.zsh.shellAliases.drs = "nix flake update && darwin-rebuild build --flake .#S-MBA && sudo darwin-rebuild switch --flake .#S-MBA";
     };
   };
 

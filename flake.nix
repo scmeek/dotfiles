@@ -4,6 +4,11 @@
   inputs = {
     self.submodules = true;
 
+    gitalias = {
+      url = "github:GitAlias/gitalias";
+      flake = false;
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,8 +33,16 @@
     {
       formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt;
       homeManagerModules = {
-        default = import ./nix/home;
-        rigel = import ./nix/hosts/rigel.nix;
+        default = {
+          imports = [ ./nix/home ];
+          _module.args.gitalias = inputs.gitalias;
+        };
+        rigel = {
+          imports = [
+            self.homeManagerModules.default
+            ./nix/hosts/rigel.nix
+          ];
+        };
       };
 
       darwinConfigurations."S-MBA" = nix-darwin.lib.darwinSystem {
@@ -38,6 +51,7 @@
 
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
+          { home-manager.extraSpecialArgs.gitalias = inputs.gitalias; }
         ];
       };
     };

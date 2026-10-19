@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  gitalias,
+  ...
+}:
 
 {
   programs.git = {
@@ -13,7 +18,7 @@
     ];
 
     includes = [
-      { path = "${../../gitalias/gitalias.txt}"; }
+      { path = "${gitalias}/gitalias.txt"; }
     ];
 
     settings = {
