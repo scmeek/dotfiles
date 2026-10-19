@@ -6,6 +6,7 @@ let
 in
 {
   xdg.enable = true;
+  xdg.stateFile."less/.keep".text = "";
 
   home.sessionVariables = {
     LESSHISTFILE = "${xdg.stateHome}/less/history";
