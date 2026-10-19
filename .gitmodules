@@ -1,7 +1,0 @@
-[submodule "dotbot"]
-	path = dotbot
-	url = git@github.com:anishathalye/dotbot.git
-	ignore = dirty
-[submodule "gitalias"]
-	path = gitalias
-	url = git@github.com:GitAlias/gitalias.git
