@@ -1,8 +1,12 @@
-{ config, pkgs, ... }:
+{ config, lib, ... }:
 
 {
-  home.packages = [ pkgs.gnupg ];
-  home.sessionVariables.GNUPGHOME = "${config.xdg.dataHome}/gnupg";
+  programs.gpg = {
+    enable = true;
+    homedir = "${config.xdg.dataHome}/gnupg";
+    # Keep existing gpg.conf unmanaged instead of installing the module's default settings.
+    settings = lib.mkForce { };
+  };
 
   programs.git.settings.commit.gpgsign = true;
 
