@@ -5,6 +5,10 @@
     autosuggestion.enable = true;
     enable = true;
     enableCompletion = true;
+    completionInit = ''
+      autoload -Uz compinit
+      compinit -d "${config.xdg.cacheHome}/zsh/zcompdump-$ZSH_VERSION"
+    '';
 
     history = {
       expireDuplicatesFirst = true;
@@ -70,6 +74,8 @@
       fi
     '';
   };
+
+  xdg.cacheFile."zsh/.keep".text = "";
 
   home.sessionVariables = {
     EDITOR = "nvim";
