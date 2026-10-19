@@ -2,7 +2,7 @@
 set -e
 set -u
 
-RFKILL=(sudo /usr/sbin/rfkill)
+RFKILL=(sudo rfkill)
 
 wifi_interface() {
   networksetup -listallhardwareports | awk '/Hardware Port: (Wi-Fi|AirPort)/ {getline; sub(/^Device: /, ""); print; exit}'

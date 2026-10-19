@@ -5,9 +5,9 @@ set -o pipefail
 
 if hash pbpaste 2>/dev/null; then
   exec pbpaste
-elif hash wl-paste 2>/dev/null; then
+elif [[ -n "${WAYLAND_DISPLAY:-}" ]] && hash wl-paste 2>/dev/null; then
   exec wl-paste
-elif hash xclip 2>/dev/null; then
+elif [[ -n "${DISPLAY:-}" ]] && hash xclip 2>/dev/null; then
   exec xclip -selection clipboard -o
 else
   echo 'cannot find a paste program' >&2
