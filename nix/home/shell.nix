@@ -63,6 +63,10 @@
     };
 
     initContent = ''
+      if command -v tput >/dev/null 2>&1 && [[ -t 1 ]]; then
+        export LESS_TERMCAP_md="$(tput bold; tput setaf 4)"
+      fi
+
       ${builtins.readFile ./zsh-completion.zsh}
       ${builtins.readFile ./zsh-functions.zsh}
       ${builtins.readFile ./zsh-keymaps.zsh}
