@@ -175,7 +175,7 @@
         '';
       };
 
-      safe.directory = "/etc/nixos";
+      safe.directory = [ "/etc/nixos" ];
     };
   };
 
