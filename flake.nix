@@ -43,6 +43,20 @@
             ./nix/hosts/rigel.nix
           ];
         };
+        "ASUS-2D03N64" = {
+          imports = [
+            self.homeManagerModules.default
+            ./nix/hosts/ASUS-2D03N64.nix
+          ];
+        };
+      };
+
+      homeConfigurations."sean@ASUS-2D03N64" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+        modules = [ self.homeManagerModules."ASUS-2D03N64" ];
       };
 
       darwinConfigurations."S-MBA" = nix-darwin.lib.darwinSystem {
