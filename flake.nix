@@ -46,7 +46,7 @@
         "ASUS-2D03N64" = {
           imports = [
             self.homeManagerModules.default
-            ./nix/hosts/ASUS-2D03N64.nix
+            ./nix/hosts/ASUS-2D03N64
           ];
         };
       };
