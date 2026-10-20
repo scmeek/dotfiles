@@ -9,7 +9,9 @@
 
     settings = {
       add_newline = false;
+      command_timeout = 1000;
       continuation_prompt = "[▸▹ ](dimmed white)";
+      scan_timeout = 100;
       format = lib.concatStrings [
         "($nix_shell$container$fill$cmd_duration$git_metrics$time \n)"
         "$username"
