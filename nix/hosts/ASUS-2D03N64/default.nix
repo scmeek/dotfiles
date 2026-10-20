@@ -3,6 +3,7 @@
 {
   imports = [
     ./git.nix
+    ./shell.nix
     ../../home
     ../../profiles/development
   ];
