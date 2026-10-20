@@ -1,3 +1,3 @@
 { ... }: {
-  xdg.configFile."nvim/lua/plugins/obsidian.lua".source = ./obsidian.lua;
+  xdg.configFile."nvim/lua/plugins/obsidian.lua".source = ./plugins/obsidian.lua;
 }

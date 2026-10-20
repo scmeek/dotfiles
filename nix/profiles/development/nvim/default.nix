@@ -1,17 +1,64 @@
-{ ... }: {
-  imports = [
-    ./devcontainer.nix
-    ./mason.nix
-    ./rust.nix
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+
+{
+  home.sessionVariables = {
+    CARGO_HOME = "${config.xdg.dataHome}/cargo";
+    CARGO_NET_GIT_FETCH_WITH_CLI = "true";
+    RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
+  };
+
+  home.packages = with pkgs; [
+    bacon
+    chafa
+    devcontainer
+    docker-client
+    ghostscript
+    mermaid-cli
+    rustup
+    texliveSmall
+    ueberzugpp
+    viu
   ];
 
-  xdg.configFile = {
-    "nvim/lua/plugins/atlas.lua".source = ./atlas.lua;
-    "nvim/lua/extras/development.lua".source = ./extras.lua;
-    "nvim/lua/plugins/development-conform.lua".source = ./conform.lua;
-    "nvim/lua/plugins/development-lspconfig.lua".source = ./lspconfig.lua;
-    "nvim/lua/plugins/dap.lua".source = ./dap.lua;
-    "nvim/lua/plugins/dap_ui.lua".source = ./dap_ui.lua;
-    "nvim/lua/plugins/tsautotag.lua".source = ./tsautotag.lua;
-  };
+  programs.neovim.extraPackages = with pkgs; [
+    bacon
+    black
+    clang-tools
+    devcontainer
+    docker-client
+    isort
+    pyright
+    python3Packages.debugpy
+    prettier
+    rustup
+    taplo
+    typescript-language-server
+    yaml-language-server
+    yamlfmt
+    yamllint
+  ];
+
+  xdg.configFile =
+    let
+      luaFiles =
+        dir:
+        lib.mapAttrs'
+          (
+            name: _:
+            lib.nameValuePair "nvim/lua/${dir}/${name}" {
+              source = ./. + "/${dir}/${name}";
+            }
+          )
+          (
+            lib.filterAttrs (name: type: type == "regular" && lib.hasSuffix ".lua" name) (
+              builtins.readDir (./. + "/${dir}")
+            )
+          );
+    in
+    (luaFiles "extras") // (luaFiles "plugins");
 }

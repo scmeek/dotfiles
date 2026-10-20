@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -13,6 +13,14 @@
     viAlias = true;
     vimAlias = true;
     initLua = builtins.readFile ./init.lua;
+
+    extraPackages = with pkgs; [
+      lua-language-server
+      bash-language-server
+      shellcheck
+      shfmt
+      stylua
+    ];
   };
 
   xdg.configFile = {

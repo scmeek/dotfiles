@@ -22,40 +22,22 @@
 
   home.sessionPath = [ "${config.home.sessionVariables.NPM_CONFIG_PREFIX}/bin" ];
 
-  home.packages =
-    with pkgs;
-    [
-      # Development tools
-      actionlint
-      gh
-      go
-      gnumake
-      just
-      opencode
-      pandoc
-      pkg-config
-      pyenv
-      zig
-      zola
-
-      # Runtimes
-      deno
-      luarocks
-
-      # Containers
-      docker-client
-      docker-compose
-      lazydocker
-
-      # Neovim dependencies
-      viu
-      chafa
-      ueberzugpp
-      ghostscript
-      mermaid-cli
-
-      # LaTeX
-      texliveSmall
-    ]
-    ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.gcc;
+  home.packages = with pkgs; [
+    actionlint
+    deno
+    docker-client
+    docker-compose
+    gh
+    go
+    gnumake
+    just
+    lazydocker
+    luarocks
+    opencode
+    pandoc
+    pkg-config
+    pyenv
+    zig
+    zola
+  ];
 }

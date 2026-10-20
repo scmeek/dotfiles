@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 
 {
-  programs.neovim.extraPackages = [
-    pkgs.tree-sitter
-  ]
-  ++ lib.optional pkgs.stdenv.hostPlatform.isLinux pkgs.gcc;
+  programs.neovim.extraPackages = with pkgs; [
+    gcc
+    tree-sitter
+  ];
 }
