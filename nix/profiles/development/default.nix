@@ -40,7 +40,6 @@
 
       # Runtimes
       deno
-      nodejs_24
       luarocks
 
       # Containers

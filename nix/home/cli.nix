@@ -23,6 +23,7 @@
       ncurses
       nixfmt
       nnn
+      nodejs
       p7zip
       perl
       poppler-utils
