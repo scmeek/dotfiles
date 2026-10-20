@@ -2,10 +2,10 @@
 
 {
   imports = [
+    ../../home
+    ./development.nix
     ./git.nix
     ./shell.nix
-    ../../home
-    ../../profiles/development
   ];
 
   home = {
