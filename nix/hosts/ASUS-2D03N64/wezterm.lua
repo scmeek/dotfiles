@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 
 return function(config)
-  config.default_cwd = "\\\\wsl.localhost\\Ubuntu-22,04\\home\\sean"
+  config.default_cwd = "\\\\wsl.localhost\\Ubuntu-22.04\\home\\sean"
   config.default_prog = {
     "wsl",
     "tmux",
