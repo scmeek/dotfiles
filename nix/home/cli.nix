@@ -33,6 +33,7 @@
       slides
       typtea
       unbound
+      unzip
       wget
       yt-dlp
       zbar
