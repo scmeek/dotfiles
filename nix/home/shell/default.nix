@@ -73,8 +73,8 @@
       ${builtins.readFile ./zsh-status-rule.zsh}
 
       # Machine-specific configuration (not managed by Nix)
-      if [[ -f "$HOME/.config/zsh_local" ]]; then
-        source "$HOME/.config/zsh_local"
+      if [[ -f "$HOME/.config/zsh/.zsh_local" ]]; then
+        source "$HOME/.config/zsh/.zsh_local"
       fi
     '';
   };
