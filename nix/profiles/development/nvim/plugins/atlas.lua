@@ -85,10 +85,7 @@ return {
       },
       repo_config = {
         -- Maps `namespace/repo` to local paths. Used for checkout, diffs, and custom actions.
-        paths = {
-          ["ASUS/*"] = "~/source/frigg/*",
-          ["ASUS/frigg"] = "~/code/frigg",
-        },
+        paths = {},
         -- settings = {
         --   ["your-workspace/atlas"] = {
         --     readme = "README.md", -- optional, defaults to README.md
