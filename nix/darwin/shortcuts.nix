@@ -5,7 +5,7 @@
 
   home-manager.sharedModules = [
     {
-      home.file.".hammerspoon/init.lua".source = ./shortcuts/init.lua;
+      home.file.".hammerspoon/init.lua".text = builtins.readFile ./shortcuts/init.lua;
     }
   ];
 }

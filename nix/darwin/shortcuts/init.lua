@@ -42,3 +42,19 @@ hs.hotkey.bind(
     window:minimize()
   end)
 )
+
+hs.hotkey.bind({ "cmd" }, "1", function()
+  hs.application.launchOrFocusByBundleID("com.github.wez.wezterm")
+end)
+
+hs.hotkey.bind({ "cmd" }, "2", function()
+  hs.application.launchOrFocusByBundleID("com.apple.Safari")
+end)
+
+hs.hotkey.bind({ "cmd" }, "3", function()
+  hs.application.launchOrFocusByBundleID("com.apple.Music")
+end)
+
+hs.hotkey.bind({ "cmd" }, "4", function()
+  hs.application.launchOrFocusByBundleID("com.apple.MobileSMS")
+end)
