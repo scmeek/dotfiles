@@ -6,6 +6,7 @@
     ./git.nix
     ./shell.nix
     ../../profiles/development
+    ../../profiles/notes/nvim
     ./nvim
   ];
 
