@@ -17,7 +17,13 @@
     plugins = with pkgs.tmuxPlugins; [
       sensible
       yank
-      vim-tmux-navigator
+      {
+        plugin = vim-tmux-navigator;
+        extraConfig = ''
+          # Forward navigation through SSH to remote Neovim or tmux.
+          set -g @vim_navigator_pattern '(\S+/)?g?\.?(view|l?n?vim?x?|fzf|ssh)(diff)?(-wrapped)?'
+        '';
+      }
     ];
 
     extraConfig = builtins.readFile ./tmux-extra.conf;
