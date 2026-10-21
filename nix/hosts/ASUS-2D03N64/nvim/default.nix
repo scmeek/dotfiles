@@ -1,48 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, ... }:
 
 {
-  home.sessionVariables = {
-    CARGO_HOME = "${config.xdg.dataHome}/cargo";
-    CARGO_NET_GIT_FETCH_WITH_CLI = "true";
-    NVIM_ENABLE_COPILOT = "0";
-    RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
-  };
-
-  home.packages = with pkgs; [
-    bacon
-    chafa
-    devcontainer
-    docker-client
-    ghostscript
-    mermaid-cli
-    rustup
-    texliveSmall
-    ueberzugpp
-    viu
-  ];
-
-  programs.neovim.extraPackages = with pkgs; [
-    bacon
-    black
-    clang-tools
-    devcontainer
-    docker-client
-    isort
-    pyright
-    python3Packages.debugpy
-    prettier
-    rustup
-    taplo
-    typescript-language-server
-    yaml-language-server
-    yamlfmt
-    yamllint
-  ];
+  home.sessionVariables.NVIM_ENABLE_COPILOT = "0";
 
   xdg.configFile = {
     "nvim/lua/config/atlas.lua".source = ../../../profiles/development/nvim/plugins/atlas.lua;
