@@ -5,7 +5,6 @@
     ./halloy.nix
     ./keybindings.nix
     ./shell.nix
-    ./shortcuts.nix
     ./yazi.nix
   ];
 
