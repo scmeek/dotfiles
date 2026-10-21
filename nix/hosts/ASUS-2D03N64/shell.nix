@@ -48,7 +48,6 @@
       # https://openproject.astroscale-us.com/projects/software-team/wiki/iac-local-development
       export TENV_AUTO_INSTALL=true
 
-      export PYENV_ROOT="$HOME/.pyenv"
       [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
       eval "$(pyenv init - zsh)"
 
