@@ -1,6 +1,3 @@
-local notes_path = vim.fn.expand("~")
-  .. [[/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes]]
-
 return {
   "obsidian-nvim/obsidian.nvim",
   version = "*",
@@ -11,7 +8,6 @@ return {
   end,
   opts = {
     legacy_commands = false,
-    workspaces = { { name = "notes", path = notes_path } },
     daily_notes = {
       folder = "journal",
       date_format = "YYYY-MM-DD",

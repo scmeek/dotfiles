@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -40,6 +45,11 @@
 
       programs.git.settings.user.signingkey = "8F73E7B76CBD3188";
       programs.zsh.shellAliases.drs = "nix flake update && darwin-rebuild build --flake .#S-MBA && sudo darwin-rebuild switch --flake .#S-MBA";
+
+      xdg.configFile = {
+        "nvim/lua/config/obsidian.lua".source = ../profiles/notes/nvim/plugins/obsidian.lua;
+        "nvim/lua/plugins/obsidian.lua".source = lib.mkForce ./S-MBA/nvim/plugins/obsidian.lua;
+      };
     };
   };
 
