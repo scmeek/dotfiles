@@ -2,6 +2,15 @@
 
 let
   lua = lib.generators.mkLuaInline;
+  copy = lua ''
+    wezterm.action_callback(function(window, pane)
+        if window:get_selection_text_for_pane(pane) ~= "" then
+          window:perform_action(wezterm.action.CopyTo("Clipboard"), pane)
+        else
+          -- Send a dedicated copy sequence without sending Ctrl-C to the shell.
+          window:perform_action(wezterm.action.SendString("\x1b[5;30012~"), pane)
+        end
+      end)'';
 
   settings = {
     animation_fps = 24;
@@ -49,7 +58,7 @@ let
       {
         key = "C";
         mods = "SUPER";
-        action = lua ''wezterm.action.CopyTo("Clipboard")'';
+        action = copy;
       }
       {
         key = "L";
@@ -69,7 +78,7 @@ let
       {
         key = "c";
         mods = "SUPER";
-        action = lua ''wezterm.action.CopyTo("Clipboard")'';
+        action = copy;
       }
       {
         key = "q";
