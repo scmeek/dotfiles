@@ -9,6 +9,7 @@
     shellAliases = {
       acr = "az acr login --name asusdev";
       open = "explorer.exe";
+      hrs = "nix flake update && home-manager build --flake .#sean@ASUS-2D03N64 && home-manager switch --flake .#sean@ASUS-2D03N64";
       sf = "source frigg_bashrc";
       sff = "source frigg_bashrc force";
       tf = "tofu";
