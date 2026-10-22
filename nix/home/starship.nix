@@ -21,8 +21,8 @@
         "$shell"
         "$env_var"
         "$jobs"
-        "$sudo"
         "$character"
+        "$sudo "
       ];
       right_format = lib.concatStrings [
         "$singularity"
@@ -101,7 +101,7 @@
         symbol = " ";
       };
       character = {
-        format = "$symbol ";
+        format = "$symbol";
         success_symbol = "[\\$](bold green)";
         error_symbol = "[\\$](bold red)";
         vimcmd_symbol = "[■](bold dimmed green)";
