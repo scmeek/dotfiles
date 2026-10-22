@@ -56,6 +56,11 @@
           system = "x86_64-linux";
           config.allowUnfree = true;
         };
+
+        extraSpecialArgs = {
+          inherit self;
+        };
+
         modules = [ self.homeManagerModules."ASUS-2D03N64" ];
       };
 

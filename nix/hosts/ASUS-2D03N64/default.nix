@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  self,
+  ...
+}:
 
 {
   imports = [
@@ -22,6 +27,9 @@
   home.packages = with pkgs; [
     pixi
   ];
+
+  # symlink home-manager to /nix/store/...-source for config file
+  xdg.configFile."home-manager".source = self;
 
   programs.zsh.shellAliases.hrs = "nix flake update && home-manager build --flake .#sean@ASUS-2D03N64 && home-manager switch --flake .#sean@ASUS-2D03N64";
 }
