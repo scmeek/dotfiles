@@ -52,35 +52,42 @@ info() {
 }
 
 note() {
-  _print "$BLUE" '' "$@"
+  _print "$BLUE" '📝 ' "NOTE: " "$@"
 }
 
 warn() {
-  _print "$MAGENTA" '⚠️  ' "$@"
+  _print "$MAGENTA" '⚠️ ' "WARNING: " "$@"
 }
 
 success() {
-  _print "$GREEN" '✅ ' "$@"
+  _print "$GREEN" '✅ ' "SUCCESS: " "$@"
 }
 
 error() {
-  _print "$RED" '🚨 ' "$@"
+  _print "$RED" '❌ ' "ERROR: " "$@"
 }
 
 die() {
-  error "$@"
+  _print "$RED" '💥 ' "ERROR: " "$@"
   exit 1
 }
 
 exit_success() {
-  _print "$GREEN" '🎉 ' "$@"
+  _print "$GREEN" '🎉 ' "SUCCESS: " "$@"
   exit 0
+}
+
+usage() {
+    note "Usage: ${0##*/} <args...>"
+    note "<description>"
 }
 
 main() {
     for arg in "$@"; do
         echo "$arg"
     done
+
+    usage
 
     die "Unimplemented!"
 }
