@@ -8,6 +8,7 @@
       bash
       bind
       coreutils
+      curl
       duf
       fastfetch
       fd
