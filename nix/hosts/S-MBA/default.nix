@@ -7,11 +7,11 @@
 
 {
   imports = [
-    ../darwin/system.nix
-    ../profiles/desktop-darwin-system.nix
-    ../profiles/development-darwin-system.nix
-    ../profiles/gpg-darwin-system.nix
-    ./S-MBA/homebrew.nix
+    ../../darwin/system.nix
+    ../../profiles/desktop-darwin-system.nix
+    ../../profiles/development-darwin-system.nix
+    ../../profiles/gpg-darwin-system.nix
+    ./homebrew.nix
   ];
 
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -39,20 +39,20 @@
       home.sessionVariables.NVIM_ENABLE_COPILOT = "1";
 
       imports = [
-        ../home
-        ../darwin
+        ../../home
+        ../../darwin
 
-        ../profiles/development-darwin.nix
-        ../profiles/gpg-darwin.nix
-        ../profiles/notes-darwin.nix
+        ../../profiles/development-darwin.nix
+        ../../profiles/gpg-darwin.nix
+        ../../profiles/notes-darwin.nix
       ];
 
       programs.git.settings.user.signingkey = "8F73E7B76CBD3188";
       programs.zsh.shellAliases.drs = "nfmt && nix flake update && nix flake check && nixos-rebuild build --flake .#S-MBA && sudo nixos-rebuild switch --flake .#S-MBA B";
 
       xdg.configFile = {
-        "nvim/lua/config/obsidian.lua".source = ../profiles/notes/nvim/plugins/obsidian.lua;
-        "nvim/lua/plugins/obsidian.lua".source = lib.mkForce ./S-MBA/nvim/plugins/obsidian.lua;
+        "nvim/lua/config/obsidian.lua".source = ../../profiles/notes/nvim/plugins/obsidian.lua;
+        "nvim/lua/plugins/obsidian.lua".source = lib.mkForce ./nvim/plugins/obsidian.lua;
       };
     };
   };

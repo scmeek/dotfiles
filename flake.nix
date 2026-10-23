@@ -66,7 +66,7 @@
 
       darwinConfigurations."S-MBA" = nix-darwin.lib.darwinSystem {
         modules = [
-          ./nix/hosts/S-MBA.nix
+          ./nix/hosts/S-MBA
 
           home-manager.darwinModules.home-manager
           nix-homebrew.darwinModules.nix-homebrew
