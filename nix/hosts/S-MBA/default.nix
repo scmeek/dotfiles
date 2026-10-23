@@ -48,7 +48,6 @@
       ];
 
       programs.git.settings.user.signingkey = "8F73E7B76CBD3188";
-      programs.zsh.shellAliases.drs = "nfmt && nix flake update && nix flake check && darwin-rebuild build --flake .#S-MBA && sudo darwin-rebuild switch --flake .#S-MBA B";
 
       xdg.configFile = {
         "nvim/lua/config/obsidian.lua".source = ../../profiles/notes/nvim/plugins/obsidian.lua;
