@@ -11,6 +11,10 @@
     enableZshIntegration = true;
     global.autoUpdate = false;
 
+    masApps = {
+      WireGuard = 1451685025;
+    };
+
     onActivation = {
       cleanup = "check";
       autoUpdate = true;
