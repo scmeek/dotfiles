@@ -1,6 +1,10 @@
 { ... }:
 
 {
+  homebrew.masApps = {
+    "GoPro Webcam" = 6477835262;
+  };
+
   homebrew.casks = [
     # Productivity and communication
     "brave-browser"
