@@ -9,10 +9,12 @@
   system.defaults.NSGlobalDomain.NSWindowShouldDragOnGesture = true;
   #defaults delete -g NSWindowShouldDragOnGesture # Revert
 
-  # Reserve three-finger horizontal swipes for Safari tabs in Hammerspoon.
+  # Reserve three-finger swipes for Safari tabs in Hammerspoon.
   system.defaults.trackpad = {
     TrackpadThreeFingerHorizSwipeGesture = 0;
     TrackpadFourFingerHorizSwipeGesture = 2;
+    TrackpadThreeFingerVertSwipeGesture = 0;
+    TrackpadFourFingerVertSwipeGesture = 2;
     TrackpadThreeFingerDrag = false;
   };
 }

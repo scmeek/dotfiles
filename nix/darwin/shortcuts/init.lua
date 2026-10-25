@@ -60,16 +60,23 @@ hs.hotkey.bind({ "cmd" }, "4", function()
 end)
 
 -- Safari: natural motion, three fingers left for the next tab, right for the previous tab.
+-- Swipe up to open a tab, down to close the current tab.
+local swipeKeys = {
+  left = { { "ctrl" }, "tab" },
+  right = { { "ctrl", "shift" }, "tab" },
+  up = { { "cmd" }, "t" },
+  down = { { "cmd" }, "w" },
+}
 local lastSwipe
 hs.loadSpoon("Swipe")
 spoon.Swipe:start(3, function(direction, distance, id)
-  if id == lastSwipe or distance < 0.08 or (direction ~= "left" and direction ~= "right") then
+  local keys = swipeKeys[direction]
+  if id == lastSwipe or distance < 0.08 or not keys then
     return
   end
   lastSwipe = id -- One tab per swipe.
   local app = hs.application.frontmostApplication()
   if app and app:bundleID() == "com.apple.Safari" then
-    local modifiers = direction == "right" and { "ctrl", "shift" } or { "ctrl" }
-    hs.eventtap.keyStroke(modifiers, "tab", 0, app)
+    hs.eventtap.keyStroke(keys[1], keys[2], 0, app)
   end
 end)
