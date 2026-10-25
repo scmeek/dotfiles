@@ -4,7 +4,7 @@
   imports = [
     ./defaults.nix
     ./homebrew.nix
-    ./shortcuts.nix
+    ./shortcuts
     ./wezterm.nix
   ];
 

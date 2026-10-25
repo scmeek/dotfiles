@@ -5,7 +5,7 @@
 
   home-manager.sharedModules = [
     ({ pkgs, ... }: {
-      home.file.".hammerspoon/init.lua".text = builtins.readFile ./shortcuts/init.lua;
+      home.file.".hammerspoon/init.lua".text = builtins.readFile ./init.lua;
       home.file.".hammerspoon/Spoons/Swipe.spoon".source = pkgs.fetchFromGitHub {
         owner = "mogenson";
         repo = "Swipe.spoon";
