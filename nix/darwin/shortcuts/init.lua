@@ -58,3 +58,18 @@ end)
 hs.hotkey.bind({ "cmd" }, "4", function()
   hs.application.launchOrFocusByBundleID("com.apple.MobileSMS")
 end)
+
+-- Safari: natural motion, three fingers left for the next tab, right for the previous tab.
+local lastSwipe
+hs.loadSpoon("Swipe")
+spoon.Swipe:start(3, function(direction, distance, id)
+  if id == lastSwipe or distance < 0.08 or (direction ~= "left" and direction ~= "right") then
+    return
+  end
+  lastSwipe = id -- One tab per swipe.
+  local app = hs.application.frontmostApplication()
+  if app and app:bundleID() == "com.apple.Safari" then
+    local modifiers = direction == "right" and { "ctrl", "shift" } or { "ctrl" }
+    hs.eventtap.keyStroke(modifiers, "tab", 0, app)
+  end
+end)
