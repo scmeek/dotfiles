@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  wtfi2,
+  ...
+}:
 
 {
   home.packages =
@@ -38,6 +43,7 @@
       wget
       yt-dlp
       zbar
+      wtfi2.packages.${pkgs.stdenv.hostPlatform.system}.default
     ]
     ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
       pkgs.espeak-ng
