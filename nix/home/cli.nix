@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  db9s,
   wtfi2,
   ...
 }:
@@ -14,6 +15,7 @@
       bind
       coreutils
       curl
+      (pkgs.callPackage ../packages/db9s.nix { src = db9s; })
       duf
       fastfetch
       fd

@@ -17,6 +17,22 @@
         "type": "github"
       }
     },
+    "db9s": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793127106,
+        "narHash": "sha256-VsMmvkQhwrJLFP+Ka10Yff5GBwtgydR7Z1ouHf4Juy0=",
+        "owner": "damien-mathieu1",
+        "repo": "db9s",
+        "rev": "e62256b6f7c5489fb33c6cffc17efd5c4edd6533",
+        "type": "github"
+      },
+      "original": {
+        "owner": "damien-mathieu1",
+        "repo": "db9s",
+        "type": "github"
+      }
+    },
     "gitalias": {
       "flake": false,
       "locked": {
@@ -111,6 +127,7 @@
     },
     "root": {
       "inputs": {
+        "db9s": "db9s",
         "gitalias": "gitalias",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",

@@ -4,6 +4,11 @@
   inputs = {
     self.submodules = true;
 
+    db9s = {
+      url = "github:damien-mathieu1/db9s";
+      flake = false;
+    };
+
     gitalias = {
       url = "github:GitAlias/gitalias";
       flake = false;
@@ -40,6 +45,7 @@
         default = {
           imports = [ ./nix/home ];
           _module.args.gitalias = inputs.gitalias;
+          _module.args.db9s = inputs.db9s;
           _module.args.wtfi2 = inputs.wtfi2;
         };
         rigel = {
@@ -77,7 +83,7 @@
           nix-homebrew.darwinModules.nix-homebrew
           {
             home-manager.extraSpecialArgs = {
-              inherit (inputs) gitalias wtfi2;
+              inherit (inputs) db9s gitalias wtfi2;
             };
           }
         ];
