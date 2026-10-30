@@ -5,15 +5,11 @@ vim.g.rustaceanvim = {
       local cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
       return function(dispatchers, config)
         cwd = cwd or config.root_dir
-        local analyzer = vim.system({ vim.fn.exepath("rustup"), "which", "rust-analyzer" }, {
-          cwd = cwd,
-          env = config.cmd_env,
-          text = true,
-        }):wait()
-        if analyzer.code ~= 0 then
-          error(vim.trim(analyzer.stderr))
-        end
-        return vim.lsp.rpc.start({ vim.trim(analyzer.stdout) }, dispatchers, {
+        local analyzer = vim.fs.joinpath(
+          vim.fs.dirname(vim.fn.exepath("rustup")),
+          "rust-analyzer"
+        )
+        return vim.lsp.rpc.start({ analyzer }, dispatchers, {
           cwd = cwd or config.root_dir,
           env = config.cmd_env,
           detached = config.detached,

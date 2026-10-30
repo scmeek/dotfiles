@@ -5,6 +5,22 @@
   ...
 }:
 
+let
+  # Keep the CLI and editor on the project's rustup toolchain, installing its
+  # optional language-server components on first use.
+  rustupWithAnalyzer = pkgs.symlinkJoin {
+    name = "rustup-with-analyzer-${pkgs.rustup.version}";
+    paths = [ pkgs.rustup ];
+    postBuild = ''
+      ln -sf ${pkgs.writeShellScript "rust-analyzer" ''
+        set -eu
+        ${pkgs.rustup}/bin/rustup component add rust-analyzer rust-src >&2
+        analyzer="$(${pkgs.rustup}/bin/rustup which rust-analyzer)"
+        exec "$analyzer" "$@"
+      ''} "$out/bin/rust-analyzer"
+    '';
+  };
+in
 {
   home.sessionVariables = {
     CARGO_HOME = "${config.xdg.dataHome}/cargo";
@@ -19,7 +35,7 @@
     docker-client
     ghostscript
     mermaid-cli
-    rustup
+    rustupWithAnalyzer
     texliveSmall
     ueberzugpp
     viu
@@ -35,7 +51,7 @@
     pyright
     python3Packages.debugpy
     prettier
-    rustup
+    rustupWithAnalyzer
     taplo
     typescript-language-server
     yaml-language-server
