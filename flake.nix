@@ -24,6 +24,7 @@
     };
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-26.05-darwin";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     wtfi2 = {
       url = "github:kanywst/wtfi2";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,6 +48,7 @@
           _module.args.gitalias = inputs.gitalias;
           _module.args.db9s = inputs.db9s;
           _module.args.wtfi2 = inputs.wtfi2;
+          _module.args.nixpkgs-unstable = inputs.nixpkgs-unstable;
         };
         rigel = {
           imports = [
@@ -83,7 +85,12 @@
           nix-homebrew.darwinModules.nix-homebrew
           {
             home-manager.extraSpecialArgs = {
-              inherit (inputs) db9s gitalias wtfi2;
+              inherit (inputs)
+                db9s
+                gitalias
+                nixpkgs-unstable
+                wtfi2
+                ;
             };
           }
         ];

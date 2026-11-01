@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  nixpkgs-unstable,
   ...
 }:
 
@@ -38,6 +39,7 @@
     pkg-config
     pyenv
     zig
-    zola
+    # Zola 0.23 is available on unstable; keep other development tools on stable.
+    nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.zola
   ];
 }
