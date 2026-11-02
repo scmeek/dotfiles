@@ -12,6 +12,7 @@
     "libreoffice"
     "netnewswire"
     "projectlibre"
+    "tor-browser"
     "whatsapp"
     "zoom"
 

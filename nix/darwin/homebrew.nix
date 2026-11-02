@@ -1,4 +1,4 @@
-{ ... }:
+{ config, lib, ... }:
 
 {
   nix-homebrew.extraEnv = {
@@ -23,8 +23,8 @@
 
     onActivation = {
       cleanup = "check";
-      # Don't auto upgrade homebrew itself, which is managed (pinned and
-      # upgraded) by nix
+      # Inline auto-update restarts the nix-homebrew wrapper and loses mas from PATH.
+      # Refresh metadata separately below, before running Bundle.
       autoUpdate = false;
       upgrade = true;
     };
@@ -37,4 +37,12 @@
     ];
 
   };
+
+  system.activationScripts.homebrew.text = lib.mkBefore ''
+    if [ -x ${lib.escapeShellArg "${config.homebrew.prefix}/bin/brew"} ]; then
+      echo >&2 "Refreshing Homebrew package metadata..."
+      sudo --user=${lib.escapeShellArg config.homebrew.user} --set-home \
+        ${lib.escapeShellArg "${config.homebrew.prefix}/bin/brew"} update
+    fi
+  '';
 }

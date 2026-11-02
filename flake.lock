@@ -160,11 +160,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793454680,
-        "narHash": "sha256-E3SGLSjcI8CuhjmgdiA6CZJtcpSaqciihwHYf74iTmI=",
+        "lastModified": 1793555190,
+        "narHash": "sha256-AJEfURzyM0JGK190db4h9nHQBTegcSA5eYo8i8PsCbE=",
         "owner": "kanywst",
         "repo": "wtfi2",
-        "rev": "f78457c70a0e4c72ced07e2befd7e6e7a784017b",
+        "rev": "43937ed85ff80905333588faafff951647d5a89c",
         "type": "github"
       },
       "original": {
