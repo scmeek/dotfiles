@@ -3,7 +3,6 @@ return {
   optional = true,
   opts = function(_, opts)
     local supplied_by_nix = {
-      ["bacon"] = true,
       ["rust-analyzer"] = true,
       ["rustfmt"] = true,
       ["clang-format"] = true,
@@ -27,7 +26,6 @@ return {
       "eslint-lsp",
       "html-lsp",
       "tailwindcss-language-server",
-      "bacon-ls",
     })
   end,
 }

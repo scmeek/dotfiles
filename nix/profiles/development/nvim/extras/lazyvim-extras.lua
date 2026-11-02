@@ -1,4 +1,4 @@
-vim.g.lazyvim_rust_diagnostics = "bacon-ls"
+vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
 
 return {
   { import = "lazyvim.plugins.extras.lang.ansible" },

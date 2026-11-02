@@ -18,17 +18,13 @@ vim.g.rustaceanvim = {
     end,
     default_settings = {
       ["rust-analyzer"] = {
-        -- Disable check-on-save so it doesn't run cargo check/clippy concurrently with bacon
-        checkOnSave = false,
+        checkOnSave = true,
         cachePriming = {
           -- Skip startup cache priming; may make the first requests slower
           enable = false,
         },
         diagnostics = {
-          -- Disable native diagnostics so they don't overlap with bacon-ls diagnostics
-          enable = false,
-          --   -- Prevent macro loops from freezing the editor
-          --   disabled = { "unresolved-proc-macro" },
+          enable = true,
         },
         cargo = {
           buildScripts = {

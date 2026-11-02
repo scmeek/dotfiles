@@ -29,7 +29,6 @@ in
   };
 
   home.packages = with pkgs; [
-    bacon
     chafa
     devcontainer
     docker-client
@@ -42,7 +41,6 @@ in
   ];
 
   programs.neovim.extraPackages = with pkgs; [
-    bacon
     black
     clang-tools
     devcontainer
