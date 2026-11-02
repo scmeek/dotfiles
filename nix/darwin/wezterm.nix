@@ -116,6 +116,7 @@ let
     native_macos_fullscreen_mode = true;
     scrollback_lines = 10000;
     term = "wezterm";
+    use_ime = false;
     window_background_opacity = 0.775;
     window_close_confirmation = "NeverPrompt";
     window_decorations = "RESIZE";
