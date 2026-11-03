@@ -1,5 +1,7 @@
 local data_dir = vim.fn.stdpath("data")
 
+-- Remove the suppression `I` flag so that the neovim welcome screen is shown
+vim.opt.shortmess:remove("I")
 if vim.fn.has("wsl") == 1 then
   local copy = require("vim.ui.clipboard.osc52").copy("+")
   local paste = { "xclip", "-selection", "clipboard", "-o" }

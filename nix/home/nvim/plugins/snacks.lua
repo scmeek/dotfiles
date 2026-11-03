@@ -59,6 +59,7 @@ return {
       },
     },
     dashboard = {
+      enabled = false,
       preset = {
         header = "Neovim",
       },
