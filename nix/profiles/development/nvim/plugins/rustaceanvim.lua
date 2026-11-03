@@ -17,21 +17,29 @@ vim.g.rustaceanvim = {
     end,
     default_settings = {
       ["rust-analyzer"] = {
-        checkOnSave = true,
         cachePriming = {
           -- Skip startup cache priming; may make the first requests slower
           enable = false,
         },
-        diagnostics = {
-          enable = true,
-        },
         cargo = {
+          features = {},
           buildScripts = {
             -- Keep build-script support for crates that require it
             enable = true,
           },
           -- Separate RA build artifacts from regular cargo builds
           targetDir = true,
+        },
+        check = {
+          command = "clippy",
+          extraArgs = { "--no-deps" },
+        },
+        checkOnSave = true,
+        diagnostics = {
+          enable = true,
+        },
+        procMacro = {
+          enable = true,
         },
       },
     },
