@@ -2,17 +2,10 @@ local data_dir = vim.fn.stdpath("data")
 
 if vim.fn.has("wsl") == 1 then
   local copy = require("vim.ui.clipboard.osc52").copy("+")
-  local paste = {
-    "powershell.exe",
-    "-NoLogo",
-    "-NoProfile",
-    "-NonInteractive",
-    "-Command",
-    '[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); [Console]::Out.Write((Get-Clipboard -Raw) -replace "`r", "")',
-  }
+  local paste = { "xclip", "-selection", "clipboard", "-o" }
 
   vim.g.clipboard = {
-    name = "OSC 52 copy / Windows paste (WSL)",
+    name = "OSC 52 copy / X11 paste (WSL)",
     copy = { ["+"] = copy, ["*"] = copy },
     paste = { ["+"] = paste, ["*"] = paste },
     cache_enabled = 0,
