@@ -1,7 +1,7 @@
 local data_dir = vim.fn.stdpath("data")
 
--- WSLg's Wayland clipboard can have no keyboard seat. Use Windows directly.
 if vim.fn.has("wsl") == 1 then
+  local copy = require("vim.ui.clipboard.osc52").copy("+")
   local paste = {
     "powershell.exe",
     "-NoLogo",
@@ -10,9 +10,10 @@ if vim.fn.has("wsl") == 1 then
     "-Command",
     '[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); [Console]::Out.Write((Get-Clipboard -Raw) -replace "`r", "")',
   }
+
   vim.g.clipboard = {
-    name = "Windows clipboard (WSL)",
-    copy = { ["+"] = { "clip.exe" }, ["*"] = { "clip.exe" } },
+    name = "OSC 52 copy / Windows paste (WSL)",
+    copy = { ["+"] = copy, ["*"] = copy },
     paste = { ["+"] = paste, ["*"] = paste },
     cache_enabled = 0,
   }
