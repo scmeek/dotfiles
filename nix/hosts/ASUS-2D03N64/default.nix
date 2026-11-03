@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   self,
@@ -23,6 +24,19 @@
 
   targets.genericLinux.enable = true;
   programs.home-manager.enable = true;
+
+  # Update GPU drivers, if necessary
+  home.activation.updateGpuDrivers =
+    let
+      gpu = config.targets.genericLinux.gpu;
+    in
+    lib.mkIf gpu.enable (
+      lib.hm.dag.entryAfter [ "writeBoundary" "checkExistingGpuDrivers" ] ''
+        if [[ "$(readlink /run/opengl-driver || true)" != "${gpu.drivers}" ]]; then
+          run /usr/bin/sudo ${lib.getExe gpu.setupPackage}
+        fi
+      ''
+    );
 
   home.packages = with pkgs; [
     pixi
