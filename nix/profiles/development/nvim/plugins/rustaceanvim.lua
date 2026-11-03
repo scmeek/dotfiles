@@ -1,16 +1,15 @@
 vim.g.rustaceanvim = {
   server = {
-    -- Resolve through system rustup beside the buffer, respecting repo toolchains.
+    -- Root detection is asynchronous: the current buffer may belong to another
+    -- project by the time this runs. Resolve rustup from the LSP's project root.
     cmd = function()
-      local cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
       return function(dispatchers, config)
-        cwd = cwd or config.root_dir
         local analyzer = vim.fs.joinpath(
           vim.fs.dirname(vim.fn.exepath("rustup")),
           "rust-analyzer"
         )
         return vim.lsp.rpc.start({ analyzer }, dispatchers, {
-          cwd = cwd or config.root_dir,
+          cwd = config.root_dir,
           env = config.cmd_env,
           detached = config.detached,
         })
