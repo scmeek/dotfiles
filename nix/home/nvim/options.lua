@@ -2,16 +2,9 @@ local data_dir = vim.fn.stdpath("data")
 
 -- Remove the suppression `I` flag so that the neovim welcome screen is shown
 vim.opt.shortmess:remove("I")
-if vim.fn.has("wsl") == 1 then
-  local copy = require("vim.ui.clipboard.osc52").copy("+")
-  local paste = { "xclip", "-selection", "clipboard", "-o" }
 
-  vim.g.clipboard = {
-    name = "OSC 52 copy / X11 paste (WSL)",
-    copy = { ["+"] = copy, ["*"] = copy },
-    paste = { ["+"] = paste, ["*"] = paste },
-    cache_enabled = 0,
-  }
+if vim.fn.has("wsl") == 1 then
+  vim.g.clipboard = "xclip"
 end
 
 vim.g.root_spec = { "cwd" }
@@ -21,6 +14,7 @@ local options = {
   backup = true,
   backupdir = data_dir .. "/backup",
   breakindent = true,
+  clipboard = "unnamedplus",
   cmdheight = 0,
   colorcolumn = "80",
   compatible = false,
