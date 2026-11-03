@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  nixpkgs-unstable,
   ...
 }:
 
@@ -34,12 +33,10 @@
     just
     lazydocker
     luarocks
-    opencode
     pandoc
     pkg-config
     pyenv
     zig
-    # Zola 0.23 is available on unstable; keep other development tools on stable.
-    nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.zola
+    zola
   ];
 }
