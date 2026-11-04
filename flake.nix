@@ -28,6 +28,9 @@
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
+    # Keep OpenCode on 2.2.1 while 2.2.5 has a node_modules hash mismatch.
+    opencode-nixpkgs.url = "github:NixOS/nixpkgs/3e662c7cafceb2a65f612e1da9dd39f82eb39ad0";
+
     wtfi2 = {
       url = "github:kanywst/wtfi2";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -53,6 +56,7 @@
               db9s
               gitalias
               nixpkgs-unstable
+              opencode-nixpkgs
               wtfi2
               ;
           };
@@ -106,6 +110,7 @@
                 db9s
                 gitalias
                 nixpkgs-unstable
+                opencode-nixpkgs
                 wtfi2
                 ;
             };
