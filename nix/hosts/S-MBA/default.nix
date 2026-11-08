@@ -10,6 +10,7 @@
     ../../darwin/system.nix
     ../../profiles/desktop-darwin-system.nix
     ../../profiles/development-darwin-system.nix
+    ../../profiles/development-nxnative-darwin-system.nix
     ../../profiles/gpg-darwin-system.nix
     ./homebrew.nix
   ];
