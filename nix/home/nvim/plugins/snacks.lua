@@ -53,6 +53,10 @@ return {
     picker = {
       -- Alt+h toggles hidden files; Alt+i toggles ignored files.
       sources = {
+        explorer = {
+          hidden = true,
+          ignored = true,
+        },
         files = vim.tbl_extend("force", search_source(), { cmd = "rg" }),
         grep = search_source(),
         grep_word = search_source({ "--word-regexp", "--sort=path" }),
