@@ -4,7 +4,7 @@
   programs.zsh = {
     shellAliases = {
       doawake = "caffeinate -dimsu &";
-      drs = "nfmt && nix flake update && nix flake check && darwin-rebuild build --flake .#S-MBA && sudo darwin-rebuild switch --flake .#S-MBA B";
+      nrs = "nfmt && nix flake update && nix flake check && darwin-rebuild build --flake .#S-MBA && sudo darwin-rebuild switch --flake .#S-MBA B";
     };
 
     initContent = ''
