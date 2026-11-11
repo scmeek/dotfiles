@@ -7,7 +7,7 @@ rgfa() {
 }
 
 attempt_activate_venv() {
-  local -a env_paths=("./.venv" "./venv" "${additional_env_paths[@]}")
+  local -a env_paths=("./.venv" "./venv" "tools/venv" "${additional_env_paths[@]}")
   local env_path activate_file_candidate
 
   for env_path in "${env_paths[@]}"; do
