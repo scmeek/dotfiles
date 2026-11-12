@@ -39,6 +39,8 @@
     );
 
   home.packages = with pkgs; [
+    awscli2
+    k9s
     pixi
   ];
 
