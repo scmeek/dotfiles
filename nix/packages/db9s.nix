@@ -4,9 +4,17 @@
   src,
 }:
 
-rustPlatform.buildRustPackage rec {
+let
+  cargoToml = builtins.fromTOML (builtins.readFile "${src}/Cargo.toml");
+in
+rustPlatform.buildRustPackage {
   pname = "db9s";
-  version = (builtins.fromTOML (builtins.readFile "${src}/Cargo.toml")).package.version;
+  version =
+    if builtins.isAttrs cargoToml.package.version then
+      cargoToml.workspace.package.version
+    else
+      cargoToml.package.version;
+
   inherit src;
 
   cargoLock.lockFile = "${src}/Cargo.lock";
