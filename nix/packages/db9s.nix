@@ -1,6 +1,7 @@
 {
   lib,
   rustPlatform,
+  sqlite,
   src,
 }:
 
@@ -14,8 +15,11 @@ rustPlatform.buildRustPackage {
       cargoToml.workspace.package.version
     else
       cargoToml.package.version;
-
   inherit src;
+
+  buildInputs = [
+    sqlite
+  ];
 
   cargoLock.lockFile = "${src}/Cargo.lock";
 
