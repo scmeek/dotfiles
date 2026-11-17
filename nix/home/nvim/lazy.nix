@@ -48,6 +48,19 @@
         },
       },
     })
+
+    -- Workarund until https://github.com/folke/lazy.nvim/pull/2182 is merged
+    -- Skip helptags generation for read-only plugin directories (Nix store).
+    local docs = require("lazy.manage.task.plugin").docs
+    local original_skip = docs.skip
+
+    docs.skip = function(plugin)
+      local dir = plugin.dir .. "/doc"
+      if vim.fn.isdirectory(dir) == 1 and not vim.uv.fs_access(dir, "W") then
+        return true
+      end
+      return original_skip(plugin)
+    end
   '';
   xdg.configFile."nvim/lua/extras/init.lua".text =
     "return "
