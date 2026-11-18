@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  opencode-nixpkgs,
   pkgs,
   ...
 }:
@@ -40,7 +39,7 @@
     just
     lazydocker
     luarocks
-    opencode-nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.opencode
+    opencode
     pandoc
     pkg-config
     pyenv
