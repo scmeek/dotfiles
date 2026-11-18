@@ -50,6 +50,11 @@
 
       programs.git.settings.user.signingkey = "8F73E7B76CBD3188";
 
+      programs.opencode.settings.enabled_providers = [
+        "openai"
+        "anthropic"
+      ];
+
       xdg.configFile = {
         "nvim/lua/config/obsidian.lua".source = ../../profiles/notes/nvim/plugins/obsidian.lua;
         "nvim/lua/plugins/obsidian.lua".source = lib.mkForce ./nvim/plugins/obsidian.lua;

@@ -8,10 +8,10 @@
 {
   imports = [ ./nvim ];
 
-  # Disable every provider, including free models, until explicitly enabled.
-  xdg.configFile."opencode/opencode.json".text = builtins.toJSON {
-    "$schema" = "https://opencode.ai/config.json";
-    enabled_providers = [ ];
+  programs.opencode = {
+    enable = true;
+    # Hosts opt in to providers; credentials stay in OpenCode's local state.
+    settings.enabled_providers = lib.mkDefault [ ];
   };
 
   home.sessionVariables = {
@@ -39,7 +39,6 @@
     just
     lazydocker
     luarocks
-    opencode
     pandoc
     pkg-config
     pyenv
