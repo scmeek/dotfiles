@@ -14,6 +14,8 @@
     settings.enabled_providers = lib.mkDefault [ ];
   };
 
+  programs.zsh.shellAliases.oc = "opencode";
+
   home.sessionVariables = {
     AWS_SHARED_CREDENTIALS_FILE = "${config.xdg.configHome}/aws/credentials";
     AWS_CONFIG_FILE = "${config.xdg.configHome}/aws/config";
