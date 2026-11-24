@@ -44,7 +44,7 @@ hs.hotkey.bind(
 )
 
 hs.hotkey.bind({ "cmd" }, "1", function()
-  hs.application.launchOrFocusByBundleID("com.github.wez.wezterm")
+  hs.application.launchOrFocusByBundleID("com.mitchellh.ghostty")
 end)
 
 hs.hotkey.bind({ "cmd" }, "2", function()

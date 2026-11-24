@@ -6,7 +6,6 @@
     ./ghostty.nix
     ./homebrew.nix
     ./shortcuts
-    ./wezterm.nix
   ];
 
   nix.settings.experimental-features = [
