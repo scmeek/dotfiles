@@ -35,7 +35,6 @@
         trusted = true;
       }
     ];
-
   };
 
   system.activationScripts.homebrew.text = lib.mkBefore ''

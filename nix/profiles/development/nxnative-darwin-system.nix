@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  imports = [ ./development-darwin-system.nix ];
+  imports = [ ./darwin-system.nix ];
 
   homebrew.brews = [
     "xcodegen"

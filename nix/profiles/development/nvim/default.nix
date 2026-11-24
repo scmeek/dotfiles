@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 
 let
   # Keep the CLI and editor on the project's rustup toolchain, installing its
@@ -22,6 +17,8 @@ let
   };
 in
 {
+  dotfiles.nvim.luaDirs = [ ./lua ];
+
   home.sessionVariables = {
     CARGO_HOME = "${config.xdg.dataHome}/cargo";
     CARGO_NET_GIT_FETCH_WITH_CLI = "true";
@@ -30,8 +27,6 @@ in
 
   home.packages = with pkgs; [
     chafa
-    devcontainer
-    docker-client
     ghostscript
     mermaid-cli
     rustupWithAnalyzer
@@ -43,7 +38,6 @@ in
   programs.neovim.extraPackages = with pkgs; [
     black
     clang-tools
-    devcontainer
     docker-client
     isort
     pyright
@@ -56,23 +50,4 @@ in
     yamlfmt
     yamllint
   ];
-
-  xdg.configFile =
-    let
-      luaFiles =
-        dir:
-        lib.mapAttrs'
-          (
-            name: _:
-            lib.nameValuePair "nvim/lua/${dir}/${name}" {
-              source = ./. + "/${dir}/${name}";
-            }
-          )
-          (
-            lib.filterAttrs (name: type: type == "regular" && lib.hasSuffix ".lua" name) (
-              builtins.readDir (./. + "/${dir}")
-            )
-          );
-    in
-    (luaFiles "extras") // (luaFiles "plugins");
 }

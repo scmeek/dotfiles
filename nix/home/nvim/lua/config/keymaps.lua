@@ -1,7 +1,5 @@
 local map = vim.keymap.set
 
--- map("i", "jk", "<ESC>")
-
 -- Movement across soft-wrapped lines
 local mux_with_g = function(key)
   local gkey = "g" .. key

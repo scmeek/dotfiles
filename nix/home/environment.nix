@@ -21,5 +21,4 @@ in
   ];
 
   home.file.".local/bin/bin".source = ../../bin;
-
 }

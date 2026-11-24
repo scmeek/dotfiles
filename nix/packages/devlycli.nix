@@ -4,14 +4,14 @@
   fetchurl,
 }:
 
-stdenvNoCC.mkDerivation rec {
+stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "devlycli";
   version = "2.0.0";
 
   # Use the same release and checksum as the original Homebrew formula.
   src = fetchurl {
-    url = "https://github.com/aarush67/devly-releases/releases/download/v${version}/DevlyCLI-v${version}-macos.tar.gz";
-    sha256 = "268105fbd49ab6d3ca3e70ef5df27b780afb5ef0d02bbb47e50e7f3b91e73912";
+    url = "https://github.com/aarush67/devly-releases/releases/download/v${finalAttrs.version}/DevlyCLI-v${finalAttrs.version}-macos.tar.gz";
+    hash = "sha256-JoEF+9SattPKPnDvXfJ7eAr7XvDQK7tH5Q5/O5HnORI=";
   };
 
   sourceRoot = ".";
@@ -22,8 +22,7 @@ stdenvNoCC.mkDerivation rec {
 
   installPhase = ''
     runHook preInstall
-    mkdir -p "$out/bin"
-    install -m755 DevlyCLI "$out/bin/devly"
+    install -Dm755 DevlyCLI "$out/bin/devly"
     runHook postInstall
   '';
 
@@ -34,4 +33,4 @@ stdenvNoCC.mkDerivation rec {
     mainProgram = "devly";
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
   };
-}
+})

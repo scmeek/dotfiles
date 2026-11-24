@@ -1,8 +1,7 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  imports = [
-    ./obsidian.nix
-    ./nvim
-  ];
+  imports = [ ./nvim ];
+
+  home.packages = [ pkgs.obsidian ];
 }

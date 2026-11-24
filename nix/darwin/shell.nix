@@ -2,10 +2,7 @@
 
 {
   programs.zsh = {
-    shellAliases = {
-      doawake = "caffeinate -dimsu &";
-      nrs = "nfmt && nix flake update && nix flake check && darwin-rebuild build --flake .#S-MBA && sudo darwin-rebuild switch --flake .#S-MBA B";
-    };
+    shellAliases.doawake = "caffeinate -dimsu &";
 
     initContent = ''
       # Prefer Nix-managed tools over Homebrew.

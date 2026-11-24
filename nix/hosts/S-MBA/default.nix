@@ -1,17 +1,12 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 
 {
   imports = [
     ../../darwin/system.nix
-    ../../profiles/desktop-darwin-system.nix
-    ../../profiles/development-darwin-system.nix
-    ../../profiles/development-nxnative-darwin-system.nix
-    ../../profiles/gpg-darwin-system.nix
+    ../../profiles/desktop/darwin-system.nix
+    ../../profiles/development/darwin-system.nix
+    ../../profiles/development/nxnative-darwin-system.nix
+    ../../profiles/gpg/darwin-system.nix
     ./homebrew.nix
   ];
 
@@ -31,36 +26,7 @@
   };
 
   users.users.sean.home = "/Users/sean";
-
-  home-manager = {
-    users.sean = {
-      home.username = "sean";
-      home.homeDirectory = "/Users/sean";
-      home.stateVersion = "26.05";
-      home.sessionVariables.NVIM_ENABLE_COPILOT = "1";
-
-      imports = [
-        ../../home
-        ../../darwin
-
-        ../../profiles/development-darwin.nix
-        ../../profiles/gpg-darwin.nix
-        ../../profiles/notes-darwin.nix
-      ];
-
-      programs.git.settings.user.signingkey = "8F73E7B76CBD3188";
-
-      dotfiles.opencode.providers = [
-        "openai"
-        "anthropic"
-      ];
-
-      xdg.configFile = {
-        "nvim/lua/config/obsidian.lua".source = ../../profiles/notes/nvim/plugins/obsidian.lua;
-        "nvim/lua/plugins/obsidian.lua".source = lib.mkForce ./nvim/plugins/obsidian.lua;
-      };
-    };
-  };
+  home-manager.users.sean = ./home.nix;
 
   fonts.packages = with pkgs.nerd-fonts; [
     fira-code

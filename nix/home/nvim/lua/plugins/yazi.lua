@@ -1,6 +1,6 @@
 return {
   "mikavilpas/yazi.nvim",
-  version = "*", -- use the latest stable version
+  version = "*",
   event = "VeryLazy",
   init = function()
     local function set_highlights()

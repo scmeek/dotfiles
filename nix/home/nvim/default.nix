@@ -1,32 +1,54 @@
-{ pkgs, ... }:
-
 {
-  imports = [
-    ./lazy.nix
-    ./plugins
-    ./tree-sitter.nix
-  ];
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    initLua = builtins.readFile ./init.lua;
-
-    extraPackages = with pkgs; [
-      lua-language-server
-      bash-language-server
-      shellcheck
-      shfmt
-      stylua
-    ];
+let
+  luaFiles =
+    dir:
+    lib.listToAttrs (
+      map (
+        file:
+        lib.nameValuePair "nvim/lua/${lib.removePrefix "${toString dir}/" (toString file)}" {
+          source = file;
+        }
+      ) (lib.filesystem.listFilesRecursive dir)
+    );
+in
+{
+  options.dotfiles.nvim.luaDirs = lib.mkOption {
+    type = lib.types.listOf lib.types.path;
+    default = [ ];
+    description = ''
+      Directories mirrored into ~/.config/nvim/lua. Each file is linked
+      individually, so other modules can override a single file.
+    '';
   };
 
-  xdg.configFile = {
-    "nvim/lua/config/options.lua".source = ./options.lua;
-    "nvim/lua/config/autocmds.lua".source = ./autocmds.lua;
-    "nvim/lua/config/highlights.lua".source = ./highlights.lua;
-    "nvim/lua/config/keymaps.lua".source = ./keymaps.lua;
+  config = {
+    dotfiles.nvim.luaDirs = [ ./lua ];
+
+    programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      initLua = builtins.readFile ./init.lua;
+      plugins = [ pkgs.vimPlugins.lazy-nvim ];
+
+      extraPackages = with pkgs; [
+        gcc
+        tree-sitter
+        lua-language-server
+        bash-language-server
+        shellcheck
+        shfmt
+        stylua
+      ];
+    };
+
+    xdg.configFile = lib.mkMerge (map luaFiles config.dotfiles.nvim.luaDirs);
   };
 }

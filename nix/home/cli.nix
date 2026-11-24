@@ -15,7 +15,7 @@
       bind
       coreutils
       curl
-      (pkgs.callPackage ../packages/db9s.nix { src = db9s; })
+      (callPackage ../packages/db9s.nix { src = db9s; })
       duf
       fastfetch
       fd
@@ -45,14 +45,14 @@
       wget
       yt-dlp
       zbar
-      wtfi2.packages.${pkgs.stdenv.hostPlatform.system}.default
+      wtfi2.packages.${stdenv.hostPlatform.system}.default
     ]
-    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
-      pkgs.espeak-ng
-      pkgs.libnotify
-      pkgs.pandoc
-      pkgs.util-linux
-      pkgs.wl-clipboard
-      pkgs.xclip
+    ++ lib.optionals stdenv.hostPlatform.isLinux [
+      espeak-ng
+      libnotify
+      pandoc
+      util-linux
+      wl-clipboard
+      xclip
     ];
 }

@@ -1,5 +1,3 @@
--- local actions = require("atlas.pulls.actions")
-
 return {
   "emrearmagan/atlas.nvim",
   dependencies = {
@@ -11,23 +9,21 @@ return {
   opts = {
     ui = {
       statusline = {
-        atlas = true, -- Dashboards, details, and other non-diff Atlas views.
+        atlas = true,
         diff = true,
       },
-      picker = "snacks", -- "auto", "default", "snacks", or "fzf-lua".
+      picker = "snacks",
       listed_buffer = true,
     },
 
     providers = {
-      ---@type AtlasGitHubConfig
       github = {
-        -- hostname = "github.company.com", -- Defaults to GH_HOST, then github.com.
-        cache_ttl = 300, -- Set to 0 to disable caching.
+        cache_ttl = 300,
       },
     },
 
     pulls = {
-      delete_notes = false, -- Delete notes after approval or merge.
+      delete_notes = false,
       default_merge_method = "squash",
       default_delete_source_branch = false,
       git_transport = "ssh",
@@ -40,7 +36,7 @@ return {
       },
 
       comment_templates = {
-        insert_mode = true, -- Enter Insert mode after applying a template.
+        insert_mode = true,
         items = {
           { label = "Suggestion", text = "suggestion: " },
           { label = "Issue", text = "issue: " },
@@ -49,61 +45,43 @@ return {
       },
 
       diff = {
-        -- "auto", or a command that accepts explicit <base>...<head> Git revisions.
-        open_cmd = "auto", -- CodeDiff, DiffviewOpen or AtlasDiff
-        comment_display = "virtual_lines", -- "virtual_lines" or compact "virtual_text" hints.
+        open_cmd = "auto",
+        comment_display = "virtual_lines",
         review_panel = {
-          hidden = true, -- Set false to show the review panel when a diff opens.
+          hidden = true,
           height = 10,
         },
 
-        -- AtlasDiff options; external viewers use their own configuration.
-        layout = "inline", -- "inline" or "side-by-side".
-        compact = true, -- Start with only changed hunks and surrounding context visible.
+        layout = "inline",
+        compact = true,
         lsp = {
-          -- Back the new side of the diff with a detached worktree at the PR head so it is made of
-          -- real files and your language servers attach to it (AtlasDiff and CodeDiff). Off by default.
           enabled = true,
-          -- Defaults to `stdpath("cache")/atlas/worktrees/<repo>/pr-<id>` (or `<repo>/<sha>` without a PR).
-          -- May be an absolute path, or a function receiving
-          -- { repo_root, repo_full_name, pr_id, head_sha, default } that returns a path or nil.
           dir = nil,
-          -- Directories symlinked from your checkout into the worktree so servers can resolve
-          -- dependencies. These are the same directories on disk, not copies.
-          link = {}, -- e.g. { "node_modules", ".venv" }
+          link = {},
         },
         explorer = {
-          grouped = true, -- Group changed files by directory.
+          grouped = true,
           hidden = false,
-          show_commits = false, -- Set true to show commits below changed files initially.
+          show_commits = false,
           width = 40,
-          initial_focus = "explorer", -- "explorer" or "diff".
-          preview = false, -- Show a file as soon as the explorer cursor moves onto it.
-          focus_on_select = false, -- Move into the diff after selecting a file.
+          initial_focus = "explorer",
+          preview = false,
+          focus_on_select = false,
           ignore = { ".git/**", ".jj/**" },
         },
       },
       repo_config = {
-        -- Maps `namespace/repo` to local paths. Used for checkout, diffs, and custom actions.
         paths = {},
-        -- settings = {
-        --   ["your-workspace/atlas"] = {
-        --     readme = "README.md", -- optional, defaults to README.md
-        --     pr_template = ".github/pull_request_template.md", -- optional, defaults to .github/pull_request_template.md
-        --     merge_method = "squash", -- Overrides default_merge_method.
-        --     delete_source_branch = true, -- Overrides default_delete_source_branch when merging.
-        --   },
-        -- },
       },
-      custom_actions = {}, -- See :help atlas-custom-actions.
+      custom_actions = {},
     },
 
     issues = {},
 
     keymaps = {
       ui = {
-        help = "g?", -- { "g?", "<leader>?" } would add aliases
-        close = "q", -- false would disable it
+        help = "g?",
+        close = "q",
         next_item = "j",
         previous_item = "k",
         first_item = "gg",
@@ -163,7 +141,7 @@ return {
         open_repository = "o",
         edit_pr = "ge",
         review = {
-          show_details = "K", -- File/commit details.
+          show_details = "K",
           toggle_file_reviewed = "-",
           approve = "<leader>ga",
           request_changes = "<leader>gr",
@@ -181,7 +159,7 @@ return {
           submit_suggestion = "S",
           add_note = "<leader>n",
           view = {
-            external_help = "gA", -- External diff viewer help.
+            external_help = "gA",
             toggle_review_panel = "gR",
             toggle_detail_panel = "gD",
             toggle_comments = "gH",
@@ -192,7 +170,6 @@ return {
             prev_unreviewed_file = "[u",
             find_file = "<leader>f",
           },
-          -- Built-in navigation; external viewers use their own keys.
           atlas = {
             next_file = { "]f", "<Tab>" },
             prev_file = { "[f", "<S-Tab>" },
@@ -218,15 +195,6 @@ return {
           merged = "gpm",
           declined = "gpd",
         },
-        -- custom = {
-        --   {
-        --     key = "gP",
-        --     desc = "Open pipelines",
-        --     callback = function(context, done)
-        --       actions.run("open_pipelines", context, done)
-        --     end,
-        --   },
-        -- },
       },
     },
   },
