@@ -13,6 +13,7 @@
     ./ripgrep.nix
     ./shell
     ./starship.nix
+    ./terminfo.nix
     ./tmux
     ./yazi.nix
     ./zoxide.nix

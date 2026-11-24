@@ -137,9 +137,7 @@ in
   ];
 
   home-manager.sharedModules = [
-    ({ config, pkgs, ... }: {
-      home.sessionVariables.TERMINFO_DIRS = "${pkgs.wezterm.terminfo}/share/terminfo:";
-
+    ({ pkgs, ... }: {
       xdg.configFile."wezterm/wezterm.lua".text = ''
         local wezterm = require("wezterm")
         local config = wezterm.config_builder and wezterm.config_builder() or {}
@@ -147,7 +145,7 @@ in
           lib.generators.toLua { } (
             settings
             // {
-              set_environment_variables.TERMINFO_DIRS = config.home.sessionVariables.TERMINFO_DIRS;
+              set_environment_variables.TERMINFO_DIRS = "${pkgs.wezterm.terminfo}/share/terminfo:";
             }
           )
         }

@@ -3,6 +3,7 @@
 {
   imports = [
     ./defaults.nix
+    ./ghostty.nix
     ./homebrew.nix
     ./shortcuts
     ./wezterm.nix
