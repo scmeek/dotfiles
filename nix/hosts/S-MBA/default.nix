@@ -50,7 +50,7 @@
 
       programs.git.settings.user.signingkey = "8F73E7B76CBD3188";
 
-      programs.opencode.settings.enabled_providers = [
+      dotfiles.opencode.providers = [
         "openai"
         "anthropic"
       ];
