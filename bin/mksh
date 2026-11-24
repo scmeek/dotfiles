@@ -52,34 +52,42 @@ info() {
 }
 
 note() {
-  _print "$BLUE" '📝 ' "NOTE: " "$@"
+  _print "$BLUE" '📝 ' "$@"
 }
 
 warn() {
-  _print "$MAGENTA" '⚠️ ' "WARNING: " "$@"
+  _print "$MAGENTA" '⚠️ ' "Warning: " "$@" >&2
 }
 
 success() {
-  _print "$GREEN" '✅ ' "SUCCESS: " "$@"
+  _print "$GREEN" '✅ ' "$@"
 }
 
 error() {
-  _print "$RED" '❌ ' "ERROR: " "$@"
+  _print "$RED" '❌ ' "Error: " "$@" >&2
 }
 
 die() {
-  _print "$RED" '💥 ' "ERROR: " "$@"
+  _print "$RED" '💥 ' "Error: " "$@" >&2
   exit 1
 }
 
 exit_success() {
-  _print "$GREEN" '🎉 ' "SUCCESS: " "$@"
+  _print "$GREEN" '🎉 ' "$@"
   exit 0
 }
 
 usage() {
     note "Usage: ${0##*/} <args...>"
     note "<description>"
+}
+
+quiet() {
+    local output
+    if ! output=$("$@" 2>&1); then
+        printf '%s\n' "$output" >&2
+        return 1
+    fi
 }
 
 main() {
