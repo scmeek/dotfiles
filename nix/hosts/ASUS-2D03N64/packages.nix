@@ -42,6 +42,7 @@ in
   home.packages = with pkgs; [
     awscli2
     k9s
+    kubernetes-helm
     opentofu
     pixi
     terragrunt
