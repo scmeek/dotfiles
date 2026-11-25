@@ -16,8 +16,13 @@
         enableZshIntegration = false;
         settings = {
           background-opacity = 0.9;
+          confirm-close-surface = false;
           command = "/bin/sh -lc 'if command -v tmux >/dev/null 2>&1; then exec tmux new-session -A -s main; else exec zsh -l; fi'";
+          macos-titlebar-style = "hidden";
+          macos-window-shadow = false;
           shell-integration-features = "ssh-env,ssh-terminfo";
+          window-padding-x = 0;
+          window-padding-y = 0;
         };
       };
 
